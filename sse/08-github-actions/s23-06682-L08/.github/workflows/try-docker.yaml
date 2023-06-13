@@ -1,0 +1,13 @@
+name: Try Docker
+on: push
+
+jobs:
+  run-my-docker:
+    runs-on: ubuntu-latest
+    steps:      
+      - uses: actions/checkout@v3
+      - uses: jkitchin/s23-06682-L08@main
+        with:
+          who-to-greet: John
+
+
