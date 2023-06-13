@@ -1,0 +1,20 @@
+name: MacOS testing
+on: push
+
+jobs:
+  mac:
+    runs-on: macos-latest
+    steps:
+      - run: |
+          pwd 
+          ls -alF
+          sw_vers
+        
+  pytest:
+    runs-on: macos-latest
+    steps:      
+      - uses: actions/checkout@v3
+      - run: |
+          pip install matplotlib requests IPython pytest
+          python -m pytest       
+
