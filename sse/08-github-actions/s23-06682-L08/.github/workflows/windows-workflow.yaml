@@ -1,0 +1,18 @@
+name: Windows testing
+on: push
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - run: |
+          systeminfo
+        
+  pytest:
+    runs-on: windows-lattest
+    steps:      
+      - uses: actions/checkout@v3
+      - run: |
+          pip install matplotlib requests IPython pytest
+          pytest .        
+
