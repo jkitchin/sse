@@ -515,7 +515,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/jkitchin/anaconda3/lib/python3.10/os.py&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/os.py&#39;
 </pre></div>
 </div>
 </div>
@@ -529,16 +529,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/Users/jkitchin/Dropbox/emacs/projects/gumroad-books/products/scientific-software-engineering/sse/sse/03-python-packaging&#39;,
- &#39;/Users/jkitchin/anaconda3/lib/python310.zip&#39;,
- &#39;/Users/jkitchin/anaconda3/lib/python3.10&#39;,
- &#39;/Users/jkitchin/anaconda3/lib/python3.10/lib-dynload&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/home/runner/work/sse/sse/sse/03-python-packaging&#39;,
+ &#39;/opt/hostedtoolcache/Python/3.8.17/x64/lib/python38.zip&#39;,
+ &#39;/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8&#39;,
+ &#39;/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/lib-dynload&#39;,
  &#39;&#39;,
- &#39;/Users/jkitchin/anaconda3/lib/python3.10/site-packages&#39;,
- &#39;/Users/jkitchin/anaconda3/lib/python3.10/site-packages/PyQt5_sip-12.11.0-py3.10-macosx-10.9-x86_64.egg&#39;,
- &#39;/Users/jkitchin/anaconda3/lib/python3.10/site-packages/aeosa&#39;,
- &#39;/Users/jkitchin/Dropbox/python/pycse&#39;,
- &#39;/Users/jkitchin/anaconda3/lib/python3.10/site-packages/mpmath-1.2.1-py3.10.egg&#39;]
+ &#39;/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages&#39;]
 </pre></div>
 </div>
 </div>
@@ -554,7 +550,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/jkitchin/anaconda3/lib/python3.10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8
 </pre></div>
 </div>
 </div>
@@ -565,7 +561,7 @@ document.write(`
 <p>A Python package is a collection of files and directories that follow some conventions. It is common for the whole set to be in a single root directory. This is helpful to isolate the files from other files, so they are easy to move later.</p>
 <p>In the package root, you need several files:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="package-root/README.html"><span class="doc std std-doc">README.md</span></a> :: A text file describing the package</p></li>
+<li><p><span class="xref myst">README.md</span> :: A text file describing the package</p></li>
 <li><p><a class="reference download internal" download="" href="../_downloads/3508c56061faa9804fd85bd722c17ff2/setup.py"><span class="xref download myst">setup.py</span></a> :: A Python file for installing the package</p></li>
 <li><p><a class="reference download internal" download="" href="../_downloads/84d461a1f23029dd89f92b22bc5761f8/LICENSE"><span class="xref download myst">LICENSE</span></a> :: A file containing the terms of use for your package.</p></li>
 </ul>
@@ -673,7 +669,7 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 └── <span class=" -Color -Color-Bold -Color-Bold-Blue">testpack</span>
     └── __init__.py
 
-2 directories, 4 files
+1 directory, 4 files
 </pre></div>
 </div>
 </div>
@@ -749,30 +745,9 @@ git config --global user.email johndoe@example.com
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[github]
-	user = jkitchin
-[user]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[user]
 	name = John Doe
 	email = johndoe@example.com
-[filter &quot;lfs&quot;]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-[init]
-	defaultBranch = main
-[pull]
-	rebase = false
-[url &quot;git@github.com:&quot;]
-	insteadOf = https://github.com/
-[credential &quot;https://git.overleaf.com&quot;]
-	username = jkitchin@andrew.cmu.edu
-	helper = cache
-[diff &quot;daff-csv&quot;]
-	command = daff diff --git
-[merge &quot;daff-csv&quot;]
-	name = daff tabular csv merge
-	driver = daff merge --output %A %O %A %B
 </pre></div>
 </div>
 </div>
@@ -787,7 +762,37 @@ git init
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialized empty Git repository in /Users/jkitchin/Dropbox/emacs/projects/gumroad-books/products/scientific-software-engineering/sse/sse/03-python-packaging/package-root/.git/
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hint: Using &#39;master&#39; as the name for the initial branch. This default branch name
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hint: is subject to change. To configure the initial branch name to use in all
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hint: of your new repositories, which will suppress this warning, call:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hint: 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hint: 	git config --global init.defaultBranch &lt;name&gt;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hint: 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hint: Names commonly chosen instead of &#39;master&#39; are &#39;main&#39;, &#39;trunk&#39; and
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hint: &#39;development&#39;. The just-created branch can be renamed via this command:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hint: 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hint: 	git branch -m &lt;name&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialized empty Git repository in /home/runner/work/sse/sse/sse/03-python-packaging/package-root/.git/
 </pre></div>
 </div>
 </div>
@@ -806,7 +811,7 @@ git status
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch master
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -893,7 +898,7 @@ git commit -m &quot;First commit&quot;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main (root-commit) 79a311c] First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main (root-commit) 74993c0] First commit
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 4 files changed, 29 insertions(+)
@@ -954,7 +959,7 @@ git status
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main 45928ed] Add the .gitignore file
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main 051dd2f] Add the .gitignore file
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 2 insertions(+)
@@ -981,13 +986,13 @@ git log
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit 45928ed13e01cc6bdeef550496f0429178bfb01b
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit 051dd2f27e193d9d435a5a8ac351e975179ace5c
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Author: John Doe &lt;johndoe@example.com&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date:   Wed Jun 14 20:27:13 2023 -0400
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date:   Thu Jun 15 01:16:34 2023 +0000
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -999,13 +1004,13 @@ git log
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit 79a311c85130fb86b9859f31020c624e04c745c2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit 74993c08497c28e5afd4dd821b8b0e852317914c
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Author: John Doe &lt;johndoe@example.com&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date:   Wed Jun 14 20:27:12 2023 -0400
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date:   Thu Jun 15 01:16:34 2023 +0000
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1029,8 +1034,8 @@ git log
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* <span class=" -Color -Color-Yellow">45928ed (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span> Add the .gitignore file
-* <span class=" -Color -Color-Yellow">79a311c</span> First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* <span class=" -Color -Color-Yellow">051dd2f (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span> Add the .gitignore file
+* <span class=" -Color -Color-Yellow">74993c0</span> First commit
 </pre></div>
 </div>
 </div>
@@ -1058,10 +1063,10 @@ git log --graph --oneline
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nothing to commit, working tree clean
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 45928ed Add the .gitignore file
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 051dd2f Add the .gitignore file
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 79a311c First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 74993c0 First commit
 </pre></div>
 </div>
 </div>
@@ -1134,19 +1139,19 @@ git log --graph --oneline
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[feature d047e13] Add a new function
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[feature b5ef827] Add a new function
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 3 insertions(+)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* d047e13 Add a new function
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* b5ef827 Add a new function
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 45928ed Add the .gitignore file
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 051dd2f Add the .gitignore file
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 79a311c First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 74993c0 First commit
 </pre></div>
 </div>
 </div>
@@ -1292,19 +1297,19 @@ git log --graph --oneline
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;main&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main f5a6005] document the function in the package
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main 472043c] document the function in the package
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 3 insertions(+)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* f5a6005 document the function in the package
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 472043c document the function in the package
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 45928ed Add the .gitignore file
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 051dd2f Add the .gitignore file
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 79a311c First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 74993c0 First commit
 </pre></div>
 </div>
 </div>
@@ -1360,25 +1365,25 @@ git log --graph --oneline
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 3 insertions(+)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*   c2aebb9 Merge branch &#39;main&#39; into feature
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*   1566041 Merge branch &#39;main&#39; into feature
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|\  
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| * f5a6005 document the function in the package
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| * 472043c document the function in the package
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* | d047e13 Add a new function
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* | b5ef827 Add a new function
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|/  
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 45928ed Add the .gitignore file
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 051dd2f Add the .gitignore file
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 79a311c First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 74993c0 First commit
 </pre></div>
 </div>
 </div>
@@ -1400,7 +1405,7 @@ git log --graph --oneline
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;main&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updating f5a6005..c2aebb9
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updating 472043c..1566041
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fast-forward
@@ -1412,28 +1417,28 @@ git log --graph --oneline
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 3 insertions(+)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Deleted branch feature (was c2aebb9).
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Deleted branch feature (was 1566041).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*   c2aebb9 Merge branch &#39;main&#39; into feature
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*   1566041 Merge branch &#39;main&#39; into feature
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|\  
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| * f5a6005 document the function in the package
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| * 472043c document the function in the package
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* | d047e13 Add a new function
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* | b5ef827 Add a new function
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|/  
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 45928ed Add the .gitignore file
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 051dd2f Add the .gitignore file
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 79a311c First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 74993c0 First commit
 </pre></div>
 </div>
 </div>

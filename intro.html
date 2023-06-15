@@ -427,84 +427,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="welcome-to-scientific-software-engineering">
 <h1>Welcome to Scientific Software Engineering<a class="headerlink" href="#welcome-to-scientific-software-engineering" title="Permalink to this heading">#</a></h1>
-<p>You will learn a little about writing scientific software.</p>
+<p>You will learn a little about writing scientific software. You won’t learn everything. I assume little experience in writing software, so we start with the shell, and writing a shell script. Then we transition to writing that script in Python. After that we package the script in Python library, and learn how to make reusable code that works in scripts and Jupyter notebooks. From there we introduce some tools to improve code quality and to enable version control. We conclude with an introduction to GitHUb and automation tools.</p>
+<p><img alt="img" src="_images/cmu-sse.png" /></p>
+<p>Each of these topics is an iceberg of material, and we navigate between them. It is not possible to learn everything about each tool, and they tend to change somewhat often. Instead, we try to provide just enough to get you started in writing your own software tools.</p>
+<p>Good luck on your journey!</p>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="00-introduction/00-introduction-terminals.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="00-introduction/00-introduction-terminals.html#terminals-and-shells">Terminals and shells</a></li>
-<li class="toctree-l1"><a class="reference internal" href="00-introduction/00-introduction-terminals.html#paths-and-the-working-directory">Paths and the working directory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="00-introduction/00-introduction-terminals.html#commands">Commands</a></li>
-<li class="toctree-l1"><a class="reference internal" href="00-introduction/00-introduction-terminals.html#combining-commands">Combining commands</a></li>
-<li class="toctree-l1"><a class="reference internal" href="00-introduction/00-introduction-terminals.html#redirecting-output">Redirecting output</a></li>
-<li class="toctree-l1"><a class="reference internal" href="00-introduction/00-introduction-terminals.html#make-your-own-shell-command">Make your own shell command!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="00-introduction/00-introduction-terminals.html#do-i-have-to-learn-the-shell">Do I have to learn the shell?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01-rest-api-openalex/01-rest-api-openalex.html">OpenAlex</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01-rest-api-openalex/01-rest-api-openalex.html#api">API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01-rest-api-openalex/01-rest-api-openalex.html#json">JSON</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01-rest-api-openalex/01-rest-api-openalex.html#using-rest-apis-in-the-shell">Using REST APIs in the shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01-rest-api-openalex/01-rest-api-openalex.html#jq-shell-command-to-parse-json-files">jq - shell command to parse json files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01-rest-api-openalex/01-rest-api-openalex.html#writing-a-shell-script">Writing a shell script</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01-rest-api-openalex/01-rest-api-openalex.html#exercise">Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02-python-requests/02-python-requests.html">Python and REST APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02-python-requests/02-python-requests.html#back-to-the-author-endpoint">Back to the author endpoint</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02-python-requests/02-python-requests.html#exercise">Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-python-packaging/03-python-packaging.html">Python packaging and version control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-python-packaging/03-python-packaging.html#anatomy-of-a-package">Anatomy of a package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-python-packaging/03-python-packaging.html#version-control">Version control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-python-packaging/03-python-packaging.html#first-package-modification">First package modification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-python-packaging/03-python-packaging.html#try-the-new-python-function">Try the new python function</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-python-packaging/03-python-packaging.html#summary">Summary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-more-python-packaging/04-more-python-packaging.html">More on Python packaging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-more-python-packaging/04-more-python-packaging.html#installing-the-package">Installing the package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-more-python-packaging/04-more-python-packaging.html#back-to-git">Back to git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-more-python-packaging/04-more-python-packaging.html#let-s-catch-our-breath">Let’s catch our breath</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-more-python-packaging/04-more-python-packaging.html#reinstall-the-package-after-making-the-changes">Reinstall the package after making the changes.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-more-python-packaging/04-more-python-packaging.html#summary-take-two">Summary - take two</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-more-python-packaging/04-more-python-packaging.html#testing">Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05-python-classes/05-python-classes.html">Introduction Python Classes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05-python-classes/05-python-classes.html#further-enhancements">Further enhancements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05-python-classes/05-python-classes.html#summary">Summary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05-python-classes/05-python-classes.html#exercise">Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06-code-quality/06-code-quality.html">Code quality control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06-code-quality/06-code-quality.html#package-setup-for-today">Package setup for today</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06-code-quality/06-code-quality.html#code-formatting">Code formatting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06-code-quality/06-code-quality.html#code-style">Code style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06-code-quality/06-code-quality.html#testing">Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06-code-quality/06-code-quality.html#coverage">Coverage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06-code-quality/06-code-quality.html#automating-these">Automating these</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06-code-quality/06-code-quality.html#integration-with-git">Integration with git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06-code-quality/06-code-quality.html#pre-commit">pre-commit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06-code-quality/06-code-quality.html#summary">Summary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06-code-quality/06-code-quality.html#in-class-exercise">In class exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07-github-intro/07-github-intro.html">Introduction to GitHUB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07-github-intro/07-github-intro.html#setting-up-a-repo-on-github">Setting up a repo on GitHUB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07-github-intro/07-github-intro.html#working-with-code-files-on-github">Working with code files on GitHUB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07-github-intro/07-github-intro.html#vs-code-in-the-browser">VS Code in the browser</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07-github-intro/07-github-intro.html#github-codespaces">GitHUB Codespaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07-github-intro/07-github-intro.html#back-to-jupyter-hub">Back to Jupyter Hub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07-github-intro/07-github-intro.html#wrapping-up-thoughts-on-codespaces">Wrapping up thoughts on Codespaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07-github-intro/07-github-intro.html#next-time">Next time</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08-github-actions/08-github-actions.html">gitHUB Actions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08-github-actions/08-github-actions.html#lecture-setup">Lecture setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08-github-actions/08-github-actions.html#brief-exploration-of-the-repo">Brief exploration of the repo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08-github-actions/08-github-actions.html#making-github-do-the-work-instead-of-your-computer">Making GitHUB do the work instead of your computer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08-github-actions/08-github-actions.html#github-actions-https-docs-github-com-en-actions">GitHUB Actions (https://docs.github.com/en/actions)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08-github-actions/08-github-actions.html#cross-platform-testing">Cross platform testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08-github-actions/08-github-actions.html#custom-environments-with-docker">Custom environments with Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08-github-actions/08-github-actions.html#cleaning-up">Cleaning up</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09-wrapup/09-wrapup.html">Wrapping up</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09-wrapup/09-wrapup.html#there-are-some-dangerous-git-commands">There are some dangerous git commands!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09-wrapup/09-wrapup.html#so-many-opportunities-remain-for-your-openalex-package">So many opportunities remain for your OpenAlex package!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09-wrapup/09-wrapup.html#wrapping-up-what-we-have-learned-and-didn-t-learn">Wrapping up what we have learned, and didn’t learn</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09-wrapup/09-wrapup.html#command-line-utilities">Command-line utilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09-wrapup/09-wrapup.html#packaging-python-commands">Packaging Python commands</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09-wrapup/09-wrapup.html#python-packages">Python packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09-wrapup/09-wrapup.html#packaging-classes-and-code-quality">Packaging classes and code quality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09-wrapup/09-wrapup.html#github">GitHUB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09-wrapup/09-wrapup.html#what-haven-t-we-covered">What haven’t we covered?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09-wrapup/09-wrapup.html#other-helpful-resources">Other helpful resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09-wrapup/09-wrapup.html#concluding-thoughts">Concluding thoughts</a></li>
-</ul>
 </div>
 </section>
 
