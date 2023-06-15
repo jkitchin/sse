@@ -4,3 +4,19 @@
 _build
 .ipynb_checkpoints
 __pycache__
+
+
+# specific generated files
+sse/01-rest-api-openalex/cmu.json
+sse/01-rest-api-openalex/myscript.sh
+sse/01-rest-api-openalex/oa-inst.sh
+sse/02-python-requests/oa_inst.py
+sse/02-python-requests/oa_inst2.py
+sse/02-python-requests/orcid
+sse/03-python-packaging/package-root/
+sse/04-more-python-packaging/src/
+sse/06-code-quality/.coverage
+sse/06-code-quality/black-example.py
+sse/06-code-quality/flake-example.py
+sse/06-code-quality/package/
+sse/06-code-quality/references.bib
