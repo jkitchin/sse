@@ -1,0 +1,1172 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction &#8212; Scientific software engineering</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '00-introduction/00-introduction-terminals';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="OpenAlex" href="../01-rest-api-openalex/01-rest-api-openalex.html" />
+    <link rel="prev" title="Welcome to Scientific Software Engineering" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Scientific Software Engineering
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../01-rest-api-openalex/01-rest-api-openalex.html">OpenAlex</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02-python-requests/02-python-requests.html">Python and REST APIs</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../03-python-packaging/03-python-packaging.html">Python packaging and version control</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04-more-python-packaging/04-more-python-packaging.html">More on Python packaging</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../05-python-classes/05-python-classes.html">Introduction Python Classes</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../06-code-quality/06-code-quality.html">Code quality control</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../07-github-intro/07-github-intro.html">Introduction to GitHUB</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../08-github-actions/08-github-actions.html">gitHUB Actions</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../09-wrapup/09-wrapup.html">Wrapping up</a></li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://lab.amdatascience.com/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/sse&urlpath=lab/tree/sse/docs/00-introduction/00-introduction-terminals.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jkitchin/sse/blob/main/docs/00-introduction/00-introduction-terminals.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jkitchin/sse" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jkitchin/sse/issues/new?title=Issue%20on%20page%20%2F00-introduction/00-introduction-terminals.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/00-introduction/00-introduction-terminals.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#terminals-and-shells">Terminals and shells</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#paths-and-the-working-directory">Paths and the working directory</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-and-relative-paths">Absolute and relative paths</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#commands">Commands</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-are-the-commands">Where are the commands?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-makes-them-a-command">What makes them a command?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-commands">Combining commands</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#redirecting-output">Redirecting output</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#make-your-own-shell-command">Make your own shell command!</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-your-own-bin-directory-and-add-it-to-the-path">Make your own bin directory and add it to the path</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-the-path-modification-permanent">Making the PATH modification permanent</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#do-i-have-to-learn-the-shell">Do I have to learn the shell?</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
+<p>You should read most of <a class="reference external" href="https://merely-useful.tech/py-rse/index.html">https://merely-useful.tech/py-rse/index.html</a> in parallel with this course. We will not follow it exactly, but it contains many useful things we won’t have time to fully cover.</p>
+<p>Course structure:</p>
+<p>We will start with the shell, and use it to get some information from <a class="reference external" href="https://openalex.org/">https://openalex.org/</a>. This will introduce us to some basic concepts in how software works on a computer. Then, we will transition to using Python, which is more flexible, to create shell commands. Finally, we will transition that into a Jupyter notebook app of sorts, with reusable packaged code.</p>
+<p>We need a little bit of setup for using Jupyter lab. These notes are written in a Jupyter notebook. Some cells will run Python code. Other cells will start with a <code class="docutils literal notranslate"><span class="pre">shell</span> <span class="pre">magic</span></code> “%%bash”. These cells will execute shell commands, similar to running those commands in a terminal.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="terminals-and-shells">
+<h1>Terminals and shells<a class="headerlink" href="#terminals-and-shells" title="Permalink to this heading">#</a></h1>
+<p>A terminal is a command-line interface to your computer. In it you type commands to do things. In Windows it might be called the DOS prompt, or Powershell, or if you have the Linux Subsystem installed, it is just a terminal. On a Mac/Linux system it is also often called a terminal. Terminals usually do not have a lot of functionality compared to a “Window/GUI” system. In fact, you can run a terminal in systems where there is in GUI present.</p>
+<p>In the terminal, a <em>shell</em> runs. The shell provides some commands and functionality to the terminal. Some typical shells include:</p>
+<ul class="simple">
+<li><p>bash</p></li>
+<li><p>csh/tcsh</p></li>
+<li><p>zsh</p></li>
+</ul>
+<p>Others exist too, but these are the most common ones.</p>
+<p>You can find out what shell you are using by running this command:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+echo $SHELL
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/bin/bash
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, echo is a command, and $SHELL is called an environment variable. We will learn more about those later.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="paths-and-the-working-directory">
+<h1>Paths and the working directory<a class="headerlink" href="#paths-and-the-working-directory" title="Permalink to this heading">#</a></h1>
+<p>We need to talk about the concept of <em>where are we in the computer</em>? A computer has a file system, and all files live at a path in that system</p>
+<p>All files live at a path. The root of the file system (on Linux) starts at /. We use the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command to list files at a path.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+ls /
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bin
+boot
+dev
+etc
+home
+lib
+lib32
+lib64
+libx32
+media
+mnt
+opt
+proc
+root
+run
+sbin
+srv
+sys
+tmp
+usr
+var
+</pre></div>
+</div>
+</div>
+</div>
+<p>You do not always have permission to list any directory. You can run <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">/home</span></code>, but you probably cannot list the contents of most directories in /home; they belong to other people and are private. That can be changed, but not today.</p>
+<p>The shell is always somewhere in it. It is often important to know where that is. Let’s start with the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command, or path to working directory.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+pwd
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/jovyan/work/00-introduction
+</pre></div>
+</div>
+</div>
+</div>
+<p>To get the contents of this directory, simply type <code class="docutils literal notranslate"><span class="pre">ls</span></code>.</p>
+<section id="absolute-and-relative-paths">
+<h2>Absolute and relative paths<a class="headerlink" href="#absolute-and-relative-paths" title="Permalink to this heading">#</a></h2>
+<p>An absolute path starts with /, i.e. at the root of the file system.</p>
+<p>A relative path does not. A relative path assumes the current working directory is the root, and the path is relative to that. There are two special paths you can use:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.   this means the current directory
+..  this means one directory &quot;up&quot;
+</pre></div>
+</div>
+<p>So <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">..</span></code> lists the contents one directory up, and <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">../..</span></code> lists the contents two directories up.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+ls ..
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>00-introduction
+01-rest-api-openalex
+02-python-requests
+03-python-packaging
+04-more-python-packaging
+05-python-classes
+06-code-quality
+07-github-intro
+08-github-actions
+09-wrapup
+_build
+_config.yml
+content.md
+intro.md
+logo.png
+markdown.md
+markdown-notebooks.md
+notebooks.ipynb
+references.bib
+_toc.yml
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="commands">
+<h1>Commands<a class="headerlink" href="#commands" title="Permalink to this heading">#</a></h1>
+<p>Commands are typed at the shell prompt. There are several kinds of commands. Some are built into the shell. Some are called system commands. Finally, there are user-defined commands. We have already seen several commands:</p>
+<ul class="simple">
+<li><p>echo</p></li>
+<li><p>ls</p></li>
+<li><p>pwd</p></li>
+</ul>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">type</span></code> command to tell what kind of command something is. Try it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+type echo
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>echo is a shell builtin
+</pre></div>
+</div>
+</div>
+</div>
+<p>You use commands to make the computer do something. That could include:</p>
+<ul class="simple">
+<li><p>change directory</p></li>
+<li><p>see contents of a file</p></li>
+<li><p>make a file or directory</p></li>
+<li><p>delete a file or directory</p></li>
+<li><p>run a python shell</p></li>
+<li><p>and many more things</p></li>
+</ul>
+<p>Many commands have additional options. These are often documented in “manual” pages. You access this documentation with the <code class="docutils literal notranslate"><span class="pre">man</span></code> command. First see what kind of command <code class="docutils literal notranslate"><span class="pre">ls</span></code> is:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+type ls
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ls is /usr/bin/ls
+</pre></div>
+</div>
+</div>
+</div>
+<p>On the JupyterHUB, you will find it is aliased to provide some default options. We will see how that is done later. Next run:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>man ls
+</pre></div>
+</div>
+<p>to see the options that are available. Try using the -a option for showing all files. This shows a lot more files! It is a convention that files and directories that start with “.” are <em>hidden</em> files. These files and directories often contain configuration information, or other kinds of information like a history. Let’s look at some of these. We can use the <code class="docutils literal notranslate"><span class="pre">cat</span></code> command (from concatenate) to display the contents of a file. Try this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+man ls
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, including manpages, you can run the &#39;unminimize&#39;
+command. You will still need to ensure the &#39;man-db&#39; package is installed.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+
+ls -a ~/
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+..
+.bash_logout
+.bashrc
+.cache
+.conda
+.config
+.ipython
+.jupyter
+.local
+.lsp_symlink
+.npm
+.profile
+.wget-hsts
+work
+.yarn
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cat ~/.bashrc
+
+
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If not running interactively, don&#39;t do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# don&#39;t put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don&#39;t overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern &quot;**&quot; used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] &amp;&amp; eval &quot;$(SHELL=/bin/sh lesspipe)&quot;
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z &quot;${debian_chroot:-}&quot; ] &amp;&amp; [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# set a fancy prompt (non-color, unless we know we &quot;want&quot; color)
+case &quot;$TERM&quot; in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+force_color_prompt=yes
+
+if [ -n &quot;$force_color_prompt&quot; ]; then
+    if [ -x /usr/bin/tput ] &amp;&amp; tput setaf 1 &gt;&amp;/dev/null; then
+	# We have color support; assume it&#39;s compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
+    else
+	color_prompt=
+    fi
+fi
+
+if [ &quot;$color_prompt&quot; = yes ]; then
+    PS1=&#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ &#39;
+else
+    PS1=&#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &#39;
+fi
+unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case &quot;$TERM&quot; in
+xterm*|rxvt*)
+    PS1=&quot;\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1&quot;
+    ;;
+*)
+    ;;
+esac
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors &amp;&amp; eval &quot;$(dircolors -b ~/.dircolors)&quot; || eval &quot;$(dircolors -b)&quot;
+    alias ls=&#39;ls --color=auto&#39;
+    #alias dir=&#39;dir --color=auto&#39;
+    #alias vdir=&#39;vdir --color=auto&#39;
+
+    alias grep=&#39;grep --color=auto&#39;
+    alias fgrep=&#39;fgrep --color=auto&#39;
+    alias egrep=&#39;egrep --color=auto&#39;
+fi
+
+# colored GCC warnings and errors
+#export GCC_COLORS=&#39;error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01&#39;
+
+# some more ls aliases
+alias ll=&#39;ls -alF&#39;
+alias la=&#39;ls -A&#39;
+alias l=&#39;ls -CF&#39;
+
+# Add an &quot;alert&quot; alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert=&#39;notify-send --urgency=low -i &quot;$([ $? = 0 ] &amp;&amp; echo terminal || echo error)&quot; &quot;$(history|tail -n1|sed -e &#39;\&#39;&#39;s/^\s*[0-9]\+\s*//;s/[;&amp;|]\s*alert$//&#39;\&#39;&#39;)&quot;&#39;
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don&#39;t need to enable
+# this, if it&#39;s already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+eval &quot;$(command conda shell.bash hook 2&gt; /dev/null)&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="where-are-the-commands">
+<h2>Where are the commands?<a class="headerlink" href="#where-are-the-commands" title="Permalink to this heading">#</a></h2>
+<p>The answer is it depends. Commands that are built into the shell simply exist. For example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>type pwd
+</pre></div>
+</div>
+<p>shows that <code class="docutils literal notranslate"><span class="pre">pwd</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">shell</span> <span class="pre">builtin</span></code>. In contrast, <code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">cat</span></code> tells you <code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">is</span> <span class="pre">hashed</span> <span class="pre">(/usr/bin/cat)</span></code>. That means the shell knows that <code class="docutils literal notranslate"><span class="pre">cat</span></code> is defined in a file at the path /usr/bin/cat. The <code class="docutils literal notranslate"><span class="pre">/usr/bin</span></code> directory contains hundreds of commands that do different things.</p>
+<p>We can tell what kind of file it is with the <code class="docutils literal notranslate"><span class="pre">file</span></code> command.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>file /usr/bin/cat
+</pre></div>
+</div>
+<p>indicates it is a compiled program. A command can be a compiled program, or it can be another kind of script written in some language, e.g. in the shell language, or in Python.</p>
+<p>Here is a shell script:</p>
+<blockquote>
+<div><p>less /usr/bin/gunzip</p>
+</div></blockquote>
+<p>And here is a Python script</p>
+<blockquote>
+<div><p>less /usr/bin/pip</p>
+</div></blockquote>
+</section>
+<section id="what-makes-them-a-command">
+<h2>What makes them a command?<a class="headerlink" href="#what-makes-them-a-command" title="Permalink to this heading">#</a></h2>
+<p>There are a few things that make the files in /usr/bin available as a command. First, the files are <em>executable</em>. Every file is owned by a user and group. On every file there are read, write and execute permissions. For each of those categories, there are user, group and other permissions. To see who owns a file, and the permissions it grants, use the <code class="docutils literal notranslate"><span class="pre">-l</span></code> option of ls.</p>
+<blockquote>
+<div><p>ls -l /usr/bin/pip</p>
+</div></blockquote>
+<p>This yields</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-rwxr-xr-x 1 root root 365 Feb 28 09:41 /usr/bin/pip
+</pre></div>
+</div>
+<p>First, this means the file is owned by the root user, and is in the root group. The permissions are broken up into four groups:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- ignore this for now (it is for directories)
+rwx  means that the root user can read/write and execute
+r-x  means users in the root group can read and execute but not write.
+r-x  means others can read and execute, but not write
+</pre></div>
+</div>
+<p>To work as a command, a file must be executable for you.</p>
+<p>Second, to work as a command by name, the command must exist in a file by that name in one of several special places defined by the $PATH environment variable. This variable holds a colon separated list of directories to look for commands in:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>echo $PATH
+</pre></div>
+</div>
+<p>Finally, to work as a command the shell must know how to run the file found with that name. This is done in the first line of the file. You can see the first line like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>head -n 1 /usr/bin/pip
+</pre></div>
+</div>
+<p>This shows the path to the executable that is supposed to run this file: <code class="docutils literal notranslate"><span class="pre">#!/usr/bin/python3</span></code>.</p>
+<p>Note if you run this on a binary, or compiled file, you will see gobbleygook characters. These files are not meant to be viewed by you.</p>
+<p>If a file is executable, and the first line shows how to run, you can always call it using an absolute path, even when it is not in one of the $PATH directories.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="combining-commands">
+<h1>Combining commands<a class="headerlink" href="#combining-commands" title="Permalink to this heading">#</a></h1>
+<p>So far we have looked at using commands one at at time. The shell commands are much more powerful when they are combined. Many commands are designed so they can take the output of another command is input. Suppose we want the list of files in a directory, but sorted. We use a <em>pipe</em> to take the output of <code class="docutils literal notranslate"><span class="pre">ls</span></code> and feed it to <code class="docutils literal notranslate"><span class="pre">sort</span></code>. The pipe operator is “|”.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ls | sort
+</pre></div>
+</div>
+<p>Want them in reverse order? Check the sort man page to find the option for reversing the sort.</p>
+<p>Want to know how many entries there are? You can pipe the output to <code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span></code> which is a command for word count with an option to count the number of lines.  It is not necessary to sort here, but I show it to indicate you can use multiple pipes</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ls | sort | wc -l
+</pre></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="redirecting-output">
+<h1>Redirecting output<a class="headerlink" href="#redirecting-output" title="Permalink to this heading">#</a></h1>
+<p>So far we have been seeing output on the <em>standard output</em>, or stdout of the shell. That output is transient, and ephemeral; if you close the terminal it may disappear forever. You can often look back in the .bash_history file to see what commands were run, but it may be undesireable to run them again. In the shell, we can use redirect operators to put the output into files. the “&gt;” operator will redirect the output from stdout to a file. Here is an example where we create a file, and then run some additional commands on the saved file.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ls | sort &gt; sorted-list.dat
+wc -l sorted-list.dat
+head -n3 sorted-list.dat
+</pre></div>
+</div>
+<p>When you are done with the file, you can delete it with:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>rm sorted-list.dat
+</pre></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="make-your-own-shell-command">
+<h1>Make your own shell command!<a class="headerlink" href="#make-your-own-shell-command" title="Permalink to this heading">#</a></h1>
+<p>Create a new file in this directory called <a class="reference external" href="http://hello.sh">hello.sh</a>. You can do that in Jupyter lab. Add these lines:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+echo &quot;Hello world!&quot;
+</pre></div>
+</div>
+<p>Now try to run it. This directory is not in your $PATH, so we specify the path to it:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./hello.sh
+</pre></div>
+</div>
+<p>You should see</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bash: ./hello.sh: Permission denied
+</pre></div>
+</div>
+<p>Let’s check the permissions:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ls -l hello.sh
+</pre></div>
+</div>
+<p>Sure enough, you don’t see any “x” bits indicating it is executable, and if you list the file, it is not colored green. We can make the file executable like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>chmod +x hello.sh 
+</pre></div>
+</div>
+<p>now you can see the “x” bits for everyone, and you can run it with <code class="docutils literal notranslate"><span class="pre">./hello.sh</span></code>.</p>
+<section id="make-your-own-bin-directory-and-add-it-to-the-path">
+<h2>Make your own bin directory and add it to the path<a class="headerlink" href="#make-your-own-bin-directory-and-add-it-to-the-path" title="Permalink to this heading">#</a></h2>
+<p>We can make our own bin directory with the <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> command.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mkdir ~/bin
+</pre></div>
+</div>
+<p>next, we can add that directory to our $PATH. This is done temporarily for now. That means if you close the terminal and reopen it, you will have to run this command again.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export PATH=$PATH:~/bin
+</pre></div>
+</div>
+<p>Next, we move our command to ~/bin</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mv hello.sh ~/bin
+</pre></div>
+</div>
+<p>Now in a shell, from any directory you can simply type</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>hello.sh
+</pre></div>
+</div>
+<p>to run your command. You can also use the <code class="docutils literal notranslate"><span class="pre">which</span></code> and <code class="docutils literal notranslate"><span class="pre">type</span></code> commands to find it.</p>
+<p>When naming commands you have to be careful to give them different names from other commands. If you don’t use an absolute path to your command, whatever the first one that is found will be run!</p>
+</section>
+<section id="making-the-path-modification-permanent">
+<h2>Making the PATH modification permanent<a class="headerlink" href="#making-the-path-modification-permanent" title="Permalink to this heading">#</a></h2>
+<p>We have to go back a little to understand how to make modifications to the shell, e.g. to add something to the path. When you start/open your shell it reads the contents of some “dotfiles”. Specifically, here the .bashrc file is read. Check out the contents now:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cat ~/.bashrc
+</pre></div>
+</div>
+<p>There is already a lot being set for you by default. We can add a line to this file so that our $PATH will be set each time we open a terminal. It is a little tricky editing dotfiles in JupyterLab. The dotfiles are not shown in the File manager. Instead, we have to edit them in the terminal. You can use many editors for this: vim, emacs, etc. We will use <code class="docutils literal notranslate"><span class="pre">nano</span></code>. It is pretty simple.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nano ~/.bashrc
+</pre></div>
+</div>
+<p>This will open the .bashrc file in your terminal. Use the arrows or page down to get to the end of the file. Add exactly this text (no leading spaces):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export PATH=$PATH:~/bin
+# END
+</pre></div>
+</div>
+<p>Then type C-o RET to save and write the file, then C-x to exit.</p>
+<p>Run this command to check that the text you added is there.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cat ~/.bashrc
+</pre></div>
+</div>
+<p>We still have to load the file in this terminal session. Do that here to check for errors. If you get no output, there is no error.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>source ~/.bashrc
+</pre></div>
+</div>
+<p>Finally, echo the $PATH to see if your directory got added. Now, any executable files you add to ~/bin will be on your path, and available as commands.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="do-i-have-to-learn-the-shell">
+<h1>Do I have to learn the shell?<a class="headerlink" href="#do-i-have-to-learn-the-shell" title="Permalink to this heading">#</a></h1>
+<p>Sort of. Eventually you land in it when developing software. It is eventually where you install and uninstall software, and every software package runs in a shell somewhere. So you have to understand some things about the shell to know how software works.</p>
+<p>Personally, I limit the way I use shell commands. Where practical, I write short shell scripts to document</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>ls<span class="w"> </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>00-introduction-terminals.ipynb
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./00-introduction"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to Scientific Software Engineering</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../01-rest-api-openalex/01-rest-api-openalex.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">OpenAlex</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#terminals-and-shells">Terminals and shells</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#paths-and-the-working-directory">Paths and the working directory</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-and-relative-paths">Absolute and relative paths</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#commands">Commands</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-are-the-commands">Where are the commands?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-makes-them-a-command">What makes them a command?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-commands">Combining commands</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#redirecting-output">Redirecting output</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#make-your-own-shell-command">Make your own shell command!</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-your-own-bin-directory-and-add-it-to-the-path">Make your own bin directory and add it to the path</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-the-path-modification-permanent">Making the PATH modification permanent</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#do-i-have-to-learn-the-shell">Do I have to learn the shell?</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By John Kitchin
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

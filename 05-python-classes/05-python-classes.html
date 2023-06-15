@@ -1,0 +1,1505 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction Python Classes &#8212; Scientific software engineering</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '05-python-classes/05-python-classes';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Code quality control" href="../06-code-quality/06-code-quality.html" />
+    <link rel="prev" title="More on Python packaging" href="../04-more-python-packaging/04-more-python-packaging.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Scientific Software Engineering
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-introduction/00-introduction-terminals.html">Introduction</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../01-rest-api-openalex/01-rest-api-openalex.html">OpenAlex</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02-python-requests/02-python-requests.html">Python and REST APIs</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../03-python-packaging/03-python-packaging.html">Python packaging and version control</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04-more-python-packaging/04-more-python-packaging.html">More on Python packaging</a></li>
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction Python Classes</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../06-code-quality/06-code-quality.html">Code quality control</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../07-github-intro/07-github-intro.html">Introduction to GitHUB</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../08-github-actions/08-github-actions.html">gitHUB Actions</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../09-wrapup/09-wrapup.html">Wrapping up</a></li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://lab.amdatascience.com/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/sse&urlpath=lab/tree/sse/docs/05-python-classes/05-python-classes.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jkitchin/sse/blob/main/docs/05-python-classes/05-python-classes.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jkitchin/sse" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jkitchin/sse/issues/new?title=Issue%20on%20page%20%2F05-python-classes/05-python-classes.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/05-python-classes/05-python-classes.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction Python Classes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction Python Classes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-class-representations">Python class representations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fancier-representation-in-markdown">Fancier representation in Markdown</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-class-property-to-get-an-ris-entry">A Class property to get an RIS entry</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#further-enhancements">Further enhancements</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-python-classes">
+<h1>Introduction Python Classes<a class="headerlink" href="#introduction-python-classes" title="Permalink to this heading">#</a></h1>
+<p>Today we will touch on programming with classes in Python and Jupyter. Classes allow you to “encapsulate” data and methods. We will also learn about rich outputs in Jupyter notebooks.</p>
+<p>If you are not familiar with classes in Python you should review them. Here are some reasonable introductions:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://towardsdatascience.com/introduction-to-python-classes-da526ff745df">https://towardsdatascience.com/introduction-to-python-classes-da526ff745df</a></p></li>
+<li><p><a class="reference external" href="https://python.plainenglish.io/python-classes-and-objects-a13edcd2bc1e">https://python.plainenglish.io/python-classes-and-objects-a13edcd2bc1e</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/classes.html">https://docs.python.org/3/tutorial/classes.html</a></p></li>
+</ul>
+<p>I will assume you have some experience with classes, and only introduce what we need for this lecture as we go.  We are going to create a single class today to represent a <code class="docutils literal notranslate"><span class="pre">Works</span></code> object. The class will get data for a doi, and provide some representations and methods that are convenient.</p>
+<p><a class="reference external" href="https://api.openalex.org/works/https://doi.org/10.1021/acscatal.5b00538">https://api.openalex.org/works/https://doi.org/10.1021/acscatal.5b00538</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+
+<span class="k">class</span> <span class="nc">Works</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oaid</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">oaid</span> <span class="o">=</span> <span class="n">oaid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;https://api.openalex.org/works/</span><span class="si">{</span><span class="n">oaid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+
+<span class="n">w</span> <span class="o">=</span> <span class="n">Works</span><span class="p">(</span><span class="s2">&quot;https://doi.org/10.1021/acscatal.5b00538&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that we saved attributes on our object, and we can access them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="o">.</span><span class="n">oaid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;https://doi.org/10.1021/acscatal.5b00538&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="o">.</span><span class="n">req</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;id&#39;: &#39;https://openalex.org/W2288114809&#39;,
+ &#39;doi&#39;: &#39;https://doi.org/10.1021/acscatal.5b00538&#39;,
+ &#39;title&#39;: &#39;Examples of Effective Data Sharing in Scientific Publishing&#39;,
+ &#39;display_name&#39;: &#39;Examples of Effective Data Sharing in Scientific Publishing&#39;,
+ &#39;publication_year&#39;: 2015,
+ &#39;publication_date&#39;: &#39;2015-05-29&#39;,
+ &#39;ids&#39;: {&#39;openalex&#39;: &#39;https://openalex.org/W2288114809&#39;,
+  &#39;doi&#39;: &#39;https://doi.org/10.1021/acscatal.5b00538&#39;,
+  &#39;mag&#39;: &#39;2288114809&#39;},
+ &#39;language&#39;: &#39;en&#39;,
+ &#39;primary_location&#39;: {&#39;is_oa&#39;: True,
+  &#39;landing_page_url&#39;: &#39;https://doi.org/10.1021/acscatal.5b00538&#39;,
+  &#39;pdf_url&#39;: None,
+  &#39;source&#39;: {&#39;id&#39;: &#39;https://openalex.org/S37391459&#39;,
+   &#39;display_name&#39;: &#39;ACS Catalysis&#39;,
+   &#39;issn_l&#39;: &#39;2155-5435&#39;,
+   &#39;issn&#39;: [&#39;2155-5435&#39;],
+   &#39;is_in_doaj&#39;: False,
+   &#39;host_organization&#39;: &#39;https://openalex.org/P4310320006&#39;,
+   &#39;host_organization_name&#39;: &#39;American Chemical Society&#39;,
+   &#39;host_organization_lineage&#39;: [&#39;https://openalex.org/P4310320006&#39;],
+   &#39;host_organization_lineage_names&#39;: [&#39;American Chemical Society&#39;],
+   &#39;type&#39;: &#39;journal&#39;},
+  &#39;license&#39;: &#39;acs-specific: authorchoice/editors choice usage agreement&#39;,
+  &#39;version&#39;: &#39;publishedVersion&#39;},
+ &#39;type&#39;: &#39;journal-article&#39;,
+ &#39;open_access&#39;: {&#39;is_oa&#39;: True,
+  &#39;oa_status&#39;: &#39;hybrid&#39;,
+  &#39;oa_url&#39;: &#39;https://doi.org/10.1021/acscatal.5b00538&#39;,
+  &#39;any_repository_has_fulltext&#39;: False},
+ &#39;authorships&#39;: [{&#39;author_position&#39;: &#39;first&#39;,
+   &#39;author&#39;: {&#39;id&#39;: &#39;https://openalex.org/A4330425867&#39;,
+    &#39;display_name&#39;: &#39;John R. Kitchin&#39;,
+    &#39;orcid&#39;: None},
+   &#39;institutions&#39;: [{&#39;id&#39;: &#39;https://openalex.org/I74973139&#39;,
+     &#39;display_name&#39;: &#39;Carnegie Mellon University&#39;,
+     &#39;ror&#39;: &#39;https://ror.org/05x2bcf33&#39;,
+     &#39;country_code&#39;: &#39;US&#39;,
+     &#39;type&#39;: &#39;education&#39;}],
+   &#39;is_corresponding&#39;: True,
+   &#39;raw_affiliation_string&#39;: &#39;Department#R#of Chemical Engineering Carnegie-Mellon University, 5000 Forbes#R#Avenue, Pittsburgh, Pennsylvania, 15213, United States&#39;,
+   &#39;raw_affiliation_strings&#39;: [&#39;Department#R#of Chemical Engineering Carnegie-Mellon University, 5000 Forbes#R#Avenue, Pittsburgh, Pennsylvania, 15213, United States&#39;]}],
+ &#39;corresponding_author_ids&#39;: [&#39;https://openalex.org/A4330425867&#39;],
+ &#39;corresponding_institution_ids&#39;: [&#39;https://openalex.org/I74973139&#39;],
+ &#39;apc_list&#39;: None,
+ &#39;apc_paid&#39;: None,
+ &#39;cited_by_count&#39;: 18,
+ &#39;biblio&#39;: {&#39;volume&#39;: &#39;5&#39;,
+  &#39;issue&#39;: &#39;6&#39;,
+  &#39;first_page&#39;: &#39;3894&#39;,
+  &#39;last_page&#39;: &#39;3899&#39;},
+ &#39;is_retracted&#39;: False,
+ &#39;is_paratext&#39;: False,
+ &#39;concepts&#39;: [{&#39;id&#39;: &#39;https://openalex.org/C2984423262&#39;,
+   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q17327049&#39;,
+   &#39;display_name&#39;: &#39;Scientific publishing&#39;,
+   &#39;level&#39;: 3,
+   &#39;score&#39;: 0.59255606},
+  {&#39;id&#39;: &#39;https://openalex.org/C2779965156&#39;,
+   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q5227350&#39;,
+   &#39;display_name&#39;: &#39;Data sharing&#39;,
+   &#39;level&#39;: 3,
+   &#39;score&#39;: 0.516408},
+  {&#39;id&#39;: &#39;https://openalex.org/C151719136&#39;,
+   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q3972943&#39;,
+   &#39;display_name&#39;: &#39;Publishing&#39;,
+   &#39;level&#39;: 2,
+   &#39;score&#39;: 0.50584006},
+  {&#39;id&#39;: &#39;https://openalex.org/C41008148&#39;,
+   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q21198&#39;,
+   &#39;display_name&#39;: &#39;Computer science&#39;,
+   &#39;level&#39;: 0,
+   &#39;score&#39;: 0.46287516},
+  {&#39;id&#39;: &#39;https://openalex.org/C2522767166&#39;,
+   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q2374463&#39;,
+   &#39;display_name&#39;: &#39;Data science&#39;,
+   &#39;level&#39;: 1,
+   &#39;score&#39;: 0.37777355},
+  {&#39;id&#39;: &#39;https://openalex.org/C136764020&#39;,
+   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q466&#39;,
+   &#39;display_name&#39;: &#39;World Wide Web&#39;,
+   &#39;level&#39;: 1,
+   &#39;score&#39;: 0.32164475},
+  {&#39;id&#39;: &#39;https://openalex.org/C185592680&#39;,
+   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q2329&#39;,
+   &#39;display_name&#39;: &#39;Chemistry&#39;,
+   &#39;level&#39;: 0,
+   &#39;score&#39;: 0.32151806},
+  {&#39;id&#39;: &#39;https://openalex.org/C17744445&#39;,
+   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q36442&#39;,
+   &#39;display_name&#39;: &#39;Political science&#39;,
+   &#39;level&#39;: 0,
+   &#39;score&#39;: 0.24190083},
+  {&#39;id&#39;: &#39;https://openalex.org/C71924100&#39;,
+   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q11190&#39;,
+   &#39;display_name&#39;: &#39;Medicine&#39;,
+   &#39;level&#39;: 0,
+   &#39;score&#39;: 0.13397601},
+  {&#39;id&#39;: &#39;https://openalex.org/C199539241&#39;,
+   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q7748&#39;,
+   &#39;display_name&#39;: &#39;Law&#39;,
+   &#39;level&#39;: 1,
+   &#39;score&#39;: 0.09442881},
+  {&#39;id&#39;: &#39;https://openalex.org/C204787440&#39;,
+   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q188504&#39;,
+   &#39;display_name&#39;: &#39;Alternative medicine&#39;,
+   &#39;level&#39;: 2,
+   &#39;score&#39;: 0.0},
+  {&#39;id&#39;: &#39;https://openalex.org/C142724271&#39;,
+   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q7208&#39;,
+   &#39;display_name&#39;: &#39;Pathology&#39;,
+   &#39;level&#39;: 1,
+   &#39;score&#39;: 0.0}],
+ &#39;mesh&#39;: [],
+ &#39;locations_count&#39;: 3,
+ &#39;locations&#39;: [{&#39;is_oa&#39;: True,
+   &#39;landing_page_url&#39;: &#39;https://doi.org/10.1021/acscatal.5b00538&#39;,
+   &#39;pdf_url&#39;: None,
+   &#39;source&#39;: {&#39;id&#39;: &#39;https://openalex.org/S37391459&#39;,
+    &#39;display_name&#39;: &#39;ACS Catalysis&#39;,
+    &#39;issn_l&#39;: &#39;2155-5435&#39;,
+    &#39;issn&#39;: [&#39;2155-5435&#39;],
+    &#39;is_in_doaj&#39;: False,
+    &#39;host_organization&#39;: &#39;https://openalex.org/P4310320006&#39;,
+    &#39;host_organization_name&#39;: &#39;American Chemical Society&#39;,
+    &#39;host_organization_lineage&#39;: [&#39;https://openalex.org/P4310320006&#39;],
+    &#39;host_organization_lineage_names&#39;: [&#39;American Chemical Society&#39;],
+    &#39;type&#39;: &#39;journal&#39;},
+   &#39;license&#39;: &#39;acs-specific: authorchoice/editors choice usage agreement&#39;,
+   &#39;version&#39;: &#39;publishedVersion&#39;},
+  {&#39;is_oa&#39;: False,
+   &#39;landing_page_url&#39;: &#39;https://www.osti.gov/biblio/1455204&#39;,
+   &#39;pdf_url&#39;: None,
+   &#39;source&#39;: {&#39;id&#39;: &#39;https://openalex.org/S4306402487&#39;,
+    &#39;display_name&#39;: &#39;OSTI OAI (U.S. Department of Energy Office of Scientific and Technical Information)&#39;,
+    &#39;issn_l&#39;: None,
+    &#39;issn&#39;: None,
+    &#39;is_in_doaj&#39;: False,
+    &#39;host_organization&#39;: &#39;https://openalex.org/I139351228&#39;,
+    &#39;host_organization_name&#39;: &#39;Office of Scientific and Technical Information&#39;,
+    &#39;host_organization_lineage&#39;: [&#39;https://openalex.org/I139351228&#39;],
+    &#39;host_organization_lineage_names&#39;: [&#39;Office of Scientific and Technical Information&#39;],
+    &#39;type&#39;: &#39;repository&#39;},
+   &#39;license&#39;: None,
+   &#39;version&#39;: None},
+  {&#39;is_oa&#39;: False,
+   &#39;landing_page_url&#39;: &#39;https://www.osti.gov/biblio/1183810&#39;,
+   &#39;pdf_url&#39;: None,
+   &#39;source&#39;: {&#39;id&#39;: &#39;https://openalex.org/S4306402487&#39;,
+    &#39;display_name&#39;: &#39;OSTI OAI (U.S. Department of Energy Office of Scientific and Technical Information)&#39;,
+    &#39;issn_l&#39;: None,
+    &#39;issn&#39;: None,
+    &#39;is_in_doaj&#39;: False,
+    &#39;host_organization&#39;: &#39;https://openalex.org/I139351228&#39;,
+    &#39;host_organization_name&#39;: &#39;Office of Scientific and Technical Information&#39;,
+    &#39;host_organization_lineage&#39;: [&#39;https://openalex.org/I139351228&#39;],
+    &#39;host_organization_lineage_names&#39;: [&#39;Office of Scientific and Technical Information&#39;],
+    &#39;type&#39;: &#39;repository&#39;},
+   &#39;license&#39;: None,
+   &#39;version&#39;: None}],
+ &#39;best_oa_location&#39;: {&#39;is_oa&#39;: True,
+  &#39;landing_page_url&#39;: &#39;https://doi.org/10.1021/acscatal.5b00538&#39;,
+  &#39;pdf_url&#39;: None,
+  &#39;source&#39;: {&#39;id&#39;: &#39;https://openalex.org/S37391459&#39;,
+   &#39;display_name&#39;: &#39;ACS Catalysis&#39;,
+   &#39;issn_l&#39;: &#39;2155-5435&#39;,
+   &#39;issn&#39;: [&#39;2155-5435&#39;],
+   &#39;is_in_doaj&#39;: False,
+   &#39;host_organization&#39;: &#39;https://openalex.org/P4310320006&#39;,
+   &#39;host_organization_name&#39;: &#39;American Chemical Society&#39;,
+   &#39;host_organization_lineage&#39;: [&#39;https://openalex.org/P4310320006&#39;],
+   &#39;host_organization_lineage_names&#39;: [&#39;American Chemical Society&#39;],
+   &#39;type&#39;: &#39;journal&#39;},
+  &#39;license&#39;: &#39;acs-specific: authorchoice/editors choice usage agreement&#39;,
+  &#39;version&#39;: &#39;publishedVersion&#39;},
+ &#39;grants&#39;: [{&#39;funder&#39;: &#39;https://openalex.org/F4320337480&#39;,
+   &#39;funder_display_name&#39;: &#39;Basic Energy Sciences&#39;,
+   &#39;award_id&#39;: &#39;DE-SC0004031&#39;}],
+ &#39;referenced_works&#39;: [&#39;https://openalex.org/W902952202&#39;,
+  &#39;https://openalex.org/W1526025733&#39;,
+  &#39;https://openalex.org/W1879090356&#39;,
+  &#39;https://openalex.org/W1981491642&#39;,
+  &#39;https://openalex.org/W1988054515&#39;,
+  &#39;https://openalex.org/W2024342942&#39;,
+  &#39;https://openalex.org/W2024769307&#39;,
+  &#39;https://openalex.org/W2036912748&#39;,
+  &#39;https://openalex.org/W2037100030&#39;,
+  &#39;https://openalex.org/W2038722478&#39;,
+  &#39;https://openalex.org/W2052942032&#39;,
+  &#39;https://openalex.org/W2061939373&#39;,
+  &#39;https://openalex.org/W2257333152&#39;,
+  &#39;https://openalex.org/W2321716361&#39;,
+  &#39;https://openalex.org/W2326319594&#39;,
+  &#39;https://openalex.org/W2333048302&#39;,
+  &#39;https://openalex.org/W2537005472&#39;,
+  &#39;https://openalex.org/W3125261728&#39;],
+ &#39;related_works&#39;: [&#39;https://openalex.org/W1646698585&#39;,
+  &#39;https://openalex.org/W2127183609&#39;,
+  &#39;https://openalex.org/W2408420038&#39;,
+  &#39;https://openalex.org/W2748952813&#39;,
+  &#39;https://openalex.org/W2784807254&#39;,
+  &#39;https://openalex.org/W3021112985&#39;,
+  &#39;https://openalex.org/W4285793538&#39;,
+  &#39;https://openalex.org/W4285796209&#39;,
+  &#39;https://openalex.org/W4285798643&#39;,
+  &#39;https://openalex.org/W4287973116&#39;],
+ &#39;ngrams_url&#39;: &#39;https://api.openalex.org/works/W2288114809/ngrams&#39;,
+ &#39;abstract_inverted_index&#39;: {&#39;We&#39;: [0, 42, 53],
+  &#39;present&#39;: [1],
+  &#39;a&#39;: [2, 32, 55],
+  &#39;perspective&#39;: [3],
+  &#39;on&#39;: [4],
+  &#39;an&#39;: [5],
+  &#39;approach&#39;: [6, 24],
+  &#39;to&#39;: [7, 61],
+  &#39;data&#39;: [8, 27, 63, 80, 95],
+  &#39;sharing&#39;: [9, 96],
+  &#39;in&#39;: [10, 17, 31, 91, 97],
+  &#39;scientific&#39;: [11, 98],
+  &#39;publications&#39;: [12],
+  &#39;we&#39;: [13, 66, 70],
+  &#39;have&#39;: [14, 71],
+  &#39;been&#39;: [15, 72],
+  &#39;developing&#39;: [16, 73],
+  &#39;our&#39;: [18],
+  &#39;group.&#39;: [19],
+  &#39;The&#39;: [20],
+  &#39;essence&#39;: [21],
+  &#39;of&#39;: [22],
+  &#39;the&#39;: [23, 38, 68],
+  &#39;is&#39;: [25],
+  &#39;that&#39;: [26],
+  &#39;can&#39;: [28, 86],
+  &#39;be&#39;: [29, 87],
+  &#39;embedded&#39;: [30],
+  &#39;human-readable&#39;: [33],
+  &#39;and&#39;: [34, 50, 65, 83, 93],
+  &#39;machine-addressable&#39;: [35],
+  &#39;way&#39;: [36],
+  &#39;within&#39;: [37],
+  &#39;traditional&#39;: [39],
+  &#39;publishing&#39;: [40],
+  &#39;environment.&#39;: [41],
+  &#39;show&#39;: [43],
+  &#39;this&#39;: [44, 75],
+  &#39;by&#39;: [45],
+  &#39;example&#39;: [46],
+  &#39;for&#39;: [47, 57, 74],
+  &#39;both&#39;: [48],
+  &#39;computational&#39;: [49],
+  &#39;experimental&#39;: [51],
+  &#39;data.&#39;: [52],
+  &#39;articulate&#39;: [54],
+  &#39;need&#39;: [56],
+  &#39;new&#39;: [58],
+  &#39;authoring&#39;: [59],
+  &#39;tools&#39;: [60, 69],
+  &#39;facilitate&#39;: [62],
+  &#39;sharing,&#39;: [64],
+  &#39;discuss&#39;: [67],
+  &#39;purpose.&#39;: [76],
+  &#39;With&#39;: [77],
+  &#39;these&#39;: [78],
+  &#39;tools,&#39;: [79],
+  &#39;generation,&#39;: [81],
+  &#39;analysis,&#39;: [82],
+  &#39;manuscript&#39;: [84],
+  &#39;preparation&#39;: [85],
+  &#39;deeply&#39;: [88],
+  &#39;integrated,&#39;: [89],
+  &#39;resulting&#39;: [90],
+  &#39;easier&#39;: [92],
+  &#39;better&#39;: [94],
+  &#39;publications.&#39;: [99]},
+ &#39;cited_by_api_url&#39;: &#39;https://api.openalex.org/works?filter=cites:W2288114809&#39;,
+ &#39;counts_by_year&#39;: [{&#39;year&#39;: 2023, &#39;cited_by_count&#39;: 1},
+  {&#39;year&#39;: 2022, &#39;cited_by_count&#39;: 2},
+  {&#39;year&#39;: 2021, &#39;cited_by_count&#39;: 2},
+  {&#39;year&#39;: 2020, &#39;cited_by_count&#39;: 2},
+  {&#39;year&#39;: 2019, &#39;cited_by_count&#39;: 3},
+  {&#39;year&#39;: 2018, &#39;cited_by_count&#39;: 3},
+  {&#39;year&#39;: 2017, &#39;cited_by_count&#39;: 1},
+  {&#39;year&#39;: 2016, &#39;cited_by_count&#39;: 4}],
+ &#39;updated_date&#39;: &#39;2023-06-01T08:06:24.667617&#39;,
+ &#39;created_date&#39;: &#39;2016-06-24&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The object itself doesn’t show us anything especially useful though:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Works at 0x106772f50&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="python-class-representations">
+<h2>Python class representations<a class="headerlink" href="#python-class-representations" title="Permalink to this heading">#</a></h2>
+<p>That is not a particularly helpful output. Let’s see what we can do about it. There are two dunder methods that “present” an object: <code class="docutils literal notranslate"><span class="pre">__str__</span></code> and <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>. The first is called when you print an object, and the second is the “representation” of the object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Works</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oaid</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">oaid</span> <span class="o">=</span> <span class="n">oaid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;https://api.openalex.org/works/</span><span class="si">{</span><span class="n">oaid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;str&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;repr&quot;</span>
+
+
+<span class="n">w</span> <span class="o">=</span> <span class="n">Works</span><span class="p">(</span><span class="s2">&quot;https://doi.org/10.1021/acscatal.5b00538&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;print: &quot;</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+<span class="n">w</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>print:  str
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>repr
+</pre></div>
+</div>
+</div>
+</div>
+<p>We probably want some basic information about the work. Let’s construct a function that prints basic bibliographic information. We want a string in the form of:</p>
+<p>authors, title, journal, volume/issue, pages, year, doi. cited by: count. open alex url</p>
+<p>We can get all that from the json data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Works</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oaid</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">oaid</span> <span class="o">=</span> <span class="n">oaid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;https://api.openalex.org/works/</span><span class="si">{</span><span class="n">oaid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">_authors</span> <span class="o">=</span> <span class="p">[</span><span class="n">au</span><span class="p">[</span><span class="s2">&quot;author&quot;</span><span class="p">][</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">au</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;authorships&quot;</span><span class="p">]]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_authors</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">authors</span> <span class="o">=</span> <span class="n">_authors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">authors</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_authors</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; and &quot;</span> <span class="o">+</span> <span class="n">_authors</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">title</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
+
+        <span class="n">journal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;primary_location&quot;</span><span class="p">][</span><span class="s2">&quot;source&quot;</span><span class="p">][</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span>
+        <span class="n">volume</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span>
+
+        <span class="n">issue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;issue&quot;</span><span class="p">]</span>
+
+        <span class="n">pages</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;first_page&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;last_page&quot;</span><span class="p">]]</span>
+        <span class="p">)</span>
+        <span class="n">year</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;publication_year&quot;</span><span class="p">]</span>
+        <span class="n">citedby</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;cited_by_count&quot;</span><span class="p">]</span>
+
+        <span class="n">oa</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">authors</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">journal</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">volume</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">issue</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">pages</span><span class="si">}</span><span class="s1">, (</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">), </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;doi&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">. cited by: </span><span class="si">{</span><span class="n">citedby</span><span class="si">}</span><span class="s1">. </span><span class="si">{</span><span class="n">oa</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="k">return</span> <span class="n">s</span>
+
+
+<span class="n">w</span> <span class="o">=</span> <span class="n">Works</span><span class="p">(</span><span class="s2">&quot;https://doi.org/10.1021/acscatal.5b00538&quot;</span><span class="p">)</span>
+<span class="n">w</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>John R. Kitchin, Examples of Effective Data Sharing in Scientific Publishing, ACS Catalysis, 5, 6, 3894-3899, (2015), https://doi.org/10.1021/acscatal.5b00538. cited by: 18. https://openalex.org/W2288114809
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fancier-representation-in-markdown">
+<h2>Fancier representation in Markdown<a class="headerlink" href="#fancier-representation-in-markdown" title="Permalink to this heading">#</a></h2>
+<p>That is pretty good but let’s make it a little prettier. We can use markdown (or html) in this output. We simply define a new special function <code class="docutils literal notranslate"><span class="pre">_repr_markdown_</span></code>, which has precedence over <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>, so it will be called by default here. Let’s also add some functionality to the display. We can link each author to their OpenAlex page. Finally, we will provide a graph of citations by year.</p>
+<p>We do this via markdown.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">base64</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">IPython.core.pylabtools</span> <span class="kn">import</span> <span class="n">print_figure</span>
+
+
+<span class="k">class</span> <span class="nc">Works</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oaid</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">oaid</span> <span class="o">=</span> <span class="n">oaid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;https://api.openalex.org/works/</span><span class="si">{</span><span class="n">oaid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;str&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">_authors</span> <span class="o">=</span> <span class="p">[</span><span class="n">au</span><span class="p">[</span><span class="s2">&quot;author&quot;</span><span class="p">][</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">au</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;authorships&quot;</span><span class="p">]]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_authors</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">authors</span> <span class="o">=</span> <span class="n">_authors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">authors</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_authors</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; and&quot;</span> <span class="o">+</span> <span class="n">_authors</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">title</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
+
+        <span class="n">journal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;primary_location&quot;</span><span class="p">][</span><span class="s2">&quot;source&quot;</span><span class="p">][</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span>
+        <span class="n">volume</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span>
+
+        <span class="n">issue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;issue&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">issue</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">issue</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">issue</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">issue</span>
+
+        <span class="n">pages</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;first_page&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;last_page&quot;</span><span class="p">]]</span>
+        <span class="p">)</span>
+        <span class="n">year</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;publication_year&quot;</span><span class="p">]</span>
+        <span class="n">citedby</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;cited_by_count&quot;</span><span class="p">]</span>
+
+        <span class="n">oa</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">authors</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">volume</span><span class="si">}{</span><span class="n">issue</span><span class="si">}{</span><span class="n">pages</span><span class="si">}</span><span class="s1">, (</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">), </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;doi&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">. cited by: </span><span class="si">{</span><span class="n">citedby</span><span class="si">}</span><span class="s1">. </span><span class="si">{</span><span class="n">oa</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="k">return</span> <span class="n">s</span>
+
+    <span class="k">def</span> <span class="nf">_repr_markdown_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">_authors</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="sa">f</span><span class="s1">&#39;[</span><span class="si">{</span><span class="n">au</span><span class="p">[</span><span class="s2">&quot;author&quot;</span><span class="p">][</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">](</span><span class="si">{</span><span class="n">au</span><span class="p">[</span><span class="s2">&quot;author&quot;</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">)&#39;</span>
+            <span class="k">for</span> <span class="n">au</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;authorships&quot;</span><span class="p">]</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_authors</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">authors</span> <span class="o">=</span> <span class="n">_authors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">authors</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_authors</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; and &quot;</span> <span class="o">+</span> <span class="n">_authors</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">title</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
+
+        <span class="n">jname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;primary_location&quot;</span><span class="p">][</span><span class="s2">&quot;source&quot;</span><span class="p">][</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span>
+        <span class="n">jurl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;primary_location&quot;</span><span class="p">][</span><span class="s2">&quot;source&quot;</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+        <span class="n">journal</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">jname</span><span class="si">}</span><span class="s2">](</span><span class="si">{</span><span class="n">jurl</span><span class="si">}</span><span class="s2">)&quot;</span>
+        <span class="n">volume</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span>
+
+        <span class="n">issue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;issue&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">issue</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">issue</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">issue</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">issue</span>
+
+        <span class="n">pages</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;first_page&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;last_page&quot;</span><span class="p">]]</span>
+        <span class="p">)</span>
+        <span class="n">year</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;publication_year&quot;</span><span class="p">]</span>
+        <span class="n">citedby</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;cited_by_count&quot;</span><span class="p">]</span>
+
+        <span class="n">oa</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+
+        <span class="c1"># Citation counts by year</span>
+        <span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;counts_by_year&quot;</span><span class="p">]]</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;cited_by_count&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;counts_by_year&quot;</span><span class="p">]]</span>
+
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">counts</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;citation count&quot;</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">print_figure</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="s2">&quot;png&quot;</span><span class="p">)</span>  <span class="c1"># save figure in string</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+
+        <span class="n">b64</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+        <span class="n">citefig</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;![img](data:image/png;base64,</span><span class="si">{</span><span class="n">b64</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+        <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">authors</span><span class="si">}</span><span class="s1">, *</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">*, **</span><span class="si">{</span><span class="n">journal</span><span class="si">}</span><span class="s1">**, </span><span class="si">{</span><span class="n">volume</span><span class="si">}{</span><span class="n">issue</span><span class="si">}{</span><span class="n">pages</span><span class="si">}</span><span class="s1">, (</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">), </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;doi&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">. cited by: </span><span class="si">{</span><span class="n">citedby</span><span class="si">}</span><span class="s1">. [Open Alex](</span><span class="si">{</span><span class="n">oa</span><span class="si">}</span><span class="s1">)&#39;</span>
+
+        <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;&lt;br&gt;&quot;</span> <span class="o">+</span> <span class="n">citefig</span>
+        <span class="k">return</span> <span class="n">s</span>
+
+
+<span class="n">w</span> <span class="o">=</span> <span class="n">Works</span><span class="p">(</span><span class="s2">&quot;https://doi.org/10.1021/acscatal.5b00538&quot;</span><span class="p">)</span>
+<span class="n">w</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><a class="reference external" href="https://openalex.org/A4330425867">John R. Kitchin</a>, <em>Examples of Effective Data Sharing in Scientific Publishing</em>, <strong><a class="reference external" href="https://openalex.org/S37391459">ACS Catalysis</a></strong>, 5, 63894-3899, (2015), https://doi.org/10.1021/acscatal.5b00538. cited by: 18. <a class="reference external" href="https://openalex.org/W2288114809">Open Alex</a><br><img alt="img" src="data:image/png;base64,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QhBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApbgdbjIzM1VZWVlrvKqqSpmZmR4pCgAAoLHcDjeTJ09WRUVFrfETJ05o8uTJHikKAACgsdwON8YY2Wy2WuPffPONwsLCPFIUAABAYwU0dGK/fv1ks9lks9mUmJiogID/P7SmpkaFhYW64YYbvFIkAABAQzU43Nxyyy2SpPz8fI0YMUJt27Z1vhYYGKiuXbtq3LhxHi8QAADAHQ0ON/PmzZMkde3aVbfffruCgoK8VhQAAEBjNTjcnHPnnXdK+unpqKNHj+rs2bMur3fu3NkzlQEAADSC2wuKv/jiCw0ePFjBwcHq0qWLYmNjFRsbq65duyo2Ntat90pLS9OAAQMUEhKiiIgI3XLLLTp48GC9x2RnZzvX/vx8O3DggLutAAAAC3L7ys2kSZMUEBCgjRs3Kjo6us4npxpqx44dmjFjhgYMGKDq6mrNnTtXSUlJKigoUJs2beo99uDBgwoNDXXud+zYsdF1AAAA63A73OTn52vPnj26/PLLL/jkW7ZscdlPT09XRESE9uzZo2uvvbbeYyMiItSuXbsLrgEAAFiL27elevbsqfLycm/U4vxwwPbt2//q3H79+ik6OlqJiYnavn37eedVVlbK4XC4bAAAwLrcDjeLFi1SSkqKsrOzdezYMY8FB2OMkpOTdc0116h3797nnRcdHa1Vq1YpKytL69evV1xcnBITE7Vz584656elpSksLMy5xcTENLpGAADQ9Ll9W+r666+XJCUmJrqMn/vk4pqamkYVcu+992rfvn16//33650XFxenuLg4535CQoKKi4u1ePHiOm9lpaamKjk52bnvcDgIOAAAWJjb4aa+W0CNdd9992nDhg3auXOnLrnkErePHzhwoNauXVvna3a7XXa7/UJLBAAAzYTb4WbIkCEeO7kxRvfdd59ef/11ZWdnu/0o+Tl5eXmKjo72WF0AAKD5cjvcnG9tyzm/9pTTz82YMUMvvfSS3njjDYWEhKisrEySFBYWpuDgYEk/3VYqKSlRZmamJGnp0qXq2rWrevXqpaqqKq1du1ZZWVnKyspytxUAAGBBboeboUOH1hr7+WfduLPmZvny5XW+Z3p6uiZNmiRJKi0tVVFRkfO1qqoqzZ49WyUlJQoODlavXr20adMmjRo1quFNAAAAy3I73Hz//fcu+2fOnFFeXp7++te/asGCBW69lzHmV+dkZGS47KekpCglJcWt8wAAgN8Ot8NNWFhYrbHhw4fLbrdr1qxZ2rNnj0cKAwAAaAy3P+fmfDp27Pir3wsFAADgbW5fudm3b5/LvjFGpaWlWrhwoa688kqPFQYAANAYboebvn37ymaz1VovM3DgQK1Zs8ZjhQEAADSG2+GmsLDQZb9Fixbq2LGjgoKCPFYUAABAY7kdbrp06eKNOgAAADyiUQuKd+zYodGjR6t79+667LLLNGbMGL333nuerg0AAMBtboebtWvX6vrrr1fr1q01c+ZM3XvvvQoODlZiYqJeeuklb9QIAADQYG7fllqwYIEee+wxzZo1yzl2//33a8mSJXr00Uf1hz/8waMFAgAAuMPtKzdff/21Ro8eXWt8zJgxtRYbAwAA+Jrb4SYmJkbvvPNOrfF33nlHMTExHikKAACgsdy+LfXggw9q5syZys/P16BBg2Sz2fT+++8rIyNDTz75pDdqBAAAaDC3w80999yjqKgoPf7443r11VclST169NArr7yim2++2eMFAgAAuMPtcCNJt956q2699VZP1wIAAHDB3F5zs3v3bn300Ue1xj/66CPl5uZ6pCgAAIDGcjvczJgxQ8XFxbXGS0pKNGPGDI8UBQAA0Fhuh5uCggJdddVVtcb79eungoICjxQFAADQWG6HG7vdrm+//bbWeGlpqQICGrWEBwAAwGPcDjfDhw9XamqqKioqnGM//PCD5syZo+HDh3u0OAAAAHe5fanl8ccf17XXXqsuXbqoX79+kqT8/HxFRkbqf/7nfzxeIAAAgDvcDjcXX3yx9u3bpxdffFGffPKJgoODNXnyZN1xxx1q1aqVN2oEAABosEYtkmnTpo3++Mc/eroWAACAC+b2mhsAAICmjHADAAAshXADAAAshXADAAAspdGfuldVVaWjR4/q7NmzLuOdO3e+4KIAAAAay+1w88UXX+iuu+7Shx9+6DJujJHNZlNNTY3HigMAAHCX2+Fm0qRJCggI0MaNGxUdHS2bzeaNugAAABrF7XCTn5+vPXv26PLLL/dGPQAAABfE7QXFPXv2VHl5uTdqAQAAuGBuh5tFixYpJSVF2dnZOnbsmBwOh8sGAADgT27flrr++uslSYmJiS7jLCgGAABNgdvhZvv27R47eVpamtavX68DBw4oODhYgwYN0qJFixQXF1fvcTt27FBycrI+++wzderUSSkpKZo2bZrH6gIAAM2X2+FmyJAhHjv5jh07NGPGDA0YMEDV1dWaO3eukpKSVFBQoDZt2tR5TGFhoUaNGqW7775ba9eu1QcffKDp06erY8eOGjdunMdqAwAAzVOjPsTvhx9+0OrVq/X555/LZrOpZ8+euuuuuxQWFubW+2zZssVlPz09XREREdqzZ4+uvfbaOo9ZsWKFOnfurKVLl0qSevToodzcXC1evJhwAwAA3F9QnJubq0svvVRPPPGEjh8/rvLyci1ZskSXXnqp9u7de0HFVFRUSJLat29/3jk5OTlKSkpyGRsxYoRyc3N15syZWvMrKytZ9AwAwG+I21duZs2apTFjxui5555TQMBPh1dXV2vq1Kl64IEHtHPnzkYVYoxRcnKyrrnmGvXu3fu888rKyhQZGekyFhkZqerqapWXlys6OtrltbS0NM2fP79RNQGwjq5/3uTvEhrl0MIb3ZpPn02bu32icRp15eahhx5yBhtJCggIUEpKinJzcxtdyL333qt9+/bp5Zdf/tW5v/xUZGNMneOSlJqaqoqKCudWXFzc6BoBAEDT5/aVm9DQUBUVFdX6hOLi4mKFhIQ0qoj77rtPGzZs0M6dO3XJJZfUOzcqKkplZWUuY0ePHlVAQIDCw8Nrzbfb7bLb7Y2qCwAAND9uX7m5/fbbNWXKFL3yyisqLi7WN998o3Xr1mnq1Km644473HovY4zuvfderV+/Xu+++65iY2N/9ZiEhARt27bNZWzr1q3q37+/WrVq5db5AQCA9bh95Wbx4sWy2WyaOHGiqqurJUmtWrXSPffco4ULF7r1XjNmzNBLL72kN954QyEhIc4rMmFhYQoODpb0022lkpISZWZmSpKmTZump59+WsnJybr77ruVk5Oj1atXN+h2FgAAsD63w01gYKCefPJJpaWl6auvvpIxRt27d1fr1q3dPvny5cslSUOHDnUZT09P16RJkyRJpaWlKioqcr4WGxurzZs3a9asWXrm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hxtuuMH07t3bfPjhh+bDDz80vXv3NjfddJOlenz44YfNkiVLTHJysgkLC/N6bz/nqz7feustM2nSJPP222+br776yrzxxhsmIiLCPPjgg5bq0xhjlixZYnJycsyhQ4fMBx98YBISEkxCQoJP+mwswo2fHD161EgyO3bsMMYYc/bsWRMVFWUWLlzonHP69GkTFhZmVqxYUev47du31/lD4syZM+biiy82zz//vFfrbyhv9flLVVVVJiIiwvztb3/zaP0N5a0+v/vuOyPJ7Ny50znmcDiMJPPPf/7TO83Uw1t9rly50kRERJiamhrnWF5enpFkvvjiC+80U48L7fOcV1991QQGBpozZ84YY4wpKCgwksyuXbucc3Jycowkc+DAAS91Uzdv9fhz6enpPg83v+SLPs957LHHTGxsrOeKd4Mv+3zjjTeMzWYzVVVVnmvAw7gt5SfnLvu1b99eklRYWKiysjIlJSU559jtdg0ZMkQffvhhg9937969KikpUYsWLdSvXz9FR0dr5MiRtW4T+Iq3+vylDRs2qLy8XJMmTbqgehvLW32Gh4erR48eyszM1KlTp1RdXa2VK1cqMjJS8fHxnm2iAbzVZ2VlpQIDA9Wixf//lxQcHCxJev/99z1Ruls81WdFRYVCQ0MVEPDT56Xm5OQoLCxMV199tXPOwIEDFRYWdkF//xvDWz02Nb7ss6KiwnkeX/NVn8ePH9eLL76oQYMGNemvPSLc+IExRsnJybrmmmvUu3dvSXJ+IegvvzQ0MjKy1peF1ufrr7+WJD3yyCP6y1/+oo0bN+qiiy7SkCFDdPz4cQ910DDe7POXVq9erREjRigmJqbxBTeSN/u02Wzatm2b8vLyFBISoqCgID3xxBPasmWLz9cyeLPPYcOGqaysTP/93/+tqqoqff/995ozZ46knz6p3Jc81eexY8f06KOP6k9/+pNzrKysTBEREbXmRkREXNDff3d5s8emxJd9fvXVV3rqqaecXx/kS77o86GHHlKbNm0UHh6uoqIivfHGGx7uwrMIN35w7733at++fXr55ZdrvWaz2Vz2jTG1xupz9uxZSdLcuXM1btw4xcfHKz09XTabTa+99tqFFe4mb/b5c998843efvttTZkypVHHXyhv9mmM0fTp0xUREaH33ntPH3/8sW6++WbddNNNPv+h780+e/XqpRdeeEGPP/64WrduraioKHXr1k2RkZFq2bLlBdfuDk/06XA4dOONN6pnz56aN29eve9R3/t4i7d7bCp81eeRI0d0ww036LbbbtPUqVM9U7wbfNHnf/7nfyovL09bt25Vy5YtNXHiRJkm/AUHhBsfu++++7RhwwZt375dl1xyiXM8KipKkmol6qNHj9ZK3vWJjo6WJPXs2dM5Zrfb1a1bN5fv6fI2b/f5c+np6QoPD9eYMWMaX3AjebvPd999Vxs3btS6dev0+9//XldddZWeffZZBQcH64UXXvBMEw3giz/PP/zhDyorK1NJSYmOHTumRx55RN99951iY2MvvIEG8kSfJ06c0A033KC2bdvq9ddfd7l0HxUVpW+//bbWeb/77rtG//13l7d7bCp81eeRI0d03XXXKSEhQatWrfJCJ/XzVZ8dOnTQ7373Ow0fPlzr1q3T5s2btWvXLi905BmEGx8xxujee+/V+vXr9e6779b6Dzs2NlZRUVHatm2bc6yqqko7duzQoEGDGnye+Ph42e12l0cCz5w5o0OHDjm/kNSbfNXnz8+Xnp6uiRMn+vQ/WF/1+eOPP0qSy1qUc/vnrtJ5k6//PKWfLpu3bdtWr7zyioKCgjR8+PAL6qEhPNWnw+FQUlKSAgMDtWHDBgUFBbm8T0JCgioqKvTxxx87xz766CNVVFQ0+veroXzVo7/5ss+SkhINHTpUV111ldLT02v9O/Umf/55nrtiU1lZ6aFuvMAny5Zh7rnnHhMWFmays7NdHl/+8ccfnXMWLlxowsLCzPr1683+/fvNHXfcUeuR2tLSUpOXl2eee+4551M0eXl55tixY845999/v7n44ovN22+/bQ4cOGCmTJliIiIizPHjxy3VpzHG/POf/zSSTEFBgdd7+zlf9fndd9+Z8PBwM3bsWJOfn28OHjxoZs+ebVq1amXy8/Mt06cxxjz11FNmz5495uDBg+bpp582wcHB5sknn/R6j57q0+FwmKuvvtpcccUV5ssvv3R5n+rqauf73HDDDaZPnz4mJyfH5OTkmCuuuMInj4L7ssfDhw+bvLw8M3/+fNO2bVuTl5dn8vLyzIkTJyzTZ0lJienevbsZNmyY+eabb1zm+IKv+vzoo4/MU089ZfLy8syhQ4fMu+++a6655hpz6aWXmtOnT/uk18Yg3PiIpDq39PR055yzZ8+aefPmmaioKGO32821115r9u/f7/I+8+bN+9X3qaqqMg8++KCJiIgwISEh5vrrrzeffvqp5fo0xpg77rjDDBo0yAedufJln7t37zZJSUmmffv2JiQkxAwcONBs3rzZcn1OmDDBtG/f3gQGBpo+ffqYzMxMn/RojGf6PPeYe11bYWGhc96xY8fM+PHjTUhIiAkJCTHjx4//1Y86aG493nnnnXXO2b59u2X6TE9PP+8cX/BVn/v27TPXXXedad++vbHb7aZr165m2rRp5ptvvvFJn41lM6YJrwgCAABwE2tuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAEBSTU2NT75pHYD3EW4ANDmZmZkKDw9XZWWly/i4ceM0ceJESdKbb76p+Ph4BQUFqVu3bpo/f76qq6udc5csWaIrrrhCbdq0UUxMjKZPn66TJ086X8/IyFC7du20ceNG9ezZU3a7XYcPH/ZNgwC8inADoMm57bbbVFNTow0bNjjHysvLtXHjRk2ePFlvv/22/uM//kMzZ85UQUGBVq5cqYyMDC1YsMA5v0WLFlq2bJk+/fRTvfDCC3r33XeVkpLicp4ff/xRaWlpev755/XZZ58pIiLCZz0C8B6+FRxAkzR9+nQdOnRImzdvliQ9+eSTWrZsmb788ksNGTJEI0eOVGpqqnP+2rVrlZKSoiNHjtT5fq+99pruuecelZeXS/rpys3kyZOVn5+vK6+80vsNAfAZwg2AJikvL08DBgzQ4cOHdfHFF6tv374aN26c/vrXv6pNmzY6e/asWrZs6ZxfU1Oj06dP69SpU2rdurW2b9+u//qv/1JBQYEcDoeqq6t1+vRpnTx5Um3atFFGRob+9Kc/6fTp07LZbH7sFICnBfi7AACoS79+/XTllVcqMzNTI0aM0P79+/Xmm29Kks6ePav58+dr7NixtY4LCgrS4cOHNWrUKE2bNk2PPvqo2rdvr/fff19TpkzRmTNnnHODg4MJNoAFEW4ANFlTp07VE088oZKSEl1//fWKiYmRJF111VU6ePCgunfvXudxubm5qq6u1uOPP64WLX5aWvjqq6/6rG4A/kW4AdBkjR8/XrNnz9Zzzz2nzMxM5/jDDz+sm266STExMbrtttvUokUL7du3T/v379ff//53XXrppaqurtZTTz2l0aNH64MPPtCKFSv82AkAX+JpKQBNVmhoqMaNG6e2bdvqlltucY6PGDFCGzdu1LZt2zRgwAANHDhQS5YsUZcuXSRJffv21ZIlS7Ro0SL17t1bL774otLS0vzUBQBfY0ExgCZt+PDh6tGjh5YtW+bvUgA0E4QbAE3S8ePHtXXrVo0fP14FBQWKi4vzd0kAmgnW3ABokq666ip9//33WrRoEcEGgFu4cgMAACyFBcUAAMBSCDcAAMBSCDcAAMBSCDcAAMBSCDcAAMBSCDcAAMBSCDcAAMBSCDcAAMBS/g9Cotj6xbPYPQAAAABJRU5ErkJggg==" /></p>
+</div>
+</div>
+</section>
+<section id="a-class-property-to-get-an-ris-entry">
+<h2>A Class property to get an RIS entry<a class="headerlink" href="#a-class-property-to-get-an-ris-entry" title="Permalink to this heading">#</a></h2>
+<p>That looks pretty reasonable. Next, we might like to generate a bibliography entry, e.g. in bibtex or RIS form. bibtex can be used with LaTeX, and both can be imported into your favorite bibliographic tool, e.g. Zotero. Let’s do <a class="reference external" href="https://en.wikipedia.org/wiki/RIS_(file_format)">RIS</a>.</p>
+<p>The code here is not complete, and is only lightly tested so far. It isn’t possible to know in advance all the variations of data we might come across, and we do not make the code too defensive at this stage.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Works</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oaid</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">oaid</span> <span class="o">=</span> <span class="n">oaid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;https://api.openalex.org/works/</span><span class="si">{</span><span class="n">oaid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">_authors</span> <span class="o">=</span> <span class="p">[</span><span class="n">au</span><span class="p">[</span><span class="s2">&quot;author&quot;</span><span class="p">][</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">au</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;authorships&quot;</span><span class="p">]]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_authors</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">authors</span> <span class="o">=</span> <span class="n">_authors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">authors</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_authors</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; and&quot;</span> <span class="o">+</span> <span class="n">_authors</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">title</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
+
+        <span class="n">journal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;primary_location&quot;</span><span class="p">][</span><span class="s2">&quot;source&quot;</span><span class="p">][</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span>
+        <span class="n">volume</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span>
+
+        <span class="n">issue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;issue&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">issue</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">issue</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">issue</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">issue</span>
+
+        <span class="n">pages</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;first_page&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;last_page&quot;</span><span class="p">]]</span>
+        <span class="p">)</span>
+        <span class="n">year</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;publication_year&quot;</span><span class="p">]</span>
+        <span class="n">citedby</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;cited_by_count&quot;</span><span class="p">]</span>
+
+        <span class="n">oa</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">authors</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">journal</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">volume</span><span class="si">}{</span><span class="n">issue</span><span class="si">}{</span><span class="n">pages</span><span class="si">}</span><span class="s1">, (</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">), </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;doi&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">. cited by: </span><span class="si">{</span><span class="n">citedby</span><span class="si">}</span><span class="s1">. </span><span class="si">{</span><span class="n">oa</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="k">return</span> <span class="n">s</span>
+
+    <span class="k">def</span> <span class="nf">_repr_markdown_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">_authors</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="sa">f</span><span class="s1">&#39;[</span><span class="si">{</span><span class="n">au</span><span class="p">[</span><span class="s2">&quot;author&quot;</span><span class="p">][</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">](</span><span class="si">{</span><span class="n">au</span><span class="p">[</span><span class="s2">&quot;author&quot;</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">)&#39;</span>
+            <span class="k">for</span> <span class="n">au</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;authorships&quot;</span><span class="p">]</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_authors</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">authors</span> <span class="o">=</span> <span class="n">_authors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">authors</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_authors</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; and &quot;</span> <span class="o">+</span> <span class="n">_authors</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">title</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
+
+        <span class="n">jname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;primary_location&quot;</span><span class="p">][</span><span class="s2">&quot;source&quot;</span><span class="p">][</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span>
+        <span class="n">jurl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;primary_location&quot;</span><span class="p">][</span><span class="s2">&quot;source&quot;</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+        <span class="n">journal</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">jname</span><span class="si">}</span><span class="s2">](</span><span class="si">{</span><span class="n">jurl</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+        <span class="n">volume</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span>
+
+        <span class="n">issue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;issue&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">issue</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">issue</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">issue</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">issue</span>
+
+        <span class="n">pages</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;first_page&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;last_page&quot;</span><span class="p">]]</span>
+        <span class="p">)</span>
+        <span class="n">year</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;publication_year&quot;</span><span class="p">]</span>
+        <span class="n">citedby</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;cited_by_count&quot;</span><span class="p">]</span>
+
+        <span class="n">oa</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+
+        <span class="c1"># Citation counts by year</span>
+        <span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;counts_by_year&quot;</span><span class="p">]]</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;cited_by_count&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;counts_by_year&quot;</span><span class="p">]]</span>
+
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">counts</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;citation count&quot;</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">print_figure</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="s2">&quot;png&quot;</span><span class="p">)</span>  <span class="c1"># save figure in string</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+
+        <span class="n">b64</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+        <span class="n">citefig</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;![img](data:image/png;base64,</span><span class="si">{</span><span class="n">b64</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+        <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">authors</span><span class="si">}</span><span class="s1">, *</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">*, **</span><span class="si">{</span><span class="n">journal</span><span class="si">}</span><span class="s1">**, </span><span class="si">{</span><span class="n">volume</span><span class="si">}{</span><span class="n">issue</span><span class="si">}{</span><span class="n">pages</span><span class="si">}</span><span class="s1">, (</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">), </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;doi&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">. cited by: </span><span class="si">{</span><span class="n">citedby</span><span class="si">}</span><span class="s1">. [Open Alex](</span><span class="si">{</span><span class="n">oa</span><span class="si">}</span><span class="s1">)&#39;</span>
+
+        <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;&lt;br&gt;&quot;</span> <span class="o">+</span> <span class="n">citefig</span>
+        <span class="k">return</span> <span class="n">s</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ris</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;journal-article&quot;</span><span class="p">:</span>
+            <span class="n">fields</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;TY  - JOUR&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Unsupported type </span><span class="si">{self.data[&#39;type&#39;]}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">author</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;authorships&quot;</span><span class="p">]:</span>
+            <span class="n">fields</span> <span class="o">+=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;AU  - </span><span class="si">{</span><span class="n">author</span><span class="p">[</span><span class="s2">&quot;author&quot;</span><span class="p">][</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span>
+
+        <span class="n">fields</span> <span class="o">+=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;PY  - </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;publication_year&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span>
+        <span class="n">fields</span> <span class="o">+=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;TI  - </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span>
+        <span class="n">jname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;primary_location&quot;</span><span class="p">][</span><span class="s2">&quot;source&quot;</span><span class="p">][</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span>
+
+        <span class="n">fields</span> <span class="o">+=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;JO  - </span><span class="si">{</span><span class="n">jname</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span>
+        <span class="n">fields</span> <span class="o">+=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;VL  - </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;issue&quot;</span><span class="p">]:</span>
+            <span class="n">fields</span> <span class="o">+=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;IS  - </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;issue&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span>
+
+        <span class="n">fields</span> <span class="o">+=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;SP  - </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;first_page&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span>
+        <span class="n">fields</span> <span class="o">+=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;EP  - </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;last_page&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span>
+        <span class="n">fields</span> <span class="o">+=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;DO  - </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;doi&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span>
+        <span class="n">fields</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;ER  -&quot;</span><span class="p">]</span>
+
+        <span class="n">ris</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
+        <span class="n">ris64</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">ris</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+        <span class="n">uri</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&lt;pre&gt;</span><span class="si">{</span><span class="n">ris</span><span class="si">}</span><span class="s1">&lt;/pre&gt;&lt;br&gt;&lt;a href=&quot;data:text/plain;base64,</span><span class="si">{</span><span class="n">ris64</span><span class="si">}</span><span class="s1">&quot; download=&quot;ris&quot;&gt;Download RIS&lt;/a&gt;&#39;</span>
+        <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+
+        <span class="k">return</span> <span class="n">HTML</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span>
+
+
+<span class="n">w</span> <span class="o">=</span> <span class="n">Works</span><span class="p">(</span><span class="s2">&quot;https://doi.org/10.1021/acscatal.5b00538&quot;</span><span class="p">)</span>
+<span class="n">w</span><span class="o">.</span><span class="n">ris</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre>TY  - JOUR
+AU  - John R. Kitchin
+PY  - 2015
+TI  - Examples of Effective Data Sharing in Scientific Publishing
+JO  - ACS Catalysis
+VL  - 5
+IS  - 6
+SP  - 3894
+EP  - 3899
+DO  - https://doi.org/10.1021/acscatal.5b00538
+ER  -</pre><br><a href="data:text/plain;base64,VFkgIC0gSk9VUgpBVSAgLSBKb2huIFIuIEtpdGNoaW4KUFkgIC0gMjAxNQpUSSAgLSBFeGFtcGxlcyBvZiBFZmZlY3RpdmUgRGF0YSBTaGFyaW5nIGluIFNjaWVudGlmaWMgUHVibGlzaGluZwpKTyAgLSBBQ1MgQ2F0YWx5c2lzClZMICAtIDUKSVMgIC0gNgpTUCAgLSAzODk0CkVQICAtIDM4OTkKRE8gIC0gaHR0cHM6Ly9kb2kub3JnLzEwLjEwMjEvYWNzY2F0YWwuNWIwMDUzOApFUiAgLQ==" download="ris">Download RIS</a></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><a class="reference external" href="https://openalex.org/A4330425867">John R. Kitchin</a>, <em>Examples of Effective Data Sharing in Scientific Publishing</em>, <strong><a class="reference external" href="https://openalex.org/S37391459">ACS Catalysis</a></strong>, 5, 63894-3899, (2015), https://doi.org/10.1021/acscatal.5b00538. cited by: 18. <a class="reference external" href="https://openalex.org/W2288114809">Open Alex</a><br><img alt="img" src="data:image/png;base64,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QhBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApbgdbjIzM1VZWVlrvKqqSpmZmR4pCgAAoLHcDjeTJ09WRUVFrfETJ05o8uTJHikKAACgsdwON8YY2Wy2WuPffPONwsLCPFIUAABAYwU0dGK/fv1ks9lks9mUmJiogID/P7SmpkaFhYW64YYbvFIkAABAQzU43Nxyyy2SpPz8fI0YMUJt27Z1vhYYGKiuXbtq3LhxHi8QAADAHQ0ON/PmzZMkde3aVbfffruCgoK8VhQAAEBjNTjcnHPnnXdK+unpqKNHj+rs2bMur3fu3NkzlQEAADSC2wuKv/jiCw0ePFjBwcHq0qWLYmNjFRsbq65duyo2Ntat90pLS9OAAQMUEhKiiIgI3XLLLTp48GC9x2RnZzvX/vx8O3DggLutAAAAC3L7ys2kSZMUEBCgjRs3Kjo6us4npxpqx44dmjFjhgYMGKDq6mrNnTtXSUlJKigoUJs2beo99uDBgwoNDXXud+zYsdF1AAAA63A73OTn52vPnj26/PLLL/jkW7ZscdlPT09XRESE9uzZo2uvvbbeYyMiItSuXbsLrgEAAFiL27elevbsqfLycm/U4vxwwPbt2//q3H79+ik6OlqJiYnavn37eedVVlbK4XC4bAAAwLrcDjeLFi1SSkqKsrOzdezYMY8FB2OMkpOTdc0116h3797nnRcdHa1Vq1YpKytL69evV1xcnBITE7Vz584656elpSksLMy5xcTENLpGAADQ9Ll9W+r666+XJCUmJrqMn/vk4pqamkYVcu+992rfvn16//33650XFxenuLg4535CQoKKi4u1ePHiOm9lpaamKjk52bnvcDgIOAAAWJjb4aa+W0CNdd9992nDhg3auXOnLrnkErePHzhwoNauXVvna3a7XXa7/UJLBAAAzYTb4WbIkCEeO7kxRvfdd59ef/11ZWdnu/0o+Tl5eXmKjo72WF0AAKD5cjvcnG9tyzm/9pTTz82YMUMvvfSS3njjDYWEhKisrEySFBYWpuDgYEk/3VYqKSlRZmamJGnp0qXq2rWrevXqpaqqKq1du1ZZWVnKyspytxUAAGBBboeboUOH1hr7+WfduLPmZvny5XW+Z3p6uiZNmiRJKi0tVVFRkfO1qqoqzZ49WyUlJQoODlavXr20adMmjRo1quFNAAAAy3I73Hz//fcu+2fOnFFeXp7++te/asGCBW69lzHmV+dkZGS47KekpCglJcWt8wAAgN8Ot8NNWFhYrbHhw4fLbrdr1qxZ2rNnj0cKAwAAaAy3P+fmfDp27Pir3wsFAADgbW5fudm3b5/LvjFGpaWlWrhwoa688kqPFQYAANAYboebvn37ymaz1VovM3DgQK1Zs8ZjhQEAADSG2+GmsLDQZb9Fixbq2LGjgoKCPFYUAABAY7kdbrp06eKNOgAAADyiUQuKd+zYodGjR6t79+667LLLNGbMGL333nuerg0AAMBtboebtWvX6vrrr1fr1q01c+ZM3XvvvQoODlZiYqJeeuklb9QIAADQYG7fllqwYIEee+wxzZo1yzl2//33a8mSJXr00Uf1hz/8waMFAgAAuMPtKzdff/21Ro8eXWt8zJgxtRYbAwAA+Jrb4SYmJkbvvPNOrfF33nlHMTExHikKAACgsdy+LfXggw9q5syZys/P16BBg2Sz2fT+++8rIyNDTz75pDdqBAAAaDC3w80999yjqKgoPf7443r11VclST169NArr7yim2++2eMFAgAAuMPtcCNJt956q2699VZP1wIAAHDB3F5zs3v3bn300Ue1xj/66CPl5uZ6pCgAAIDGcjvczJgxQ8XFxbXGS0pKNGPGDI8UBQAA0Fhuh5uCggJdddVVtcb79eungoICjxQFAADQWG6HG7vdrm+//bbWeGlpqQICGrWEBwAAwGPcDjfDhw9XamqqKioqnGM//PCD5syZo+HDh3u0OAAAAHe5fanl8ccf17XXXqsuXbqoX79+kqT8/HxFRkbqf/7nfzxeIAAAgDvcDjcXX3yx9u3bpxdffFGffPKJgoODNXnyZN1xxx1q1aqVN2oEAABosEYtkmnTpo3++Mc/eroWAACAC+b2mhsAAICmjHADAAAshXADAAAshXADAAAspdGfuldVVaWjR4/q7NmzLuOdO3e+4KIAAAAay+1w88UXX+iuu+7Shx9+6DJujJHNZlNNTY3HigMAAHCX2+Fm0qRJCggI0MaNGxUdHS2bzeaNugAAABrF7XCTn5+vPXv26PLLL/dGPQAAABfE7QXFPXv2VHl5uTdqAQAAuGBuh5tFixYpJSVF2dnZOnbsmBwOh8sGAADgT27flrr++uslSYmJiS7jLCgGAABNgdvhZvv27R47eVpamtavX68DBw4oODhYgwYN0qJFixQXF1fvcTt27FBycrI+++wzderUSSkpKZo2bZrH6gIAAM2X2+FmyJAhHjv5jh07NGPGDA0YMEDV1dWaO3eukpKSVFBQoDZt2tR5TGFhoUaNGqW7775ba9eu1QcffKDp06erY8eOGjdunMdqAwAAzVOjPsTvhx9+0OrVq/X555/LZrOpZ8+euuuuuxQWFubW+2zZssVlPz09XREREdqzZ4+uvfbaOo9ZsWKFOnfurKVLl0qSevToodzcXC1evJhwAwAA3F9QnJubq0svvVRPPPGEjh8/rvLyci1ZskSXXnqp9u7de0HFVFRUSJLat29/3jk5OTlKSkpyGRsxYoRyc3N15syZWvMrKytZ9AwAwG+I21duZs2apTFjxui5555TQMBPh1dXV2vq1Kl64IEHtHPnzkYVYoxRcnKyrrnmGvXu3fu888rKyhQZGekyFhkZqerqapWXlys6OtrltbS0NM2fP79RNQGwjq5/3uTvEhrl0MIb3ZpPn02bu32icRp15eahhx5yBhtJCggIUEpKinJzcxtdyL333qt9+/bp5Zdf/tW5v/xUZGNMneOSlJqaqoqKCudWXFzc6BoBAEDT5/aVm9DQUBUVFdX6hOLi4mKFhIQ0qoj77rtPGzZs0M6dO3XJJZfUOzcqKkplZWUuY0ePHlVAQIDCw8Nrzbfb7bLb7Y2qCwAAND9uX7m5/fbbNWXKFL3yyisqLi7WN998o3Xr1mnq1Km644473HovY4zuvfderV+/Xu+++65iY2N/9ZiEhARt27bNZWzr1q3q37+/WrVq5db5AQCA9bh95Wbx4sWy2WyaOHGiqqurJUmtWrXSPffco4ULF7r1XjNmzNBLL72kN954QyEhIc4rMmFhYQoODpb0022lkpISZWZmSpKmTZump59+WsnJybr77ruVk5Oj1atXN+h2FgAAsD63w01gYKCefPJJpaWl6auvvpIxRt27d1fr1q3dPvny5cslSUOHDnUZT09P16RJkyRJpaWlKioqcr4WGxurzZs3a9asWXrm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hxtuuMH07t3bfPjhh+bDDz80vXv3NjfddJOlenz44YfNkiVLTHJysgkLC/N6bz/nqz7feustM2nSJPP222+br776yrzxxhsmIiLCPPjgg5bq0xhjlixZYnJycsyhQ4fMBx98YBISEkxCQoJP+mwswo2fHD161EgyO3bsMMYYc/bsWRMVFWUWLlzonHP69GkTFhZmVqxYUev47du31/lD4syZM+biiy82zz//vFfrbyhv9flLVVVVJiIiwvztb3/zaP0N5a0+v/vuOyPJ7Ny50znmcDiMJPPPf/7TO83Uw1t9rly50kRERJiamhrnWF5enpFkvvjiC+80U48L7fOcV1991QQGBpozZ84YY4wpKCgwksyuXbucc3Jycowkc+DAAS91Uzdv9fhz6enpPg83v+SLPs957LHHTGxsrOeKd4Mv+3zjjTeMzWYzVVVVnmvAw7gt5SfnLvu1b99eklRYWKiysjIlJSU559jtdg0ZMkQffvhhg9937969KikpUYsWLdSvXz9FR0dr5MiRtW4T+Iq3+vylDRs2qLy8XJMmTbqgehvLW32Gh4erR48eyszM1KlTp1RdXa2VK1cqMjJS8fHxnm2iAbzVZ2VlpQIDA9Wixf//lxQcHCxJev/99z1Ruls81WdFRYVCQ0MVEPDT56Xm5OQoLCxMV199tXPOwIEDFRYWdkF//xvDWz02Nb7ss6KiwnkeX/NVn8ePH9eLL76oQYMGNemvPSLc+IExRsnJybrmmmvUu3dvSXJ+IegvvzQ0MjKy1peF1ufrr7+WJD3yyCP6y1/+oo0bN+qiiy7SkCFDdPz4cQ910DDe7POXVq9erREjRigmJqbxBTeSN/u02Wzatm2b8vLyFBISoqCgID3xxBPasmWLz9cyeLPPYcOGqaysTP/93/+tqqoqff/995ozZ46knz6p3Jc81eexY8f06KOP6k9/+pNzrKysTBEREbXmRkREXNDff3d5s8emxJd9fvXVV3rqqaecXx/kS77o86GHHlKbNm0UHh6uoqIivfHGGx7uwrMIN35w7733at++fXr55ZdrvWaz2Vz2jTG1xupz9uxZSdLcuXM1btw4xcfHKz09XTabTa+99tqFFe4mb/b5c998843efvttTZkypVHHXyhv9mmM0fTp0xUREaH33ntPH3/8sW6++WbddNNNPv+h780+e/XqpRdeeEGPP/64WrduraioKHXr1k2RkZFq2bLlBdfuDk/06XA4dOONN6pnz56aN29eve9R3/t4i7d7bCp81eeRI0d0ww036LbbbtPUqVM9U7wbfNHnf/7nfyovL09bt25Vy5YtNXHiRJkm/AUHhBsfu++++7RhwwZt375dl1xyiXM8KipKkmol6qNHj9ZK3vWJjo6WJPXs2dM5Zrfb1a1bN5fv6fI2b/f5c+np6QoPD9eYMWMaX3AjebvPd999Vxs3btS6dev0+9//XldddZWeffZZBQcH64UXXvBMEw3giz/PP/zhDyorK1NJSYmOHTumRx55RN99951iY2MvvIEG8kSfJ06c0A033KC2bdvq9ddfd7l0HxUVpW+//bbWeb/77rtG//13l7d7bCp81eeRI0d03XXXKSEhQatWrfJCJ/XzVZ8dOnTQ7373Ow0fPlzr1q3T5s2btWvXLi905BmEGx8xxujee+/V+vXr9e6779b6Dzs2NlZRUVHatm2bc6yqqko7duzQoEGDGnye+Ph42e12l0cCz5w5o0OHDjm/kNSbfNXnz8+Xnp6uiRMn+vQ/WF/1+eOPP0qSy1qUc/vnrtJ5k6//PKWfLpu3bdtWr7zyioKCgjR8+PAL6qEhPNWnw+FQUlKSAgMDtWHDBgUFBbm8T0JCgioqKvTxxx87xz766CNVVFQ0+veroXzVo7/5ss+SkhINHTpUV111ldLT02v9O/Umf/55nrtiU1lZ6aFuvMAny5Zh7rnnHhMWFmays7NdHl/+8ccfnXMWLlxowsLCzPr1683+/fvNHXfcUeuR2tLSUpOXl2eee+4551M0eXl55tixY845999/v7n44ovN22+/bQ4cOGCmTJliIiIizPHjxy3VpzHG/POf/zSSTEFBgdd7+zlf9fndd9+Z8PBwM3bsWJOfn28OHjxoZs+ebVq1amXy8/Mt06cxxjz11FNmz5495uDBg+bpp582wcHB5sknn/R6j57q0+FwmKuvvtpcccUV5ssvv3R5n+rqauf73HDDDaZPnz4mJyfH5OTkmCuuuMInj4L7ssfDhw+bvLw8M3/+fNO2bVuTl5dn8vLyzIkTJyzTZ0lJienevbsZNmyY+eabb1zm+IKv+vzoo4/MU089ZfLy8syhQ4fMu+++a6655hpz6aWXmtOnT/uk18Yg3PiIpDq39PR055yzZ8+aefPmmaioKGO32821115r9u/f7/I+8+bN+9X3qaqqMg8++KCJiIgwISEh5vrrrzeffvqp5fo0xpg77rjDDBo0yAedufJln7t37zZJSUmmffv2JiQkxAwcONBs3rzZcn1OmDDBtG/f3gQGBpo+ffqYzMxMn/RojGf6PPeYe11bYWGhc96xY8fM+PHjTUhIiAkJCTHjx4//1Y86aG493nnnnXXO2b59u2X6TE9PP+8cX/BVn/v27TPXXXedad++vbHb7aZr165m2rRp5ptvvvFJn41lM6YJrwgCAABwE2tuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAACApRBuAEBSTU2NT75pHYD3EW4ANDmZmZkKDw9XZWWly/i4ceM0ceJESdKbb76p+Ph4BQUFqVu3bpo/f76qq6udc5csWaIrrrhCbdq0UUxMjKZPn66TJ086X8/IyFC7du20ceNG9ezZU3a7XYcPH/ZNgwC8inADoMm57bbbVFNTow0bNjjHysvLtXHjRk2ePFlvv/22/uM//kMzZ85UQUGBVq5cqYyMDC1YsMA5v0WLFlq2bJk+/fRTvfDCC3r33XeVkpLicp4ff/xRaWlpev755/XZZ58pIiLCZz0C8B6+FRxAkzR9+nQdOnRImzdvliQ9+eSTWrZsmb788ksNGTJEI0eOVGpqqnP+2rVrlZKSoiNHjtT5fq+99pruuecelZeXS/rpys3kyZOVn5+vK6+80vsNAfAZwg2AJikvL08DBgzQ4cOHdfHFF6tv374aN26c/vrXv6pNmzY6e/asWrZs6ZxfU1Oj06dP69SpU2rdurW2b9+u//qv/1JBQYEcDoeqq6t1+vRpnTx5Um3atFFGRob+9Kc/6fTp07LZbH7sFICnBfi7AACoS79+/XTllVcqMzNTI0aM0P79+/Xmm29Kks6ePav58+dr7NixtY4LCgrS4cOHNWrUKE2bNk2PPvqo2rdvr/fff19TpkzRmTNnnHODg4MJNoAFEW4ANFlTp07VE088oZKSEl1//fWKiYmRJF111VU6ePCgunfvXudxubm5qq6u1uOPP64WLX5aWvjqq6/6rG4A/kW4AdBkjR8/XrNnz9Zzzz2nzMxM5/jDDz+sm266STExMbrtttvUokUL7du3T/v379ff//53XXrppaqurtZTTz2l0aNH64MPPtCKFSv82AkAX+JpKQBNVmhoqMaNG6e2bdvqlltucY6PGDFCGzdu1LZt2zRgwAANHDhQS5YsUZcuXSRJffv21ZIlS7Ro0SL17t1bL774otLS0vzUBQBfY0ExgCZt+PDh6tGjh5YtW+bvUgA0E4QbAE3S8ePHtXXrVo0fP14FBQWKi4vzd0kAmgnW3ABokq666ip9//33WrRoEcEGgFu4cgMAACyFBcUAAMBSCDcAAMBSCDcAAMBSCDcAAMBSCDcAAMBSCDcAAMBSCDcAAMBSCDcAAMBS/g9Cotj6xbPYPQAAAABJRU5ErkJggg==" /></p>
+</div>
+</div>
+<p>You can copy that text to your clipboard, and import it to Zotero now. Or click on the link to download a file to your computer. Pretty sweet.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="further-enhancements">
+<h1>Further enhancements<a class="headerlink" href="#further-enhancements" title="Permalink to this heading">#</a></h1>
+<p>There are three additional things we might like for our Works class:</p>
+<ol class="arabic simple">
+<li><p>Get the references</p></li>
+<li><p>Get citing works</p></li>
+<li><p>Get related works</p></li>
+</ol>
+<p>For each one of these, print out something useful. We start with related works. There is a limit of 10 requests per second, so we import time so we can add a short delay.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+
+<span class="k">class</span> <span class="nc">Works</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oaid</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">oaid</span> <span class="o">=</span> <span class="n">oaid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;https://api.openalex.org/works/</span><span class="si">{</span><span class="n">oaid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">_authors</span> <span class="o">=</span> <span class="p">[</span><span class="n">au</span><span class="p">[</span><span class="s2">&quot;author&quot;</span><span class="p">][</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">au</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;authorships&quot;</span><span class="p">]]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_authors</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">authors</span> <span class="o">=</span> <span class="n">_authors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">authors</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_authors</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; and &quot;</span> <span class="o">+</span> <span class="n">_authors</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">title</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
+
+        <span class="n">journal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;primary_location&quot;</span><span class="p">][</span><span class="s2">&quot;source&quot;</span><span class="p">][</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span>
+        <span class="n">volume</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span>
+
+        <span class="n">issue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;issue&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">issue</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">issue</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">issue</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">issue</span>
+
+        <span class="n">pages</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;first_page&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;last_page&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+        <span class="n">year</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;publication_year&quot;</span><span class="p">]</span>
+        <span class="n">citedby</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;cited_by_count&quot;</span><span class="p">]</span>
+
+        <span class="n">oa</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">authors</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">volume</span><span class="si">}{</span><span class="n">issue</span><span class="si">}{</span><span class="n">pages</span><span class="si">}</span><span class="s1">, (</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">), </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;doi&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">. cited by: </span><span class="si">{</span><span class="n">citedby</span><span class="si">}</span><span class="s1">. </span><span class="si">{</span><span class="n">oa</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="k">return</span> <span class="n">s</span>
+
+
+    <span class="k">def</span> <span class="nf">related_works</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">rworks</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">rw_url</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;related_works&quot;</span><span class="p">]:</span>
+            <span class="n">rw</span> <span class="o">=</span> <span class="n">Works</span><span class="p">(</span><span class="n">rw_url</span><span class="p">)</span>
+            <span class="n">rworks</span> <span class="o">+=</span> <span class="p">[</span><span class="n">rw</span><span class="p">]</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.101</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">rworks</span>
+
+
+<span class="n">w</span> <span class="o">=</span> <span class="n">Works</span><span class="p">(</span><span class="s2">&quot;https://doi.org/10.1021/acscatal.5b00538&quot;</span><span class="p">)</span>
+<span class="n">rw</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">related_works</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_rw</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">rw</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">(</span><span class="n">_rw</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">:</span><span class="s2">2d</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Caught exception for </span><span class="si">{</span><span class="n">_rw</span><span class="o">.</span><span class="n">oaid</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1. Helena Bukvova, Taking new routes: Blogs, Web sites, and Scientific Publishing, 7, 2-, (2011), None. cited by: 5. https://openalex.org/W1646698585
+
+
+ 2. Oscar Pulido Cortés, Natalia Lamprea and Gabriel Soto, Harmonizing Protection and Publication of Research Findings in Biosciences and Bioinformatics, None, 363-370, (2014), https://doi.org/10.1007/978-3-319-01568-2_51. cited by: 0. https://openalex.org/W2127183609
+
+
+ 3. Michael Banks, Access all theses, None, -, (2007), https://doi.org/10.1088/2058-7058/20/11/28. cited by: 0. https://openalex.org/W2408420038
+
+
+Caught exception for https://openalex.org/W2748952813.
+Caught exception for https://openalex.org/W2784807254.
+ 6. Jean-Baptiste Poline, From data sharing to data publishing [version 2; peer review: 2 approved, 1 approved with reservations]., 2, -, (2019), https://doi.org/10.12688/mniopenres.12772.2. cited by: 7. https://openalex.org/W3021112985
+
+
+ 7. Yuanchun Zhou, Construction idea and practice of international scientific data publishing platform, None, -, (2022), https://doi.org/10.11922/sciencedb.01330. cited by: 0. https://openalex.org/W4285793538
+
+
+ 8. 黎建辉 黎建辉, 吴超 吴超, 李成赞 李成赞, 张丽丽 张丽丽 and 胡良霖 胡良霖, Scientific data publishing survey, None, -, (2022), https://doi.org/10.11922/sciencedb.87. cited by: 0. https://openalex.org/W4285796209
+
+
+ 9. Yuanchun Zhou Yuanchun Zhou, Scientific data publishing and sharing, None, -, (2022), https://doi.org/10.11922/sciencedb.o00114.00061. cited by: 0. https://openalex.org/W4285798643
+
+
+10. Thomas W Elwood, Reflections on the Evolving World of Periodicals., None, -, (2020), None. cited by: 0. https://openalex.org/W4287973116
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are some exceptions caught because some entries do not have the data we try to access in the returned results. For example, <a class="reference external" href="https://openalex.org/W2748952813">https://openalex.org/W2748952813</a> does not seem to have a primary_location.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Works</span><span class="p">(</span><span class="s2">&quot;https://openalex.org/W2748952813&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/IPython/core/formatters.py:706,</span> in <span class="ni">PlainTextFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">699</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">700</span> <span class="n">printer</span> <span class="o">=</span> <span class="n">pretty</span><span class="o">.</span><span class="n">RepresentationPrinter</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">701</span>     <span class="bp">self</span><span class="o">.</span><span class="n">max_width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">newline</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">702</span>     <span class="n">max_seq_length</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_seq_length</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span>     <span class="n">singleton_pprinters</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">singleton_printers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span>     <span class="n">type_pprinters</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">type_printers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">705</span>     <span class="n">deferred_pprinters</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">deferred_printers</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">706</span> <span class="n">printer</span><span class="o">.</span><span class="n">pretty</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span> <span class="n">printer</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">708</span> <span class="k">return</span> <span class="n">stream</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/IPython/lib/pretty.py:410,</span> in <span class="ni">RepresentationPrinter.pretty</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span>                         <span class="k">return</span> <span class="n">meth</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">408</span>                 <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">object</span> \
+<span class="g g-Whitespace">    </span><span class="mi">409</span>                         <span class="ow">and</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;__repr__&#39;</span><span class="p">)):</span>
+<span class="ne">--&gt; </span><span class="mi">410</span>                     <span class="k">return</span> <span class="n">_repr_pprint</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">412</span>     <span class="k">return</span> <span class="n">_default_pprint</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">413</span> <span class="k">finally</span><span class="p">:</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/IPython/lib/pretty.py:778,</span> in <span class="ni">_repr_pprint</span><span class="nt">(obj, p, cycle)</span>
+<span class="g g-Whitespace">    </span><span class="mi">776</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;A pprint that just redirects to the normal repr function.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">777</span> <span class="c1"># Find newlines and replace them with p.break_()</span>
+<span class="ne">--&gt; </span><span class="mi">778</span> <span class="n">output</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">779</span> <span class="n">lines</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">780</span> <span class="k">with</span> <span class="n">p</span><span class="o">.</span><span class="n">group</span><span class="p">():</span>
+
+<span class="nn">Cell In[11], line 20,</span> in <span class="ni">Works.__repr__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="n">authors</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_authors</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; and &quot;</span> <span class="o">+</span> <span class="n">_authors</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="n">title</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
+<span class="ne">---&gt; </span><span class="mi">20</span> <span class="n">journal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;primary_location&quot;</span><span class="p">][</span><span class="s2">&quot;source&quot;</span><span class="p">][</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">volume</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="n">issue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;issue&quot;</span><span class="p">]</span>
+
+<span class="ne">TypeError</span>: &#39;NoneType&#39; object is not subscriptable
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h1>
+<p>Today we only reviewed Python classes, and worked out some ways to use a class to encapsulate information about a Works. The class is still incomplete in many ways.</p>
+<ol class="arabic simple">
+<li><p>It only exists in this notebook. Eventually, we will have to extract it into a file, and in a package.</p></li>
+<li><p>It is not very fault tolerant. For example, it will give errors if any retrieved entry is not a journal article.</p></li>
+<li><p>We did not implement all the features we desired.</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercise">
+<h1>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h1>
+<p>Implement the other features we described above.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./05-python-classes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../04-more-python-packaging/04-more-python-packaging.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">More on Python packaging</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../06-code-quality/06-code-quality.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Code quality control</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction Python Classes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-class-representations">Python class representations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fancier-representation-in-markdown">Fancier representation in Markdown</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-class-property-to-get-an-ris-entry">A Class property to get an RIS entry</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#further-enhancements">Further enhancements</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By John Kitchin
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

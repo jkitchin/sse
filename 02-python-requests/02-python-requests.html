@@ -1,0 +1,1855 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Python and REST APIs &#8212; Scientific software engineering</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '02-python-requests/02-python-requests';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python packaging and version control" href="../03-python-packaging/03-python-packaging.html" />
+    <link rel="prev" title="OpenAlex" href="../01-rest-api-openalex/01-rest-api-openalex.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Scientific Software Engineering
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-introduction/00-introduction-terminals.html">Introduction</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../01-rest-api-openalex/01-rest-api-openalex.html">OpenAlex</a></li>
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python and REST APIs</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../03-python-packaging/03-python-packaging.html">Python packaging and version control</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04-more-python-packaging/04-more-python-packaging.html">More on Python packaging</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../05-python-classes/05-python-classes.html">Introduction Python Classes</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../06-code-quality/06-code-quality.html">Code quality control</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../07-github-intro/07-github-intro.html">Introduction to GitHUB</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../08-github-actions/08-github-actions.html">gitHUB Actions</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../09-wrapup/09-wrapup.html">Wrapping up</a></li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://lab.amdatascience.com/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/sse&urlpath=lab/tree/sse/docs/02-python-requests/02-python-requests.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jkitchin/sse/blob/main/docs/02-python-requests/02-python-requests.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jkitchin/sse" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jkitchin/sse/issues/new?title=Issue%20on%20page%20%2F02-python-requests/02-python-requests.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/02-python-requests/02-python-requests.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python and REST APIs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Python and REST APIs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#our-first-python-based-shell-script">Our first Python based shell script</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-better-than-sys-argv">Getting better than sys.argv</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-click-usage">Basic click usage</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-the-author-endpoint">Back to the author endpoint</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="python-and-rest-apis">
+<h1>Python and REST APIs<a class="headerlink" href="#python-and-rest-apis" title="Permalink to this heading">#</a></h1>
+<p>Python can be used instead of <code class="docutils literal notranslate"><span class="pre">curl</span></code> for accessing REST APIs. The most useful library for this is <a class="reference external" href="https://requests.readthedocs.io/en/latest/">requests</a>. When combined with the <code class="docutils literal notranslate"><span class="pre">json</span></code> library in Python, we can easily write small programs, and wrap them into command-line utilities.</p>
+<p>We simply import the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library, and use it to retrieve data. The OpenAlex API returns json data, and the request library makes it easy to access that in the form of a Python dictionary. Here is a short example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.openalex.org/institutions?search=carnegie+mellon+university&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;meta&#39;: {&#39;count&#39;: 4, &#39;db_response_time_ms&#39;: 27, &#39;page&#39;: 1, &#39;per_page&#39;: 25},
+ &#39;results&#39;: [{&#39;id&#39;: &#39;https://openalex.org/I74973139&#39;,
+   &#39;ror&#39;: &#39;https://ror.org/05x2bcf33&#39;,
+   &#39;display_name&#39;: &#39;Carnegie Mellon University&#39;,
+   &#39;relevance_score&#39;: 207141.17,
+   &#39;country_code&#39;: &#39;US&#39;,
+   &#39;type&#39;: &#39;education&#39;,
+   &#39;homepage_url&#39;: &#39;http://www.cmu.edu/index.shtml&#39;,
+   &#39;image_url&#39;: &#39;https://upload.wikimedia.org/wikipedia/commons/1/1d/Www.wikipedia.org_screenshot_2018.png&#39;,
+   &#39;image_thumbnail_url&#39;: &#39;https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Www.wikipedia.org_screenshot_2018.png/76px-Www.wikipedia.org_screenshot_2018.png&#39;,
+   &#39;display_name_acronyms&#39;: [&#39;CMU&#39;],
+   &#39;display_name_alternatives&#39;: [],
+   &#39;repositories&#39;: [{&#39;id&#39;: &#39;https://openalex.org/S4306400668&#39;,
+     &#39;display_name&#39;: &#39;Research Showcase @ Carnegie Mellon University (Carnegie Mellon University)&#39;,
+     &#39;host_organization&#39;: &#39;https://openalex.org/I74973139&#39;,
+     &#39;host_organization_name&#39;: &#39;Carnegie Mellon University&#39;,
+     &#39;host_organization_lineage&#39;: [&#39;https://openalex.org/I74973139&#39;]}],
+   &#39;works_count&#39;: 111876,
+   &#39;cited_by_count&#39;: 4533093,
+   &#39;summary_stats&#39;: {&#39;2yr_mean_citedness&#39;: 3.471146472392638,
+    &#39;h_index&#39;: 696,
+    &#39;i10_index&#39;: 51070},
+   &#39;ids&#39;: {&#39;openalex&#39;: &#39;https://openalex.org/I74973139&#39;,
+    &#39;ror&#39;: &#39;https://ror.org/05x2bcf33&#39;,
+    &#39;mag&#39;: &#39;74973139&#39;,
+    &#39;grid&#39;: &#39;grid.147455.6&#39;,
+    &#39;wikipedia&#39;: &#39;https://en.wikipedia.org/wiki/Web%20server%20directory%20index&#39;,
+    &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q2712836&#39;},
+   &#39;geo&#39;: {&#39;city&#39;: &#39;Pittsburgh&#39;,
+    &#39;geonames_city_id&#39;: &#39;5206379&#39;,
+    &#39;region&#39;: &#39;Pennsylvania&#39;,
+    &#39;country_code&#39;: &#39;US&#39;,
+    &#39;country&#39;: &#39;United States&#39;,
+    &#39;latitude&#39;: 40.44332,
+    &#39;longitude&#39;: -79.94358},
+   &#39;international&#39;: {&#39;display_name&#39;: {&#39;ar&#39;: &#39;فهرس دليل خادم الويب&#39;,
+     &#39;cs&#39;: &#39;Index&#39;,
+     &#39;de&#39;: &#39;Webserver Verzeichnis Index&#39;,
+     &#39;el&#39;: &#39;Ευρετήριο καταλόγου εξυπηρετητή ιστού&#39;,
+     &#39;en&#39;: &#39;webserver directory index&#39;,
+     &#39;en-ca&#39;: &#39;Web server directory index&#39;,
+     &#39;en-gb&#39;: &#39;Web server directory index&#39;,
+     &#39;es&#39;: &#39;Índice de un servidor web&#39;,
+     &#39;fi&#39;: &#39;Index.html&#39;,
+     &#39;fr&#39;: &#39;index de répertoire de serveur Web&#39;,
+     &#39;it&#39;: &#39;index&#39;,
+     &#39;lv&#39;: &#39;Web servera direktoriju indekss&#39;,
+     &#39;pl&#39;: &#39;Index&#39;,
+     &#39;pt&#39;: &#39;Index.html&#39;,
+     &#39;pt-br&#39;: &#39;Index.html&#39;,
+     &#39;ru&#39;: &#39;Index.htm&#39;,
+     &#39;tr&#39;: &#39;Web sunucusu dizin indeksi&#39;,
+     &#39;uk&#39;: &#39;Індекс директорії веб-сервера&#39;,
+     &#39;zh&#39;: &#39;網頁伺服器目錄索引&#39;,
+     &#39;zh-cn&#39;: &#39;网页服务器目录索引&#39;,
+     &#39;zh-hans&#39;: &#39;网页服务器目录索引&#39;,
+     &#39;zh-hant&#39;: &#39;網頁服務器目錄索引&#39;}},
+   &#39;associated_institutions&#39;: [{&#39;id&#39;: &#39;https://openalex.org/I4210130200&#39;,
+     &#39;ror&#39;: &#39;https://ror.org/02f33m021&#39;,
+     &#39;display_name&#39;: &#39;Carnegie Mellon University Africa&#39;,
+     &#39;country_code&#39;: &#39;RW&#39;,
+     &#39;type&#39;: &#39;education&#39;,
+     &#39;relationship&#39;: &#39;child&#39;},
+    {&#39;id&#39;: &#39;https://openalex.org/I4210091826&#39;,
+     &#39;ror&#39;: &#39;https://ror.org/00ds41r10&#39;,
+     &#39;display_name&#39;: &#39;Carnegie Mellon University Australia&#39;,
+     &#39;country_code&#39;: &#39;AU&#39;,
+     &#39;type&#39;: &#39;education&#39;,
+     &#39;relationship&#39;: &#39;child&#39;},
+    {&#39;id&#39;: &#39;https://openalex.org/I4210089979&#39;,
+     &#39;ror&#39;: &#39;https://ror.org/00az5dt38&#39;,
+     &#39;display_name&#39;: &#39;Carnegie Mellon University Qatar&#39;,
+     &#39;country_code&#39;: &#39;QA&#39;,
+     &#39;type&#39;: &#39;education&#39;,
+     &#39;relationship&#39;: &#39;child&#39;},
+    {&#39;id&#39;: &#39;https://openalex.org/I4210086114&#39;,
+     &#39;ror&#39;: &#39;https://ror.org/00jfeg660&#39;,
+     &#39;display_name&#39;: &#39;Center for the Neural Basis of Cognition&#39;,
+     &#39;country_code&#39;: &#39;US&#39;,
+     &#39;type&#39;: &#39;facility&#39;,
+     &#39;relationship&#39;: &#39;child&#39;},
+    {&#39;id&#39;: &#39;https://openalex.org/I114772536&#39;,
+     &#39;ror&#39;: &#39;https://ror.org/01xqjjn94&#39;,
+     &#39;display_name&#39;: &#39;Software Engineering Institute&#39;,
+     &#39;country_code&#39;: &#39;US&#39;,
+     &#39;type&#39;: &#39;facility&#39;,
+     &#39;relationship&#39;: &#39;child&#39;},
+    {&#39;id&#39;: &#39;https://openalex.org/I4210129003&#39;,
+     &#39;ror&#39;: &#39;https://ror.org/02w30ae27&#39;,
+     &#39;display_name&#39;: &#39;SYSU-CMU International Joint Research Institute&#39;,
+     &#39;country_code&#39;: &#39;CN&#39;,
+     &#39;type&#39;: &#39;facility&#39;,
+     &#39;relationship&#39;: &#39;related&#39;},
+    {&#39;id&#39;: &#39;https://openalex.org/I4210128526&#39;,
+     &#39;ror&#39;: &#39;https://ror.org/03bw34a45&#39;,
+     &#39;display_name&#39;: &#39;University of Pittsburgh Cancer Institute&#39;,
+     &#39;country_code&#39;: &#39;US&#39;,
+     &#39;type&#39;: &#39;facility&#39;,
+     &#39;relationship&#39;: &#39;related&#39;}],
+   &#39;counts_by_year&#39;: [{&#39;year&#39;: 2023,
+     &#39;works_count&#39;: 1428,
+     &#39;cited_by_count&#39;: 266582},
+    {&#39;year&#39;: 2022, &#39;works_count&#39;: 3694, &#39;cited_by_count&#39;: 604520},
+    {&#39;year&#39;: 2021, &#39;works_count&#39;: 5228, &#39;cited_by_count&#39;: 751099},
+    {&#39;year&#39;: 2020, &#39;works_count&#39;: 5223, &#39;cited_by_count&#39;: 706914},
+    {&#39;year&#39;: 2019, &#39;works_count&#39;: 5147, &#39;cited_by_count&#39;: 623849},
+    {&#39;year&#39;: 2018, &#39;works_count&#39;: 4797, &#39;cited_by_count&#39;: 552801},
+    {&#39;year&#39;: 2017, &#39;works_count&#39;: 4445, &#39;cited_by_count&#39;: 503033},
+    {&#39;year&#39;: 2016, &#39;works_count&#39;: 4241, &#39;cited_by_count&#39;: 498816},
+    {&#39;year&#39;: 2015, &#39;works_count&#39;: 4374, &#39;cited_by_count&#39;: 493316},
+    {&#39;year&#39;: 2014, &#39;works_count&#39;: 4131, &#39;cited_by_count&#39;: 466474},
+    {&#39;year&#39;: 2013, &#39;works_count&#39;: 4093, &#39;cited_by_count&#39;: 444427},
+    {&#39;year&#39;: 2012, &#39;works_count&#39;: 3970, &#39;cited_by_count&#39;: 411378}],
+   &#39;roles&#39;: [{&#39;role&#39;: &#39;institution&#39;,
+     &#39;id&#39;: &#39;https://openalex.org/I74973139&#39;,
+     &#39;works_count&#39;: 111876},
+    {&#39;role&#39;: &#39;funder&#39;,
+     &#39;id&#39;: &#39;https://openalex.org/F4320310207&#39;,
+     &#39;works_count&#39;: 806}],
+   &#39;x_concepts&#39;: [{&#39;id&#39;: &#39;https://openalex.org/C41008148&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q21198&#39;,
+     &#39;display_name&#39;: &#39;Computer science&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 74.2},
+    {&#39;id&#39;: &#39;https://openalex.org/C33923547&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q395&#39;,
+     &#39;display_name&#39;: &#39;Mathematics&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 51.5},
+    {&#39;id&#39;: &#39;https://openalex.org/C121332964&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q413&#39;,
+     &#39;display_name&#39;: &#39;Physics&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 49.6},
+    {&#39;id&#39;: &#39;https://openalex.org/C127413603&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q11023&#39;,
+     &#39;display_name&#39;: &#39;Engineering&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 47.7},
+    {&#39;id&#39;: &#39;https://openalex.org/C86803240&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q420&#39;,
+     &#39;display_name&#39;: &#39;Biology&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 38.6},
+    {&#39;id&#39;: &#39;https://openalex.org/C154945302&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q11660&#39;,
+     &#39;display_name&#39;: &#39;Artificial intelligence&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 37.7},
+    {&#39;id&#39;: &#39;https://openalex.org/C62520636&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q944&#39;,
+     &#39;display_name&#39;: &#39;Quantum mechanics&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 35.6},
+    {&#39;id&#39;: &#39;https://openalex.org/C199360897&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q9143&#39;,
+     &#39;display_name&#39;: &#39;Programming language&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 29.0},
+    {&#39;id&#39;: &#39;https://openalex.org/C138885662&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q5891&#39;,
+     &#39;display_name&#39;: &#39;Philosophy&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 28.5},
+    {&#39;id&#39;: &#39;https://openalex.org/C185592680&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q2329&#39;,
+     &#39;display_name&#39;: &#39;Chemistry&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 28.3},
+    {&#39;id&#39;: &#39;https://openalex.org/C162324750&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q8134&#39;,
+     &#39;display_name&#39;: &#39;Economics&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 28.1},
+    {&#39;id&#39;: &#39;https://openalex.org/C111919701&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q9135&#39;,
+     &#39;display_name&#39;: &#39;Operating system&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 27.2},
+    {&#39;id&#39;: &#39;https://openalex.org/C15744967&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q9418&#39;,
+     &#39;display_name&#39;: &#39;Psychology&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 24.0},
+    {&#39;id&#39;: &#39;https://openalex.org/C192562407&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q228736&#39;,
+     &#39;display_name&#39;: &#39;Materials science&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 22.2},
+    {&#39;id&#39;: &#39;https://openalex.org/C105795698&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q12483&#39;,
+     &#39;display_name&#39;: &#39;Statistics&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 21.5},
+    {&#39;id&#39;: &#39;https://openalex.org/C71924100&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q11190&#39;,
+     &#39;display_name&#39;: &#39;Medicine&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 20.1}],
+   &#39;works_api_url&#39;: &#39;https://api.openalex.org/works?filter=institutions.id:I74973139&#39;,
+   &#39;updated_date&#39;: &#39;2023-06-14T21:21:14.172553&#39;,
+   &#39;created_date&#39;: &#39;2016-06-24&#39;},
+  {&#39;id&#39;: &#39;https://openalex.org/I4210089979&#39;,
+   &#39;ror&#39;: &#39;https://ror.org/00az5dt38&#39;,
+   &#39;display_name&#39;: &#39;Carnegie Mellon University Qatar&#39;,
+   &#39;relevance_score&#39;: 7896.541,
+   &#39;country_code&#39;: &#39;QA&#39;,
+   &#39;type&#39;: &#39;education&#39;,
+   &#39;homepage_url&#39;: &#39;http://www.qatar.cmu.edu/&#39;,
+   &#39;image_url&#39;: &#39;https://upload.wikimedia.org/wikipedia/en/b/bc/Carnegiemellonqatar_building_entrance.jpg&#39;,
+   &#39;image_thumbnail_url&#39;: &#39;https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Carnegiemellonqatar_building_entrance.jpg/100px-Carnegiemellonqatar_building_entrance.jpg&#39;,
+   &#39;display_name_acronyms&#39;: [&#39;CMU-Q&#39;],
+   &#39;display_name_alternatives&#39;: [],
+   &#39;repositories&#39;: [],
+   &#39;works_count&#39;: 612,
+   &#39;cited_by_count&#39;: 8180,
+   &#39;summary_stats&#39;: {&#39;2yr_mean_citedness&#39;: 2.4871794871794872,
+    &#39;h_index&#39;: 45,
+    &#39;i10_index&#39;: 167},
+   &#39;ids&#39;: {&#39;openalex&#39;: &#39;https://openalex.org/I4210089979&#39;,
+    &#39;ror&#39;: &#39;https://ror.org/00az5dt38&#39;,
+    &#39;grid&#39;: &#39;grid.452171.4&#39;,
+    &#39;wikipedia&#39;: &#39;https://en.wikipedia.org/wiki/Carnegie%20Mellon%20University%20in%20Qatar&#39;},
+   &#39;geo&#39;: {&#39;city&#39;: &#39;Doha&#39;,
+    &#39;geonames_city_id&#39;: &#39;290030&#39;,
+    &#39;region&#39;: None,
+    &#39;country_code&#39;: &#39;QA&#39;,
+    &#39;country&#39;: &#39;Qatar&#39;,
+    &#39;latitude&#39;: 25.31639,
+    &#39;longitude&#39;: 51.43889},
+   &#39;international&#39;: {&#39;display_name&#39;: {&#39;en&#39;: &#39;Carnegie Mellon University Qatar&#39;}},
+   &#39;associated_institutions&#39;: [{&#39;id&#39;: &#39;https://openalex.org/I74973139&#39;,
+     &#39;ror&#39;: &#39;https://ror.org/05x2bcf33&#39;,
+     &#39;display_name&#39;: &#39;Carnegie Mellon University&#39;,
+     &#39;country_code&#39;: &#39;US&#39;,
+     &#39;type&#39;: &#39;education&#39;,
+     &#39;relationship&#39;: &#39;parent&#39;}],
+   &#39;counts_by_year&#39;: [{&#39;year&#39;: 2023, &#39;works_count&#39;: 11, &#39;cited_by_count&#39;: 672},
+    {&#39;year&#39;: 2022, &#39;works_count&#39;: 20, &#39;cited_by_count&#39;: 1599},
+    {&#39;year&#39;: 2021, &#39;works_count&#39;: 44, &#39;cited_by_count&#39;: 1939},
+    {&#39;year&#39;: 2020, &#39;works_count&#39;: 34, &#39;cited_by_count&#39;: 1668},
+    {&#39;year&#39;: 2019, &#39;works_count&#39;: 35, &#39;cited_by_count&#39;: 1563},
+    {&#39;year&#39;: 2018, &#39;works_count&#39;: 63, &#39;cited_by_count&#39;: 951},
+    {&#39;year&#39;: 2017, &#39;works_count&#39;: 26, &#39;cited_by_count&#39;: 874},
+    {&#39;year&#39;: 2016, &#39;works_count&#39;: 45, &#39;cited_by_count&#39;: 812},
+    {&#39;year&#39;: 2015, &#39;works_count&#39;: 34, &#39;cited_by_count&#39;: 836},
+    {&#39;year&#39;: 2014, &#39;works_count&#39;: 50, &#39;cited_by_count&#39;: 563},
+    {&#39;year&#39;: 2013, &#39;works_count&#39;: 57, &#39;cited_by_count&#39;: 441},
+    {&#39;year&#39;: 2012, &#39;works_count&#39;: 38, &#39;cited_by_count&#39;: 315}],
+   &#39;roles&#39;: [{&#39;role&#39;: &#39;institution&#39;,
+     &#39;id&#39;: &#39;https://openalex.org/I4210089979&#39;,
+     &#39;works_count&#39;: 612}],
+   &#39;x_concepts&#39;: [{&#39;id&#39;: &#39;https://openalex.org/C41008148&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q21198&#39;,
+     &#39;display_name&#39;: &#39;Computer science&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 80.2},
+    {&#39;id&#39;: &#39;https://openalex.org/C33923547&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q395&#39;,
+     &#39;display_name&#39;: &#39;Mathematics&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 49.3},
+    {&#39;id&#39;: &#39;https://openalex.org/C127413603&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q11023&#39;,
+     &#39;display_name&#39;: &#39;Engineering&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 48.4},
+    {&#39;id&#39;: &#39;https://openalex.org/C138885662&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q5891&#39;,
+     &#39;display_name&#39;: &#39;Philosophy&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 40.5},
+    {&#39;id&#39;: &#39;https://openalex.org/C86803240&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q420&#39;,
+     &#39;display_name&#39;: &#39;Biology&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 39.2},
+    {&#39;id&#39;: &#39;https://openalex.org/C154945302&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q11660&#39;,
+     &#39;display_name&#39;: &#39;Artificial intelligence&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 38.6},
+    {&#39;id&#39;: &#39;https://openalex.org/C17744445&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q36442&#39;,
+     &#39;display_name&#39;: &#39;Political science&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 35.9},
+    {&#39;id&#39;: &#39;https://openalex.org/C121332964&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q413&#39;,
+     &#39;display_name&#39;: &#39;Physics&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 35.6},
+    {&#39;id&#39;: &#39;https://openalex.org/C199539241&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q7748&#39;,
+     &#39;display_name&#39;: &#39;Law&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 34.6},
+    {&#39;id&#39;: &#39;https://openalex.org/C111919701&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q9135&#39;,
+     &#39;display_name&#39;: &#39;Operating system&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 34.2},
+    {&#39;id&#39;: &#39;https://openalex.org/C41895202&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q8162&#39;,
+     &#39;display_name&#39;: &#39;Linguistics&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 30.1},
+    {&#39;id&#39;: &#39;https://openalex.org/C199360897&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q9143&#39;,
+     &#39;display_name&#39;: &#39;Programming language&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 29.6},
+    {&#39;id&#39;: &#39;https://openalex.org/C15744967&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q9418&#39;,
+     &#39;display_name&#39;: &#39;Psychology&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 29.4},
+    {&#39;id&#39;: &#39;https://openalex.org/C162324750&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q8134&#39;,
+     &#39;display_name&#39;: &#39;Economics&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 29.2},
+    {&#39;id&#39;: &#39;https://openalex.org/C62520636&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q944&#39;,
+     &#39;display_name&#39;: &#39;Quantum mechanics&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 24.2},
+    {&#39;id&#39;: &#39;https://openalex.org/C205649164&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q1071&#39;,
+     &#39;display_name&#39;: &#39;Geography&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 23.7},
+    {&#39;id&#39;: &#39;https://openalex.org/C71924100&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q11190&#39;,
+     &#39;display_name&#39;: &#39;Medicine&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 23.0},
+    {&#39;id&#39;: &#39;https://openalex.org/C144024400&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q21201&#39;,
+     &#39;display_name&#39;: &#39;Sociology&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 22.5}],
+   &#39;works_api_url&#39;: &#39;https://api.openalex.org/works?filter=institutions.id:I4210089979&#39;,
+   &#39;updated_date&#39;: &#39;2023-06-15T00:01:47.565771&#39;,
+   &#39;created_date&#39;: &#39;2022-02-02&#39;},
+  {&#39;id&#39;: &#39;https://openalex.org/I4210091826&#39;,
+   &#39;ror&#39;: &#39;https://ror.org/00ds41r10&#39;,
+   &#39;display_name&#39;: &#39;Carnegie Mellon University Australia&#39;,
+   &#39;relevance_score&#39;: 3570.0837,
+   &#39;country_code&#39;: &#39;AU&#39;,
+   &#39;type&#39;: &#39;education&#39;,
+   &#39;homepage_url&#39;: &#39;https://www.australia.cmu.edu/&#39;,
+   &#39;image_url&#39;: &#39;https://upload.wikimedia.org/wikipedia/commons/4/41/Torrens_Building%2C_Wakefield_St%2C_Adelaide.JPG&#39;,
+   &#39;image_thumbnail_url&#39;: &#39;https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Torrens_Building%2C_Wakefield_St%2C_Adelaide.JPG/100px-Torrens_Building%2C_Wakefield_St%2C_Adelaide.JPG&#39;,
+   &#39;display_name_acronyms&#39;: [&#39;CMU&#39;],
+   &#39;display_name_alternatives&#39;: [],
+   &#39;repositories&#39;: [],
+   &#39;works_count&#39;: 81,
+   &#39;cited_by_count&#39;: 1672,
+   &#39;summary_stats&#39;: {&#39;2yr_mean_citedness&#39;: 0.8,
+    &#39;h_index&#39;: 11,
+    &#39;i10_index&#39;: 12},
+   &#39;ids&#39;: {&#39;openalex&#39;: &#39;https://openalex.org/I4210091826&#39;,
+    &#39;ror&#39;: &#39;https://ror.org/00ds41r10&#39;,
+    &#39;grid&#39;: &#39;grid.448660.8&#39;,
+    &#39;wikipedia&#39;: &#39;https://en.wikipedia.org/wiki/Carnegie%20Mellon%20University%2C%20Australia&#39;},
+   &#39;geo&#39;: {&#39;city&#39;: &#39;Adelaide&#39;,
+    &#39;geonames_city_id&#39;: &#39;2078025&#39;,
+    &#39;region&#39;: &#39;South Australia&#39;,
+    &#39;country_code&#39;: &#39;AU&#39;,
+    &#39;country&#39;: &#39;Australia&#39;,
+    &#39;latitude&#39;: 40.44285,
+    &#39;longitude&#39;: -79.94308},
+   &#39;international&#39;: {&#39;display_name&#39;: {&#39;en&#39;: &#39;Carnegie Mellon University Australia&#39;}},
+   &#39;associated_institutions&#39;: [{&#39;id&#39;: &#39;https://openalex.org/I74973139&#39;,
+     &#39;ror&#39;: &#39;https://ror.org/05x2bcf33&#39;,
+     &#39;display_name&#39;: &#39;Carnegie Mellon University&#39;,
+     &#39;country_code&#39;: &#39;US&#39;,
+     &#39;type&#39;: &#39;education&#39;,
+     &#39;relationship&#39;: &#39;parent&#39;}],
+   &#39;counts_by_year&#39;: [{&#39;year&#39;: 2023, &#39;works_count&#39;: 0, &#39;cited_by_count&#39;: 43},
+    {&#39;year&#39;: 2022, &#39;works_count&#39;: 1, &#39;cited_by_count&#39;: 75},
+    {&#39;year&#39;: 2021, &#39;works_count&#39;: 5, &#39;cited_by_count&#39;: 79},
+    {&#39;year&#39;: 2020, &#39;works_count&#39;: 5, &#39;cited_by_count&#39;: 58},
+    {&#39;year&#39;: 2019, &#39;works_count&#39;: 14, &#39;cited_by_count&#39;: 31},
+    {&#39;year&#39;: 2018, &#39;works_count&#39;: 1, &#39;cited_by_count&#39;: 47},
+    {&#39;year&#39;: 2017, &#39;works_count&#39;: 2, &#39;cited_by_count&#39;: 28},
+    {&#39;year&#39;: 2016, &#39;works_count&#39;: 20, &#39;cited_by_count&#39;: 34},
+    {&#39;year&#39;: 2015, &#39;works_count&#39;: 1, &#39;cited_by_count&#39;: 24},
+    {&#39;year&#39;: 2014, &#39;works_count&#39;: 2, &#39;cited_by_count&#39;: 37},
+    {&#39;year&#39;: 2013, &#39;works_count&#39;: 0, &#39;cited_by_count&#39;: 45},
+    {&#39;year&#39;: 2012, &#39;works_count&#39;: 9, &#39;cited_by_count&#39;: 52}],
+   &#39;roles&#39;: [{&#39;role&#39;: &#39;institution&#39;,
+     &#39;id&#39;: &#39;https://openalex.org/I4210091826&#39;,
+     &#39;works_count&#39;: 81}],
+   &#39;x_concepts&#39;: [{&#39;id&#39;: &#39;https://openalex.org/C41008148&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q21198&#39;,
+     &#39;display_name&#39;: &#39;Computer science&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 85.2},
+    {&#39;id&#39;: &#39;https://openalex.org/C111919701&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q9135&#39;,
+     &#39;display_name&#39;: &#39;Operating system&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 44.4},
+    {&#39;id&#39;: &#39;https://openalex.org/C17744445&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q36442&#39;,
+     &#39;display_name&#39;: &#39;Political science&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 40.7},
+    {&#39;id&#39;: &#39;https://openalex.org/C199539241&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q7748&#39;,
+     &#39;display_name&#39;: &#39;Law&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 40.7},
+    {&#39;id&#39;: &#39;https://openalex.org/C33923547&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q395&#39;,
+     &#39;display_name&#39;: &#39;Mathematics&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 38.3},
+    {&#39;id&#39;: &#39;https://openalex.org/C127413603&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q11023&#39;,
+     &#39;display_name&#39;: &#39;Engineering&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 38.3},
+    {&#39;id&#39;: &#39;https://openalex.org/C144133560&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q4830453&#39;,
+     &#39;display_name&#39;: &#39;Business&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 37.0},
+    {&#39;id&#39;: &#39;https://openalex.org/C162324750&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q8134&#39;,
+     &#39;display_name&#39;: &#39;Economics&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 33.3},
+    {&#39;id&#39;: &#39;https://openalex.org/C138885662&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q5891&#39;,
+     &#39;display_name&#39;: &#39;Philosophy&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 32.1},
+    {&#39;id&#39;: &#39;https://openalex.org/C199360897&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q9143&#39;,
+     &#39;display_name&#39;: &#39;Programming language&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 29.6},
+    {&#39;id&#39;: &#39;https://openalex.org/C205649164&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q1071&#39;,
+     &#39;display_name&#39;: &#39;Geography&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 24.7},
+    {&#39;id&#39;: &#39;https://openalex.org/C95457728&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q309&#39;,
+     &#39;display_name&#39;: &#39;History&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 24.7},
+    {&#39;id&#39;: &#39;https://openalex.org/C142362112&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q735&#39;,
+     &#39;display_name&#39;: &#39;Art&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 23.5},
+    {&#39;id&#39;: &#39;https://openalex.org/C136764020&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q466&#39;,
+     &#39;display_name&#39;: &#39;World Wide Web&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 23.5},
+    {&#39;id&#39;: &#39;https://openalex.org/C166957645&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q23498&#39;,
+     &#39;display_name&#39;: &#39;Archaeology&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 22.2},
+    {&#39;id&#39;: &#39;https://openalex.org/C71924100&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q11190&#39;,
+     &#39;display_name&#39;: &#39;Medicine&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 22.2},
+    {&#39;id&#39;: &#39;https://openalex.org/C86803240&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q420&#39;,
+     &#39;display_name&#39;: &#39;Biology&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 22.2}],
+   &#39;works_api_url&#39;: &#39;https://api.openalex.org/works?filter=institutions.id:I4210091826&#39;,
+   &#39;updated_date&#39;: &#39;2023-06-11T22:51:20.415281&#39;,
+   &#39;created_date&#39;: &#39;2022-02-02&#39;},
+  {&#39;id&#39;: &#39;https://openalex.org/I4210130200&#39;,
+   &#39;ror&#39;: &#39;https://ror.org/02f33m021&#39;,
+   &#39;display_name&#39;: &#39;Carnegie Mellon University Africa&#39;,
+   &#39;relevance_score&#39;: 2227.6694,
+   &#39;country_code&#39;: &#39;RW&#39;,
+   &#39;type&#39;: &#39;education&#39;,
+   &#39;homepage_url&#39;: &#39;https://www.africa.engineering.cmu.edu/&#39;,
+   &#39;image_url&#39;: &#39;https://upload.wikimedia.org/wikipedia/en/b/bb/Carnegie_Mellon_University_seal.svg&#39;,
+   &#39;image_thumbnail_url&#39;: &#39;https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Carnegie_Mellon_University_seal.svg/100px-Carnegie_Mellon_University_seal.svg.png&#39;,
+   &#39;display_name_acronyms&#39;: [&#39;CMU&#39;],
+   &#39;display_name_alternatives&#39;: [],
+   &#39;repositories&#39;: [],
+   &#39;works_count&#39;: 125,
+   &#39;cited_by_count&#39;: 651,
+   &#39;summary_stats&#39;: {&#39;2yr_mean_citedness&#39;: 2.675,
+    &#39;h_index&#39;: 13,
+    &#39;i10_index&#39;: 13},
+   &#39;ids&#39;: {&#39;openalex&#39;: &#39;https://openalex.org/I4210130200&#39;,
+    &#39;ror&#39;: &#39;https://ror.org/02f33m021&#39;,
+    &#39;grid&#39;: &#39;grid.508475.b&#39;,
+    &#39;wikipedia&#39;: &#39;https://en.wikipedia.org/wiki/Carnegie%20Mellon%20University&#39;},
+   &#39;geo&#39;: {&#39;city&#39;: &#39;Kigali&#39;,
+    &#39;geonames_city_id&#39;: &#39;202061&#39;,
+    &#39;region&#39;: None,
+    &#39;country_code&#39;: &#39;RW&#39;,
+    &#39;country&#39;: &#39;Rwanda&#39;,
+    &#39;latitude&#39;: -1.935111,
+    &#39;longitude&#39;: 30.158602},
+   &#39;international&#39;: {&#39;display_name&#39;: {&#39;en&#39;: &#39;Carnegie Mellon University Africa&#39;}},
+   &#39;associated_institutions&#39;: [{&#39;id&#39;: &#39;https://openalex.org/I74973139&#39;,
+     &#39;ror&#39;: &#39;https://ror.org/05x2bcf33&#39;,
+     &#39;display_name&#39;: &#39;Carnegie Mellon University&#39;,
+     &#39;country_code&#39;: &#39;US&#39;,
+     &#39;type&#39;: &#39;education&#39;,
+     &#39;relationship&#39;: &#39;parent&#39;}],
+   &#39;counts_by_year&#39;: [{&#39;year&#39;: 2023, &#39;works_count&#39;: 14, &#39;cited_by_count&#39;: 160},
+    {&#39;year&#39;: 2022, &#39;works_count&#39;: 22, &#39;cited_by_count&#39;: 239},
+    {&#39;year&#39;: 2021, &#39;works_count&#39;: 27, &#39;cited_by_count&#39;: 215},
+    {&#39;year&#39;: 2020, &#39;works_count&#39;: 15, &#39;cited_by_count&#39;: 102},
+    {&#39;year&#39;: 2019, &#39;works_count&#39;: 9, &#39;cited_by_count&#39;: 55},
+    {&#39;year&#39;: 2018, &#39;works_count&#39;: 15, &#39;cited_by_count&#39;: 40},
+    {&#39;year&#39;: 2017, &#39;works_count&#39;: 7, &#39;cited_by_count&#39;: 23},
+    {&#39;year&#39;: 2016, &#39;works_count&#39;: 3, &#39;cited_by_count&#39;: 11},
+    {&#39;year&#39;: 2015, &#39;works_count&#39;: 2, &#39;cited_by_count&#39;: 4},
+    {&#39;year&#39;: 2014, &#39;works_count&#39;: 4, &#39;cited_by_count&#39;: 7},
+    {&#39;year&#39;: 2013, &#39;works_count&#39;: 5, &#39;cited_by_count&#39;: 1},
+    {&#39;year&#39;: 2012, &#39;works_count&#39;: 2, &#39;cited_by_count&#39;: 1}],
+   &#39;roles&#39;: [{&#39;role&#39;: &#39;institution&#39;,
+     &#39;id&#39;: &#39;https://openalex.org/I4210130200&#39;,
+     &#39;works_count&#39;: 125}],
+   &#39;x_concepts&#39;: [{&#39;id&#39;: &#39;https://openalex.org/C41008148&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q21198&#39;,
+     &#39;display_name&#39;: &#39;Computer science&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 85.6},
+    {&#39;id&#39;: &#39;https://openalex.org/C86803240&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q420&#39;,
+     &#39;display_name&#39;: &#39;Biology&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 55.2},
+    {&#39;id&#39;: &#39;https://openalex.org/C127413603&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q11023&#39;,
+     &#39;display_name&#39;: &#39;Engineering&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 52.0},
+    {&#39;id&#39;: &#39;https://openalex.org/C162324750&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q8134&#39;,
+     &#39;display_name&#39;: &#39;Economics&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 45.6},
+    {&#39;id&#39;: &#39;https://openalex.org/C33923547&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q395&#39;,
+     &#39;display_name&#39;: &#39;Mathematics&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 44.0},
+    {&#39;id&#39;: &#39;https://openalex.org/C17744445&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q36442&#39;,
+     &#39;display_name&#39;: &#39;Political science&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 44.0},
+    {&#39;id&#39;: &#39;https://openalex.org/C199539241&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q7748&#39;,
+     &#39;display_name&#39;: &#39;Law&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 38.4},
+    {&#39;id&#39;: &#39;https://openalex.org/C71924100&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q11190&#39;,
+     &#39;display_name&#39;: &#39;Medicine&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 36.0},
+    {&#39;id&#39;: &#39;https://openalex.org/C111919701&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q9135&#39;,
+     &#39;display_name&#39;: &#39;Operating system&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 36.0},
+    {&#39;id&#39;: &#39;https://openalex.org/C144133560&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q4830453&#39;,
+     &#39;display_name&#39;: &#39;Business&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 36.0},
+    {&#39;id&#39;: &#39;https://openalex.org/C205649164&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q1071&#39;,
+     &#39;display_name&#39;: &#39;Geography&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 36.0},
+    {&#39;id&#39;: &#39;https://openalex.org/C121332964&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q413&#39;,
+     &#39;display_name&#39;: &#39;Physics&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 34.4},
+    {&#39;id&#39;: &#39;https://openalex.org/C154945302&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q11660&#39;,
+     &#39;display_name&#39;: &#39;Artificial intelligence&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 31.2},
+    {&#39;id&#39;: &#39;https://openalex.org/C138885662&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q5891&#39;,
+     &#39;display_name&#39;: &#39;Philosophy&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 29.6},
+    {&#39;id&#39;: &#39;https://openalex.org/C18903297&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q7150&#39;,
+     &#39;display_name&#39;: &#39;Ecology&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 26.4},
+    {&#39;id&#39;: &#39;https://openalex.org/C38652104&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q3510521&#39;,
+     &#39;display_name&#39;: &#39;Computer security&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 25.6},
+    {&#39;id&#39;: &#39;https://openalex.org/C105795698&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q12483&#39;,
+     &#39;display_name&#39;: &#39;Statistics&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 25.6},
+    {&#39;id&#39;: &#39;https://openalex.org/C62520636&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q944&#39;,
+     &#39;display_name&#39;: &#39;Quantum mechanics&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 24.8},
+    {&#39;id&#39;: &#39;https://openalex.org/C127313418&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q1069&#39;,
+     &#39;display_name&#39;: &#39;Geology&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 24.0},
+    {&#39;id&#39;: &#39;https://openalex.org/C15744967&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q9418&#39;,
+     &#39;display_name&#39;: &#39;Psychology&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 24.0},
+    {&#39;id&#39;: &#39;https://openalex.org/C136764020&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q466&#39;,
+     &#39;display_name&#39;: &#39;World Wide Web&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 23.2},
+    {&#39;id&#39;: &#39;https://openalex.org/C144024400&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q21201&#39;,
+     &#39;display_name&#39;: &#39;Sociology&#39;,
+     &#39;level&#39;: 0,
+     &#39;score&#39;: 22.4},
+    {&#39;id&#39;: &#39;https://openalex.org/C76155785&#39;,
+     &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q418&#39;,
+     &#39;display_name&#39;: &#39;Telecommunications&#39;,
+     &#39;level&#39;: 1,
+     &#39;score&#39;: 20.8}],
+   &#39;works_api_url&#39;: &#39;https://api.openalex.org/works?filter=institutions.id:I4210130200&#39;,
+   &#39;updated_date&#39;: &#39;2023-06-14T16:13:44.663871&#39;,
+   &#39;created_date&#39;: &#39;2022-02-02&#39;}],
+ &#39;group_by&#39;: []}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;meta&#39;, &#39;results&#39;, &#39;group_by&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">][</span><span class="s1">&#39;count&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;display_name&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Carnegie Mellon University&#39;,
+ &#39;Carnegie Mellon University Qatar&#39;,
+ &#39;Carnegie Mellon University Australia&#39;,
+ &#39;Carnegie Mellon University Africa&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">][</span><span class="s1">&#39;count&#39;</span><span class="p">]):</span>
+    <span class="n">names</span> <span class="o">+=</span> <span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;display_name&#39;</span><span class="p">]]</span>
+<span class="n">names</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Carnegie Mellon University&#39;,
+ &#39;Carnegie Mellon University Qatar&#39;,
+ &#39;Carnegie Mellon University Australia&#39;,
+ &#39;Carnegie Mellon University Africa&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, it is easy to replicate the example we had from last class to show each result with the works_count and cited_by_count, even with simple formatting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span><span class="si">:</span><span class="s1">50s</span><span class="si">}{</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;works_count&quot;</span><span class="p">]</span><span class="si">:</span><span class="s1">10d</span><span class="si">}{</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;cited_by_count&quot;</span><span class="p">]</span><span class="si">:</span><span class="s1">10d</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Carnegie Mellon University                            111876   4533093
+Carnegie Mellon University Qatar                         612      8180
+Carnegie Mellon University Australia                      81      1672
+Carnegie Mellon University Africa                        125       651
+</pre></div>
+</div>
+</div>
+</div>
+<section id="our-first-python-based-shell-script">
+<h2>Our first Python based shell script<a class="headerlink" href="#our-first-python-based-shell-script" title="Permalink to this heading">#</a></h2>
+<p>It is convenient to use the notebook for this, but let’s convert this to a script that takes an argument. Let’s do this in a few pieces.</p>
+<ol class="arabic simple">
+<li><p>create a file called oa_inst.py, and make it executable.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> oa_inst.py
+<span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting oa_inst.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>oa_inst.py
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first line (the so-called shebang line) tells the shell what interpreter to use, in this case, that it is a python script. Then we import the <code class="docutils literal notranslate"><span class="pre">sys</span></code> module. This module provides basic access to command line arguments through the .argv attribute.</p>
+<p>Run your script with a few examples:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./oa_inst.py
+./oa_inst.py carnegie mellon university
+</pre></div>
+</div>
+<p>You can see the first element of <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> is always the script name. All the other elements are what we call the command-line arguments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span> 
+./oa_inst.py
+./oa_inst.py carnegie mellon university
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;./oa_inst.py&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;./oa_inst.py&#39;, &#39;carnegie&#39;, &#39;mellon&#39;, &#39;university&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We need to join these with + as we did in the shell script before. It is easy to do in Python. Now, add these lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> oa_inst.py
+<span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;+&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://api.openalex.org/institutions?search=</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span><span class="si">:</span><span class="s1">50s</span><span class="si">}{</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;works_count&quot;</span><span class="p">]</span><span class="si">:</span><span class="s1">10d</span><span class="si">}{</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;cited_by_count&quot;</span><span class="p">]</span><span class="si">:</span><span class="s1">10d</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting oa_inst.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>oa_inst.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>./oa_inst.py<span class="w"> </span>carnegie<span class="w"> </span>mellon<span class="w"> </span>university
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Carnegie Mellon University                            111876   4533093
+Carnegie Mellon University Qatar                         612      8180
+Carnegie Mellon University Australia                      81      1672
+Carnegie Mellon University Africa                        125       651
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now you should be able to run this python script like the shell script.</p>
+<p>You can move the script to ~/bin if you put that on your path like we described in the first lecture, and then run that from anywhere.</p>
+<p>Our script is not without issues. They aren’t big issues, but we can <em>only</em> use this script in the shell. We can’t import it and use it here in the notebook. If you do import it, you will see that it tries to run something, but something weird happens, and it doesn’t work right.</p>
+<p>We need to separate some things out so we can have a script <em>and</em> importable library.</p>
+</section>
+<section id="getting-better-than-sys-argv">
+<h2>Getting better than sys.argv<a class="headerlink" href="#getting-better-than-sys-argv" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> is really only suitable for the simplest of command line arguments, and it isn’t really even great for those. Among the limitations are:</p>
+<ol class="arabic simple">
+<li><p>No option parsing (or you have to write your own)</p></li>
+<li><p>No built-in help or documentation</p></li>
+</ol>
+<p>Some built-in core libraries in Python can help with this, e.g. <a class="reference external" href="https://docs.python.org/3/library/argparse.html">argparse</a>. There are also third-party libraries like <a class="reference external" href="https://palletsprojects.com/p/click/">click</a>.</p>
+<p>Let’s rewrite the script above using click. The principle idea is we write a function that does what we want with some arguments, use the click library to convert the command line arguments into variables we use in the function, and then, we only run the function when we run the script (as opposed to importing from it).</p>
+<p>Making this look easy requires some advanced Python skills. Let’s work out a reusable function first. I am writing this with some 20/20 hindsight we don’t have yet. We will return later to why we wrote the function this specific way. This function should take a list of terms, or a string to query. Either way, we convert it to a string with each word joined by +. Then, we return a formatted string for each result found.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span> 
+<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Iterable</span> 
+
+<span class="k">def</span> <span class="nf">openalex_institution</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+    <span class="s1">&#39;query is a list of terms in the query, or a string.&#39;</span>
+    
+    <span class="c1"># Replace spaces with +</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;+&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+
+    <span class="c1"># If it is not a string We assume it is an iterable of strings.</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">):</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;+&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;query should be a string or Iterable&#39;</span><span class="p">)</span>
+        
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://api.openalex.org/institutions?search=</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span><span class="si">:</span><span class="s1">50s</span><span class="si">}{</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;works_count&quot;</span><span class="p">]</span><span class="si">:</span><span class="s1">10d</span><span class="si">}{</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;cited_by_count&quot;</span><span class="p">]</span><span class="si">:</span><span class="s1">10d</span><span class="si">}</span><span class="s1">&#39;</span>
+            <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]]</span>
+            
+<span class="n">openalex_institution</span><span class="p">(</span><span class="s1">&#39;carnegie mellon university&#39;</span><span class="p">)</span>            
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Carnegie Mellon University                            111876   4533093&#39;,
+ &#39;Carnegie Mellon University Qatar                         612      8180&#39;,
+ &#39;Carnegie Mellon University Australia                      81      1672&#39;,
+ &#39;Carnegie Mellon University Africa                        125       651&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test with list of words</span>
+<span class="n">openalex_institution</span><span class="p">([</span><span class="s1">&#39;carnegie&#39;</span><span class="p">,</span> <span class="s1">&#39;mellon&#39;</span><span class="p">,</span> <span class="s1">&#39;university&#39;</span><span class="p">])</span>          
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Carnegie Mellon University                            111876   4533093&#39;,
+ &#39;Carnegie Mellon University Qatar                         612      8180&#39;,
+ &#39;Carnegie Mellon University Australia                      81      1672&#39;,
+ &#39;Carnegie Mellon University Africa                        125       651&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note our function returns data in the form of a list of strings. Later, we can join them into a single string like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">openalex_institution</span><span class="p">([</span><span class="s1">&#39;carnegie&#39;</span><span class="p">,</span> <span class="s1">&#39;mellon&#39;</span><span class="p">,</span> <span class="s1">&#39;university&#39;</span><span class="p">])))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Carnegie Mellon University                            111876   4533093
+Carnegie Mellon University Qatar                         612      8180
+Carnegie Mellon University Australia                      81      1672
+Carnegie Mellon University Africa                        125       651
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="basic-click-usage">
+<h2>Basic click usage<a class="headerlink" href="#basic-click-usage" title="Permalink to this heading">#</a></h2>
+<p>That is the independent reusable part. Now, let’s look at how click works. We have to create a function that does what we want, and then decorate it with click functions. Start by creating a new file: oa_inst2.py with these contents. The <code class="docutils literal notranslate"><span class="pre">main</span></code> function is what will run in our script, and only when we run this as a script.</p>
+<p>Now, you can see we automatically get help.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> oa_inst2.py
+<span class="ch">#!/usr/bin/env python</span>
+<span class="kn">import</span> <span class="nn">click</span>
+
+<span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s1">&#39;OpenAlex Institutions&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">argument</span><span class="p">(</span><span class="s1">&#39;query&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+    
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting oa_inst2.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>oa_inst2.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>./oa_inst2.py<span class="w"> </span>--help
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Usage: oa_inst2.py [OPTIONS] [QUERY]...
+
+  OpenAlex Institutions
+
+Options:
+  --help  Show this message and exit.
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also run the command with a few arguments. Here you see that the arguments become a tuple of strings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>./oa_inst2.py<span class="w"> </span>carnegie<span class="w"> </span>mellon<span class="w"> </span>university
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;carnegie&#39;, &#39;mellon&#39;, &#39;university&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we combine the function we worked out above in the script. We make a few modifications to the main function here. First, we have to join the strings returned by the openalex_institution function with \n, and then print that string so we can see it on stdout in the shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> oa_inst2.py
+<span class="ch">#!/usr/bin/env python</span>
+<span class="kn">import</span> <span class="nn">click</span>
+
+<span class="kn">import</span> <span class="nn">requests</span> 
+<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Iterable</span> 
+
+<span class="k">def</span> <span class="nf">openalex_institution</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+    <span class="s1">&#39;query is a list of terms in the query, or a string.&#39;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;+&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+
+    <span class="c1"># We assume it is an iterable of strings.</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">):</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;+&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://api.openalex.org/institutions?search=</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span><span class="si">:</span><span class="s1">50s</span><span class="si">}{</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;works_count&quot;</span><span class="p">]</span><span class="si">:</span><span class="s1">10d</span><span class="si">}{</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;cited_by_count&quot;</span><span class="p">]</span><span class="si">:</span><span class="s1">10d</span><span class="si">}</span><span class="s1">&#39;</span>
+            <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]]</span>
+
+<span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s1">&#39;OpenAlex Institutions&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">argument</span><span class="p">(</span><span class="s1">&#39;query&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">openalex_institution</span><span class="p">(</span><span class="n">query</span><span class="p">)))</span>
+    
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting oa_inst2.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>./oa_inst2.py<span class="w"> </span>carnegie<span class="w"> </span>mellon<span class="w"> </span>university
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Carnegie Mellon University                            111876   4533093
+Carnegie Mellon University Qatar                         612      8180
+Carnegie Mellon University Australia                      81      1672
+Carnegie Mellon University Africa                        125       651
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we can import the function we wrote and use it in the notebook. This import works because the python file is in this directory. Later we will learn how to do this more generally. For now the critical idea is we have one file that can be used two different ways: one as a script in a shell, and one as a python library you can import the same function for use in a notebook, or even another script.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">oa_inst2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">oa_inst2</span> <span class="kn">import</span> <span class="n">openalex_institution</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">openalex_institution</span><span class="p">(</span><span class="s1">&#39;carnegie+mellon+university&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Carnegie Mellon University                            111876   4533093
+Carnegie Mellon University Qatar                         612      8180
+Carnegie Mellon University Australia                      81      1672
+Carnegie Mellon University Africa                        125       651
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="back-to-the-author-endpoint">
+<h1>Back to the author endpoint<a class="headerlink" href="#back-to-the-author-endpoint" title="Permalink to this heading">#</a></h1>
+<p>You can access an author from a URL like this:
+<a class="reference external" href="https://api.openalex.org/authors/https://orcid.org/0000-0003-2625-9232">https://api.openalex.org/authors/https://orcid.org/0000-0003-2625-9232</a>. Let’s look at a few things. We get the name, number of works, and a url to those works. Although the url here says there are 172 works, it does not list them. Instead, it provides you with a url to get to them. Let’s click on this url, and see what is there.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.openalex.org/authors/https://orcid.org/0000-0003-2625-9232&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;display_name&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;works_count&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;works_api_url&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;John R. Kitchin&#39;,
+ 4,
+ &#39;https://api.openalex.org/works?filter=author.id:A1760930984&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is another set of json data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">works</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;works_api_url&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">works</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;count&#39;: 4, &#39;db_response_time_ms&#39;: 40, &#39;page&#39;: 1, &#39;per_page&#39;: 25}
+</pre></div>
+</div>
+</div>
+</div>
+<p>This new data has a new feature. There are 172 works, but on this “page” of data, there are only 25 results. We have to consider how to access all the pages to get the rest of the data. Paging is described here <a class="reference external" href="https://docs.openalex.org/how-to-use-the-api/get-lists-of-entities/paging">https://docs.openalex.org/how-to-use-the-api/get-lists-of-entities/paging</a>. The gist is we have to add something to the url to increase the number of results per-page. We can increase it up to 200, and this example only has 172, so we do that.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">works</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;works_api_url&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="sa">f</span><span class="s1">&#39;?page=1&amp;per-page=</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;works_count&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">works</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;count&#39;: 4, &#39;db_response_time_ms&#39;: 24, &#39;page&#39;: 1, &#39;per_page&#39;: 4}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our goal now is to retrieve each work, and get the cited_by_count for each paper. Then, we will compute the H-index for this list of papers. The H-index is the number of papers that have at least H citations. The works are already sorted in descending citations here, so we don’t have to sort them ourselves.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">works</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">citations</span> <span class="o">=</span> <span class="p">[</span><span class="n">work</span><span class="p">[</span><span class="s1">&#39;cited_by_count&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">work</span> <span class="ow">in</span> <span class="n">works</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">cite</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">citations</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">cite</span> <span class="o">&lt;</span> <span class="n">i</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;H-index = </span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s1">3d</span><span class="si">}{</span><span class="n">cite</span><span class="si">:</span><span class="s1">8d</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1       1
+H-index = 1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercise">
+<h1>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h1>
+<p>Work together to create a Python based shell script that takes an ORCID and computes the H-index for the author, and prints it with their name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> orcid
+<span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">import</span> <span class="nn">click</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="k">def</span> <span class="nf">hindex</span><span class="p">(</span><span class="n">orcid</span><span class="p">):</span>
+    
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://api.openalex.org/authors/https://orcid.org/</span><span class="si">{</span><span class="n">orcid</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="n">displayname</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;display_name&#39;</span><span class="p">]</span>
+    <span class="n">works</span> <span class="o">=</span> <span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;works_api_url&#39;</span><span class="p">]</span> 
+                          <span class="o">+</span> <span class="sa">f</span><span class="s1">&#39;?page=1&amp;per-page=</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;works_count&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+    
+    <span class="n">citations</span> <span class="o">=</span> <span class="p">[</span><span class="n">work</span><span class="p">[</span><span class="s1">&#39;cited_by_count&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">work</span> <span class="ow">in</span> <span class="n">works</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">cite</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">citations</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">cite</span> <span class="o">&lt;</span> <span class="n">i</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">displayname</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s1">&#39;OpenAlex h-index&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">argument</span><span class="p">(</span><span class="s1">&#39;orcid&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">orcid</span><span class="p">):</span>
+    <span class="n">dn</span><span class="p">,</span> <span class="n">hi</span> <span class="o">=</span> <span class="n">hindex</span><span class="p">(</span><span class="n">orcid</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">dn</span><span class="si">}</span><span class="s1">: h-index = </span><span class="si">{</span><span class="n">hi</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting orcid
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>chmod<span class="w"> </span>+x<span class="w"> </span>orcid
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>./orcid<span class="w"> </span><span class="m">0000</span>-0003-2625-9232
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>John R. Kitchin: h-index = 1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./02-python-requests"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../01-rest-api-openalex/01-rest-api-openalex.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">OpenAlex</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../03-python-packaging/03-python-packaging.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python packaging and version control</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Python and REST APIs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#our-first-python-based-shell-script">Our first Python based shell script</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-better-than-sys-argv">Getting better than sys.argv</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-click-usage">Basic click usage</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-the-author-endpoint">Back to the author endpoint</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By John Kitchin
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

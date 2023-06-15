@@ -1,0 +1,2410 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Code quality control &#8212; Scientific software engineering</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '06-code-quality/06-code-quality';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction to GitHUB" href="../07-github-intro/07-github-intro.html" />
+    <link rel="prev" title="Introduction Python Classes" href="../05-python-classes/05-python-classes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Scientific Software Engineering
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-introduction/00-introduction-terminals.html">Introduction</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../01-rest-api-openalex/01-rest-api-openalex.html">OpenAlex</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02-python-requests/02-python-requests.html">Python and REST APIs</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../03-python-packaging/03-python-packaging.html">Python packaging and version control</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04-more-python-packaging/04-more-python-packaging.html">More on Python packaging</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../05-python-classes/05-python-classes.html">Introduction Python Classes</a></li>
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Code quality control</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../07-github-intro/07-github-intro.html">Introduction to GitHUB</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../08-github-actions/08-github-actions.html">gitHUB Actions</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../09-wrapup/09-wrapup.html">Wrapping up</a></li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://lab.amdatascience.com/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/sse&urlpath=lab/tree/sse/docs/06-code-quality/06-code-quality.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jkitchin/sse/blob/main/docs/06-code-quality/06-code-quality.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jkitchin/sse" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jkitchin/sse/issues/new?title=Issue%20on%20page%20%2F06-code-quality/06-code-quality.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/06-code-quality/06-code-quality.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Code quality control</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Code quality control</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#package-setup-for-today">Package setup for today</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-and-test-basic-functionalities">Install and test basic functionalities</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#code-formatting">Code formatting</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#code-style">Code style</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-start-with-flake8">Let’s start with flake8.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pylint">pylint</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#coverage">Coverage</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#automating-these">Automating these</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-with-git">Integration with git</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit">pre-commit</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#in-class-exercise">In class exercise</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="code-quality-control">
+<h1>Code quality control<a class="headerlink" href="#code-quality-control" title="Permalink to this heading">#</a></h1>
+<p>Today we look at some ways we automate quality control in our packages. This includes:</p>
+<ol class="arabic simple">
+<li><p>Standardizing the format of your code</p></li>
+<li><p>Standardizing compliance with <a class="reference external" href="https://peps.python.org/pep-0008/">PEP8</a> style</p></li>
+<li><p>Measuring coverage of the package</p></li>
+<li><p>Ensuring these are satisfied before you commit your code to git.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+# Clean up any existing files
+rm -fr package black-example.py flake-example.py references.bib
+pip uninstall -y s23bib
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found existing installation: s23bib 0.0.1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Uninstalling s23bib-0.0.1:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Successfully uninstalled s23bib-0.0.1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="package-setup-for-today">
+<h1>Package setup for today<a class="headerlink" href="#package-setup-for-today" title="Permalink to this heading">#</a></h1>
+<p>We start with a small package that just sorts a bibtex file by year. This package is missing an explicit license and readme file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+mkdir -p package/s23bib
+cd package
+git init
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialized empty Git repository in /Users/jkitchin/Dropbox/emacs/projects/gumroad-books/products/scientific-software-engineering/sse/sse/06-code-quality/package/.git/
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> package/setup.py
+<span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+
+<span class="n">setup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;s23bib&#39;</span><span class="p">,</span>
+      <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.0.1&#39;</span><span class="p">,</span>
+      <span class="n">description</span><span class="o">=</span><span class="s1">&#39;bibtex utilities&#39;</span><span class="p">,</span>
+      <span class="n">maintainer</span><span class="o">=</span><span class="s1">&#39;John Kitchin&#39;</span><span class="p">,</span>
+      <span class="n">maintainer_email</span><span class="o">=</span><span class="s1">&#39;jkitchin@andrew.cmu.edu&#39;</span><span class="p">,</span>
+      <span class="n">license</span><span class="o">=</span><span class="s1">&#39;MIT&#39;</span><span class="p">,</span>
+      <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;s23bib&#39;</span><span class="p">],</span>
+      <span class="n">scripts</span><span class="o">=</span><span class="p">[],</span>
+      <span class="n">long_description</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;A set of bibtex utilities&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing package/setup.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> package/s23bib/utils.py
+<span class="kn">import</span> <span class="nn">bibtexparser</span>
+
+<span class="k">def</span> <span class="nf">sort_bibtex</span><span class="p">(</span><span class="n">bibfile</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">bibfile</span><span class="p">)</span> <span class="k">as</span> <span class="n">bf</span><span class="p">:</span>
+        <span class="n">bd</span> <span class="o">=</span> <span class="n">bibtexparser</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">bf</span><span class="p">)</span>
+    <span class="n">entries</span> <span class="o">=</span> <span class="n">bd</span><span class="o">.</span><span class="n">entries</span>
+    <span class="n">entries</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">entry</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]),</span> <span class="n">reverse</span><span class="o">=</span><span class="ow">not</span> <span class="n">ascending</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">inplace</span><span class="p">:</span>
+        <span class="n">db</span> <span class="o">=</span> <span class="n">bibtexparser</span><span class="o">.</span><span class="n">bibdatabase</span><span class="o">.</span><span class="n">BibDatabase</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">entries</span> <span class="o">=</span> <span class="n">entries</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">comments</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">strings</span><span class="o">=</span><span class="p">{}</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">preambles</span><span class="o">=</span><span class="p">[]</span>
+        <span class="n">writer</span> <span class="o">=</span> <span class="n">bibtexparser</span><span class="o">.</span><span class="n">bwriter</span><span class="o">.</span><span class="n">BibTexWriter</span><span class="p">()</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">bibfile</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">bibfile</span><span class="p">:</span>
+            <span class="n">bibfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">db</span><span class="p">))</span>
+        
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">entries</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing package/s23bib/utils.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> package/s23bib/__init__.py
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">sort_bibtex</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing package/s23bib/__init__.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> package/s23bib/test_sort.py
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">import</span> <span class="nn">bibtexparser</span>
+<span class="kn">from</span> <span class="nn">s23bib</span> <span class="kn">import</span> <span class="n">sort_bibtex</span>
+
+<span class="n">bs</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">@article{kitchin-2018-machin-learn-catal,</span>
+<span class="s1">  author =	 {John R. Kitchin},</span>
+<span class="s1">  title =	 {Machine Learning in Catalysis},</span>
+<span class="s1">  journal =	 {Nature Catalysis},</span>
+<span class="s1">  volume =	 1,</span>
+<span class="s1">  number =	 4,</span>
+<span class="s1">  pages =	 {230-232},</span>
+<span class="s1">  year =	 2018,</span>
+<span class="s1">  doi =		 {10.1038/s41929-018-0056-y},</span>
+<span class="s1">  url =		 {https://doi.org/10.1038/s41929-018-0056-y},</span>
+<span class="s1">  DATE_ADDED =	 {Sun Mar 3 16:40:42 2019},</span>
+<span class="s1">}</span>
+<span class="s1">@article{kitchin-2015-examp-effec,</span>
+<span class="s1">  author =	 {John R. Kitchin},</span>
+<span class="s1">  title =	 {Examples of Effective Data Sharing in Scientific Publishing},</span>
+<span class="s1">  journal =	 {ACS Catalysis},</span>
+<span class="s1">  volume =	 5,</span>
+<span class="s1">  number =	 6,</span>
+<span class="s1">  pages =	 {3894-3899},</span>
+<span class="s1">  year =	 2015,</span>
+<span class="s1">  doi =		 {10.1021/acscatal.5b00538},</span>
+<span class="s1">  url =		 {https://doi.org/10.1021/acscatal.5b00538},</span>
+<span class="s1">  DATE_ADDED =	 {Fri Jan 18 09:54:51 2019},</span>
+<span class="s1">}&#39;&#39;&#39;</span>
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">setup</span><span class="p">():</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.bib&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">bs</span><span class="p">)</span>
+    <span class="k">yield</span> <span class="s2">&quot;setup&quot;</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="s1">&#39;test.bib&#39;</span><span class="p">)</span>
+    
+<span class="k">class</span> <span class="nc">TestSort</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">test_sort</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">setup</span><span class="p">):</span>
+        <span class="n">entries</span> <span class="o">=</span> <span class="n">sort_bibtex</span><span class="p">(</span><span class="s1">&#39;test.bib&#39;</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">entries</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;2015&#39;</span><span class="p">,</span> <span class="s1">&#39;2018&#39;</span><span class="p">]</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing package/s23bib/test_sort.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> references.bib
+<span class="nd">@article</span><span class="p">{</span><span class="n">kitchin</span><span class="o">-</span><span class="mi">2018</span><span class="o">-</span><span class="n">machin</span><span class="o">-</span><span class="n">learn</span><span class="o">-</span><span class="n">catal</span><span class="p">,</span>
+  <span class="n">author</span> <span class="o">=</span>	 <span class="p">{</span><span class="n">John</span> <span class="n">R</span><span class="o">.</span> <span class="n">Kitchin</span><span class="p">},</span>
+  <span class="n">title</span> <span class="o">=</span>	 <span class="p">{</span><span class="n">Machine</span> <span class="n">Learning</span> <span class="ow">in</span> <span class="n">Catalysis</span><span class="p">},</span>
+  <span class="n">journal</span> <span class="o">=</span>	 <span class="p">{</span><span class="n">Nature</span> <span class="n">Catalysis</span><span class="p">},</span>
+  <span class="n">volume</span> <span class="o">=</span>	 <span class="mi">1</span><span class="p">,</span>
+  <span class="n">number</span> <span class="o">=</span>	 <span class="mi">4</span><span class="p">,</span>
+  <span class="n">pages</span> <span class="o">=</span>	 <span class="p">{</span><span class="mi">230</span><span class="o">-</span><span class="mi">232</span><span class="p">},</span>
+  <span class="n">year</span> <span class="o">=</span>	 <span class="mi">2018</span><span class="p">,</span>
+  <span class="n">doi</span> <span class="o">=</span>		 <span class="p">{</span><span class="mf">10.1038</span><span class="o">/</span><span class="n">s41929</span><span class="o">-</span><span class="mi">018</span><span class="o">-</span><span class="mi">0056</span><span class="o">-</span><span class="n">y</span><span class="p">},</span>
+  <span class="n">url</span> <span class="o">=</span>		 <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1038</span><span class="o">/</span><span class="n">s41929</span><span class="o">-</span><span class="mi">018</span><span class="o">-</span><span class="mi">0056</span><span class="o">-</span><span class="n">y</span><span class="p">},</span>
+  <span class="n">DATE_ADDED</span> <span class="o">=</span>	 <span class="p">{</span><span class="n">Sun</span> <span class="n">Mar</span> <span class="mi">3</span> <span class="mi">16</span><span class="p">:</span><span class="mi">40</span><span class="p">:</span><span class="mi">42</span> <span class="mi">2019</span><span class="p">},</span>
+<span class="p">}</span>
+<span class="nd">@article</span><span class="p">{</span><span class="n">kitchin</span><span class="o">-</span><span class="mi">2015</span><span class="o">-</span><span class="n">examp</span><span class="o">-</span><span class="n">effec</span><span class="p">,</span>
+  <span class="n">author</span> <span class="o">=</span>	 <span class="p">{</span><span class="n">John</span> <span class="n">R</span><span class="o">.</span> <span class="n">Kitchin</span><span class="p">},</span>
+  <span class="n">title</span> <span class="o">=</span>	 <span class="p">{</span><span class="n">Examples</span> <span class="n">of</span> <span class="n">Effective</span> <span class="n">Data</span> <span class="n">Sharing</span> <span class="ow">in</span> <span class="n">Scientific</span> <span class="n">Publishing</span><span class="p">},</span>
+  <span class="n">journal</span> <span class="o">=</span>	 <span class="p">{</span><span class="n">ACS</span> <span class="n">Catalysis</span><span class="p">},</span>
+  <span class="n">volume</span> <span class="o">=</span>	 <span class="mi">5</span><span class="p">,</span>
+  <span class="n">number</span> <span class="o">=</span>	 <span class="mi">6</span><span class="p">,</span>
+  <span class="n">pages</span> <span class="o">=</span>	 <span class="p">{</span><span class="mi">3894</span><span class="o">-</span><span class="mi">3899</span><span class="p">},</span>
+  <span class="n">year</span> <span class="o">=</span>	 <span class="mi">2015</span><span class="p">,</span>
+  <span class="n">doi</span> <span class="o">=</span>		 <span class="p">{</span><span class="mf">10.1021</span><span class="o">/</span><span class="n">acscatal</span><span class="mf">.5</span><span class="n">b00538</span><span class="p">},</span>
+  <span class="n">url</span> <span class="o">=</span>		 <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1021</span><span class="o">/</span><span class="n">acscatal</span><span class="mf">.5</span><span class="n">b00538</span><span class="p">},</span>
+  <span class="n">DATE_ADDED</span> <span class="o">=</span>	 <span class="p">{</span><span class="n">Fri</span> <span class="n">Jan</span> <span class="mi">18</span> <span class="mi">09</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mi">51</span> <span class="mi">2019</span><span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing references.bib
+</pre></div>
+</div>
+</div>
+</div>
+<section id="install-and-test-basic-functionalities">
+<h2>Install and test basic functionalities<a class="headerlink" href="#install-and-test-basic-functionalities" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pwd
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/jkitchin/Dropbox/emacs/projects/gumroad-books/products/scientific-software-engineering/sse/sse/06-code-quality
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>./package
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing ./package
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+?25hBuilding wheels for collected packages: s23bib
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for s23bib (setup.py) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+?25h  Created wheel for s23bib: filename=s23bib-0.0.1-py3-none-any.whl size=2345 sha256=3b737d3dc26ff760880c3ccf61bb3b8b9d8a7388fafed243e2517bef1348be4c
+  Stored in directory: /private/var/folders/3q/ht_2mtk52hl7ydxrcr87z2gr0000gn/T/pip-ephem-wheel-cache-7ztc2kl4/wheels/09/91/ca/34e64c3a1c81011f7511c038297c81f2e83ae5dd4bf8a05ef7
+Successfully built s23bib
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: s23bib
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed s23bib-0.0.1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>bibtexparser
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting bibtexparser
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading bibtexparser-1.4.0.tar.gz (51 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/51.9 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺ <span class=" -Color -Color-Green">51.2/51.9 kB</span> <span class=" -Color -Color-Red">1.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">51.9/51.9 kB</span> <span class=" -Color -Color-Red">1.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+?25hRequirement already satisfied: pyparsing&gt;=2.0.3 in /Users/jkitchin/anaconda3/lib/python3.10/site-packages (from bibtexparser) (3.0.9)
+Building wheels for collected packages: bibtexparser
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for bibtexparser (setup.py) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+?25h  Created wheel for bibtexparser: filename=bibtexparser-1.4.0-py3-none-any.whl size=42429 sha256=0b3a5c66870bbe205a2b2cf827999074bbe732bcef7d0ffe70cff5d738adedd2
+  Stored in directory: /Users/jkitchin/Library/Caches/pip/wheels/2c/b8/1f/efb3ac79d0f25c4fa78908711eb855877df3540bce2be88903
+Successfully built bibtexparser
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: bibtexparser
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed bibtexparser-1.4.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">s23bib</span> <span class="kn">import</span> <span class="n">sort_bibtex</span>
+<span class="n">sort_bibtex</span><span class="p">(</span><span class="s1">&#39;references.bib&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;date_added&#39;: &#39;Fri Jan 18 09:54:51 2019&#39;,
+  &#39;url&#39;: &#39;https://doi.org/10.1021/acscatal.5b00538&#39;,
+  &#39;doi&#39;: &#39;10.1021/acscatal.5b00538&#39;,
+  &#39;year&#39;: &#39;2015&#39;,
+  &#39;pages&#39;: &#39;3894-3899&#39;,
+  &#39;number&#39;: &#39;6&#39;,
+  &#39;volume&#39;: &#39;5&#39;,
+  &#39;journal&#39;: &#39;ACS Catalysis&#39;,
+  &#39;title&#39;: &#39;Examples of Effective Data Sharing in Scientific Publishing&#39;,
+  &#39;author&#39;: &#39;John R. Kitchin&#39;,
+  &#39;ENTRYTYPE&#39;: &#39;article&#39;,
+  &#39;ID&#39;: &#39;kitchin-2015-examp-effec&#39;},
+ {&#39;date_added&#39;: &#39;Sun Mar 3 16:40:42 2019&#39;,
+  &#39;url&#39;: &#39;https://doi.org/10.1038/s41929-018-0056-y&#39;,
+  &#39;doi&#39;: &#39;10.1038/s41929-018-0056-y&#39;,
+  &#39;year&#39;: &#39;2018&#39;,
+  &#39;pages&#39;: &#39;230-232&#39;,
+  &#39;number&#39;: &#39;4&#39;,
+  &#39;volume&#39;: &#39;1&#39;,
+  &#39;journal&#39;: &#39;Nature Catalysis&#39;,
+  &#39;title&#39;: &#39;Machine Learning in Catalysis&#39;,
+  &#39;author&#39;: &#39;John R. Kitchin&#39;,
+  &#39;ENTRYTYPE&#39;: &#39;article&#39;,
+  &#39;ID&#39;: &#39;kitchin-2018-machin-learn-catal&#39;}]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sort_bibtex</span><span class="p">(</span><span class="s1">&#39;references.bib&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>cat<span class="w"> </span>references.bib
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>@article{kitchin-2015-examp-effec,
+ author = {John R. Kitchin},
+ date_added = {Fri Jan 18 09:54:51 2019},
+ doi = {10.1021/acscatal.5b00538},
+ journal = {ACS Catalysis},
+ number = {6},
+ pages = {3894-3899},
+ title = {Examples of Effective Data Sharing in Scientific Publishing},
+ url = {https://doi.org/10.1021/acscatal.5b00538},
+ volume = {5},
+ year = {2015}
+}
+
+@article{kitchin-2018-machin-learn-catal,
+ author = {John R. Kitchin},
+ date_added = {Sun Mar 3 16:40:42 2019},
+ doi = {10.1038/s41929-018-0056-y},
+ journal = {Nature Catalysis},
+ number = {4},
+ pages = {230-232},
+ title = {Machine Learning in Catalysis},
+ url = {https://doi.org/10.1038/s41929-018-0056-y},
+ volume = {1},
+ year = {2018}
+}
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can see the file has been sorted by year.</p>
+<p>We can also run tests.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pytest
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">============================= test session starts ==============================</span>
+platform darwin -- Python 3.10.11, pytest-7.1.2, pluggy-1.0.0
+rootdir: /Users/jkitchin/Dropbox/emacs/projects/gumroad-books/products/scientific-software-engineering/sse/sse/06-code-quality
+plugins: anyio-3.5.0
+<span class=" -Color -Color-Bold">collecting ... </span>
+<span class=" -Color -Color-Bold">collected 1 item                                                               </span>
+
+package/s23bib/test_sort.py 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Green">.                                            [100%]</span>
+
+<span class=" -Color -Color-Green">============================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span><span class=" -Color -Color-Green"> in 0.05s ===============================</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="code-formatting">
+<h1>Code formatting<a class="headerlink" href="#code-formatting" title="Permalink to this heading">#</a></h1>
+<p>When people use different formatting styles it makes it more difficult to work as a team:</p>
+<ol class="arabic simple">
+<li><p>The code looks different to different people</p></li>
+<li><p>People waste time changing the format</p></li>
+<li><p>git diffs contain unimportant information</p></li>
+</ol>
+<p>A way to manage this is to use an automatic formatter. One such tools is <a class="reference external" href="https://github.com/psf/black">black</a>. It is strongly opinionated on style.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> black-example.py
+<span class="n">a</span><span class="o">=</span><span class="mi">4</span>
+<span class="c1">#how about this for loop</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="n">b</span>  <span class="o">=</span><span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="c1">#comment two</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="s1">&#39;docstring&#39;</span>
+    <span class="k">return</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span>
+             <span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing black-example.py
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see what kinds of changes will be made first.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+black black-example.py --diff
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- black-example.py	2023-06-15 00:28:37.213198 +0000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+++ black-example.py	2023-06-15 00:28:37.598037 +0000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>@@ -1,12 +1,12 @@
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-a=4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-#how about this for loop
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+a = 4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+# how about this for loop
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> for i in range(a):
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-    b  =3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-    print( a,b)#comment two
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+    b = 3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+    print(a, b)  # comment two
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-b = [1,2,3,4,5,6,7,8,9,0]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> def f(x):
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-    &#39;docstring&#39;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-    return ([1,2,3,4,
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-             5,6,7,8,9,0])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+    &quot;docstring&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>would reformat black-example.py
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All done! ✨ 🍰 ✨
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 file would be reformatted.
+</pre></div>
+</div>
+</div>
+</div>
+<p>To actually make the changes, we run this command. This modifies the file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+black black-example.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reformatted black-example.py
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All done! ✨ 🍰 ✨
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 file reformatted.
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can open the <a class="reference download internal" download="" href="../_downloads/b0a4c5e8d541edb0bec62c4dfd4a6dd2/black-example.py"><span class="xref download myst">file</span></a> or see it in the notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>black-example.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 4
+# how about this for loop
+for i in range(a):
+    b = 3
+    print(a, b)  # comment two
+
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+
+
+def f(x):
+    &quot;docstring&quot;
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is possible to fine-tune what black does (see <a class="reference external" href="https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#configuration-via-a-file">https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#configuration-via-a-file</a>). We will not consider this here.</p>
+<p>You can run black on all the files in a directory with</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>black package
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>black<span class="w"> </span>package
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">reformatted package/setup.py</span>
+<span class=" -Color -Color-Bold">reformatted package/s23bib/test_sort.py</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">reformatted package/s23bib/utils.py</span>
+
+<span class=" -Color -Color-Bold">All done! ✨ 🍰 ✨</span>
+<span class=" -Color -Color-Bold -Color-Bold-Blue">3 files </span><span class=" -Color -Color-Bold">reformatted</span>, <span class=" -Color -Color-Blue">1 file </span>left unchanged.
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are also options to only check the files, output diffs, etc. There is even <a class="reference external" href="https://pypi.org/project/black-nb/">black-nb</a> for notebooks.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>black<span class="w"> </span>-h
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Usage: black [OPTIONS] SRC ...
+
+  The uncompromising code formatter.
+
+Options:
+  -c, --code TEXT                 Format the code passed in as a string.
+  -l, --line-length INTEGER       How many characters per line to allow.
+                                  [default: 88]
+  -t, --target-version [py33|py34|py35|py36|py37|py38|py39|py310|py311]
+                                  Python versions that should be supported by
+                                  Black&#39;s output. [default: per-file auto-
+                                  detection]
+  --pyi                           Format all input files like typing stubs
+                                  regardless of file extension (useful when
+                                  piping source on standard input).
+  --ipynb                         Format all input files like Jupyter
+                                  Notebooks regardless of file extension
+                                  (useful when piping source on standard
+                                  input).
+  --python-cell-magics TEXT       When processing Jupyter Notebooks, add the
+                                  given magic to the list of known python-
+                                  magics (pypy, timeit, python3, time, python,
+                                  prun, capture). Useful for formatting cells
+                                  with custom python magics.
+  -S, --skip-string-normalization
+                                  Don&#39;t normalize string quotes or prefixes.
+  -C, --skip-magic-trailing-comma
+                                  Don&#39;t use trailing commas as a reason to
+                                  split lines.
+  --preview                       Enable potentially disruptive style changes
+                                  that may be added to Black&#39;s main
+                                  functionality in the next major release.
+  --check                         Don&#39;t write the files back, just return the
+                                  status. Return code 0 means nothing would
+                                  change. Return code 1 means some files would
+                                  be reformatted. Return code 123 means there
+                                  was an internal error.
+  --diff                          Don&#39;t write the files back, just output a
+                                  diff for each file on stdout.
+  --color / --no-color            Show colored diff. Only applies when
+                                  `--diff` is given.
+  --fast / --safe                 If --fast given, skip temporary sanity
+                                  checks. [default: --safe]
+  --required-version TEXT         Require a specific version of Black to be
+                                  running (useful for unifying results across
+                                  many environments e.g. with a pyproject.toml
+                                  file). It can be either a major version
+                                  number or an exact version.
+  --include TEXT                  A regular expression that matches files and
+                                  directories that should be included on
+                                  recursive searches. An empty value means all
+                                  files are included regardless of the name.
+                                  Use forward slashes for directories on all
+                                  platforms (Windows, too). Exclusions are
+                                  calculated first, inclusions later.
+                                  [default: (\.pyi?|\.ipynb)$]
+  --exclude TEXT                  A regular expression that matches files and
+                                  directories that should be excluded on
+                                  recursive searches. An empty value means no
+                                  paths are excluded. Use forward slashes for
+                                  directories on all platforms (Windows, too).
+                                  Exclusions are calculated first, inclusions
+                                  later. [default: /(\.direnv|\.eggs|\.git|\.h
+                                  g|\.mypy_cache|\.nox|\.tox|\.venv|venv|\.svn
+                                  |_build|buck-
+                                  out|build|dist|__pypackages__)/]
+  --extend-exclude TEXT           Like --exclude, but adds additional files
+                                  and directories on top of the excluded ones.
+                                  (Useful if you simply want to add to the
+                                  default)
+  --force-exclude TEXT            Like --exclude, but files and directories
+                                  matching this regex will be excluded even
+                                  when they are passed explicitly as
+                                  arguments.
+  --stdin-filename TEXT           The name of the file when passing it through
+                                  stdin. Useful to make sure Black will
+                                  respect --force-exclude option on some
+                                  editors that rely on using stdin.
+  -W, --workers INTEGER RANGE     Number of parallel workers  [default: 6]
+  -q, --quiet                     Don&#39;t emit non-error messages to stderr.
+                                  Errors are still emitted; silence those with
+                                  2&gt;/dev/null.
+  -v, --verbose                   Also emit messages to stderr about files
+                                  that were not changed or were ignored due to
+                                  exclusion patterns.
+  --version                       Show the version and exit.
+  --config FILE                   Read configuration from FILE path.
+  -h, --help                      Show this message and exit.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="code-style">
+<h1>Code style<a class="headerlink" href="#code-style" title="Permalink to this heading">#</a></h1>
+<p>Style is also important. Python is a little over 30 years old now. Over the last three decades many things have been learned about effective coding styles which are described in the <a class="reference external" href="https://peps.python.org/pep-0008/">PEP8</a> Style guide. These guidelines are even coded into a package that can analyze your code and alert you to problems: <a class="reference external" href="https://flake8.pycqa.org/en/latest/">https://flake8.pycqa.org/en/latest/</a> and <a class="reference external" href="https://pylint.pycqa.org/en/latest/">https://pylint.pycqa.org/en/latest/</a>.</p>
+<p>These packages are complementary and do slightly different things.</p>
+<section id="let-s-start-with-flake8">
+<h2>Let’s start with flake8.<a class="headerlink" href="#let-s-start-with-flake8" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> flake-example.py
+<span class="n">a</span><span class="o">=</span><span class="mi">4</span>
+<span class="c1">#how about this for loop</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="n">b</span>  <span class="o">=</span><span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="c1">#comment two</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing flake-example.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>flake8<span class="w"> </span>flake-example.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">flake-example.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>2<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E225</span> missing whitespace around operator
+<span class=" -Color -Color-Bold">flake-example.py</span><span class=" -Color -Color-Cyan">:</span>2<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E265</span> block comment should start with &#39;# &#39;
+<span class=" -Color -Color-Bold">flake-example.py</span><span class=" -Color -Color-Cyan">:</span>4<span class=" -Color -Color-Cyan">:</span>6<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E221</span> multiple spaces before operator
+<span class=" -Color -Color-Bold">flake-example.py</span><span class=" -Color -Color-Cyan">:</span>4<span class=" -Color -Color-Cyan">:</span>9<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E225</span> missing whitespace around operator
+<span class=" -Color -Color-Bold">flake-example.py</span><span class=" -Color -Color-Cyan">:</span>5<span class=" -Color -Color-Cyan">:</span>11<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E201</span> whitespace after &#39;(&#39;
+<span class=" -Color -Color-Bold">flake-example.py</span><span class=" -Color -Color-Cyan">:</span>5<span class=" -Color -Color-Cyan">:</span>13<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E231</span> missing whitespace after &#39;,&#39;
+<span class=" -Color -Color-Bold">flake-example.py</span><span class=" -Color -Color-Cyan">:</span>5<span class=" -Color -Color-Cyan">:</span>16<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E261</span> at least two spaces before inline comment
+<span class=" -Color -Color-Bold">flake-example.py</span><span class=" -Color -Color-Cyan">:</span>5<span class=" -Color -Color-Cyan">:</span>16<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E262</span> inline comment should start with &#39;# &#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The output tells you all the places you need to fix the code. This has to be done manually.</p>
+<p>You can check that all your functions are documented. flake8 is extendable, and you just install a new package called <a class="reference external" href="https://gitlab.com/pycqa/flake8-docstrings">flake8-docstrings</a>. You can then specify a docstring style as an argument.</p>
+<p>Here we choose the numpy docstring format, and run it on our package.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>flake8-docstrings
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting flake8-docstrings
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading flake8_docstrings-1.7.0-py2.py3-none-any.whl (5.0 kB)
+Requirement already satisfied: flake8&gt;=3 in /Users/jkitchin/anaconda3/lib/python3.10/site-packages (from flake8-docstrings) (6.0.0)
+Requirement already satisfied: pydocstyle&gt;=2.1 in /Users/jkitchin/anaconda3/lib/python3.10/site-packages (from flake8-docstrings) (6.3.0)
+Requirement already satisfied: mccabe&lt;0.8.0,&gt;=0.7.0 in /Users/jkitchin/anaconda3/lib/python3.10/site-packages (from flake8&gt;=3-&gt;flake8-docstrings) (0.7.0)
+Requirement already satisfied: pyflakes&lt;3.1.0,&gt;=3.0.0 in /Users/jkitchin/anaconda3/lib/python3.10/site-packages (from flake8&gt;=3-&gt;flake8-docstrings) (3.0.1)
+Requirement already satisfied: pycodestyle&lt;2.11.0,&gt;=2.10.0 in /Users/jkitchin/anaconda3/lib/python3.10/site-packages (from flake8&gt;=3-&gt;flake8-docstrings) (2.10.0)
+Requirement already satisfied: snowballstemmer&gt;=2.2.0 in /Users/jkitchin/anaconda3/lib/python3.10/site-packages (from pydocstyle&gt;=2.1-&gt;flake8-docstrings) (2.2.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: flake8-docstrings
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed flake8-docstrings-1.7.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>flake8<span class="w"> </span>--docstring-convention<span class="w"> </span>numpy<span class="w"> </span>package
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">package/build/lib/s23bib/__init__.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D104</span> Missing docstring in public package
+<span class=" -Color -Color-Bold">package/build/lib/s23bib/__init__.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">F401</span> &#39;.utils.sort_bibtex&#39; imported but unused
+<span class=" -Color -Color-Bold">package/build/lib/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D100</span> Missing docstring in public module
+<span class=" -Color -Color-Bold">package/build/lib/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>3<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">F401</span> &#39;bibtexparser&#39; imported but unused
+<span class=" -Color -Color-Bold">package/build/lib/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>32<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E302</span> expected 2 blank lines, found 1
+<span class=" -Color -Color-Bold">package/build/lib/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>33<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D103</span> Missing docstring in public function
+<span class=" -Color -Color-Bold">package/build/lib/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>38<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">W293</span> blank line contains whitespace
+<span class=" -Color -Color-Bold">package/build/lib/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>39<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D101</span> Missing docstring in public class
+<span class=" -Color -Color-Bold">package/build/lib/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>39<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E302</span> expected 2 blank lines, found 1
+<span class=" -Color -Color-Bold">package/build/lib/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>40<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D102</span> Missing docstring in public method
+<span class=" -Color -Color-Bold">package/build/lib/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>42<span class=" -Color -Color-Cyan">:</span>64<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">W291</span> trailing whitespace
+<span class=" -Color -Color-Bold">package/build/lib/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D100</span> Missing docstring in public module
+<span class=" -Color -Color-Bold">package/build/lib/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>3<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D103</span> Missing docstring in public function
+<span class=" -Color -Color-Bold">package/build/lib/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>3<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E302</span> expected 2 blank lines, found 1
+<span class=" -Color -Color-Bold">package/build/lib/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>8<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">W293</span> blank line contains whitespace
+<span class=" -Color -Color-Bold">package/build/lib/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>13<span class=" -Color -Color-Cyan">:</span>19<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E225</span> missing whitespace around operator
+<span class=" -Color -Color-Bold">package/build/lib/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>14<span class=" -Color -Color-Cyan">:</span>21<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E225</span> missing whitespace around operator
+<span class=" -Color -Color-Bold">package/build/lib/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>18<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">W293</span> blank line contains whitespace
+<span class=" -Color -Color-Bold">package/s23bib/__init__.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D104</span> Missing docstring in public package
+<span class=" -Color -Color-Bold">package/s23bib/__init__.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">F401</span> &#39;.utils.sort_bibtex&#39; imported but unused
+<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D100</span> Missing docstring in public module
+<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>3<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">F401</span> &#39;bibtexparser&#39; imported but unused
+<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>34<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D103</span> Missing docstring in public function
+<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>41<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D101</span> Missing docstring in public class
+<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>42<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D102</span> Missing docstring in public method
+<span class=" -Color -Color-Bold">package/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D100</span> Missing docstring in public module
+<span class=" -Color -Color-Bold">package/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>4<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D103</span> Missing docstring in public function
+<span class=" -Color -Color-Bold">package/setup.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D100</span> Missing docstring in public module
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can exclude directories, e.g. package/build.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>flake8<span class="w"> </span>--extend-ignore<span class="w"> </span>F401<span class="w"> </span>--exclude<span class="w"> </span>package/build,package/s23bib/.ipynb_checkpoints<span class="w">  </span>--docstring-convention<span class="w"> </span>numpy<span class="w"> </span>package
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">package/s23bib/__init__.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D104</span> Missing docstring in public package
+<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D100</span> Missing docstring in public module
+<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>34<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D103</span> Missing docstring in public function
+<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>41<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D101</span> Missing docstring in public class
+<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>42<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D102</span> Missing docstring in public method
+<span class=" -Color -Color-Bold">package/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D100</span> Missing docstring in public module
+<span class=" -Color -Color-Bold">package/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>4<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D103</span> Missing docstring in public function
+<span class=" -Color -Color-Bold">package/setup.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D100</span> Missing docstring in public module
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise</strong> Take some time now to fix these issues. Run the cells above until they come out clean.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> flake8-fix-1.ipynb
+<span class="o">!</span><span class="w"> </span>flake8<span class="w"> </span>--extend-ignore<span class="w"> </span>F401<span class="w"> </span>--exclude<span class="w"> </span>package/build,package/s23bib/.ipynb_checkpoints<span class="w">  </span>--docstring-convention<span class="w"> </span>numpy<span class="w"> </span>package
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting package/s23bib/__init__.py
+Overwriting package/s23bib/utils.py
+Overwriting package/s23bib/test_sort.py
+Overwriting package/setup.py
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pylint">
+<h2>pylint<a class="headerlink" href="#pylint" title="Permalink to this heading">#</a></h2>
+<p>A <em>linter</em> is used to check your code for a wide range of possible problems.</p>
+<p><a class="reference external" href="https://pylint.pycqa.org/en/latest/">pylint</a> is an alternative to flake8 and often provides complementary information. It is also a tool for checking for errors, coding standards, etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pylint<span class="w"> </span>--ignore<span class="w"> </span>build,.ipynb_checkpoints<span class="w"> </span>package
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PYLINTHOME is now &#39;/Users/jkitchin/Library/Caches/pylint&#39; but obsolescent &#39;/Users/jkitchin/.pylint.d&#39; is found; you can safely remove the latter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>************* Module s23bib.test_sort
+package/s23bib/test_sort.py:7:0: C0103: Constant name &quot;bs&quot; doesn&#39;t conform to UPPER_CASE naming style (invalid-name)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>package/s23bib/test_sort.py:37:9: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+package/s23bib/test_sort.py:37:34: C0103: Variable name &quot;f&quot; doesn&#39;t conform to snake_case naming style (invalid-name)
+package/s23bib/test_sort.py:46:24: W0621: Redefining name &#39;setup&#39; from outer scope (line 35) (redefined-outer-name)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>package/s23bib/test_sort.py:46:24: W0613: Unused argument &#39;setup&#39; (unused-argument)
+package/s23bib/test_sort.py:43:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+package/s23bib/test_sort.py:4:0: W0611: Unused import bibtexparser (unused-import)
+************* Module s23bib.utils
+package/s23bib/utils.py:13:9: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+package/s23bib/utils.py:13:26: C0103: Variable name &quot;bf&quot; doesn&#39;t conform to snake_case naming style (invalid-name)
+package/s23bib/utils.py:14:8: C0103: Variable name &quot;bd&quot; doesn&#39;t conform to snake_case naming style (invalid-name)
+package/s23bib/utils.py:25:35: R1704: Redefining argument with the local name &#39;bibfile&#39; (redefined-argument-from-local)
+package/s23bib/utils.py:25:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+package/s23bib/utils.py:6:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+
+------------------------------------------------------------------
+Your code has been rated at 6.06/10 (previous run: 0.30/10, +5.76)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise</strong> If there are residual issues, fix them so that the package is clean.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="testing">
+<h1>Testing<a class="headerlink" href="#testing" title="Permalink to this heading">#</a></h1>
+<p>Our package only has one test right now. We can run it with <code class="docutils literal notranslate"><span class="pre">pytest</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pytest<span class="w"> </span>package
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">============================= test session starts ==============================</span>
+platform darwin -- Python 3.10.11, pytest-7.1.2, pluggy-1.0.0
+rootdir: /Users/jkitchin/Dropbox/emacs/projects/gumroad-books/products/scientific-software-engineering/sse/sse/06-code-quality/package
+plugins: anyio-3.5.0
+<span class=" -Color -Color-Bold">collecting ... </span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">collected 1 item                                                               </span>
+
+package/s23bib/test_sort.py <span class=" -Color -Color-Green">.                                            [100%]</span>
+
+<span class=" -Color -Color-Green">============================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span><span class=" -Color -Color-Green"> in 0.05s ===============================</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="coverage">
+<h1>Coverage<a class="headerlink" href="#coverage" title="Permalink to this heading">#</a></h1>
+<p>Your tests should <em>cover</em> as much of your code as possible. This can actually be measured using the <a class="reference external" href="https://coverage.readthedocs.io/en/7.2.3/">coverage</a> package. There are two steps: running and reporting</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>coverage
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting coverage
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading coverage-7.2.7-cp310-cp310-macosx_10_9_x86_64.whl (200 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/200.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">112.6/200.7 kB</span> <span class=" -Color -Color-Red">2.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━ <span class=" -Color -Color-Green">194.6/200.7 kB</span> <span class=" -Color -Color-Red">3.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">200.7/200.7 kB</span> <span class=" -Color -Color-Red">1.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: coverage
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed coverage-7.2.7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>coverage<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>package/s23bib
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">============================= test session starts ==============================</span>
+platform darwin -- Python 3.10.11, pytest-7.1.2, pluggy-1.0.0
+rootdir: /Users/jkitchin/Dropbox/emacs/projects/gumroad-books/products/scientific-software-engineering/sse/sse/06-code-quality/package
+plugins: anyio-3.5.0
+<span class=" -Color -Color-Bold">collecting ... </span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">collected 1 item                                                               </span>
+
+package/s23bib/test_sort.py 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Green">.                                            [100%]</span>
+
+<span class=" -Color -Color-Green">============================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span><span class=" -Color -Color-Green"> in 0.08s ===============================</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>coverage<span class="w"> </span>report<span class="w"> </span>--show-missing<span class="w"> </span>package/s23bib/*.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name                          Stmts   Miss  Cover   Missing
+-----------------------------------------------------------
+package/s23bib/__init__.py        1      0   100%
+package/s23bib/test_sort.py      15      0   100%
+package/s23bib/utils.py          16      8    50%   19-26
+-----------------------------------------------------------
+TOTAL                            32      8    75%
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our test does not cover all of the functionality in our function; it skips the inplace argument branch. It is not necessary to achieve 100% coverage. This is a tool to help you find areas of your code that is under-tested. That doesn’t mean there is not a bug in there, but it does mean you have not tested it.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="automating-these">
+<h1>Automating these<a class="headerlink" href="#automating-these" title="Permalink to this heading">#</a></h1>
+<p>You may find chapter 9 (<a class="reference external" href="https://merely-useful.tech/py-rse/automate.html">https://merely-useful.tech/py-rse/automate.html</a>) helpful. It covers make in more depth than I do there.</p>
+<p>It is a little tedious to run these each time. There are a few ways you could solve this. One is to simply create a file as a shell command that chains all the commands together:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+black package &amp;&amp; flake8 --exclude package/build package &amp;&amp; pylint --ignore build package &amp;&amp; pytest package
+</pre></div>
+</div>
+<p>Then you can run one command that will run these, and stop if any single command does not succeed. Put this into a file called <a class="reference external" href="http://run.sh">run.sh</a>, make it executable, and try it out. Here we use &amp;&amp; to only run subsequent commands if the previous command succeeded.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>black<span class="w"> </span>package<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>flake8<span class="w"> </span>--exclude<span class="w"> </span>package/build<span class="w"> </span>package<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pylint<span class="w"> </span>--ignore<span class="w"> </span>build<span class="w"> </span>package<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pytest<span class="w"> </span>package
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">All done! ✨ 🍰 ✨</span>
+<span class=" -Color -Color-Blue">4 files </span>left unchanged.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">package/s23bib/__init__.py</span><span class=" -Color -Color-Cyan">:</span>2<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">F401</span> &#39;.utils.sort_bibtex&#39; imported but unused
+<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>4<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">F401</span> &#39;bibtexparser&#39; imported but unused
+</pre></div>
+</div>
+</div>
+</div>
+<p>An alternative is to create a <a class="reference external" href="https://www.gnu.org/software/make/manual/make.html">makefile</a>. Make is a GNU program that allows you to create rules that run commands by name. The syntax in a make file is sensitive. The body /must/ be indented with tabs, and not spaces. These commands are run from the same directory as the makefile, so the paths are set accordingly.</p>
+<p>Each section starts with a target name, then a list of commands that are indented by a tab. It must be tabs or you will get an error. You don’t get a tab in jupyter lab when you press tab… you get 4 spaces. I had to copy the tab from somewhere else…</p>
+<p>The all target lists some dependencies by target name. Each of these will be run when you run the all target.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> package/makefile
+<span class="n">black</span><span class="p">:</span> 
+	<span class="n">black</span> <span class="o">.</span>
+
+<span class="n">flake8</span><span class="p">:</span>
+	<span class="n">flake8</span> <span class="o">--</span><span class="n">exclude</span> <span class="n">build</span> <span class="o">.</span>
+    
+<span class="n">pylint</span><span class="p">:</span>
+	<span class="n">pylint</span> <span class="o">--</span><span class="n">ignore</span> <span class="n">build</span> <span class="o">.</span>
+    
+<span class="n">test</span><span class="p">:</span>
+	<span class="n">pytest</span> <span class="o">.</span>
+
+<span class="nb">all</span><span class="p">:</span> <span class="n">black</span> <span class="n">flake8</span> <span class="n">pylint</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing package/makefile
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd package
+make all
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>black .
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All done! ✨ 🍰 ✨
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 files left unchanged.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>flake8 --exclude build .
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/__init__.py:2:1: F401 &#39;.utils.sort_bibtex&#39; imported but unused
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/test_sort.py:4:1: F401 &#39;bibtexparser&#39; imported but unused
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make[1]: *** [flake8] Error 1
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">34</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;cd package</span><span class="se">\n</span><span class="s1">make all</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2430,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2428</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2429</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2430</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2432</span> <span class="c1"># The code below prevents the output from being displayed</span>
+<span class="g g-Whitespace">   </span><span class="mi">2433</span> <span class="c1"># when using magics with decodator @output_can_be_silenced</span>
+<span class="g g-Whitespace">   </span><span class="mi">2434</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2435</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
+<span class="ne">--&gt; </span><span class="mi">153</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="c1"># in case it&#39;s stuck in uninterruptible sleep. -9 = SIGKILL</span>
+<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="n">rc</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">9</span>
+<span class="ne">--&gt; </span><span class="mi">305</span>     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+
+<span class="ne">CalledProcessError</span>: Command &#39;b&#39;cd package\nmake all\n&#39;&#39; returned non-zero exit status 2.
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also run individual targets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd package
+make test
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pytest .
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">============================= test session starts ==============================</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>platform darwin -- Python 3.10.11, pytest-7.1.2, pluggy-1.0.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rootdir: /Users/jkitchin/Dropbox/emacs/projects/gumroad-books/products/scientific-software-engineering/sse/sse/06-code-quality/package
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>plugins: anyio-3.5.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>collected 1 item
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>s23bib/test_sort.py <span class=" -Color -Color-Green">.                                                    [100%]</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Green">============================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span><span class=" -Color -Color-Green"> in 0.05s ===============================</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that make will exit if any rule exits with a non-zero status.</p>
+<p>Make is complex, and does much more than this. It has many applications in building, compilation and installing software.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="integration-with-git">
+<h1>Integration with git<a class="headerlink" href="#integration-with-git" title="Permalink to this heading">#</a></h1>
+<p>Finally, we can look at how we can integrate all this with git. So far, we have manually run each command, and edited files, then run the commands again. That is a little tedious, and we can leverage some capability in git we have not talked about so far.</p>
+<p>Git has a notion of <a class="reference external" href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks">hooks</a>. These are programs that are run at different events that occur. There are many possible hooks that exist in the ~.git/hooks~ directory.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd package
+ls .git/hooks
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">applypatch-msg.sample</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">commit-msg.sample</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">fsmonitor-watchman.sample</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">post-update.sample</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">pre-applypatch.sample</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">pre-commit.sample</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">pre-merge-commit.sample</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">pre-push.sample</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">pre-rebase.sample</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">pre-receive.sample</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">prepare-commit-msg.sample</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">push-to-checkout.sample</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">update.sample</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The one we are interested in is the pre-commit hook. This will be a program that runs before a commit is done, and the commit can only proceed if the program runs successfully. We can use our makefile for this. You can create .git/hooks/pre-commit with at least this content. You also need to add a shebang line (#!/bin/bash), and make the file executable (chmod +x .git/hooks/pre-commit).</p>
+<p>Let’s run some tests first.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> package/.git/hooks/pre-commit
+<span class="ch">#!/bin/bash</span>
+<span class="n">echo</span> <span class="s2">&quot;running precommit in `pwd`&quot;</span>
+<span class="n">exit</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing package/.git/hooks/pre-commit
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+chmod +x package/.git/hooks/pre-commit
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, this will be run every time you try to commit, and you will not be able to make a commit if your tests don’t pass.</p>
+<p>Note that the pre-commit hook is run from the root of the git repository, and any paths used must be set accordingly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+git config --global user.email &quot;you@example.com&quot;
+git config --global user.name &quot;Your Name&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd package
+git add *.py
+git commit -m &quot;adding pyfiles&quot;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>running precommit in /Users/jkitchin/Dropbox/emacs/projects/gumroad-books/products/scientific-software-engineering/sse/sse/06-code-quality/package
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main (root-commit) 864e3cc] adding pyfiles
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 14 insertions(+)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 setup.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> package/.git/hooks/pre-commit
+<span class="ch">#!/bin/bash</span>
+<span class="n">make</span> <span class="nb">all</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting package/.git/hooks/pre-commit
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+chmod +x package/.git/hooks/pre-commit
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd package
+git add *.py
+git commit -m &quot;adding pyfiles&quot;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>black .
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All done! ✨ 🍰 ✨
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 files left unchanged.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>flake8 --exclude build .
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/__init__.py:2:1: F401 &#39;.utils.sort_bibtex&#39; imported but unused
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/test_sort.py:4:1: F401 &#39;bibtexparser&#39; imported but unused
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make[1]: *** [flake8] Error 1
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">43</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;cd package</span><span class="se">\n</span><span class="s1">git add *.py</span><span class="se">\n</span><span class="s1">git commit -m &quot;adding pyfiles&quot;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2430,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2428</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2429</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2430</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2432</span> <span class="c1"># The code below prevents the output from being displayed</span>
+<span class="g g-Whitespace">   </span><span class="mi">2433</span> <span class="c1"># when using magics with decodator @output_can_be_silenced</span>
+<span class="g g-Whitespace">   </span><span class="mi">2434</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2435</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
+<span class="ne">--&gt; </span><span class="mi">153</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="c1"># in case it&#39;s stuck in uninterruptible sleep. -9 = SIGKILL</span>
+<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="n">rc</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">9</span>
+<span class="ne">--&gt; </span><span class="mi">305</span>     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+
+<span class="ne">CalledProcessError</span>: Command &#39;b&#39;cd package\ngit add *.py\ngit commit -m &quot;adding pyfiles&quot;\n&#39;&#39; returned non-zero exit status 1.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now you have to fix the errors if you want to able to commit. This helps ensure you always submit good code. You can also integrate testing into this so you make sure your code doesn’t have errors in it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span> 
+cd package
+git log
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit 864e3cca2572ff06088c0f517452bf16d3d98bc6
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Author: Your Name &lt;you@example.com&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date:   Wed Jun 14 20:29:02 2023 -0400
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    adding pyfiles
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd package
+git add *.py
+git commit --no-verify -m &quot;adding pyfiles&quot;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Untracked files:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	build/
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	makefile
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	s23bib.egg-info/
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	s23bib/
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">45</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;cd package</span><span class="se">\n</span><span class="s1">git add *.py</span><span class="se">\n</span><span class="s1">git commit --no-verify -m &quot;adding pyfiles&quot;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2430,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2428</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2429</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2430</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2432</span> <span class="c1"># The code below prevents the output from being displayed</span>
+<span class="g g-Whitespace">   </span><span class="mi">2433</span> <span class="c1"># when using magics with decodator @output_can_be_silenced</span>
+<span class="g g-Whitespace">   </span><span class="mi">2434</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2435</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
+<span class="ne">--&gt; </span><span class="mi">153</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="c1"># in case it&#39;s stuck in uninterruptible sleep. -9 = SIGKILL</span>
+<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="n">rc</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">9</span>
+<span class="ne">--&gt; </span><span class="mi">305</span>     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+
+<span class="ne">CalledProcessError</span>: Command &#39;b&#39;cd package\ngit add *.py\ngit commit --no-verify -m &quot;adding pyfiles&quot;\n&#39;&#39; returned non-zero exit status 1.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pre-commit">
+<h1>pre-commit<a class="headerlink" href="#pre-commit" title="Permalink to this heading">#</a></h1>
+<p>There are more sophisticated approaches. <a class="reference external" href="https://pre-commit.com/#intro">pre-commit</a> is another Python package that can help you create scripts for the pre-commit hook. To set it up you have to create a yaml config file like this. I find these tricky in general, and usually adapt them from documentation at pre-commit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pre-commit
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pre-commit in /Users/jkitchin/anaconda3/lib/python3.10/site-packages (2.21.0)
+Requirement already satisfied: cfgv&gt;=2.0.0 in /Users/jkitchin/anaconda3/lib/python3.10/site-packages (from pre-commit) (3.3.1)
+Requirement already satisfied: identify&gt;=1.0.0 in /Users/jkitchin/anaconda3/lib/python3.10/site-packages (from pre-commit) (2.5.24)
+Requirement already satisfied: nodeenv&gt;=0.11.1 in /Users/jkitchin/anaconda3/lib/python3.10/site-packages (from pre-commit) (1.7.0)
+Requirement already satisfied: pyyaml&gt;=5.1 in /Users/jkitchin/anaconda3/lib/python3.10/site-packages (from pre-commit) (6.0)
+Requirement already satisfied: virtualenv&gt;=20.10.0 in /Users/jkitchin/anaconda3/lib/python3.10/site-packages (from pre-commit) (20.23.0)
+Requirement already satisfied: setuptools in /Users/jkitchin/anaconda3/lib/python3.10/site-packages (from nodeenv&gt;=0.11.1-&gt;pre-commit) (65.6.3)
+Requirement already satisfied: distlib&lt;1,&gt;=0.3.6 in /Users/jkitchin/anaconda3/lib/python3.10/site-packages (from virtualenv&gt;=20.10.0-&gt;pre-commit) (0.3.6)
+Requirement already satisfied: filelock&lt;4,&gt;=3.11 in /Users/jkitchin/anaconda3/lib/python3.10/site-packages (from virtualenv&gt;=20.10.0-&gt;pre-commit) (3.12.0)
+Requirement already satisfied: platformdirs&lt;4,&gt;=3.2 in /Users/jkitchin/anaconda3/lib/python3.10/site-packages (from virtualenv&gt;=20.10.0-&gt;pre-commit) (3.5.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> package/.pre-commit-config.yaml
+<span class="n">repos</span><span class="p">:</span>
+  <span class="o">-</span>  <span class="n">repo</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">psf</span><span class="o">/</span><span class="n">black</span>
+     <span class="n">rev</span><span class="p">:</span> <span class="mf">23.3.0</span>
+     <span class="n">hooks</span><span class="p">:</span>
+     <span class="o">-</span> <span class="nb">id</span><span class="p">:</span> <span class="n">black</span>
+
+  <span class="o">-</span>  <span class="n">repo</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pre</span><span class="o">-</span><span class="n">commit</span><span class="o">/</span><span class="n">pre</span><span class="o">-</span><span class="n">commit</span><span class="o">-</span><span class="n">hooks</span>
+     <span class="n">rev</span><span class="p">:</span> <span class="n">v2</span><span class="mf">.0.0</span>
+     <span class="n">hooks</span><span class="p">:</span>
+     <span class="o">-</span> <span class="nb">id</span><span class="p">:</span> <span class="n">flake8</span>
+    
+  <span class="o">-</span> <span class="n">repo</span><span class="p">:</span> <span class="n">local</span>
+    <span class="n">hooks</span><span class="p">:</span>
+    <span class="o">-</span> <span class="nb">id</span><span class="p">:</span> <span class="n">pytest</span><span class="o">-</span><span class="n">check</span>
+      <span class="n">name</span><span class="p">:</span> <span class="n">pytest</span><span class="o">-</span><span class="n">check</span>
+      <span class="n">stages</span><span class="p">:</span> <span class="p">[</span><span class="n">commit</span><span class="p">]</span>
+      <span class="n">types</span><span class="p">:</span> <span class="p">[</span><span class="n">python</span><span class="p">]</span>
+      <span class="n">entry</span><span class="p">:</span> <span class="n">pytest</span>
+      <span class="n">language</span><span class="p">:</span> <span class="n">system</span>
+      <span class="n">pass_filenames</span><span class="p">:</span> <span class="n">false</span>
+      <span class="n">always_run</span><span class="p">:</span> <span class="n">true</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing package/.pre-commit-config.yaml
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd package
+pre-commit install
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running in migration mode with existing hooks at .git/hooks/pre-commit.legacy
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Use -f to use only pre-commit.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pre-commit installed at .git/hooks/pre-commit
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>cat<span class="w"> </span>package/.git/hooks/pre-commit
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#!/usr/bin/env bash
+# File generated by pre-commit: https://pre-commit.com
+# ID: 138fd403232d2ddd5efb44317e38bf03
+
+# start templated
+INSTALL_PYTHON=/Users/jkitchin/anaconda3/bin/python
+ARGS=(hook-impl --config=.pre-commit-config.yaml --hook-type=pre-commit)
+# end templated
+
+HERE=&quot;$(cd &quot;$(dirname &quot;$0&quot;)&quot; &amp;&amp; pwd)&quot;
+ARGS+=(--hook-dir &quot;$HERE&quot; -- &quot;$@&quot;)
+
+if [ -x &quot;$INSTALL_PYTHON&quot; ]; then
+    exec &quot;$INSTALL_PYTHON&quot; -mpre_commit &quot;${ARGS[@]}&quot;
+elif command -v pre-commit &gt; /dev/null; then
+    exec pre-commit &quot;${ARGS[@]}&quot;
+else
+    echo &#39;`pre-commit` not found.  Did you forget to activate your virtualenv?&#39; 1&gt;&amp;2
+    exit 1
+fi
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can run the rules manually.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd package
+pre-commit run --all-files
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>black....................................................................Passed
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Flake8...................................................................Passed
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pytest-check.............................................................Passed
+</pre></div>
+</div>
+</div>
+</div>
+<p>This also runs automatically whenever git detects changes in a file that would be checked.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd package
+
+git add makefile
+git commit -m &quot;add makefile&quot;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>black .
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All done! ✨ 🍰 ✨
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 files left unchanged.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>flake8 --exclude build .
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/__init__.py:2:1: F401 &#39;.utils.sort_bibtex&#39; imported but unused
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/test_sort.py:4:1: F401 &#39;bibtexparser&#39; imported but unused
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make[1]: *** [flake8] Error 1
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>black................................................(no files to check)Skipped
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Flake8...............................................(no files to check)Skipped
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pytest-check.............................................................Passed
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">51</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;cd package</span><span class="se">\n\n</span><span class="s1">git add makefile</span><span class="se">\n</span><span class="s1">git commit -m &quot;add makefile&quot;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2430,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2428</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2429</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2430</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2432</span> <span class="c1"># The code below prevents the output from being displayed</span>
+<span class="g g-Whitespace">   </span><span class="mi">2433</span> <span class="c1"># when using magics with decodator @output_can_be_silenced</span>
+<span class="g g-Whitespace">   </span><span class="mi">2434</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2435</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
+<span class="ne">--&gt; </span><span class="mi">153</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="c1"># in case it&#39;s stuck in uninterruptible sleep. -9 = SIGKILL</span>
+<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="n">rc</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">9</span>
+<span class="ne">--&gt; </span><span class="mi">305</span>     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+
+<span class="ne">CalledProcessError</span>: Command &#39;b&#39;cd package\n\ngit add makefile\ngit commit -m &quot;add makefile&quot;\n&#39;&#39; returned non-zero exit status 1.
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are a lot of things you can do with pre-commit (<a class="reference external" href="https://pre-commit.com/hooks.html">https://pre-commit.com/hooks.html</a>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd package
+
+git commit setup.py -m &quot;capitalize something&quot;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>black .
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All done! ✨ 🍰 ✨
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 files left unchanged.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>flake8 --exclude build .
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/__init__.py:2:1: F401 &#39;.utils.sort_bibtex&#39; imported but unused
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/test_sort.py:4:1: F401 &#39;bibtexparser&#39; imported but unused
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make[1]: *** [flake8] Error 1
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>black................................................(no files to check)Skipped
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Flake8...............................................(no files to check)Skipped
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pytest-check.............................................................Passed
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">52</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;cd package</span><span class="se">\n\n</span><span class="s1">git commit setup.py -m &quot;capitalize something&quot;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2430,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2428</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2429</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2430</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2432</span> <span class="c1"># The code below prevents the output from being displayed</span>
+<span class="g g-Whitespace">   </span><span class="mi">2433</span> <span class="c1"># when using magics with decodator @output_can_be_silenced</span>
+<span class="g g-Whitespace">   </span><span class="mi">2434</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2435</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
+<span class="ne">--&gt; </span><span class="mi">153</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="c1"># in case it&#39;s stuck in uninterruptible sleep. -9 = SIGKILL</span>
+<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="n">rc</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">9</span>
+<span class="ne">--&gt; </span><span class="mi">305</span>     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+
+<span class="ne">CalledProcessError</span>: Command &#39;b&#39;cd package\n\ngit commit setup.py -m &quot;capitalize something&quot;\n&#39;&#39; returned non-zero exit status 1.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h1>
+<p>As your package gets more sophisticated, and more people have to interact with it, it becomes more and more important that you follow some standards in formatting and styling. There are tools to help with auto-formatting, and style checking.</p>
+<p>Testing is important to help verify that your package works correctly. There are tools to examine your package, and compute how much of it is covered by the tests.</p>
+<p>Finally, we looked at integration of these tools with git via the pre-commit hook to make sure that you only commit high-quality code to the repository. This helps avoid needing multiple commits to fix formatting, style issues, and can be used to make sure your tests pass before you commit.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="in-class-exercise">
+<h1>In class exercise<a class="headerlink" href="#in-class-exercise" title="Permalink to this heading">#</a></h1>
+<p>Fix all the issues in the package so that you can commit the files, and have a clean package.</p>
+<p>Make sure to ignore files like the build directory and .egg-info directory.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./06-code-quality"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../05-python-classes/05-python-classes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction Python Classes</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../07-github-intro/07-github-intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction to GitHUB</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Code quality control</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#package-setup-for-today">Package setup for today</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-and-test-basic-functionalities">Install and test basic functionalities</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#code-formatting">Code formatting</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#code-style">Code style</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-start-with-flake8">Let’s start with flake8.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pylint">pylint</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#coverage">Coverage</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#automating-these">Automating these</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-with-git">Integration with git</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit">pre-commit</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#in-class-exercise">In class exercise</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By John Kitchin
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

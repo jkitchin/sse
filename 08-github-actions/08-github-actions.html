@@ -1,0 +1,1192 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>gitHUB Actions &#8212; Scientific software engineering</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '08-github-actions/08-github-actions';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Wrapping up" href="../09-wrapup/09-wrapup.html" />
+    <link rel="prev" title="Introduction to GitHUB" href="../07-github-intro/07-github-intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Scientific Software Engineering
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-introduction/00-introduction-terminals.html">Introduction</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../01-rest-api-openalex/01-rest-api-openalex.html">OpenAlex</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02-python-requests/02-python-requests.html">Python and REST APIs</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../03-python-packaging/03-python-packaging.html">Python packaging and version control</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04-more-python-packaging/04-more-python-packaging.html">More on Python packaging</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../05-python-classes/05-python-classes.html">Introduction Python Classes</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../06-code-quality/06-code-quality.html">Code quality control</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../07-github-intro/07-github-intro.html">Introduction to GitHUB</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">gitHUB Actions</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../09-wrapup/09-wrapup.html">Wrapping up</a></li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://lab.amdatascience.com/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/sse&urlpath=lab/tree/sse/docs/08-github-actions/08-github-actions.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jkitchin/sse/blob/main/docs/08-github-actions/08-github-actions.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jkitchin/sse" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jkitchin/sse/issues/new?title=Issue%20on%20page%20%2F08-github-actions/08-github-actions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/08-github-actions/08-github-actions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>gitHUB Actions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">gitHUB Actions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-setup">Lecture setup</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#brief-exploration-of-the-repo">Brief exploration of the repo</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#making-github-do-the-work-instead-of-your-computer">Making GitHUB do the work instead of your computer</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#github-actions-https-docs-github-com-en-actions">GitHUB Actions (https://docs.github.com/en/actions)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-status-badge">Create a status badge</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-platform-testing">Cross platform testing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-on-windows">Testing on Windows.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-macs">Testing for Macs</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-environments-with-docker">Custom environments with Docker</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-up">Cleaning up</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="github-actions">
+<h1>gitHUB Actions<a class="headerlink" href="#github-actions" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start clean</span>
+<span class="o">!</span><span class="w"> </span>rm<span class="w"> </span>-fr<span class="w"> </span>s23-06682-L08
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="lecture-setup">
+<h1>Lecture setup<a class="headerlink" href="#lecture-setup" title="Permalink to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Make sure you are logged into GitHUB.</p></li>
+<li><p>Go to <a class="github reference external" href="https://github.com/Steel-Bank-codespaces/s23-06682-L08">Steel-Bank-codespaces/s23-06682-L08</a>.</p></li>
+</ol>
+<p>Look for the fork button.</p>
+<p>then click it. This will “fork” the repo, i.e. make a copy of it in your GitHUB account.</p>
+<p>Then, come back here and open a terminal. Navigate to the lecture directory and run</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>! git clone https://github.com/&lt;github-id&gt;/s23-06682-L08.git
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/jkitchin/s23-06682-L08.git
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;s23-06682-L08&#39;...
+Username for &#39;https://github.com&#39;: ^C
+</pre></div>
+</div>
+</div>
+</div>
+<p>to make your own copy locally we can work on.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="brief-exploration-of-the-repo">
+<h1>Brief exploration of the repo<a class="headerlink" href="#brief-exploration-of-the-repo" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>tree<span class="w"> </span>s23-06682-L08
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>s23-06682-L08  [error opening dir]
+
+0 directories, 0 files
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd s23-06682-L08
+pytest
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bash: line 1: cd: s23-06682-L08: No such file or directory
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>============================= test session starts ==============================
+platform linux -- Python 3.9.13, pytest-7.3.2, pluggy-1.0.0
+rootdir: /home/jovyan/work/08-github-actions
+plugins: anyio-3.6.1, nbmake-1.4.1
+collected 0 items
+
+============================ no tests ran in 0.02s =============================
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;cd s23-06682-L08</span><span class="se">\n</span><span class="s1">pytest</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nn">File /opt/conda/lib/python3.9/site-packages/IPython/core/interactiveshell.py:2362,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2360</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2361</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2362</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2363</span> <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File /opt/conda/lib/python3.9/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
+<span class="ne">--&gt; </span><span class="mi">153</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+
+<span class="nn">File /opt/conda/lib/python3.9/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="c1"># in case it&#39;s stuck in uninterruptible sleep. -9 = SIGKILL</span>
+<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="n">rc</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">9</span>
+<span class="ne">--&gt; </span><span class="mi">305</span>     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+
+<span class="ne">CalledProcessError</span>: Command &#39;b&#39;cd s23-06682-L08\npytest\n&#39;&#39; returned non-zero exit status 5.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd s23-06682-L08/pkg
+pip install .
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> s23-06682-L08/example.ipynb
+</pre></div>
+</div>
+</div>
+</div>
+<p>Looks good for now.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="making-github-do-the-work-instead-of-your-computer">
+<h1>Making GitHUB do the work instead of your computer<a class="headerlink" href="#making-github-do-the-work-instead-of-your-computer" title="Permalink to this heading">#</a></h1>
+<p>We have learned about pre-commit hooks, where you leverage git to run tests, do formatting, check styles, etc. These are ideal for your side of the work, that is, we check before submitting to GitHUB.</p>
+<p>There is also a way to do checks /after/ you submit to GitHUB. This is a specific feature of GitHUB, but you may find similar features in other services like bitbucket or gitlab.</p>
+<p>A workflow is a setup for an environment to run some commands in, and a set of commands to be run. Before we get into the details of those two things, we will talk about YAML (<a class="reference external" href="https://yaml.org/">https://yaml.org/</a>), which is recursively defined as “YAML ain’t markup language”. It is a data serialization language often used for configurations. It is specifically a data language, and is not meant to be used to write documents (in contrast to Markdown, for example).</p>
+<p>You can learn YAML here <a class="reference external" href="https://learnxinyminutes.com/docs/yaml/">https://learnxinyminutes.com/docs/yaml/</a>. We will learn by example today.</p>
+<p>Yaml is comprised of key:value pairs (like a dictionary) and lists.  These can be opened/closed by changing indentation levels.</p>
+<p>To get a sense for how to read YAML, we will use pyyaml to read some.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">yaml</span>
+
+
+<span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;name: my action&#39;</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">SafeLoader</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A two line string loads like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">name: grading</span>
+<span class="s1">runs-on: ubuntu-latest</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">SafeLoader</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">steps:</span>
+<span class="s1">  - uses: actions/checkout@v3</span>
+<span class="s1">    with:</span>
+<span class="s1">      fetch-depth: 0</span>
+<span class="s1">  - uses: education/autograding@v1</span>
+<span class="s1">    name: &quot;Grading and Feedback&quot;</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">SafeLoader</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>These files usually get put into a file with an extension of .yml or .yaml. We have to create YAML files to tell GitHUB what to do for actions and workflows.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="github-actions-https-docs-github-com-en-actions">
+<h1>GitHUB Actions (<a class="reference external" href="https://docs.github.com/en/actions">https://docs.github.com/en/actions</a>)<a class="headerlink" href="#github-actions-https-docs-github-com-en-actions" title="Permalink to this heading">#</a></h1>
+<p>To make a new workflow, you create a .yml or .yaml file in ~.github/workflows~.</p>
+<p>GitHUB actions are sophisticated, and cover a lot of ground:
+<a class="reference external" href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#about-yaml-syntax-for-workflows">https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#about-yaml-syntax-for-workflows</a>.</p>
+<p>There are a few things every workflow must have in it. One is a name, and one is what triggers it to run. Here we specify those things. Put this in a file called <code class="docutils literal notranslate"><span class="pre">.github/workflows/my-workflow.yaml</span></code>. This will give your action a name, and it will get run when ever anything is pushed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+mkdir -p s23-06682-L08/.github/workflows
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> s23-06682-L08/.github/workflows/my-workflow.yaml
+<span class="n">name</span><span class="p">:</span> <span class="n">First</span> <span class="n">job</span>
+<span class="n">on</span><span class="p">:</span> <span class="n">push</span>
+
+<span class="n">jobs</span><span class="p">:</span>
+  <span class="n">my_first_job</span><span class="p">:</span>
+    <span class="n">runs</span><span class="o">-</span><span class="n">on</span><span class="p">:</span> <span class="n">ubuntu</span><span class="o">-</span><span class="n">latest</span>
+    <span class="n">steps</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">run</span><span class="p">:</span> <span class="o">|</span>
+          <span class="n">pwd</span> 
+          <span class="n">ls</span> <span class="o">-</span><span class="n">alF</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Go ahead and commit this new file. Before you push it, remember to go to <a class="github reference external" href="https://github.com/settings/tokens">settings/tokens</a> to setup a personal access token. Make sure to select the repo and workflow items this time.</p>
+<p>Also, go ahead and run this command in the repo in the terminal before you push:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git config credential.helper store
+</pre></div>
+</div>
+<p>then, go ahead and push it back to your forked version.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>you may see something like</p>
+<p>jupyter-jkitchin&#64;andrew.cm-11dd7&#64;jupyterhub-dev:~/src/lectures/08-github-actions/s23-06682-L08$ git push
+remote: Invalid username or password.
+fatal: Authentication failed for ‘<a class="github reference external" href="https://github.com/jkitchin/s23-06682-L08.git/">jkitchin/s23-06682-L08.git</a>’</p>
+<p>because there may be a saved value from last class. Try it again and see if it prompts you for a username, and then paste your new token in.</p>
+</div>
+<p>Assuming that worked, now we can go check out what happened. Navigate back to your repo. You can find it like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd s23-06682-L08
+git remote -v
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are a bunch of new things. You can see where the repo was forked from, and that it is one commit ahead of the repo it was forked from.</p>
+<p>Next, navigate to the Actions tab. Let’s see what happened.</p>
+<p>There isn’t much in the actions output. In fact, there is nothing at all! When the virtual machine that runs this spins up, it is bare and has almost nothing in it. It does not even have your repo in it.</p>
+<p>Let’s add a second job and learn a new trick about using “actions”. Here we checkout a copy of our repo, then we update apt so we can install tree. What is with the “sudo”? You need /root/ or /superuser/ privileges to install packages, and we get that with <code class="docutils literal notranslate"><span class="pre">sudo</span></code>. It is short for “superuser do”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> s23-06682-L08/.github/workflows/my-workflow.yaml
+<span class="n">name</span><span class="p">:</span> <span class="n">First</span> <span class="n">job</span>
+<span class="n">on</span><span class="p">:</span> <span class="n">push</span>
+
+<span class="n">jobs</span><span class="p">:</span>
+  <span class="n">my_first_job</span><span class="p">:</span>
+    <span class="n">runs</span><span class="o">-</span><span class="n">on</span><span class="p">:</span> <span class="n">ubuntu</span><span class="o">-</span><span class="n">latest</span>
+    <span class="n">steps</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">run</span><span class="p">:</span> <span class="o">|</span>
+          <span class="n">pwd</span> 
+          <span class="n">ls</span> <span class="o">-</span><span class="n">alF</span>
+
+  <span class="n">my_second_job</span><span class="p">:</span>
+    <span class="n">runs</span><span class="o">-</span><span class="n">on</span><span class="p">:</span> <span class="n">ubuntu</span><span class="o">-</span><span class="n">latest</span>
+    <span class="n">steps</span><span class="p">:</span>      
+      <span class="o">-</span> <span class="n">uses</span><span class="p">:</span> <span class="n">actions</span><span class="o">/</span><span class="n">checkout</span><span class="nd">@v3</span>
+      <span class="o">-</span> <span class="n">run</span><span class="p">:</span> <span class="o">|</span>
+          <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> 
+          <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">tree</span> 
+          <span class="n">tree</span> <span class="o">-</span><span class="n">F</span> <span class="o">.</span>            
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we need to commit and push this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd s23-06682-L08
+git commit .github/workflows/my-workflow.yaml -m &quot;add second job&quot;
+git push
+</pre></div>
+</div>
+</div>
+</div>
+<p>It may take a while, but soon a new Action task should launch.</p>
+<p>Finally, you see we have a copy of our current repository. This still isn’t that exciting, after all, we already knew we had those! We are leading up to setting up some tests.</p>
+<p>It is a little challenging to know what all is installed remotely. Let’s add a third job, this time we install <code class="docutils literal notranslate"><span class="pre">black</span></code> and run it on our repository. We only run in check mode, so if this fails, then this job will fail.</p>
+<p>We don’t need the first or second job any more, so let’s delete that.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> s23-06682-L08/.github/workflows/my-workflow.yaml
+<span class="n">name</span><span class="p">:</span> <span class="n">First</span> <span class="n">job</span>
+<span class="n">on</span><span class="p">:</span> <span class="n">push</span>
+
+<span class="n">jobs</span><span class="p">:</span>
+
+  <span class="n">my_third_job</span><span class="p">:</span>
+    <span class="n">runs</span><span class="o">-</span><span class="n">on</span><span class="p">:</span> <span class="n">ubuntu</span><span class="o">-</span><span class="n">latest</span>
+    <span class="n">steps</span><span class="p">:</span>      
+      <span class="o">-</span> <span class="n">uses</span><span class="p">:</span> <span class="n">actions</span><span class="o">/</span><span class="n">checkout</span><span class="nd">@v3</span>
+      <span class="o">-</span> <span class="n">run</span><span class="p">:</span> <span class="o">|</span>
+          <span class="n">pip</span> <span class="n">install</span> <span class="n">black</span>
+          <span class="n">black</span> <span class="o">--</span><span class="n">check</span> <span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd s23-06682-L08
+git commit .github/workflows/my-workflow.yaml -m &quot;add third job&quot;
+git push
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now go back to your Actions tab. You will see that the third job should have failed. We can fix it by running black locally. Check your email, you should have gotten a notification that a job failed!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd s23-06682-L08
+black .
+git commit -am &quot;ran black&quot;
+git push
+</pre></div>
+</div>
+</div>
+</div>
+<section id="create-a-status-badge">
+<h2>Create a status badge<a class="headerlink" href="#create-a-status-badge" title="Permalink to this heading">#</a></h2>
+<p>In the actions view there is a place to create a status badge. This is some Markdown that GitHUB can render. Copy this to your <a class="reference external" href="http://Readme.md">Readme.md</a> file, then commit and push it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd s23-06682-L08
+git commit README.md -m &quot;add badge&quot;
+git push
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now on gitHUB, you should be able to see the badge.</p>
+<p>Let’s add one new task to run our tests. This one requires us to install all the libraries needed for our test to work. Note that with the checkout action we start in our repo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> s23-06682-L08/.github/workflows/my-workflow.yaml
+<span class="n">name</span><span class="p">:</span> <span class="n">First</span> <span class="n">job</span>
+<span class="n">on</span><span class="p">:</span> <span class="n">push</span>
+
+<span class="n">jobs</span><span class="p">:</span>
+
+  <span class="n">black</span><span class="p">:</span>
+    <span class="n">runs</span><span class="o">-</span><span class="n">on</span><span class="p">:</span> <span class="n">ubuntu</span><span class="o">-</span><span class="n">latest</span>
+    <span class="n">steps</span><span class="p">:</span>      
+      <span class="o">-</span> <span class="n">uses</span><span class="p">:</span> <span class="n">actions</span><span class="o">/</span><span class="n">checkout</span><span class="nd">@v3</span>
+      <span class="o">-</span> <span class="n">run</span><span class="p">:</span> <span class="o">|</span>
+          <span class="n">pip</span> <span class="n">install</span> <span class="n">black</span>
+          <span class="n">black</span> <span class="o">--</span><span class="n">check</span> <span class="o">.</span>
+        
+  <span class="n">pytest</span><span class="p">:</span>
+    <span class="n">runs</span><span class="o">-</span><span class="n">on</span><span class="p">:</span> <span class="n">ubuntu</span><span class="o">-</span><span class="n">latest</span>
+    <span class="n">steps</span><span class="p">:</span>      
+      <span class="o">-</span> <span class="n">uses</span><span class="p">:</span> <span class="n">actions</span><span class="o">/</span><span class="n">checkout</span><span class="nd">@v3</span>
+      <span class="o">-</span> <span class="n">run</span><span class="p">:</span> <span class="o">|</span>
+          <span class="n">pip</span> <span class="n">install</span> <span class="n">matplotlib</span> <span class="n">requests</span> <span class="n">IPython</span> <span class="n">pytest</span>
+          <span class="n">pytest</span> <span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd s23-06682-L08
+git commit -am &quot;add black and pytest with better names&quot;
+git push
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="cross-platform-testing">
+<h1>Cross platform testing<a class="headerlink" href="#cross-platform-testing" title="Permalink to this heading">#</a></h1>
+<p>These tests are more expensive than the Linux tests, so do not use them alot if you don’t need them.</p>
+<section id="testing-on-windows">
+<h2>Testing on Windows.<a class="headerlink" href="#testing-on-windows" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> s23-06682-L08/.github/workflows/windows-workflow.yaml
+<span class="n">name</span><span class="p">:</span> <span class="n">Windows</span> <span class="n">testing</span>
+<span class="n">on</span><span class="p">:</span> <span class="n">push</span>
+
+<span class="n">jobs</span><span class="p">:</span>
+  <span class="n">windows</span><span class="p">:</span>
+    <span class="n">runs</span><span class="o">-</span><span class="n">on</span><span class="p">:</span> <span class="n">windows</span><span class="o">-</span><span class="n">latest</span>
+    <span class="n">steps</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">run</span><span class="p">:</span> <span class="o">|</span>
+          <span class="n">systeminfo</span>
+        
+  <span class="n">pytest</span><span class="p">:</span>
+    <span class="n">runs</span><span class="o">-</span><span class="n">on</span><span class="p">:</span> <span class="n">windows</span><span class="o">-</span><span class="n">lattest</span>
+    <span class="n">steps</span><span class="p">:</span>      
+      <span class="o">-</span> <span class="n">uses</span><span class="p">:</span> <span class="n">actions</span><span class="o">/</span><span class="n">checkout</span><span class="nd">@v3</span>
+      <span class="o">-</span> <span class="n">run</span><span class="p">:</span> <span class="o">|</span>
+          <span class="n">pip</span> <span class="n">install</span> <span class="n">matplotlib</span> <span class="n">requests</span> <span class="n">IPython</span> <span class="n">pytest</span>
+          <span class="n">pytest</span> <span class="o">.</span>        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd s23-06682-L08
+git add .github/workflows/windows-workflow.yaml
+git commit -m &quot;add Windows test&quot;
+git push
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="testing-for-macs">
+<h2>Testing for Macs<a class="headerlink" href="#testing-for-macs" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> s23-06682-L08/.github/workflows/mac-workflow.yaml
+<span class="n">name</span><span class="p">:</span> <span class="n">MacOS</span> <span class="n">testing</span>
+<span class="n">on</span><span class="p">:</span> <span class="n">push</span>
+
+<span class="n">jobs</span><span class="p">:</span>
+  <span class="n">mac</span><span class="p">:</span>
+    <span class="n">runs</span><span class="o">-</span><span class="n">on</span><span class="p">:</span> <span class="n">macos</span><span class="o">-</span><span class="n">latest</span>
+    <span class="n">steps</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">run</span><span class="p">:</span> <span class="o">|</span>
+          <span class="n">pwd</span> 
+          <span class="n">ls</span> <span class="o">-</span><span class="n">alF</span>
+          <span class="n">sw_vers</span>
+        
+  <span class="n">pytest</span><span class="p">:</span>
+    <span class="n">runs</span><span class="o">-</span><span class="n">on</span><span class="p">:</span> <span class="n">macos</span><span class="o">-</span><span class="n">latest</span>
+    <span class="n">steps</span><span class="p">:</span>      
+      <span class="o">-</span> <span class="n">uses</span><span class="p">:</span> <span class="n">actions</span><span class="o">/</span><span class="n">checkout</span><span class="nd">@v3</span>
+      <span class="o">-</span> <span class="n">run</span><span class="p">:</span> <span class="o">|</span>
+          <span class="n">pip</span> <span class="n">install</span> <span class="n">matplotlib</span> <span class="n">requests</span> <span class="n">IPython</span> <span class="n">pytest</span>
+          <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pytest</span>       
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd s23-06682-L08
+git add .github/workflows/mac-workflow.yaml
+git commit -m &quot;add Mac test&quot;
+git push
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="custom-environments-with-docker">
+<h1>Custom environments with Docker<a class="headerlink" href="#custom-environments-with-docker" title="Permalink to this heading">#</a></h1>
+<p>It can be tedious, and time-consuming to have to install everything in your GitHUB actions environment. The tedious part is not too avoidable, that work has to be done somewhere, at least once. The time-consuming part can be problematic though; 1) you have to wait for it each time, 2) for open-source projects the time is “free” but may be capped at 2000 minutes a month (or whatever GitHUB decides it wants). Furthermore, a single workflow can only run up to 58 minutes. There are three strategies to mitigate these: 1) Pay for more time, 2) setup an external server to run your actions, and 3) streamline the actions by using Docker images that are pre-built. We only consider the last of these today, and we only partially consider how to use Docker.</p>
+<p>This example is adapted from <a class="reference external" href="https://docs.github.com/es/actions/creating-actions/creating-a-docker-container-action">https://docs.github.com/es/actions/creating-actions/creating-a-docker-container-action</a>.</p>
+<p>This is an advanced example. It may be the longest version of “Hello World” I have seen yet. There is quite a bit of setup here. The idea is we run a virtual machine inside the virtual machine. Here we use a Dockerfile inside our repo, but you can also use images from Dockerhub, for example.</p>
+<p>Our goal is to run a simple shell script inside a Docker image that is inside GitHUB actions. This allows us to customize the environment, e.g. we could install python, or LaTeX, or any other things we want. We don’t do those things here, and instead focus on the smallest working example we can get get.</p>
+<p>First, we define a shell script called <a class="reference external" href="http://entrypoint.sh">entrypoint.sh</a>. It will take one argument, and echo “Hello argument”. We will also run our tests in this script. Make this script executable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> s23-06682-L08/entrypoint.sh
+<span class="ch">#!/bin/sh -l</span>
+
+<span class="n">echo</span> <span class="s2">&quot;Hello $1&quot;</span>
+<span class="n">pwd</span>
+<span class="n">ls</span>
+<span class="n">pytest</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>s23-06682-L08/entrypoint.sh
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next we make the Dockerfile. We have to provide directions in this file to setup our environment. Docker is complicated, and we won’t get all the way into it. The gist here is we start with a base image <code class="docutils literal notranslate"><span class="pre">python3-slim</span></code>, and then install software in it, and copy our script into it. GitHUB will build the image, and use it for your actions. The <a class="reference external" href="http://entrypoint.sh">entrypoint.sh</a> script is run when the image starts up.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> s23-06682-L08/Dockerfile
+<span class="c1"># Container image that runs your code</span>
+<span class="n">FROM</span> <span class="n">python</span><span class="p">:</span><span class="mi">3</span><span class="o">-</span><span class="n">slim</span> 
+
+<span class="n">RUN</span> <span class="n">pip3</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span> <span class="n">setuptools</span> <span class="n">wheel</span> <span class="n">matplotlib</span> <span class="n">requests</span> <span class="n">IPython</span> <span class="n">pytest</span>
+
+<span class="c1"># Copies your code file from your action repository to the filesystem path `/` of the container</span>
+<span class="n">COPY</span> <span class="n">entrypoint</span><span class="o">.</span><span class="n">sh</span> <span class="o">/</span><span class="n">entrypoint</span><span class="o">.</span><span class="n">sh</span>
+    
+<span class="c1"># Code file to execute when the docker container starts up (`entrypoint.sh`)</span>
+<span class="n">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&quot;sh&quot;</span><span class="p">,</span> <span class="s2">&quot;/entrypoint.sh&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we set up a GitHUB <em>action</em>. This is a yaml file saved as <code class="docutils literal notranslate"><span class="pre">action.yml</span></code> in your repo root. This is a little different than the workflows above. This defines some inputs that will be used and passed to the Docker image.</p>
+<p>The syntax ~$~ is /like/ a python f-string, but in yaml instead. The value of “who-to-greet” will be used in the template string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%writefile  s23-06682-L08/action.yml
+name: &#39;Hello World&#39;
+description: &#39;Greet someone and record the time&#39;
+inputs:
+  who-to-greet:  # id of input
+    description: &#39;Who to greet&#39;
+    required: true
+    default: &#39;World&#39;
+
+runs:
+  using: &#39;docker&#39;
+  image: &#39;Dockerfile&#39;
+  args:
+    - ${{ inputs.who-to-greet }}
+
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we define a workflow to use our action. We specify a “path” to our action, which is of the form <code class="docutils literal notranslate"><span class="pre">&lt;user&gt;/&lt;repo&gt;&#64;&lt;version&gt;</span></code>. For version we use the main branch, which should always use the latest version. Next we define the input we want using <code class="docutils literal notranslate"><span class="pre">with</span></code>. The name of this variable matches the name used in the inputs of the action. Put this into <code class="docutils literal notranslate"><span class="pre">.github/workflows/try-docker.yaml</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> s23-06682-L08/.github/workflows/try-docker.yaml
+<span class="n">name</span><span class="p">:</span> <span class="n">Try</span> <span class="n">Docker</span>
+<span class="n">on</span><span class="p">:</span> <span class="n">push</span>
+
+<span class="n">jobs</span><span class="p">:</span>
+  <span class="n">run</span><span class="o">-</span><span class="n">my</span><span class="o">-</span><span class="n">docker</span><span class="p">:</span>
+    <span class="n">runs</span><span class="o">-</span><span class="n">on</span><span class="p">:</span> <span class="n">ubuntu</span><span class="o">-</span><span class="n">latest</span>
+    <span class="n">steps</span><span class="p">:</span>      
+      <span class="o">-</span> <span class="n">uses</span><span class="p">:</span> <span class="n">actions</span><span class="o">/</span><span class="n">checkout</span><span class="nd">@v3</span>
+      <span class="o">-</span> <span class="n">uses</span><span class="p">:</span> <span class="n">jkitchin</span><span class="o">/</span><span class="n">s23</span><span class="o">-</span><span class="mi">06682</span><span class="o">-</span><span class="n">L08</span><span class="nd">@main</span>
+        <span class="k">with</span><span class="p">:</span>
+          <span class="n">who</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">greet</span><span class="p">:</span> <span class="n">John</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, push these out to GitHUB.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd s23-06682-L08
+git add entrypoint.sh Dockerfile action.yml .github/workflows/try-docker.yaml
+git commit -m &quot;added docker&quot;
+git push
+</pre></div>
+</div>
+</div>
+</div>
+<p>When you push this, you will see in the actions output, “Hello John”, and some other output for the tests.</p>
+<p>This may seem like quite some overkill to print “Hello John”. The real value of this comes when you start using files in the repo as input to do more sophisticated analysis.</p>
+<p>Finally, this Docker image is built at run time. This is not the fastest way to do this. A faster way is to register the images on DockerHUB, and then you just use the image directly.</p>
+<p>There is <em>so much</em> flexibility in Docker images. Their main limitation is they are Linux based.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="cleaning-up">
+<h1>Cleaning up<a class="headerlink" href="#cleaning-up" title="Permalink to this heading">#</a></h1>
+<p>You can delete your GitHUB repo now if you want. Go to the settings tab (something like <a class="github reference external" href="https://github.com/jkitchin/s23-06682-L08/settings">jkitchin/s23-06682-L08</a>). Scroll to the bottom, and click <code class="docutils literal notranslate"><span class="pre">Delete</span> <span class="pre">this</span> <span class="pre">repository</span></code>. Don’t worry, you can re-fork it.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./08-github-actions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../07-github-intro/07-github-intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to GitHUB</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../09-wrapup/09-wrapup.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Wrapping up</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">gitHUB Actions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-setup">Lecture setup</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#brief-exploration-of-the-repo">Brief exploration of the repo</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#making-github-do-the-work-instead-of-your-computer">Making GitHUB do the work instead of your computer</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#github-actions-https-docs-github-com-en-actions">GitHUB Actions (https://docs.github.com/en/actions)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-status-badge">Create a status badge</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-platform-testing">Cross platform testing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-on-windows">Testing on Windows.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-macs">Testing for Macs</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-environments-with-docker">Custom environments with Docker</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-up">Cleaning up</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By John Kitchin
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

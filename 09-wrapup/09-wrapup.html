@@ -1,0 +1,843 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Wrapping up &#8212; Scientific software engineering</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '09-wrapup/09-wrapup';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="gitHUB Actions" href="../08-github-actions/08-github-actions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Scientific Software Engineering
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-introduction/00-introduction-terminals.html">Introduction</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../01-rest-api-openalex/01-rest-api-openalex.html">OpenAlex</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02-python-requests/02-python-requests.html">Python and REST APIs</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../03-python-packaging/03-python-packaging.html">Python packaging and version control</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04-more-python-packaging/04-more-python-packaging.html">More on Python packaging</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../05-python-classes/05-python-classes.html">Introduction Python Classes</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../06-code-quality/06-code-quality.html">Code quality control</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../07-github-intro/07-github-intro.html">Introduction to GitHUB</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../08-github-actions/08-github-actions.html">gitHUB Actions</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Wrapping up</a></li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://lab.amdatascience.com/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/sse&urlpath=lab/tree/sse/docs/09-wrapup/09-wrapup.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jkitchin/sse/blob/main/docs/09-wrapup/09-wrapup.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jkitchin/sse" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jkitchin/sse/issues/new?title=Issue%20on%20page%20%2F09-wrapup/09-wrapup.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/09-wrapup/09-wrapup.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Wrapping up</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Wrapping up</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#there-are-some-dangerous-git-commands">There are some dangerous git commands!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#so-many-opportunities-remain-for-your-openalex-package">So many opportunities remain for your OpenAlex package!</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#many-other-similar-apis-exist">Many other similar APIs exist</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibtex-ris-utilities">Bibtex / RIS utilities</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapping-up-what-we-have-learned-and-didn-t-learn">Wrapping up what we have learned, and didn’t learn</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-utilities">Command-line utilities</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-command-utilities-in-python">Writing command utilities in Python</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#packaging-python-commands">Packaging Python commands</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python-packages">Python packages</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#packaging-classes-and-code-quality">Packaging classes and code quality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#github">GitHUB</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-haven-t-we-covered">What haven’t we covered?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collaborative-work-on-github">Collaborative work on GitHUB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing-and-distributing-your-package-on-pypi">Publishing and distributing your package on PyPi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-on-making-python-packages">Resources on making Python packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-about-github-actions">Learning about GitHUB Actions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#editors-and-integrated-development-environments">Editors and integrated development environments</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#other-helpful-resources">Other helpful resources</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cookiecutter">cookiecutter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environments">virtual environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pytest">pytest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker">Docker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-documentation">Software documentation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#concluding-thoughts">Concluding thoughts</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="wrapping-up">
+<h1>Wrapping up<a class="headerlink" href="#wrapping-up" title="Permalink to this heading">#</a></h1>
+<p><img alt="image" src="../_images/cmu-sse.png" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="there-are-some-dangerous-git-commands">
+<h1>There are some dangerous git commands!<a class="headerlink" href="#there-are-some-dangerous-git-commands" title="Permalink to this heading">#</a></h1>
+<p>git is usually used to make sure you never lose data/code in your work, but there are some scenarios where it is possible to lose code.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clean</span> <span class="pre">-f</span></code> will delete any files not committed to your repository!</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span></code> will delete any changes you have made that are not committed yet.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">&lt;file&gt;</span></code> will undo any changes to the file not committed yet.</p>
+<p>Some other commands can mess up things for you:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-f</span></code> will remove/modify history on remotes. This will be problematic for users when they go to pull as the histories will no longer be related.</p>
+<p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-fr</span> <span class="pre">.git</span></code> will delete the git history.</p>
+<p>See <a class="reference external" href="https://stackoverflow.com/questions/21048765/what-can-cause-data-loss-in-git">this StackOverflow</a> for more examples.</p>
+<p>In general, it is helpful to have backup plans to recover things. For example, in many of the examples above, the effects are local (until you push them), so in the worst case scenario, you simply re-clone the remote repo and start over.</p>
+<p>If you are unsure of what you are doing, before you run these commands, you can make a copy of the repo locally, so that you can restore from it if needed. This is pretty extreme, and would be a case where starting from scratch, or the remote-repo is simply too expensive, or not possible to consider.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="so-many-opportunities-remain-for-your-openalex-package">
+<h1>So many opportunities remain for your OpenAlex package!<a class="headerlink" href="#so-many-opportunities-remain-for-your-openalex-package" title="Permalink to this heading">#</a></h1>
+<p>There are other end-points that you can create classes for including Institutions, Authors, etc.</p>
+<p>You could envision different kinds of graphical representations of papers, e.g. network graphs showing how papers and authors are connected through citation and collaboration networks.</p>
+<p>You might envision some kind of automated report on an Institution or Author that summarizes papers, citations, collaborations, etc.</p>
+<section id="many-other-similar-apis-exist">
+<h2>Many other similar APIs exist<a class="headerlink" href="#many-other-similar-apis-exist" title="Permalink to this heading">#</a></h2>
+<p>You could develop packages to search PubMed, CrossRef, or arXiv for example.</p>
+</section>
+<section id="bibtex-ris-utilities">
+<h2>Bibtex / RIS utilities<a class="headerlink" href="#bibtex-ris-utilities" title="Permalink to this heading">#</a></h2>
+<p>There is still a need for tools to merge, find duplicates, sort, convert, etc. for bibliography entries.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="wrapping-up-what-we-have-learned-and-didn-t-learn">
+<h1>Wrapping up what we have learned, and didn’t learn<a class="headerlink" href="#wrapping-up-what-we-have-learned-and-didn-t-learn" title="Permalink to this heading">#</a></h1>
+<p>We covered a lot of ground in this mini, but this is only the beginning in software development. I took a pretty opinionated path to get you to writing a Python package. I did not get into more complex tools and packaging methods because I vastly prefer a simple “pip install” approach to Python packages. Anything more complex is simply too hard to remember. Our primary jobs are not software engineering most of the time.</p>
+<p>The reality is in my career there have rarely been software engineers available to solve problems for me. There are several obstacles to that:</p>
+<ol class="arabic simple">
+<li><p>They are expensive</p></li>
+<li><p>They don’t understand my problem</p></li>
+<li><p>It is slow to develop software and projects end before the software is done</p></li>
+</ol>
+<p>Practically, this means I have had to solve my problems and learn enough about software engineering to do it. That is not with consequence though; I am not as skilled as a professional software engineer. There are perennial <a class="reference external" href="https://www.sciencedaily.com/releases/2021/05/210525113715.htm">complaints of scientific software quality</a>. We should strive to do better, but that will always be balanced by other demands on our time. The problem is simply solved with time and money, both of which are short in supply.</p>
+<p>Learning to create software packages will help you understand how other software packages (and your own computer) work. This will lead to better utilization of these tools.</p>
+<p>We did not spend a lot of time on Python programming. That is a necessary, but insufficient skill for software engineering! I introduced <em>just enough</em> of it to get to our package. People make whole careers around just Python programming. That is not practical for most of you; you also need domain specific knowledge. There is always a balance to choose, and a different balance applies to different people and their jobs and goals.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="command-line-utilities">
+<h1>Command-line utilities<a class="headerlink" href="#command-line-utilities" title="Permalink to this heading">#</a></h1>
+<p>We started out with command line utilities. These are commands that you run in a terminal by typing the command, options and arguments. These commands can be designed in a variety of ways, ranging from a one-off utility to a composable command that can consume output from another command, and whose output can in turn be consumed by other commands (also called piping commands together).</p>
+<p>Shell commands can be written in any language, and can even be compiled. All that really matters is the name of the command is the same as the executable file, and that file is on your executable path. The executable path is defined (usually) as a colon-delimited list of paths that are directories on your computer where command files live.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some commands are defined by the SHELL that runs in the terminal.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/jkitchin/anaconda3/bin:/Users/jkitchin/anaconda3/condabin:/usr/local/sbin:/usr/local/lib/ruby/gems/3.0.0/bin:/usr/local/opt/ruby/bin:/Users/jkitchin/.gem/ruby/2.6.0/bin:/usr/local/opt/openjdk/bin:/Users/jkitchin/bin:/Users/jkitchin/src/q-e/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/opt/X11/bin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is possible to get some colorful output in a terminal, e.g. using <a class="reference external" href="https://github.com/Textualize/rich">rich</a>, but commands line utilities are usually not intended for interactive gui applications.</p>
+<p>We learned how to use shell commands to interact with web APIs in <a class="reference internal" href="../01-rest-api-openalex/01-rest-api-openalex.html"><span class="doc std std-doc">lecture 01</span></a>. Here we learned about how to get json from a url using <code class="docutils literal notranslate"><span class="pre">curl</span></code>, how to parse it with <code class="docutils literal notranslate"><span class="pre">jq</span></code>, and use those results to output something more readable. This lecture showed some limitations of shell-programming, and led to using Python as a more general command building utility.</p>
+<section id="writing-command-utilities-in-python">
+<h2>Writing command utilities in Python<a class="headerlink" href="#writing-command-utilities-in-python" title="Permalink to this heading">#</a></h2>
+<p>Python is <em>much</em> more flexible and readable than shell programming. In <a class="reference internal" href="../02-python-requests/02-python-requests.html"><span class="doc std std-doc">lecture 02</span></a> we learned how to use Python to make http requests instead of shell commands, and could then leverage the full programming capabilities for analysis and flexible output, and much more flexible command line options.</p>
+<p>Here we wrote a script, made it executable, and put it in our executable path so we could use it in a terminal.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="packaging-python-commands">
+<h1>Packaging Python commands<a class="headerlink" href="#packaging-python-commands" title="Permalink to this heading">#</a></h1>
+<p>Today it is not common to download a script and manually install it. Instead, people expect there to be a “package” and a standard installation method. In Python, one standard installation method is to “pip install” a package. To do this, we had to learn how to put our script into a package that is installable. This process began in <span class="xref myst">lecture 03</span>.</p>
+<p>We learned about the PYTHONPATH, which analogous tp PATH is a list of directories where Python packages are found. We also learned that a Python package is just a directory of files that follow some conventions. There has to be a setup file, and directory of source files to define the package.</p>
+<p>We also began learning about version control using git here. This allowed us to start modifying the package files without worrying about making changes that would break it, or be hard to undo. <a class="reference internal" href="../04-more-python-packaging/04-more-python-packaging.html"><span class="doc std std-doc">lecture 04</span></a> built on this to install and uninstall the package.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="python-packages">
+<h1>Python packages<a class="headerlink" href="#python-packages" title="Permalink to this heading">#</a></h1>
+<p>We moved on from command line utilities in Python, which are great in the shell, but not great for interactive graphical use in Jupyter notebooks. Conceptually, we transitioned from using the terminal as the “app” to using a Notebook as an “app”. A typical way to do this is to develop a Python class that encapsulates the data and functionality you want to use. In <a class="reference internal" href="../05-python-classes/05-python-classes.html"><span class="doc std std-doc">lecture 05</span></a> we introduce the concepts of classes in Python.</p>
+<p>Here we learned about rich outputs in Jupyter notebooks where you can have formatted, functional text (e.g. hyperlinks), and graphical objects like figures that are used to represent Python objects.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="packaging-classes-and-code-quality">
+<h1>Packaging classes and code quality<a class="headerlink" href="#packaging-classes-and-code-quality" title="Permalink to this heading">#</a></h1>
+<p>The next step is to incorporate the class into a package. We learned how to do this in <a class="reference internal" href="../06-code-quality/06-code-quality.html"><span class="doc std std-doc">lecture 06</span></a>. Up to this point we focused on getting code written that actually works. In this lecture we introduced several ideas related to code quality, including automated formatting, code checking and testing. We also learned several ways to automate these tasks through shell scripts, makefiles, and integration with git. These tools make writing better code easier.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/psf/black">black</a></p></li>
+<li><p><a class="reference external" href="https://flake8.pycqa.org/en/latest/">flake8</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pylint-dev/pylint">pylint</a></p></li>
+<li><p><a class="reference external" href="https://pre-commit.com/">pre-commit</a></p></li>
+</ul>
+<p>Related packages</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pycodestyle.pycqa.org/en/latest/%5D">pycodestyle</a> a pep8 compliance checker</p></li>
+<li><p><a class="reference external" href="https://github.com/hhatto/autopep8">autopep8</a> automatic pep8 code formatter</p></li>
+<li><p><a class="reference external" href="https://blue.readthedocs.io/en/latest/">blue</a> a less opinionated formatter than black</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="github">
+<h1>GitHUB<a class="headerlink" href="#github" title="Permalink to this heading">#</a></h1>
+<p>Many software developers use cloud-based version control. We have learned how to use <code class="docutils literal notranslate"><span class="pre">git</span></code> locally, and in <a class="reference internal" href="../07-github-intro/07-github-intro.html"><span class="doc std std-doc">lecture 07</span></a> we learned about GitHUB, which allows you to push your git repositories out to the cloud where others can see and use it. GitHUB provides many new features including the capability for editing code remotely, and access control to allow others to collaborate with you.</p>
+<p>GitHUB Codespaces are a powerful new way to develop code. You start a remote computer that provides an entire, customizable compute environment to develop and test your software in.</p>
+<p>In <a class="reference internal" href="../08-github-actions/08-github-actions.html"><span class="doc std std-doc">lecture 08</span></a> we learned that it is possible to setup GitHUB Actions, which are like commands that get run after certain GitHUB events like when you push your repository. You can use these to automate testing, and you can setup a status badge to show if your repository is passing those tests.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="what-haven-t-we-covered">
+<h1>What haven’t we covered?<a class="headerlink" href="#what-haven-t-we-covered" title="Permalink to this heading">#</a></h1>
+<p>You can also write packages in other languages. These won’t be the same as a Python package, but there will be similar conventions and requirements for them. For example, there are probably other kinds of configuration/setup files, and other required directory structures to identify the “package”.</p>
+<section id="collaborative-work-on-github">
+<h2>Collaborative work on GitHUB<a class="headerlink" href="#collaborative-work-on-github" title="Permalink to this heading">#</a></h2>
+<p>We didn’t have time to get into collaborative work on GitHUB. Each repo can add additional users with permission to push and pull.</p>
+<p>You can also collaborate by <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">pull requests</a>. In this model, you fork the repo, make changes and then submit a pull request. The original repo owner can review it, and if they find it acceptable, they can merge it into the original repo.</p>
+</section>
+<section id="publishing-and-distributing-your-package-on-pypi">
+<h2>Publishing and distributing your package on <a class="reference external" href="https://pypi.org/">PyPi</a><a class="headerlink" href="#publishing-and-distributing-your-package-on-pypi" title="Permalink to this heading">#</a></h2>
+<p>One of the biggest things we haven’t talked about is publishing your packages so you can simply <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;your-package&gt;</span></code>. This is not crucial; once your package is on GitHUB, you can install it with pip easily:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install git+git://github.com/jkitchin/pycse
+</pre></div>
+</div>
+<p>To get your package on PyPi you have to upload it there. See <a class="reference external" href="https://packaging.python.org/en/latest/tutorials/packaging-projects/">https://packaging.python.org/en/latest/tutorials/packaging-projects/</a> for all the details. You will have to create an account with PyPi, and follow some directions to test your package, and then upload it.</p>
+</section>
+<section id="resources-on-making-python-packages">
+<h2>Resources on making Python packages<a class="headerlink" href="#resources-on-making-python-packages" title="Permalink to this heading">#</a></h2>
+<p>There is <em>a lot</em> to writing Python packages, and it changes on a pretty regular basis.
+A book I have used a lot is <a class="reference external" href="https://www.manning.com/books/publishing-python-packages">Publishing Python Packages</a> by Dane Hillard.  The book covers the most modern approaches to Python packages. In some ways I find it a little too modern; I don’t use some of the tools recommended here on a regular basis.</p>
+</section>
+<section id="learning-about-github-actions">
+<h2>Learning about GitHUB Actions<a class="headerlink" href="#learning-about-github-actions" title="Permalink to this heading">#</a></h2>
+<p>There is so much that is possible with GitHUB Actions, basically anything you would do locally, e.g. build software, compile documentation, run tests, etc. You can use it to automatically build websites and push to <a class="reference external" href="https://pages.github.com/">GitHUB pages</a>.</p>
+<p>It is a sophisticated tool though, and it takes time to learn how to think about it and use it. You can start with GitHUB documentation on <a class="reference external" href="https://docs.github.com/en/actions/learn-github-actions">GitHUB Actions</a>.</p>
+<p>A book I used early on is <a class="reference external" href="https://mheap.gumroad.com/l/actionsbook">Building GitHUB Actions a step by step guide</a>. This books shows some example applications and covers Dockerfiles, actions and workflows.</p>
+</section>
+<section id="editors-and-integrated-development-environments">
+<h2>Editors and integrated development environments<a class="headerlink" href="#editors-and-integrated-development-environments" title="Permalink to this heading">#</a></h2>
+<p>We mostly used the editor in Jupyter HUB for this course. Although the notebook and editor support some features like code completion, tooltips, and syntax highlighting, it is overall pretty limited compared to something like VS Code or a dedicated IDE like <a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a>. These environments are sophisticated tools that take significant time to configure and master. If you do a lot of software development, you may want to invest some time in getting skilled in one of these tools.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="other-helpful-resources">
+<h1>Other helpful resources<a class="headerlink" href="#other-helpful-resources" title="Permalink to this heading">#</a></h1>
+<p>One of the best ways to learn how to write packages is to mimic existing packages. Any open-source package should have the source code available for you to study and learn from. You can learn about package structure, Python programming, or algorithms and methods this way. So if there is a package you like, find its source and start reading it!</p>
+<p>In practice, I frequently use packages I have written before as templates for new projects.</p>
+<section id="cookiecutter">
+<h2>cookiecutter<a class="headerlink" href="#cookiecutter" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://cookiecutter.readthedocs.io/en/stable/">cookiecutter</a> can help you create python packages from templates. See <a class="reference external" href="https://cookiecutter.readthedocs.io/en/stable/tutorials/tutorial1.html#case-study-cookiecutter-pypackage">this example</a> to see what is possible. I find the amount of configuration and volume of files a little overwhelming, but once you get more familiar with it it can be a time saver. You can also create your own templates that might be simpler for your needs.</p>
+</section>
+<section id="virtual-environments">
+<h2>virtual environments<a class="headerlink" href="#virtual-environments" title="Permalink to this heading">#</a></h2>
+<p>The idea of a virtual environment is a great one. You create an isolated environment to install packages in that doesn’t interfere with any other environment. In theory they sound great. In practice, I have not found a tool for this that actually does this, or that doesn’t add some additional complexity that isn’t worth it eventually. It is easy to still do the wrong things with these; e.g. you have to remember to activate and deactivate the environments, so it is pretty easy to have the wrong one active when doing something.
+These days, if I need this kind of isolation, I usually go to Docker. That is a heavyweight solution though.</p>
+<p>Python provides <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a>. This is a reasonable solution if you are just trying to isolate your Python environment. It does not solve the issue of isolating other things though, e.g. system libraries.</p>
+<p><a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">conda environments</a> were one of the killer features of conda. conda is also an alternative package manager to pip, and it was built to solve some shortcomings of pip (especially when there is compiled code). These days though, conda feels slow in dependency resolution, and a faster tool called <a class="reference external" href="https://mamba.readthedocs.io/en/latest/">mamba</a> is often used in its place for package management.</p>
+<p><a class="reference external" href="https://python-poetry.org/">poetry</a> is a software tool for managing python packaging and dependency management. It can also be used to augment or create virtual environments.</p>
+</section>
+<section id="pytest">
+<h2>pytest<a class="headerlink" href="#pytest" title="Permalink to this heading">#</a></h2>
+<p>We looked at pretty simple tests with <a class="reference external" href="https://docs.pytest.org/en/7.3.x/">pytest</a>. There is much more that is possible. I learned alot about pytest in the book <a class="reference external" href="https://pragprog.com/titles/bopytest2/python-testing-with-pytest-second-edition/">Python Testing with pytest</a>.</p>
+</section>
+<section id="docker">
+<h2>Docker<a class="headerlink" href="#docker" title="Permalink to this heading">#</a></h2>
+<p>We only briefly touched on <a class="reference external" href="https://www.docker.com/">docker</a>. This container technology is something you are likely to come across if you do much in the cloud. Docker is free for open-source projects, and more complicated for companies.</p>
+<p>Docker is remarkably complex, with performance and security concerns that need to be handled correctly. I learned a lot about these at <a class="reference external" href="https://pythonspeed.com/products/docker/">https://pythonspeed.com/products/docker/</a>. You can read a lot of the articles at <a class="reference external" href="https://pythonspeed.com/docker/">https://pythonspeed.com/docker/</a>. I also learned from <a class="reference external" href="https://dockerbook.com/">https://dockerbook.com/</a>.</p>
+</section>
+<section id="software-documentation">
+<h2>Software documentation<a class="headerlink" href="#software-documentation" title="Permalink to this heading">#</a></h2>
+<p>We did not touch on “proper” documentation. Many projects have a dedicated directory of documentation files that are used to build web documentation. These pages are hosted at sites like <a class="reference external" href="https://readthedocs.org/">Read the Docs</a>, or GitHUB pages.</p>
+<p>For example, matplotlib has documentation files at <a class="github reference external" href="https://github.com/matplotlib/matplotlib/tree/main/doc">matplotlib/matplotlib</a>. This directory contains files in a <a class="reference external" href="https://devguide.python.org/documentation/markup/">restructured text</a> format that <a class="reference external" href="https://www.sphinx-doc.org/en/master/">sphinx</a> uses to render html pages that are hosted at <a class="reference external" href="https://matplotlib.org/stable/index.html">https://matplotlib.org/stable/index.html</a>.</p>
+<p>The <a class="reference external" href="https://github.com/ddbourgin/numpy-ml">numpy-ml</a> project also uses rst files that are hosted at <a class="reference external" href="https://numpy-ml.readthedocs.io/en/latest/">https://numpy-ml.readthedocs.io/en/latest/</a>.</p>
+<p>Other projects are starting to use <a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">jupyter-book</a>.</p>
+<p>What you use is less important than using something, but some of these tools make nicer looking, more functional (e.g. searchable) documentation with less work (although that is somewhat compensated for with the effort required to learn their ways).</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="concluding-thoughts">
+<h1>Concluding thoughts<a class="headerlink" href="#concluding-thoughts" title="Permalink to this heading">#</a></h1>
+<p>Software engineering has been and remains one of the most quickly evolving fields. When I started in the 90s, Python was at version 1.5. During my career it spent many years as “Python 2” and then changed to a somewhat incompatible “Python 3”. Today we are at Python 3.10/11. One of the biggest changes was the development of machine learning tools, and these have changed the fastest! When I was on sabbatical at Google, code I wrote in Tensorflow at the beginning of the year was incompatible with the version of Tensorflow released just 6 months later.</p>
+<p>The change in language, tools, approaches has been relentless, and the rate of change even increases with the creation of new languages and tools every day.</p>
+<p>In my experience, sometimes things that used to work, no longer work because of a change. It has been important to build a foundation of understanding of how computers work to troubleshoot and debug these issues. For example, understanding how computers find commands, or libraries, how Python finds libraries to import, etc. There are not enough classes in the world to provide you with this knowledge. You have to take every opportunity you can to learn things you don’t know. You also have to invest time in keeping that knowledge up to date.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./09-wrapup"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../08-github-actions/08-github-actions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">gitHUB Actions</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Wrapping up</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#there-are-some-dangerous-git-commands">There are some dangerous git commands!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#so-many-opportunities-remain-for-your-openalex-package">So many opportunities remain for your OpenAlex package!</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#many-other-similar-apis-exist">Many other similar APIs exist</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibtex-ris-utilities">Bibtex / RIS utilities</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapping-up-what-we-have-learned-and-didn-t-learn">Wrapping up what we have learned, and didn’t learn</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-utilities">Command-line utilities</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-command-utilities-in-python">Writing command utilities in Python</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#packaging-python-commands">Packaging Python commands</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python-packages">Python packages</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#packaging-classes-and-code-quality">Packaging classes and code quality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#github">GitHUB</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-haven-t-we-covered">What haven’t we covered?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collaborative-work-on-github">Collaborative work on GitHUB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing-and-distributing-your-package-on-pypi">Publishing and distributing your package on PyPi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-on-making-python-packages">Resources on making Python packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-about-github-actions">Learning about GitHUB Actions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#editors-and-integrated-development-environments">Editors and integrated development environments</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#other-helpful-resources">Other helpful resources</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cookiecutter">cookiecutter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environments">virtual environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pytest">pytest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker">Docker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-documentation">Software documentation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#concluding-thoughts">Concluding thoughts</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By John Kitchin
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
