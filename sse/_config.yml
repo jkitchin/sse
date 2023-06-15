@@ -14,8 +14,10 @@ exclude_patterns: [.virtual_documents/*]
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: "off"
-  allow_errors: true  
+  execute_notebooks: auto
+  allow_errors: true
+  exclude_patterns:
+    - '08-github-actions/08-github-actions.ipynb'
 
 # Define the name of the latex output file for PDF builds
 latex:
