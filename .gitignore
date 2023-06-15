@@ -1,0 +1,6 @@
+.virtual_documents
+.jupyter_ystore.db
+.DS_Store
+_build
+.ipynb_checkpoints
+__pycache__
