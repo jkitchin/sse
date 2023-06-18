@@ -39,6 +39,10 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  comments:
+    utterances:
+      repo: jkitchin/dsmles
+    hypothesis: true  
 
 launch_buttons:
   colab_url: "https://colab.research.google.com"
