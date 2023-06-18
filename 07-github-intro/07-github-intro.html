@@ -1,508 +1,445 @@
 
-
 <!DOCTYPE html>
 
-
-<html lang="en" >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Introduction to GitHUB &#8212; Scientific software engineering</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
-  
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "jkitchin/dsmles");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '07-github-intro/07-github-intro';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="gitHUB Actions" href="../08-github-actions/08-github-actions.html" />
     <link rel="prev" title="Code quality control" href="../06-code-quality/06-code-quality.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="../intro.html">
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="../_static/cmu-sse.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/cmu-sse.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    Welcome to Scientific Software Engineering
-                </a>
-            </li>
-        </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../00-introduction/00-introduction-terminals.html">Introduction</a></li>
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../01-rest-api-openalex/01-rest-api-openalex.html">OpenAlex</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../02-python-requests/02-python-requests.html">Python and REST APIs</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="../03-python-packaging/03-python-packaging.html">Python packaging and version control</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../04-more-python-packaging/04-more-python-packaging.html">More on Python packaging</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../05-python-classes/05-python-classes.html">Introduction Python Classes</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../06-code-quality/06-code-quality.html">Code quality control</a></li>
-
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to GitHUB</a></li>
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../08-github-actions/08-github-actions.html">gitHUB Actions</a></li>
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../09-wrapup/09-wrapup.html">Wrapping up</a></li>
-
-
-
-
-
-
-
-
-
-
-
+      
+      <img src="../_static/cmu-sse.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Scientific software engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to Scientific Software Engineering
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00-introduction/00-introduction-terminals.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-rest-api-openalex/01-rest-api-openalex.html">
+   OpenAlex
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-python-requests/02-python-requests.html">
+   Python and REST APIs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-python-packaging/03-python-packaging.html">
+   Python packaging and version control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-more-python-packaging/04-more-python-packaging.html">
+   More on Python packaging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-python-classes/05-python-classes.html">
+   Introduction Python Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-code-quality/06-code-quality.html">
+   Code quality control
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction to GitHUB
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-github-actions/08-github-actions.html">
+   gitHUB Actions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../09-wrapup/09-wrapup.html">
+   Wrapping up
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav></div>
-    </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
 
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
-
-<div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://lab.amdatascience.com/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/sse&urlpath=lab/tree/sse/docs/07-github-intro/07-github-intro.ipynb&branch=main" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../_static/images/logo_jupyterhub.svg">
-  </span>
-<span class="btn__text-container">JupyterHub</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/jkitchin/sse/blob/main/docs/07-github-intro/07-github-intro.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
 </div>
 
 
+          
 
 
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/jkitchin/sse" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/jkitchin/sse/issues/new?title=Issue%20on%20page%20%2F07-github-intro/07-github-intro.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../_sources/07-github-intro/07-github-intro.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
-  
-</div>
-</div>
-              
-              
-
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introduction to GitHUB</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
             
-            <div>
-                <h2> Contents </h2>
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/07-github-intro/07-github-intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jkitchin/sse"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/jkitchin/sse/issues/new?title=Issue%20on%20page%20%2F07-github-intro/07-github-intro.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/jkitchin/sse/main?urlpath=lab/tree/docs/07-github-intro/07-github-intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://lab.amdatascience.com//hub/user-redirect/git-pull?repo=https://github.com/jkitchin/sse&urlpath=lab/tree/sse/docs/07-github-intro/07-github-intro.ipynb&branch=main"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/jkitchin/sse/blob/main/docs/07-github-intro/07-github-intro.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
             </div>
-            <nav aria-label="Page">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction to GitHUB</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-a-repo-on-github">Setting up a repo on GitHUB</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-repo-here-in-the-jupyter-hub">Clone the repo here in the Jupyter Hub</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-code-files-on-github">Working with code files on GitHUB</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code-in-the-browser">VS Code in the browser</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#github-codespaces">GitHUB Codespaces</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-jupyter-hub">Back to Jupyter Hub</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-merge-conflicts">Dealing with merge conflicts</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapping-up-thoughts-on-codespaces">Wrapping up thoughts on Codespaces</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#next-time">Next time</a></li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction to GitHUB
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-a-repo-on-github">
+   Setting up a repo on GitHUB
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clone-the-repo-here-in-the-jupyter-hub">
+     Clone the repo here in the Jupyter Hub
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-with-code-files-on-github">
+   Working with code files on GitHUB
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vs-code-in-the-browser">
+   VS Code in the browser
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-codespaces">
+   GitHUB Codespaces
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#back-to-jupyter-hub">
+   Back to Jupyter Hub
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dealing-with-merge-conflicts">
+     Dealing with merge conflicts
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wrapping-up-thoughts-on-codespaces">
+   Wrapping up thoughts on Codespaces
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-time">
+   Next time
+  </a>
+ </li>
 </ul>
 
             </nav>
         </div>
     </div>
 </div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to GitHUB</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction to GitHUB
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-a-repo-on-github">
+   Setting up a repo on GitHUB
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clone-the-repo-here-in-the-jupyter-hub">
+     Clone the repo here in the Jupyter Hub
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-with-code-files-on-github">
+   Working with code files on GitHUB
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vs-code-in-the-browser">
+   VS Code in the browser
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-codespaces">
+   GitHUB Codespaces
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#back-to-jupyter-hub">
+   Back to Jupyter Hub
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dealing-with-merge-conflicts">
+     Dealing with merge conflicts
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wrapping-up-thoughts-on-codespaces">
+   Wrapping up thoughts on Codespaces
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-time">
+   Next time
+  </a>
+ </li>
+</ul>
 
-              
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-github">
-<h1>Introduction to GitHUB<a class="headerlink" href="#introduction-to-github" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-github">
+<h1>Introduction to GitHUB<a class="headerlink" href="#introduction-to-github" title="Permalink to this headline">¶</a></h1>
 <p>So far we have only used git locally, i.e. in the JupyterHUB. git was designed to be distributed, which means used on many machines, and collaborative, i.e. many people can make contributions. A common model for doing this is there is a central location where a repository is saved. Anyone can make a copy of that repository (called a clone) on their local machine. Then they can make modifications to their copy, and optionally push the changes back to the central location.</p>
-<p><a class="reference external" href="https://github.com/">GitHUB</a> is one such solution. To use GitHUB you need to make an account with them. You can see my account at <a class="github reference external" href="https://github.com/jkitchin">jkitchin</a>. There you can find all the public repositories I have worked on, and you can look at the source code and version history of them.</p>
+<p><a class="reference external" href="https://github.com/">GitHUB</a> is one such solution. To use GitHUB you need to make an account with them. You can see my account at <a class="reference external" href="https://github.com/jkitchin">https://github.com/jkitchin</a>. There you can find all the public repositories I have worked on, and you can look at the source code and version history of them.</p>
 <p>GitHUB provides many features beyond just git. There is a feature called GitHUB actions that can automate different activities like running tests. There is also GitHUB Codespaces where you can develop software directly in your browser.</p>
 <p>There are other sites similar to GitHUB: GitLab and Bitbucket are two common ones. All of them have a free tier, and a paid tier with more features.</p>
 <div class="cell docutils container">
@@ -515,32 +452,32 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-        <iframe
-            width="400"
-            height="300"
-            src="https://www.youtube.com/embed/KElZ9uveNCs"
-            frameborder="0"
-            allowfullscreen
-            
-        ></iframe>
-        </div></div>
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/KElZ9uveNCs"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="setting-up-a-repo-on-github">
-<h1>Setting up a repo on GitHUB<a class="headerlink" href="#setting-up-a-repo-on-github" title="Permalink to this heading">#</a></h1>
-<p>First, go to your GitHUB account (something like <a class="github reference external" href="https://github.com/"></a><username>?tab=repositories). We are going to first setup a new repository.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="setting-up-a-repo-on-github">
+<h1>Setting up a repo on GitHUB<a class="headerlink" href="#setting-up-a-repo-on-github" title="Permalink to this headline">¶</a></h1>
+<p>First, go to your GitHUB account (something like <a class="reference external" href="https://github.com/">https://github.com/</a><username>?tab=repositories). We are going to first setup a new repository.</p>
 <p>Click on the green button for a new repository:
 <img alt="image.png" src="../_images/07-gh-new.png" /></p>
 <p>Give it a name, fill out the details and then select Create repository.</p>
-<section id="clone-the-repo-here-in-the-jupyter-hub">
-<h2>Clone the repo here in the Jupyter Hub<a class="headerlink" href="#clone-the-repo-here-in-the-jupyter-hub" title="Permalink to this heading">#</a></h2>
+<div class="section" id="clone-the-repo-here-in-the-jupyter-hub">
+<h2>Clone the repo here in the Jupyter Hub<a class="headerlink" href="#clone-the-repo-here-in-the-jupyter-hub" title="Permalink to this headline">¶</a></h2>
 <p>Use a command like this to clone your repo. You can clone this one, but you won’t be able to push to it later.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/Steel-Bank-codespaces/23-example.git
 </pre></div>
 </div>
 <p>This will make a local copy you can work in. Go ahead and change into that directory, and make two files: <a class="reference external" href="http://setup.py">setup.py</a>, and <code class="docutils literal notranslate"><span class="pre">pkg/__init__.py</span></code>. For now they can be empty. Add these files to your git repo and commit them.</p>
 <p>These files are locally under version control. Now we need to get them back to GitHUB. To do that we have to setup a personal access token. See <a class="reference external" href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic">https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic</a>.</p>
-<p>Go to <a class="github reference external" href="https://github.com/settings/tokens">settings/tokens</a>, and click Generate new token. We only need repo permissions, so click that box. You will have to save this token to a file, you won’t be able to see it again.</p>
+<p>Go to <a class="reference external" href="https://github.com/settings/tokens">https://github.com/settings/tokens</a>, and click Generate new token. We only need repo permissions, so click that box. You will have to save this token to a file, you won’t be able to see it again.</p>
 <p>Once you have a token, you can go to a terminal in the git repo, and run</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git push
 </pre></div>
@@ -565,10 +502,10 @@ To https://github.com/Steel-Bank-codespaces/23-example.git
 </pre></div>
 </div>
 <p>You will still have to enter your username and token one more time, but after that it is stored for you and should not bother you again.</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="working-with-code-files-on-github">
-<h1>Working with code files on GitHUB<a class="headerlink" href="#working-with-code-files-on-github" title="Permalink to this heading">#</a></h1>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="working-with-code-files-on-github">
+<h1>Working with code files on GitHUB<a class="headerlink" href="#working-with-code-files-on-github" title="Permalink to this headline">¶</a></h1>
 <p>GitHub provides two ways to edit files. Navigate to the <a class="reference external" href="http://README.md">README.md</a> file in your repo on GitHUB. Click the pencil icon. You can edit the file right in the browser, and directly commit the changes.</p>
 <p>Note that now, your local repo is behind in commits:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>jupyter-jkitchin@andrew.cm-11dd7@jupyterhub-dev:~/src/lectures/07-github-intro/23-example$ git status
@@ -594,21 +531,21 @@ Fast-forward
 </pre></div>
 </div>
 <p>In browser editing is extremely convenient for small changes.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="vs-code-in-the-browser">
-<h1>VS Code in the browser<a class="headerlink" href="#vs-code-in-the-browser" title="Permalink to this heading">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="vs-code-in-the-browser">
+<h1>VS Code in the browser<a class="headerlink" href="#vs-code-in-the-browser" title="Permalink to this headline">¶</a></h1>
 <p>You can get a much fancier editor by pressing . in a code file in your repo. This will launch a Browser version of VS Code. This is a little more sophisticated and has more of a learning curve. You still have to make commits back to the repo.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="github-codespaces">
-<h1>GitHUB Codespaces<a class="headerlink" href="#github-codespaces" title="Permalink to this heading">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="github-codespaces">
+<h1>GitHUB Codespaces<a class="headerlink" href="#github-codespaces" title="Permalink to this headline">¶</a></h1>
 <p>An even more advanced option is to open a “CodeSpace”.</p>
 <p><img alt="image.png" src="../_images/07-gh-cs.png" /></p>
-<p>This is a full computational environment that runs in VS Code, complete with a terminal. It is like the JupyterHUB we use in class, it even can run Jupyter notebooks. It does take quite a bit of configuration to get something as functional as we have (I have already done that configuration for you). Later, you can learn more about sophisticated codespaces by studying the repos at <a class="github reference external" href="https://github.com/Steel-Bank-codespaces">Steel-Bank-codespaces</a>. For now, we work with the base environment.</p>
+<p>This is a full computational environment that runs in VS Code, complete with a terminal. It is like the JupyterHUB we use in class, it even can run Jupyter notebooks. It does take quite a bit of configuration to get something as functional as we have (I have already done that configuration for you). Later, you can learn more about sophisticated codespaces by studying the repos at <a class="reference external" href="https://github.com/Steel-Bank-codespaces">https://github.com/Steel-Bank-codespaces</a>. For now, we work with the base environment.</p>
 <p>A critical point to remember about a Codespace is that it is separate from your repo. You have to commit <strong>and push</strong> changes to the repo if you want to see them on GitHUB. You can even create independent Codespaces on the same repo; these do not see each other, and are like branches.</p>
 <p>Make some new edits to the <a class="reference external" href="http://README.md">README.md</a> file, then commit to the repo. Note this does not make it go to your repo on GitHUB. You also have to push the changes. Luckily, there are no authentication issues here, you simply run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="back-to-jupyter-hub">
-<h1>Back to Jupyter Hub<a class="headerlink" href="#back-to-jupyter-hub" title="Permalink to this heading">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="back-to-jupyter-hub">
+<h1>Back to Jupyter Hub<a class="headerlink" href="#back-to-jupyter-hub" title="Permalink to this headline">¶</a></h1>
 <p>Go back to your <a class="reference external" href="http://README.md">README.md</a> file and edit it locally here. Go ahead and commit it locally.</p>
 <p>Your local repo should be “behind” the remote repo. That means there are commits remotely that you don’t have locally. If you try to push now you get an error:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>jupyter-jkitchin@andrew.cm-11dd7@jupyterhub-dev:~/src/lectures/07-github-intro/23-example$ git push
@@ -628,8 +565,8 @@ hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; fo
 <span class="n">Automatic</span> <span class="n">merge</span> <span class="n">failed</span><span class="p">;</span> <span class="n">fix</span> <span class="n">conflicts</span> <span class="ow">and</span> <span class="n">then</span> <span class="n">commit</span> <span class="n">the</span> <span class="n">result</span><span class="o">.</span>
 </pre></div>
 </div>
-<section id="dealing-with-merge-conflicts">
-<h2>Dealing with merge conflicts<a class="headerlink" href="#dealing-with-merge-conflicts" title="Permalink to this heading">#</a></h2>
+<div class="section" id="dealing-with-merge-conflicts">
+<h2>Dealing with merge conflicts<a class="headerlink" href="#dealing-with-merge-conflicts" title="Permalink to this headline">¶</a></h2>
 <p>merge conflicts happen when there are conflicting changes to a line in a file. git modifies that file with syntax like this to show you the problem. Here git is unable to tell which lines to keep. You have to make that decision.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 What about other stuff?
@@ -646,19 +583,19 @@ git push
 </pre></div>
 </div>
 <p>merge conflicts with a single user are not too common, but with so many ways to edit a repo now, they are possible!</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="wrapping-up-thoughts-on-codespaces">
-<h1>Wrapping up thoughts on Codespaces<a class="headerlink" href="#wrapping-up-thoughts-on-codespaces" title="Permalink to this heading">#</a></h1>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="wrapping-up-thoughts-on-codespaces">
+<h1>Wrapping up thoughts on Codespaces<a class="headerlink" href="#wrapping-up-thoughts-on-codespaces" title="Permalink to this headline">¶</a></h1>
 <p>GitHub will provides each Free plan account 120 core hours, or 60 hours of run time for a 2 core codespace, plus 15 GB of storage to use each month.</p>
 <p>Codespaces shut down after ~30 minutes of inactivity. After ~2 weeks of inactivity Codespaces are deleted.</p>
 <p>They are persistent until they are deleted, which means you can restart them later and continue your work. They are intended though to be temporary development environments where you start in a clean state, do your work, commit changes, and then delete the Codespace.</p>
 <p>You can setup almost any environment you want in a Codespace. See <a class="reference external" href="https://docs.github.com/en/codespaces">https://docs.github.com/en/codespaces</a>. Doing this requires learning about Docker files and devcontainer configuration. Building the images can be slow…</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="next-time">
-<h1>Next time<a class="headerlink" href="#next-time" title="Permalink to this heading">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="next-time">
+<h1>Next time<a class="headerlink" href="#next-time" title="Permalink to this headline">¶</a></h1>
 <p>Coupling automation with GitHUB via GitHUB actions.</p>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -672,7 +609,7 @@ git push
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./07-github-intro"
         },
         predefinedOutput: true
@@ -680,119 +617,44 @@ git push
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="../06-code-quality/06-code-quality.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Code quality control</p>
-      </div>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../06-code-quality/06-code-quality.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Code quality control</p>
+        </div>
     </a>
-    <a class="right-next"
-       href="../08-github-actions/08-github-actions.html"
-       title="next page">
-      <div class="prev-next-info">
+    <a class='right-next' id="next-link" href="../08-github-actions/08-github-actions.html" title="next page">
+    <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">gitHUB Actions</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
-</div></div>
-  
-</div>
-
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction to GitHUB</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-a-repo-on-github">Setting up a repo on GitHUB</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-repo-here-in-the-jupyter-hub">Clone the repo here in the Jupyter Hub</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-code-files-on-github">Working with code files on GitHUB</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code-in-the-browser">VS Code in the browser</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#github-codespaces">GitHUB Codespaces</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-jupyter-hub">Back to Jupyter Hub</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-merge-conflicts">Dealing with merge conflicts</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapping-up-thoughts-on-codespaces">Wrapping up thoughts on Codespaces</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#next-time">Next time</a></li>
-</ul>
-
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By John Kitchin
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  <p class="copyright">
-    
-      © Copyright 2023.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
     </div>
-  </div>
-  
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By John Kitchin<br/>
+    
+        &copy; Copyright 2023.<br/>
+  </p>
+</footer>
+</main>
 
-  <footer class="bd-footer">
-  </footer>
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
   </body>
 </html>

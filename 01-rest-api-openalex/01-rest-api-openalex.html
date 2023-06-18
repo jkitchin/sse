@@ -1,509 +1,437 @@
 
-
 <!DOCTYPE html>
 
-
-<html lang="en" >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OpenAlex &#8212; Scientific software engineering</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
-  
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "jkitchin/dsmles");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '01-rest-api-openalex/01-rest-api-openalex';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Python and REST APIs" href="../02-python-requests/02-python-requests.html" />
     <link rel="prev" title="Introduction" href="../00-introduction/00-introduction-terminals.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="../intro.html">
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="../_static/cmu-sse.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/cmu-sse.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    Welcome to Scientific Software Engineering
-                </a>
-            </li>
-        </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../00-introduction/00-introduction-terminals.html">Introduction</a></li>
-
-
-
-
-
-
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">OpenAlex</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../02-python-requests/02-python-requests.html">Python and REST APIs</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="../03-python-packaging/03-python-packaging.html">Python packaging and version control</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../04-more-python-packaging/04-more-python-packaging.html">More on Python packaging</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../05-python-classes/05-python-classes.html">Introduction Python Classes</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../06-code-quality/06-code-quality.html">Code quality control</a></li>
-
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../07-github-intro/07-github-intro.html">Introduction to GitHUB</a></li>
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../08-github-actions/08-github-actions.html">gitHUB Actions</a></li>
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../09-wrapup/09-wrapup.html">Wrapping up</a></li>
-
-
-
-
-
-
-
-
-
-
-
+      
+      <img src="../_static/cmu-sse.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Scientific software engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to Scientific Software Engineering
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00-introduction/00-introduction-terminals.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   OpenAlex
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-python-requests/02-python-requests.html">
+   Python and REST APIs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-python-packaging/03-python-packaging.html">
+   Python packaging and version control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-more-python-packaging/04-more-python-packaging.html">
+   More on Python packaging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-python-classes/05-python-classes.html">
+   Introduction Python Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-code-quality/06-code-quality.html">
+   Code quality control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-github-intro/07-github-intro.html">
+   Introduction to GitHUB
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-github-actions/08-github-actions.html">
+   gitHUB Actions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../09-wrapup/09-wrapup.html">
+   Wrapping up
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav></div>
-    </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
 
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
-
-<div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://lab.amdatascience.com/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/sse&urlpath=lab/tree/sse/docs/01-rest-api-openalex/01-rest-api-openalex.ipynb&branch=main" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../_static/images/logo_jupyterhub.svg">
-  </span>
-<span class="btn__text-container">JupyterHub</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/jkitchin/sse/blob/main/docs/01-rest-api-openalex/01-rest-api-openalex.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
 </div>
 
 
+          
 
 
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/jkitchin/sse" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/jkitchin/sse/issues/new?title=Issue%20on%20page%20%2F01-rest-api-openalex/01-rest-api-openalex.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../_sources/01-rest-api-openalex/01-rest-api-openalex.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
-  
-</div>
-</div>
-              
-              
-
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>OpenAlex</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
             
-            <div>
-                <h2> Contents </h2>
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/01-rest-api-openalex/01-rest-api-openalex.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jkitchin/sse"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/jkitchin/sse/issues/new?title=Issue%20on%20page%20%2F01-rest-api-openalex/01-rest-api-openalex.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/jkitchin/sse/main?urlpath=lab/tree/docs/01-rest-api-openalex/01-rest-api-openalex.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://lab.amdatascience.com//hub/user-redirect/git-pull?repo=https://github.com/jkitchin/sse&urlpath=lab/tree/sse/docs/01-rest-api-openalex/01-rest-api-openalex.ipynb&branch=main"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/jkitchin/sse/blob/main/docs/01-rest-api-openalex/01-rest-api-openalex.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
             </div>
-            <nav aria-label="Page">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">OpenAlex</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#api">API</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#json">JSON</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-rest-apis-in-the-shell">Using REST APIs in the shell</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-the-institutions-endpoint">Exploring the institutions endpoint</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jq-shell-command-to-parse-json-files">jq - shell command to parse json files</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-shell-script">Writing a shell script</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openalex-institutions-script">OpenAlex institutions script</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   OpenAlex
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#api">
+   API
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#json">
+   JSON
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-rest-apis-in-the-shell">
+   Using REST APIs in the shell
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exploring-the-institutions-endpoint">
+     Exploring the institutions endpoint
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jq-shell-command-to-parse-json-files">
+   jq - shell command to parse json files
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-a-shell-script">
+   Writing a shell script
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#openalex-institutions-script">
+     OpenAlex institutions script
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
 </ul>
 
             </nav>
         </div>
     </div>
 </div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>OpenAlex</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   OpenAlex
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#api">
+   API
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#json">
+   JSON
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-rest-apis-in-the-shell">
+   Using REST APIs in the shell
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exploring-the-institutions-endpoint">
+     Exploring the institutions endpoint
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jq-shell-command-to-parse-json-files">
+   jq - shell command to parse json files
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-a-shell-script">
+   Writing a shell script
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#openalex-institutions-script">
+     OpenAlex institutions script
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+</ul>
 
-              
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
-  <section class="tex2jax_ignore mathjax_ignore" id="openalex">
-<h1>OpenAlex<a class="headerlink" href="#openalex" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="openalex">
+<h1>OpenAlex<a class="headerlink" href="#openalex" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://openalex.org/">https://openalex.org/</a> is an open catalog of the scientific literature. You can access information about papers, authors and more both through a browser, and via an API.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="api">
-<h1>API<a class="headerlink" href="#api" title="Permalink to this heading">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="api">
+<h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
 <p>An API is an Application Programming Interface. With OpenAlex, we specifically have a REST API which is an interface to exchange information over the internet using urls. Your browser does this all the time, and we will learn to do it in a shell today.</p>
 <p>The first step in using an API is to review it: <a class="reference external" href="https://docs.openalex.org/how-to-use-the-api/api-overview">https://docs.openalex.org/how-to-use-the-api/api-overview</a></p>
 <p>Note there are some Python libraries already, but we do not use these today.</p>
@@ -518,16 +446,16 @@ document.write(`
 </div>
 <p>We combine these to form a single URL: <a class="reference external" href="https://api.openalex.org/institutions?search=carnegie+mellon+university">https://api.openalex.org/institutions?search=carnegie+mellon+university</a></p>
 <p>If you click on that url, you should see a web page of json data, it might resemble a dictionary in Python.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="json">
-<h1>JSON<a class="headerlink" href="#json" title="Permalink to this heading">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="json">
+<h1>JSON<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h1>
 <p>JSON stands for Javascript Object Notation. It is a standard data format for exchanging data. Most programming languages provide a library to parse and access this data, which makes it very convenient.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="using-rest-apis-in-the-shell">
-<h1>Using REST APIs in the shell<a class="headerlink" href="#using-rest-apis-in-the-shell" title="Permalink to this heading">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="using-rest-apis-in-the-shell">
+<h1>Using REST APIs in the shell<a class="headerlink" href="#using-rest-apis-in-the-shell" title="Permalink to this headline">¶</a></h1>
 <p>The goal today is not to use the browser. We will use it to help explore data, but with JSON data like this, the browser is not that useful to automate analysis, or for data extraction.</p>
-<section id="exploring-the-institutions-endpoint">
-<h2>Exploring the institutions endpoint<a class="headerlink" href="#exploring-the-institutions-endpoint" title="Permalink to this heading">#</a></h2>
+<div class="section" id="exploring-the-institutions-endpoint">
+<h2>Exploring the institutions endpoint<a class="headerlink" href="#exploring-the-institutions-endpoint" title="Permalink to this headline">¶</a></h2>
 <p>In a shell, we use the <code class="docutils literal notranslate"><span class="pre">curl</span></code> command. Run this command in a shell:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>curl https://api.openalex.org/institutions?search=carnegie+mellon+university
 </pre></div>
@@ -539,10 +467,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&quot;meta&quot;:{&quot;count&quot;:4,&quot;db_response_time_ms&quot;:16,&quot;page&quot;:1,&quot;per_page&quot;:25},&quot;results&quot;:[{&quot;id&quot;:&quot;https://openalex.org/I74973139&quot;,&quot;ror&quot;:&quot;https://ror.org/05x2bcf33&quot;,&quot;display_name&quot;:&quot;Carnegie Mellon University&quot;,&quot;relevance_score&quot;:213908.14,&quot;country_code&quot;:&quot;US&quot;,&quot;type&quot;:&quot;education&quot;,&quot;homepage_url&quot;:&quot;http://www.cmu.edu/index.shtml&quot;,&quot;image_url&quot;:&quot;https://upload.wikimedia.org/wikipedia/commons/1/1d/Www.wikipedia.org_screenshot_2018.png&quot;,&quot;image_thumbnail_url&quot;:&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Www.wikipedia.org_screenshot_2018.png/76px-Www.wikipedia.org_screenshot_2018.png&quot;,&quot;display_name_acronyms&quot;:[&quot;CMU&quot;],&quot;display_name_alternatives&quot;:[],&quot;repositories&quot;:[{&quot;id&quot;:&quot;https://openalex.org/S4306400668&quot;,&quot;display_name&quot;:&quot;Research Showcase @ Carnegie Mellon University (Carnegie Mellon University)&quot;,&quot;host_organization&quot;:&quot;https://openalex.org/I74973139&quot;,&quot;host_organization_name&quot;:&quot;Carnegie Mellon University&quot;,&quot;host_organization_lineage&quot;:[&quot;https://openalex.org/I74973139&quot;]}],&quot;works_count&quot;:111876,&quot;cited_by_count&quot;:4533093,&quot;summary_stats&quot;:{&quot;2yr_mean_citedness&quot;:3.471146472392638,&quot;h_index&quot;:696,&quot;i10_index&quot;:50732},&quot;ids&quot;:{&quot;openalex&quot;:&quot;https://openalex.org/I74973139&quot;,&quot;ror&quot;:&quot;https://ror.org/05x2bcf33&quot;,&quot;mag&quot;:&quot;74973139&quot;,&quot;grid&quot;:&quot;grid.147455.6&quot;,&quot;wikipedia&quot;:&quot;https://en.wikipedia.org/wiki/Web%20server%20directory%20index&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q2712836&quot;},&quot;geo&quot;:{&quot;city&quot;:&quot;Pittsburgh&quot;,&quot;geonames_city_id&quot;:&quot;5206379&quot;,&quot;region&quot;:&quot;Pennsylvania&quot;,&quot;country_code&quot;:&quot;US&quot;,&quot;country&quot;:&quot;United States&quot;,&quot;latitude&quot;:40.44332,&quot;longitude&quot;:-79.94358},&quot;international&quot;:{&quot;display_name&quot;:{&quot;ar&quot;:&quot;\u0641\u0647\u0631\u0633 \u062f\u0644\u064a\u0644 \u062e\u0627\u062f\u0645 \u0627\u0644\u0648\u064a\u0628&quot;,&quot;cs&quot;:&quot;Index&quot;,&quot;de&quot;:&quot;Webserver Verzeichnis Index&quot;,&quot;el&quot;:&quot;\u0395\u03c5\u03c1\u03b5\u03c4\u03ae\u03c1\u03b9\u03bf \u03ba\u03b1\u03c4\u03b1\u03bb\u03cc\u03b3\u03bf\u03c5 \u03b5\u03be\u03c5\u03c0\u03b7\u03c1\u03b5\u03c4\u03b7\u03c4\u03ae \u03b9\u03c3\u03c4\u03bf\u03cd&quot;,&quot;en&quot;:&quot;webserver directory index&quot;,&quot;en-ca&quot;:&quot;Web server directory index&quot;,&quot;en-gb&quot;:&quot;Web server directory index&quot;,&quot;es&quot;:&quot;\u00cdndice de un servidor web&quot;,&quot;fi&quot;:&quot;Index.html&quot;,&quot;fr&quot;:&quot;index de r\u00e9pertoire de serveur Web&quot;,&quot;it&quot;:&quot;index&quot;,&quot;lv&quot;:&quot;Web servera direktoriju indekss&quot;,&quot;pl&quot;:&quot;Index&quot;,&quot;pt&quot;:&quot;Index.html&quot;,&quot;pt-br&quot;:&quot;Index.html&quot;,&quot;ru&quot;:&quot;Index.htm&quot;,&quot;tr&quot;:&quot;Web sunucusu dizin indeksi&quot;,&quot;uk&quot;:&quot;\u0406\u043d\u0434\u0435\u043a\u0441 \u0434\u0438\u0440\u0435\u043a\u0442\u043e\u0440\u0456\u0457 \u0432\u0435\u0431-\u0441\u0435\u0440\u0432\u0435\u0440\u0430&quot;,&quot;zh&quot;:&quot;\u7db2\u9801\u4f3a\u670d\u5668\u76ee\u9304\u7d22\u5f15&quot;,&quot;zh-cn&quot;:&quot;\u7f51\u9875\u670d\u52a1\u5668\u76ee\u5f55\u7d22\u5f15&quot;,&quot;zh-hans&quot;:&quot;\u7f51\u9875\u670d\u52a1\u5668\u76ee\u5f55\u7d22\u5f15&quot;,&quot;zh-hant&quot;:&quot;\u7db2\u9801\u670d\u52d9\u5668\u76ee\u9304\u7d22\u5f15&quot;}},&quot;associated_institutions&quot;:[{&quot;id&quot;:&quot;https://openalex.org/I4210130200&quot;,&quot;ror&quot;:&quot;https://ror.org/02f33m021&quot;,&quot;display_name&quot;:&quot;Carnegie Mellon University Africa&quot;,&quot;country_code&quot;:&quot;RW&quot;,&quot;type&quot;:&quot;education&quot;,&quot;relationship&quot;:&quot;child&quot;},{&quot;id&quot;:&quot;https://openalex.org/I4210091826&quot;,&quot;ror&quot;:&quot;https://ror.org/00ds41r10&quot;,&quot;display_name&quot;:&quot;Carnegie Mellon University Australia&quot;,&quot;country_code&quot;:&quot;AU&quot;,&quot;type&quot;:&quot;education&quot;,&quot;relationship&quot;:&quot;child&quot;},{&quot;id&quot;:&quot;https://openalex.org/I4210089979&quot;,&quot;ror&quot;:&quot;https://ror.org/00az5dt38&quot;,&quot;display_name&quot;:&quot;Carnegie Mellon University Qatar&quot;,&quot;country_code&quot;:&quot;QA&quot;,&quot;type&quot;:&quot;education&quot;,&quot;relationship&quot;:&quot;child&quot;},{&quot;id&quot;:&quot;https://openalex.org/I4210086114&quot;,&quot;ror&quot;:&quot;https://ror.org/00jfeg660&quot;,&quot;display_name&quot;:&quot;Center for the Neural Basis of Cognition&quot;,&quot;country_code&quot;:&quot;US&quot;,&quot;type&quot;:&quot;facility&quot;,&quot;relationship&quot;:&quot;child&quot;},{&quot;id&quot;:&quot;https://openalex.org/I114772536&quot;,&quot;ror&quot;:&quot;https://ror.org/01xqjjn94&quot;,&quot;display_name&quot;:&quot;Software Engineering Institute&quot;,&quot;country_code&quot;:&quot;US&quot;,&quot;type&quot;:&quot;facility&quot;,&quot;relationship&quot;:&quot;child&quot;},{&quot;id&quot;:&quot;https://openalex.org/I4210129003&quot;,&quot;ror&quot;:&quot;https://ror.org/02w30ae27&quot;,&quot;display_name&quot;:&quot;SYSU-CMU International Joint Research Institute&quot;,&quot;country_code&quot;:&quot;CN&quot;,&quot;type&quot;:&quot;facility&quot;,&quot;relationship&quot;:&quot;related&quot;},{&quot;id&quot;:&quot;https://openalex.org/I4210128526&quot;,&quot;ror&quot;:&quot;https://ror.org/03bw34a45&quot;,&quot;display_name&quot;:&quot;University of Pittsburgh Cancer Institute&quot;,&quot;country_code&quot;:&quot;US&quot;,&quot;type&quot;:&quot;facility&quot;,&quot;relationship&quot;:&quot;related&quot;}],&quot;counts_by_year&quot;:[{&quot;year&quot;:2023,&quot;works_count&quot;:1553,&quot;cited_by_count&quot;:275937},{&quot;year&quot;:2022,&quot;works_count&quot;:3781,&quot;cited_by_count&quot;:605537},{&quot;year&quot;:2021,&quot;works_count&quot;:5253,&quot;cited_by_count&quot;:751683},{&quot;year&quot;:2020,&quot;works_count&quot;:5253,&quot;cited_by_count&quot;:707127},{&quot;year&quot;:2019,&quot;works_count&quot;:5172,&quot;cited_by_count&quot;:624295},{&quot;year&quot;:2018,&quot;works_count&quot;:4846,&quot;cited_by_count&quot;:553237},{&quot;year&quot;:2017,&quot;works_count&quot;:4476,&quot;cited_by_count&quot;:503467},{&quot;year&quot;:2016,&quot;works_count&quot;:4268,&quot;cited_by_count&quot;:499391},{&quot;year&quot;:2015,&quot;works_count&quot;:4421,&quot;cited_by_count&quot;:493991},{&quot;year&quot;:2014,&quot;works_count&quot;:4130,&quot;cited_by_count&quot;:467078},{&quot;year&quot;:2013,&quot;works_count&quot;:4097,&quot;cited_by_count&quot;:445046},{&quot;year&quot;:2012,&quot;works_count&quot;:3967,&quot;cited_by_count&quot;:411772}],&quot;roles&quot;:[{&quot;role&quot;:&quot;institution&quot;,&quot;id&quot;:&quot;https://openalex.org/I74973139&quot;,&quot;works_count&quot;:111876},{&quot;role&quot;:&quot;funder&quot;,&quot;id&quot;:&quot;https://openalex.org/F4320310207&quot;,&quot;works_count&quot;:811}],&quot;x_concepts&quot;:[{&quot;id&quot;:&quot;https://openalex.org/C41008148&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q21198&quot;,&quot;display_name&quot;:&quot;Computer science&quot;,&quot;level&quot;:0,&quot;score&quot;:74.5},{&quot;id&quot;:&quot;https://openalex.org/C33923547&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q395&quot;,&quot;display_name&quot;:&quot;Mathematics&quot;,&quot;level&quot;:0,&quot;score&quot;:51.8},{&quot;id&quot;:&quot;https://openalex.org/C121332964&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q413&quot;,&quot;display_name&quot;:&quot;Physics&quot;,&quot;level&quot;:0,&quot;score&quot;:50.0},{&quot;id&quot;:&quot;https://openalex.org/C127413603&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11023&quot;,&quot;display_name&quot;:&quot;Engineering&quot;,&quot;level&quot;:0,&quot;score&quot;:48.0},{&quot;id&quot;:&quot;https://openalex.org/C86803240&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q420&quot;,&quot;display_name&quot;:&quot;Biology&quot;,&quot;level&quot;:0,&quot;score&quot;:38.8},{&quot;id&quot;:&quot;https://openalex.org/C154945302&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11660&quot;,&quot;display_name&quot;:&quot;Artificial intelligence&quot;,&quot;level&quot;:1,&quot;score&quot;:37.8},{&quot;id&quot;:&quot;https://openalex.org/C62520636&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q944&quot;,&quot;display_name&quot;:&quot;Quantum mechanics&quot;,&quot;level&quot;:1,&quot;score&quot;:35.8},{&quot;id&quot;:&quot;https://openalex.org/C199360897&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q9143&quot;,&quot;display_name&quot;:&quot;Programming language&quot;,&quot;level&quot;:1,&quot;score&quot;:29.2},
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&quot;id&quot;:&quot;https://openalex.org/C138885662&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q5891&quot;,&quot;display_name&quot;:&quot;Philosophy&quot;,&quot;level&quot;:0,&quot;score&quot;:28.6},{&quot;id&quot;:&quot;https://openalex.org/C185592680&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q2329&quot;,&quot;display_name&quot;:&quot;Chemistry&quot;,&quot;level&quot;:0,&quot;score&quot;:28.5},{&quot;id&quot;:&quot;https://openalex.org/C162324750&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q8134&quot;,&quot;display_name&quot;:&quot;Economics&quot;,&quot;level&quot;:0,&quot;score&quot;:28.2},{&quot;id&quot;:&quot;https://openalex.org/C111919701&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q9135&quot;,&quot;display_name&quot;:&quot;Operating system&quot;,&quot;level&quot;:1,&quot;score&quot;:27.4},{&quot;id&quot;:&quot;https://openalex.org/C15744967&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q9418&quot;,&quot;display_name&quot;:&quot;Psychology&quot;,&quot;level&quot;:0,&quot;score&quot;:24.1},{&quot;id&quot;:&quot;https://openalex.org/C192562407&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q228736&quot;,&quot;display_name&quot;:&quot;Materials science&quot;,&quot;level&quot;:0,&quot;score&quot;:22.4},{&quot;id&quot;:&quot;https://openalex.org/C105795698&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q12483&quot;,&quot;display_name&quot;:&quot;Statistics&quot;,&quot;level&quot;:1,&quot;score&quot;:21.6},{&quot;id&quot;:&quot;https://openalex.org/C71924100&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11190&quot;,&quot;display_name&quot;:&quot;Medicine&quot;,&quot;level&quot;:0,&quot;score&quot;:20.3}],&quot;works_api_url&quot;:&quot;https://api.openalex.org/works?filter=institutions.id:I74973139&quot;,&quot;updated_date&quot;:&quot;2023-06-18T12:30:44.501674&quot;,&quot;created_date&quot;:&quot;2016-06-24&quot;},{&quot;id&quot;:&quot;https://openalex.org/I4210089979&quot;,&quot;ror&quot;:&quot;https://ror.org/00az5dt38&quot;,&quot;display_name&quot;:&quot;Carnegie Mellon University Qatar&quot;,&quot;relevance_score&quot;:8148.654,&quot;country_code&quot;:&quot;QA&quot;,&quot;type&quot;:&quot;education&quot;,&quot;homepage_url&quot;:&quot;http://www.qatar.cmu.edu/&quot;,&quot;image_url&quot;:&quot;https://upload.wikimedia.org/wikipedia/en/b/bc/Carnegiemellonqatar_building_entrance.jpg&quot;,&quot;image_thumbnail_url&quot;:&quot;https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Carnegiemellonqatar_building_entrance.jpg/100px-Carnegiemellonqatar_building_entrance.jpg&quot;,&quot;display_name_acronyms&quot;:[&quot;CMU-Q&quot;],&quot;display_name_alternatives&quot;:[],&quot;repositories&quot;:[],&quot;works_count&quot;:612,&quot;cited_by_count&quot;:8180,&quot;summary_stats&quot;:{&quot;2yr_mean_citedness&quot;:2.4871794871794872,&quot;h_index&quot;:45,&quot;i10_index&quot;:172},&quot;ids&quot;:{&quot;openalex&quot;:&quot;https://openalex.org/I4210089979&quot;,&quot;ror&quot;:&quot;https://ror.org/00az5dt38&quot;,&quot;grid&quot;:&quot;grid.452171.4&quot;,&quot;wikipedia&quot;:&quot;https://en.wikipedia.org/wiki/Carnegie%20Mellon%20University%20in%20Qatar&quot;},&quot;geo&quot;:{&quot;city&quot;:&quot;Doha&quot;,&quot;geonames_city_id&quot;:&quot;290030&quot;,&quot;region&quot;:null,&quot;country_code&quot;:&quot;QA&quot;,&quot;country&quot;:&quot;Qatar&quot;,&quot;latitude&quot;:25.31639,&quot;longitude&quot;:51.43889},&quot;international&quot;:{&quot;display_name&quot;:{&quot;en&quot;:&quot;Carnegie Mellon University Qatar&quot;}},&quot;associated_institutions&quot;:[{&quot;id&quot;:&quot;https://openalex.org/I74973139&quot;,&quot;ror&quot;:&quot;https://ror.org/05x2bcf33&quot;,&quot;display_name&quot;:&quot;Carnegie Mellon University&quot;,&quot;country_code&quot;:&quot;US&quot;,&quot;type&quot;:&quot;education&quot;,&quot;relationship&quot;:&quot;parent&quot;}],&quot;counts_by_year&quot;:[{&quot;year&quot;:2023,&quot;works_count&quot;:11,&quot;cited_by_count&quot;:695},{&quot;year&quot;:2022,&quot;works_count&quot;:22,&quot;cited_by_count&quot;:1599},{&quot;year&quot;:2021,&quot;works_count&quot;:43,&quot;cited_by_count&quot;:1939},{&quot;year&quot;:2020,&quot;works_count&quot;:34,&quot;cited_by_count&quot;:1668},{&quot;year&quot;:2019,&quot;works_count&quot;:35,&quot;cited_by_count&quot;:1563},{&quot;year&quot;:2018,&quot;works_count&quot;:64,&quot;cited_by_count&quot;:951},{&quot;year&quot;:2017,&quot;works_count&quot;:26,&quot;cited_by_count&quot;:874},{&quot;year&quot;:2016,&quot;works_count&quot;:45,&quot;cited_by_count&quot;:812},{&quot;year&quot;:2015,&quot;works_count&quot;:34,&quot;cited_by_count&quot;:836},{&quot;year&quot;:2014,&quot;works_count&quot;:50,&quot;cited_by_count&quot;:563},{&quot;year&quot;:2013,&quot;works_count&quot;:57,&quot;cited_by_count&quot;:441},{&quot;year&quot;:2012,&quot;works_count&quot;:38,&quot;cited_by_count&quot;:315}],&quot;roles&quot;:[{&quot;role&quot;:&quot;institution&quot;,&quot;id&quot;:&quot;https://openalex.org/I4210089979&quot;,&quot;works_count&quot;:612}],&quot;x_concepts&quot;:[{&quot;id&quot;:&quot;https://openalex.org/C41008148&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q21198&quot;,&quot;display_name&quot;:&quot;Computer science&quot;,&quot;level&quot;:0,&quot;score&quot;:80.4},{&quot;id&quot;:&quot;https://openalex.org/C33923547&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q395&quot;,&quot;display_name&quot;:&quot;Mathematics&quot;,&quot;level&quot;:0,&quot;score&quot;:49.5},{&quot;id&quot;:&quot;https://openalex.org/C127413603&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11023&quot;,&quot;display_name&quot;:&quot;Engineering&quot;,&quot;level&quot;:0,&quot;score&quot;:48.5},{&quot;id&quot;:&quot;https://openalex.org/C138885662&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q5891&quot;,&quot;display_name&quot;:&quot;Philosophy&quot;,&quot;level&quot;:0,&quot;score&quot;:41.0},{&quot;id&quot;:&quot;https://openalex.org/C86803240&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q420&quot;,&quot;display_name&quot;:&quot;Biology&quot;,&quot;level&quot;:0,&quot;score&quot;:39.9},{&quot;id&quot;:&quot;https://openalex.org/C154945302&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11660&quot;,&quot;display_name&quot;:&quot;Artificial intelligence&quot;,&quot;level&quot;:1,&quot;score&quot;:38.7},{&quot;id&quot;:&quot;https://openalex.org/C17744445&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q36442&quot;,&quot;display_name&quot;:&quot;Political science&quot;,&quot;level&quot;:0,&quot;score&quot;:36.4},{&quot;id&quot;:&quot;https://openalex.org/C121332964&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q413&quot;,&quot;display_name&quot;:&quot;Physics&quot;,&quot;level&quot;:0,&quot;score&quot;:35.9},{&quot;id&quot;:&quot;https://openalex.org/C199539241&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q7748&quot;,&quot;display_name&quot;:&quot;Law&quot;,&quot;level&quot;:1,&quot;score&quot;:35.1},{&quot;id&quot;:&quot;https://openalex.org/C111919701&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q9135&quot;,&quot;display_name&quot;:&quot;Operating system&quot;,&quot;level&quot;:1,&quot;score&quot;:34.2},{&quot;id&quot;:&quot;https://openalex.org/C41895202&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q8162&quot;,&quot;display_name&quot;:&quot;Linguistics&quot;,&quot;level&quot;:1,&quot;score&quot;:30.4},{&quot;id&quot;:&quot;https://openalex.org/C15744967&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q9418&quot;,&quot;display_name&quot;:&quot;Psychology&quot;,&quot;level&quot;:0,&quot;score&quot;:29.7},{&quot;id&quot;:&quot;https://openalex.org/C162324750&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q8134&quot;,&quot;display_name&quot;:&quot;Economics&quot;,&quot;level&quot;:0,&quot;score&quot;:29.7},{&quot;id&quot;:&quot;https://openalex.org/C199360897&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q9143&quot;,&quot;display_name&quot;:&quot;Programming language&quot;,&quot;level&quot;:1,&quot;score&quot;:29.6},{&quot;id&quot;:&quot;https://openalex.org/C62520636&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q944&quot;,&quot;display_name&quot;:&quot;Quantum mechanics&quot;,&quot;level&quot;:1,&quot;score&quot;:24.3},{&quot;id&quot;:&quot;https://openalex.org/C205649164&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q1071&quot;,&quot;display_name&quot;:&quot;Geography&quot;,&quot;level&quot;:0,&quot;score&quot;:23.7},{&quot;id&quot;:&quot;https://openalex.org/C71924100&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11190&quot;,&quot;display_name&quot;:&quot;Medicine&quot;,&quot;level&quot;:0,&quot;score&quot;:23.5},{&quot;id&quot;:&quot;https://openalex.org/C144024400&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q21201&quot;,&quot;display_name&quot;:&quot;Sociology&quot;,&quot;level&quot;:0,&quot;score&quot;:22.9}],&quot;works_api_url&quot;:&quot;https://api.openalex.org/works?filter=institutions.id:I4210089979&quot;,&quot;updated_date&quot;:&quot;2023-06-18T15:05:15.375683&quot;,&quot;created_date&quot;:&quot;2022-02-02&quot;},{&quot;id&quot;:&quot;https://openalex.org/I4210091826&quot;,&quot;ror&quot;:&quot;https://ror.org/00ds41r10&quot;,&quot;display_name&quot;:&quot;Carnegie Mellon University Australia&quot;,&quot;relevance_score&quot;:3684.0657,&quot;country_code&quot;:&quot;AU&quot;,&quot;type&quot;:&quot;education&quot;,&quot;homepage_url&quot;:&quot;https://www.australia.cmu.edu/&quot;,&quot;image_url&quot;:&quot;https://upload.wikimedia.org/wikipedia/commons/4/41/Torrens_Building%2C_Wakefield_St%2C_Adelaide.JPG&quot;,&quot;image_thumbnail_url&quot;:&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Torrens_Building%2C_Wakefield_St%2C_Adelaide.JPG/100px-Torrens_Building%2C_Wakefield_St%2C_Adelaide.JPG&quot;,&quot;display_name_acronyms&quot;:[&quot;CMU&quot;],&quot;display_name_alternatives&quot;:[],&quot;repositories&quot;:[],&quot;works_count&quot;:81,&quot;cited_by_count&quot;:1672,&quot;summary_stats&quot;:{&quot;2yr_mean_citedness&quot;:0.8,&quot;h_index&quot;:11,&quot;i10_index&quot;:13},&quot;ids&quot;:{&quot;openalex&quot;:&quot;https://openalex.org/I4210091826&quot;,&quot;ror&quot;:&quot;https://ror.org/00ds41r10&quot;,&quot;grid&quot;:&quot;grid.448660.8&quot;,&quot;wikipedia&quot;:&quot;https://en.wikipedia.org/wiki/Carnegie%20Mellon%20University%2C%20Australia&quot;},&quot;geo&quot;:{&quot;city&quot;:&quot;Adelaide&quot;,&quot;geonames_city_id&quot;:&quot;2078025&quot;,&quot;region&quot;:&quot;South Australia&quot;,&quot;country_code&quot;:&quot;AU&quot;,&quot;country&quot;:&quot;Australia&quot;,&quot;latitude&quot;:40.44285,&quot;longitude&quot;:-79.94308},&quot;international&quot;:{&quot;display_name&quot;:{&quot;en&quot;:&quot;Carnegie Mellon University Australia&quot;}},&quot;associated_institutions&quot;:[{&quot;id&quot;:&quot;https://openalex.org/I74973139&quot;,&quot;ror&quot;:&quot;https://ror.org/05x2bcf33&quot;,&quot;display_name&quot;:&quot;Carnegie Mellon University&quot;,&quot;country_code&quot;:&quot;US&quot;,&quot;type&quot;:&quot;education&quot;,&quot;relationship&quot;:&quot;parent&quot;}],&quot;counts_by_year&quot;:[{&quot;year&quot;:2023,&quot;works_count&quot;:0,&quot;cited_by_count&quot;:44},{&quot;year&quot;:2022,&quot;works_count&quot;:1,&quot;cited_by_count&quot;:75},{&quot;year&quot;:2021,&quot;works_count&quot;:5,&quot;cited_by_count&quot;:79},{&quot;year&quot;:2020,&quot;works_count&quot;:5,&quot;cited_by_count&quot;:58},{&quot;year&quot;:2019,&quot;works_count&quot;:14,&quot;cited_by_count&quot;:31},{&quot;year&quot;:2018,&quot;works_count&quot;:1,&quot;cited_by_count&quot;:47},{&quot;year&quot;:2017,&quot;works_count&quot;:2,&quot;cited_by_count&quot;:28},{&quot;year&quot;:2016,&quot;works_count&quot;:20,&quot;cited_by_count&quot;:34},{&quot;year&quot;:2015,&quot;works_count&quot;:1,&quot;cited_by_count&quot;:24},{&quot;year&quot;:2014,&quot;works_count&quot;:2,&quot;cited_by_count&quot;:37},{&quot;year&quot;:2013,&quot;works_count&quot;:0,&quot;cited_by_count&quot;:45},{&quot;year&quot;:2012,&quot;works_count&quot;:9,&quot;cited_by_count&quot;:52}],&quot;roles&quot;:[{&quot;role&quot;:&quot;institution&quot;,&quot;id&quot;:&quot;https://openalex.org/I4210091826&quot;,&quot;works_count&quot;:81}],&quot;x_concepts&quot;:[{&quot;id&quot;:&quot;https://openalex.org/C41008148&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q21198&quot;,&quot;display_name&quot;:&quot;Computer science&quot;,&quot;level&quot;:0,&quot;score&quot;:85.2},{&quot;id&quot;:&quot;https://openalex.org/C111919701&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q9135&quot;,&quot;display_name&quot;:&quot;Operating system&quot;,&quot;level&quot;:1,&quot;score&quot;:44.4},{&quot;id&quot;:&quot;https://openalex.org/C17744445&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q36442&quot;,&quot;display_name&quot;:&quot;Political science&quot;,&quot;level&quot;:0,&quot;score&quot;:40.7},{&quot;id&quot;:&quot;https://openalex.org/C199539241&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q7748&quot;,&quot;display_name&quot;:&quot;Law&quot;,&quot;level&quot;:1,&quot;score&quot;:40.7},{&quot;id&quot;:&quot;https://openalex.org/C127413603&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11023&quot;,&quot;display_name&quot;:&quot;Engineering&quot;,&quot;level&quot;:0,&quot;score&quot;:38.3},{&quot;id&quot;:&quot;https://openalex.org/C33923547&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q395&quot;,&quot;display_name&quot;:&quot;Mathematics&quot;,&quot;level&quot;:0,&quot;score&quot;:38.3},{&quot;id&quot;:&quot;https://openalex.org/C144133560&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q4830453&quot;,&quot;display_name&quot;:&quot;Business&quot;,&quot;level&quot;:0,&quot;score&quot;:37.0},{&quot;id&quot;:&quot;https://openalex.org/C162324750&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q8134&quot;,&quot;display_name&quot;:&quot;Economics&quot;,&quot;level&quot;:0,&quot;score&quot;:33.3},{&quot;id&quot;:&quot;https://openalex.org/C138885662&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q5891&quot;,&quot;display_name&quot;:&quot;Philosophy&quot;,&quot;level&quot;:0,&quot;score&quot;:32.1},{&quot;id&quot;:&quot;https://openalex.org/C199360897&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q9143&quot;,&quot;display_name&quot;:&quot;Programming language&quot;,&quot;level&quot;:1,&quot;score&quot;:29.6},{&quot;id&quot;:&quot;https://openalex.org/C95457728&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q309&quot;,&quot;display_name&quot;:&quot;History&quot;,&quot;level&quot;:0,&quot;score&quot;:24.7},{&quot;id&quot;:&quot;https://openalex.org/C205649164&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q1071&quot;,&quot;display_name&quot;:&quot;Geography&quot;,&quot;level&quot;:0,&quot;score&quot;:24.7},{&quot;id&quot;:&quot;https://openalex.org/C136764020&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q466&quot;,&quot;display_name&quot;:&quot;World Wide Web&quot;,&quot;level&quot;:1,&quot;score&quot;:23.5},{&quot;id&quot;:&quot;https://openalex.org/C142362112&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q735&quot;,&quot;display_name&quot;:&quot;Art&quot;,&quot;level&quot;:0,&quot;score&quot;:23.5},{&quot;id&quot;:&quot;https://openalex.org/C71924100&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11190&quot;,&quot;display_name&quot;:&quot;Medicine&quot;,&quot;level&quot;:0,&quot;score&quot;:22.2},{&quot;id&quot;:&quot;https://openalex.org/C166957645&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q23498&quot;,&quot;display_name&quot;:&quot;Archaeology&quot;,&quot;level&quot;:1,&quot;score&quot;:22.2},{&quot;id&quot;:&quot;https://openalex.org/C86803240&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q420&quot;,&quot;display_name&quot;:&quot;Biology&quot;,&quot;level&quot;:0,&quot;score&quot;:22.2}],&quot;works_api_url&quot;:&quot;https://api.openalex.org/works?filter=institutions.id:I4210091826&quot;,&quot;updated_date&quot;:&quot;2023-06-17T15:45:46.630934&quot;,&quot;created_date&quot;:&quot;2022-02-02&quot;},{&quot;id&quot;:&quot;https://openalex.org/I4210130200&quot;,&quot;ror&quot;:&quot;https://ror.org/02f33m021&quot;,&quot;display_name&quot;:&quot;Carnegie Mellon University Africa&quot;,&quot;relevance_score&quot;:2298.7922,&quot;country_code&quot;:&quot;RW&quot;,&quot;type&quot;:&quot;education&quot;,&quot;homepage_url&quot;:&quot;https://www.africa.engineering.cmu.edu/&quot;,&quot;image_url&quot;:&quot;https://upload.wikimedia.org/wikipedia/en/b/bb/Carnegie_Mellon_University_seal.svg&quot;,&quot;image_thumbnail_url&quot;:&quot;https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Carnegie_Mellon_University_seal.svg/100px-Carnegie_Mellon_University_seal.svg.png&quot;,&quot;display_name_acronyms&quot;:[&quot;CMU&quot;],&quot;display_name_alternatives&quot;:[],&quot;repositories&quot;:[],&quot;works_count&quot;:125,&quot;cited_by_count&quot;:651,&quot;summary_stats&quot;:{&quot;2yr_mean_citedness&quot;:2.675,&quot;h_index&quot;:13,&quot;i10_index&quot;:18},&quot;ids&quot;:{&quot;openalex&quot;:&quot;https://openalex.org/I4210130200&quot;,&quot;ror&quot;:&quot;https://ror.org/02f33m021&quot;,&quot;grid&quot;:&quot;grid.508475.b&quot;,&quot;wikipedia&quot;:&quot;https://en.wikipedia.org/wiki/Carnegie%20Mellon%20University&quot;},&quot;geo&quot;:{&quot;city&quot;:&quot;Kigali&quot;,&quot;geonames_city_id&quot;:&quot;202061&quot;,&quot;region&quot;:null,&quot;country_code&quot;:&quot;RW&quot;,&quot;country&quot;:&quot;Rwanda&quot;,&quot;latitude&quot;:-1.935111,&quot;longitude&quot;:30.158602},&quot;international&quot;:{&quot;display_name&quot;:{&quot;en&quot;:&quot;Carnegie Mellon University Africa&quot;}},&quot;associated_institutions&quot;:[{&quot;id&quot;:&quot;https://openalex.org/I74973139&quot;,&quot;ror&quot;:&quot;https://ror.org/05x2bcf33&quot;,&quot;display_name&quot;:&quot;Carnegie Mellon University&quot;,&quot;country_code&quot;:&quot;US&quot;,&quot;type&quot;:&quot;education&quot;,&quot;relationship&quot;:&quot;parent&quot;}],&quot;counts_by_year&quot;:[{&quot;year&quot;:2023,&quot;works_count&quot;:14,&quot;cited_by_count&quot;:166},{&quot;year&quot;:2022,&quot;works_count&quot;:22,&quot;cited_by_count&quot;:239},{&quot;year&quot;:2021,&quot;works_count&quot;:27,&quot;cited_by_count&quot;:215},{&quot;year&quot;:2020,&quot;works_count&quot;:15,&quot;cited_by_count&quot;:102},{&quot;year&quot;:2019,&quot;works_count&quot;:9,&quot;cited_by_count&quot;:55},{&quot;year&quot;:2018,&quot;works_count&quot;:16,&quot;cited_by_count&quot;:40},{&quot;year&quot;:2017,&quot;works_count&quot;:7,&quot;cited_by_count&quot;:23},{&quot;year&quot;:2016,&quot;works_count&quot;:3,&quot;cited_by_count&quot;:11},{&quot;year&quot;:2015,&quot;works_count&quot;:2,&quot;cited_by_count&quot;:4},{&quot;year&quot;:2014,&quot;works_count&quot;:4,&quot;cited_by_count&quot;:7},{&quot;year&quot;:2013,&quot;works_count&quot;:5,&quot;cited_by_count&quot;:1},{&quot;year&quot;:2012,&quot;works_count&quot;:2,&quot;cited_by_count&quot;:1}],&quot;roles&quot;:[{&quot;role&quot;:&quot;institution&quot;,&quot;id&quot;:&quot;https://openalex.org/I4210130200&quot;,&quot;works_count&quot;:125}],&quot;x_concepts&quot;:[{&quot;id&quot;:&quot;https://openalex.org/C41008148&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q21198&quot;,&quot;display_name&quot;:&quot;Computer science&quot;,&quot;level&quot;:0,&quot;score&quot;:86.4},{&quot;id&quot;:&quot;https://openalex.org/C86803240&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q420&quot;,&quot;display_name&quot;:&quot;Biology&quot;,&quot;level&quot;:0,&quot;score&quot;:56.0},{&quot;id&quot;:&quot;https://openalex.org/C127413603&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11023&quot;,&quot;display_name&quot;:&quot;Engineering&quot;,&quot;level&quot;:0,&quot;score&quot;:52.8},{&quot;id&quot;:&quot;https://openalex.org/C162324750&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q8134&quot;,&quot;display_name&quot;:&quot;Economics&quot;,&quot;level&quot;:0,&quot;score&quot;:45.6},{&quot;id&quot;:&quot;https://openalex.org/C33923547&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q395&quot;,&quot;display_name&quot;:&quot;Mathematics&quot;,&quot;level&quot;:0,&quot;score&quot;:44.8},{&quot;id&quot;:&quot;https://openalex.org/C17744445&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q36442&quot;,&quot;display_name&quot;:&quot;Political science&quot;,&quot;level&quot;:0,&quot;score&quot;:44.0},{&quot;id&quot;:&quot;https://openalex.org/C199539241&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q7748&quot;,&quot;display_name&quot;:&quot;Law&quot;,&quot;level&quot;:1,&quot;score&quot;:38.4},{&quot;id&quot;:&quot;https://openalex.org/C111919701&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q9135&quot;,&quot;display_name&quot;:&quot;Operating system&quot;,&quot;level&quot;:1,&quot;score&quot;:36.8},{&quot;id&quot;:&quot;https://openalex.org/C144133560&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q4830453&quot;,&quot;display_name&quot;:&quot;Business&quot;,&quot;level&quot;:0,&quot;score&quot;:36.0},{&quot;id&quot;:&quot;https://openalex.org/C71924100&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11190&quot;,&quot;display_name&quot;:&quot;Medicine&quot;,&quot;level&quot;:0,&quot;score&quot;:36.0},{&quot;id&quot;:&quot;https://openalex.org/C205649164&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q1071&quot;,&quot;display_name&quot;:&quot;Geography&quot;,&quot;level&quot;:0,&quot;score&quot;:36.0},{&quot;id&quot;:&quot;https://openalex.org/C121332964&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q413&quot;,&quot;display_name&quot;:&quot;Physics&quot;,&quot;level&quot;:0,&quot;score&quot;:34.4},{&quot;id&quot;:&quot;https://openalex.org/C154945302&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11660&quot;,&quot;display_name&quot;:&quot;Artificial intelligence&quot;,&quot;level&quot;:1,&quot;score&quot;:32.0},{&quot;id&quot;:&quot;https://openalex.org/C138885662&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q5891&quot;,&quot;display_name&quot;:&quot;Philosophy&quot;,&quot;level&quot;:0,&quot;score&quot;:29.6},{&quot;id&quot;:&quot;https://openalex.org/C18903297&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q7150&quot;,&quot;display_name&quot;:&quot;Ecology&quot;,&quot;level&quot;:1,&quot;score&quot;:26.4},{&quot;id&quot;:&quot;https://openalex.org/C105795698&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q12483&quot;,&quot;display_name&quot;:&quot;Statistics&quot;,&quot;level&quot;:1,&quot;score&quot;:26.4},{&quot;id&quot;:&quot;https://openalex.org/C38652104&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q3510521&quot;,&quot;display_name&quot;:&quot;Computer security&quot;,&quot;level&quot;:1,&quot;score&quot;:25.6},{&quot;id&quot;:&quot;https://openalex.org/C15744967&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q9418&quot;,&quot;display_name&quot;:&quot;Psychology&quot;,&quot;level&quot;:0,&quot;score&quot;:24.8},{&quot;id&quot;:&quot;https://openalex.org/C62520636&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q944&quot;,&quot;display_name&quot;:&quot;Quantum mechanics&quot;,&quot;level&quot;:1,&quot;score&quot;:24.8},{&quot;id&quot;:&quot;https://openalex.org/C127313418&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q1069&quot;,&quot;display_name&quot;:&quot;Geology&quot;,&quot;level&quot;:0,&quot;score&quot;:24.0},{&quot;id&quot;:&quot;https://openalex.org/C144024400&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q21201&quot;,&quot;display_name&quot;:&quot;Sociology&quot;,&quot;level&quot;:0,&quot;score&quot;:23.2},{&quot;id&quot;:&quot;https://openalex.org/C136764020&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q466&quot;,&quot;display_name&quot;:&quot;World Wide Web&quot;,&quot;level&quot;:1,&quot;score&quot;:23.2},{&quot;id&quot;:&quot;https://openalex.org/C76155785&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q418&quot;,&quot;display_name&quot;:&quot;Telecommunications&quot;,&quot;level&quot;:1,&quot;score&quot;:21.6}],&quot;works_api_url&quot;:&quot;https://api.openalex.org/works?filter=institutions.id:I4210130200&quot;,&quot;updated_date&quot;:&quot;2023-06-18T06:33:21.241230&quot;,&quot;created_date&quot;:&quot;2022-02-02&quot;}],&quot;group_by&quot;:[]}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&quot;meta&quot;:{&quot;count&quot;:4,&quot;db_response_time_ms&quot;:16,&quot;page&quot;:1,&quot;per_page&quot;:25},&quot;results&quot;:[{&quot;id&quot;:&quot;https://openalex.org/I74973139&quot;,&quot;ror&quot;:&quot;https://ror.org/05x2bcf33&quot;,&quot;display_name&quot;:&quot;Carnegie Mellon University&quot;,&quot;relevance_score&quot;:213908.14,&quot;country_code&quot;:&quot;US&quot;,&quot;type&quot;:&quot;education&quot;,&quot;homepage_url&quot;:&quot;http://www.cmu.edu/index.shtml&quot;,&quot;image_url&quot;:&quot;https://upload.wikimedia.org/wikipedia/commons/1/1d/Www.wikipedia.org_screenshot_2018.png&quot;,&quot;image_thumbnail_url&quot;:&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Www.wikipedia.org_screenshot_2018.png/76px-Www.wikipedia.org_screenshot_2018.png&quot;,&quot;display_name_acronyms&quot;:[&quot;CMU&quot;],&quot;display_name_alternatives&quot;:[],&quot;repositories&quot;:[{&quot;id&quot;:&quot;https://openalex.org/S4306400668&quot;,&quot;display_name&quot;:&quot;Research Showcase @ Carnegie Mellon University (Carnegie Mellon University)&quot;,&quot;host_organization&quot;:&quot;https://openalex.org/I74973139&quot;,&quot;host_organization_name&quot;:&quot;Carnegie Mellon University&quot;,&quot;host_organization_lineage&quot;:[&quot;https://openalex.org/I74973139&quot;]}],&quot;works_count&quot;:111876,&quot;cited_by_count&quot;:4533093,&quot;summary_stats&quot;:{&quot;2yr_mean_citedness&quot;:3.471146472392638,&quot;h_index&quot;:696,&quot;i10_index&quot;:50732},&quot;ids&quot;:{&quot;openalex&quot;:&quot;https://openalex.org/I74973139&quot;,&quot;ror&quot;:&quot;https://ror.org/05x2bcf33&quot;,&quot;mag&quot;:&quot;74973139&quot;,&quot;grid&quot;:&quot;grid.147455.6&quot;,&quot;wikipedia&quot;:&quot;https://en.wikipedia.org/wiki/Web%20server%20directory%20index&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q2712836&quot;},&quot;geo&quot;:{&quot;city&quot;:&quot;Pittsburgh&quot;,&quot;geonames_city_id&quot;:&quot;5206379&quot;,&quot;region&quot;:&quot;Pennsylvania&quot;,&quot;country_code&quot;:&quot;US&quot;,&quot;country&quot;:&quot;United States&quot;,&quot;latitude&quot;:40.44332,&quot;longitude&quot;:-79.94358},&quot;international&quot;:{&quot;display_name&quot;:{&quot;ar&quot;:&quot;\u0641\u0647\u0631\u0633 \u062f\u0644\u064a\u0644 \u062e\u0627\u062f\u0645 \u0627\u0644\u0648\u064a\u0628&quot;,&quot;cs&quot;:&quot;Index&quot;,&quot;de&quot;:&quot;Webserver Verzeichnis Index&quot;,&quot;el&quot;:&quot;\u0395\u03c5\u03c1\u03b5\u03c4\u03ae\u03c1\u03b9\u03bf \u03ba\u03b1\u03c4\u03b1\u03bb\u03cc\u03b3\u03bf\u03c5 \u03b5\u03be\u03c5\u03c0\u03b7\u03c1\u03b5\u03c4\u03b7\u03c4\u03ae \u03b9\u03c3\u03c4\u03bf\u03cd&quot;,&quot;en&quot;:&quot;webserver directory index&quot;,&quot;en-ca&quot;:&quot;Web server directory index&quot;,&quot;en-gb&quot;:&quot;Web server directory index&quot;,&quot;es&quot;:&quot;\u00cdndice de un servidor web&quot;,&quot;fi&quot;:&quot;Index.html&quot;,&quot;fr&quot;:&quot;index de r\u00e9pertoire de serveur Web&quot;,&quot;it&quot;:&quot;index&quot;,&quot;lv&quot;:&quot;Web servera direktoriju indekss&quot;,&quot;pl&quot;:&quot;Index&quot;,&quot;pt&quot;:&quot;Index.html&quot;,&quot;pt-br&quot;:&quot;Index.html&quot;,&quot;ru&quot;:&quot;Index.htm&quot;,&quot;tr&quot;:&quot;Web sunucusu dizin indeksi&quot;,&quot;uk&quot;:&quot;\u0406\u043d\u0434\u0435\u043a\u0441 \u0434\u0438\u0440\u0435\u043a\u0442\u043e\u0440\u0456\u0457 \u0432\u0435\u0431-\u0441\u0435\u0440\u0432\u0435\u0440\u0430&quot;,&quot;zh&quot;:&quot;\u7db2\u9801\u4f3a\u670d\u5668\u76ee\u9304\u7d22\u5f15&quot;,&quot;zh-cn&quot;:&quot;\u7f51\u9875\u670d\u52a1\u5668\u76ee\u5f55\u7d22\u5f15&quot;,&quot;zh-hans&quot;:&quot;\u7f51\u9875\u670d\u52a1\u5668\u76ee\u5f55\u7d22\u5f15&quot;,&quot;zh-hant&quot;:&quot;\u7db2\u9801\u670d\u52d9\u5668\u76ee\u9304\u7d22\u5f15&quot;}},&quot;associated_institutions&quot;:[{&quot;id&quot;:&quot;https://openalex.org/I4210130200&quot;,&quot;ror&quot;:&quot;https://ror.org/02f33m021&quot;,&quot;display_name&quot;:&quot;Carnegie Mellon University Africa&quot;,&quot;country_code&quot;:&quot;RW&quot;,&quot;type&quot;:&quot;education&quot;,&quot;relationship&quot;:&quot;child&quot;},{&quot;id&quot;:&quot;https://openalex.org/I4210091826&quot;,&quot;ror&quot;:&quot;https://ror.org/00ds41r10&quot;,&quot;display_name&quot;:&quot;Carnegie Mellon University Australia&quot;,&quot;country_code&quot;:&quot;AU&quot;,&quot;type&quot;:&quot;education&quot;,&quot;relationship&quot;:&quot;child&quot;},{&quot;id&quot;:&quot;https://openalex.org/I4210089979&quot;,&quot;ror&quot;:&quot;https://ror.org/00az5dt38&quot;,&quot;display_name&quot;:&quot;Carnegie Mellon University Qatar&quot;,&quot;country_code&quot;:&quot;QA&quot;,&quot;type&quot;:&quot;education&quot;,&quot;relationship&quot;:&quot;child&quot;},{&quot;id&quot;:&quot;https://openalex.org/I4210086114&quot;,&quot;ror&quot;:&quot;https://ror.org/00jfeg660&quot;,&quot;display_name&quot;:&quot;Center for the Neural Basis of Cognition&quot;,&quot;country_code&quot;:&quot;US&quot;,&quot;type&quot;:&quot;facility&quot;,&quot;relationship&quot;:&quot;child&quot;},{&quot;id&quot;:&quot;https://openalex.org/I114772536&quot;,&quot;ror&quot;:&quot;https://ror.org/01xqjjn94&quot;,&quot;display_name&quot;:&quot;Software Engineering Institute&quot;,&quot;country_code&quot;:&quot;US&quot;,&quot;type&quot;:&quot;facility&quot;,&quot;relationship&quot;:&quot;child&quot;},{&quot;id&quot;:&quot;https://openalex.org/I4210129003&quot;,&quot;ror&quot;:&quot;https://ror.org/02w30ae27&quot;,&quot;display_name&quot;:&quot;SYSU-CMU International Joint Research Institute&quot;,&quot;country_code&quot;:&quot;CN&quot;,&quot;type&quot;:&quot;facility&quot;,&quot;relationship&quot;:&quot;related&quot;},{&quot;id&quot;:&quot;https://openalex.org/I4210128526&quot;,&quot;ror&quot;:&quot;https://ror.org/03bw34a45&quot;,&quot;display_name&quot;:&quot;University of Pittsburgh Cancer Institute&quot;,&quot;country_code&quot;:&quot;US&quot;,&quot;type&quot;:&quot;facility&quot;,&quot;relationship&quot;:&quot;related&quot;}],&quot;counts_by_year&quot;:[{&quot;year&quot;:2023,&quot;works_count&quot;:1553,&quot;cited_by_count&quot;:275937},{&quot;year&quot;:2022,&quot;works_count&quot;:3781,&quot;cited_by_count&quot;:605537},{&quot;year&quot;:2021,&quot;works_count&quot;:5253,&quot;cited_by_count&quot;:751683},{&quot;year&quot;:2020,&quot;works_count&quot;:5253,&quot;cited_by_count&quot;:707127},{&quot;year&quot;:2019,&quot;works_count&quot;:5172,&quot;cited_by_count&quot;:624295},{&quot;year&quot;:2018,&quot;works_count&quot;:4846,&quot;cited_by_count&quot;:553237},{&quot;year&quot;:2017,&quot;works_count&quot;:4476,&quot;cited_by_count&quot;:503467},{&quot;year&quot;:2016,&quot;works_count&quot;:4268,&quot;cited_by_count&quot;:499391},{&quot;year&quot;:2015,&quot;works_count&quot;:4421,&quot;cited_by_count&quot;:493991},{&quot;year&quot;:2014,&quot;works_count&quot;:4130,&quot;cited_by_count&quot;:467078},{&quot;year&quot;:2013,&quot;works_count&quot;:4097,&quot;cited_by_count&quot;:445046},{&quot;year&quot;:2012,&quot;works_count&quot;:3967,&quot;cited_by_count&quot;:411772}],&quot;roles&quot;:[{&quot;role&quot;:&quot;institution&quot;,&quot;id&quot;:&quot;https://openalex.org/I74973139&quot;,&quot;works_count&quot;:111876},{&quot;role&quot;:&quot;funder&quot;,&quot;id&quot;:&quot;https://openalex.org/F4320310207&quot;,&quot;works_count&quot;:811}],&quot;x_concepts&quot;:[{&quot;id&quot;:&quot;https://openalex.org/C41008148&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q21198&quot;,&quot;display_name&quot;:&quot;Computer science&quot;,&quot;level&quot;:0,&quot;score&quot;:74.5},{&quot;id&quot;:&quot;https://openalex.org/C33923547&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q395&quot;,&quot;display_name&quot;:&quot;Mathematics&quot;,&quot;level&quot;:0,&quot;score&quot;:51.8},{&quot;id&quot;:&quot;https://openalex.org/C121332964&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q413&quot;,&quot;display_name&quot;:&quot;Physics&quot;,&quot;level&quot;:0,&quot;score&quot;:50.0},{&quot;id&quot;:&quot;https://openalex.org/C127413603&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11023&quot;,&quot;display_name&quot;:&quot;Engineering&quot;,&quot;level&quot;:0,&quot;score&quot;:48.0},{&quot;id&quot;:&quot;https://openalex.org/C86803240&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q420&quot;,&quot;display_name&quot;:&quot;Biology&quot;,&quot;level&quot;:0,&quot;score&quot;:38.8},{&quot;id&quot;:&quot;https://openalex.org/C154945302&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11660&quot;,&quot;display_name&quot;:&quot;Artificial intelligence&quot;,&quot;level&quot;:1,&quot;score&quot;:37.8},{&quot;id&quot;:&quot;https://openalex.org/C62520636&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q944&quot;,&quot;display_name&quot;:&quot;Quantum mechanics&quot;,&quot;level&quot;:1,&quot;score&quot;:35.8},{&quot;id&quot;:&quot;https://openalex.org/C199360897&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q9143&quot;,&quot;display_name&quot;:&quot;Programming language&quot;,&quot;level&quot;:1,&quot;score&quot;:29.2},{&quot;id&quot;:&quot;https://openalex.org/C138885662&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q5891&quot;,&quot;display_name&quot;:&quot;Philosophy&quot;,&quot;level&quot;:0,&quot;score&quot;:28.6},{&quot;id&quot;:&quot;https://openalex.org/C185592680&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q2329&quot;,&quot;display_name&quot;:&quot;Chemistry&quot;,&quot;level&quot;:0,&quot;score&quot;:28.5},{&quot;id&quot;:&quot;https://openalex.org/C162324750&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q8134&quot;,&quot;display_name&quot;:&quot;Economics&quot;,&quot;level&quot;:0,&quot;score&quot;:28.2},{&quot;id&quot;:&quot;https://openalex.org/C111919701&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q9135&quot;,&quot;display_name&quot;:&quot;Operating system&quot;,&quot;level&quot;:1,&quot;score&quot;:27.4},{&quot;id&quot;:&quot;https://openalex.org/C15744967&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q9418&quot;,&quot;display_name&quot;:&quot;Psychology&quot;,&quot;level&quot;:0,&quot;score&quot;:24.1},{&quot;id&quot;:&quot;https://openalex.org/C192562407&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q228736&quot;,&quot;display_name&quot;:&quot;Materials science&quot;,&quot;level&quot;:0,&quot;score&quot;:22.4},{&quot;id&quot;:&quot;https://openalex.org/C105795698&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q12483&quot;,&quot;display_name&quot;:&quot;Statistics&quot;,&quot;level&quot;:1,&quot;score&quot;:21.6},{&quot;id&quot;:&quot;https://openalex.org/C71924100&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11190&quot;,&quot;display_name&quot;:&quot;Medicine&quot;,&quot;level&quot;:0,&quot;score&quot;:20.3}],&quot;works_api_url&quot;:&quot;https://api.openalex.org/works?filter=institutions.id:I74973139&quot;,&quot;updated_date&quot;:&quot;2023-06-18T12:30:44.501674&quot;,&quot;created_date&quot;:&quot;2016-06-24&quot;},{&quot;id&quot;:&quot;https://openalex.org/I4210089979&quot;,&quot;ror&quot;:&quot;https://ror.org/00az5dt38&quot;,&quot;display_name&quot;:&quot;Carnegie Mellon University Qatar&quot;,&quot;relevance_score&quot;:8148.654,&quot;country_code&quot;:&quot;QA&quot;,&quot;type&quot;:&quot;education&quot;,&quot;homepage_url&quot;:&quot;http://www.qatar.cmu.edu/&quot;,&quot;image_url&quot;:&quot;https://upload.wikimedia.org/wikipedia/en/b/bc/Carnegiemellonqatar_building_entrance.jpg&quot;,&quot;image_thumbnail_url&quot;:&quot;https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Carnegiemellonqatar_building_entrance.jpg/100px-Carnegiemellonqatar_building_entrance.jpg&quot;,&quot;display_name_acronyms&quot;:[&quot;CMU-Q&quot;],&quot;display_name_alternatives&quot;:[],&quot;repositories&quot;:[],&quot;works_count&quot;:612,&quot;cited_by_count&quot;:8180,&quot;summary_stats&quot;:{&quot;2yr_mean_citedness&quot;:2.4871794871794872,&quot;h_index&quot;:45,&quot;i10_index&quot;:172},&quot;ids&quot;:{&quot;openalex&quot;:&quot;https://openalex.org/I4210089979&quot;,&quot;ror&quot;:&quot;https://ror.org/00az5dt38&quot;,&quot;grid&quot;:&quot;grid.452171.4&quot;,&quot;wikipedia&quot;:&quot;https://en.wikipedia.org/wiki/Carnegie%20Mellon%20University%20in%20Qatar&quot;},&quot;geo&quot;:{&quot;city&quot;:&quot;Doha&quot;,&quot;geonames_city_id&quot;:&quot;290030&quot;,&quot;region&quot;:null,&quot;country_code&quot;:&quot;QA&quot;,&quot;country&quot;:&quot;Qatar&quot;,&quot;latitude&quot;:25.31639,&quot;longitude&quot;:51.43889},&quot;international&quot;:{&quot;display_name&quot;:{&quot;en&quot;:&quot;Carnegie Mellon University Qatar&quot;}},&quot;associated_institutions&quot;:[{&quot;id&quot;:&quot;https://openalex.org/I74973139&quot;,&quot;ror&quot;:&quot;https://ror.org/05x2bcf33&quot;,&quot;display_name&quot;:&quot;Carnegie Mellon University&quot;,&quot;country_code&quot;:&quot;US&quot;,&quot;type&quot;:&quot;education&quot;,&quot;relationship&quot;:&quot;parent&quot;}],&quot;counts_by_year&quot;:[{&quot;year&quot;:2023,&quot;works_count&quot;:11,&quot;cited_by_count&quot;:695},{&quot;year&quot;:2022,&quot;works_count&quot;:22,&quot;cited_by_count&quot;:1599},{&quot;year&quot;:2021,&quot;works_count&quot;:43,&quot;cited_by_count&quot;:1939},{&quot;year&quot;:2020,&quot;works_count&quot;:34,&quot;cited_by_count&quot;:1668},{&quot;year&quot;:2019,&quot;works_count&quot;:35,&quot;cited_by_count&quot;:1563},{&quot;year&quot;:2018,&quot;works_count&quot;:64,&quot;cited_by_count&quot;:951},{&quot;year&quot;:2017,&quot;works_count&quot;:26,&quot;cited_by_count&quot;:874},{&quot;year&quot;:2016,&quot;works_count&quot;:45,&quot;cited_by_count&quot;:812},{&quot;year&quot;:2015,&quot;works_count&quot;:34,&quot;cited_by_count&quot;:836},{&quot;year&quot;:2014,&quot;works_count&quot;:50,&quot;cited_by_count&quot;:563},{&quot;year&quot;:2013,&quot;works_count&quot;:57,&quot;cited_by_count&quot;:441},{&quot;year&quot;:2012,&quot;works_count&quot;:38,&quot;cited_by_count&quot;:315}],&quot;roles&quot;:[{&quot;role&quot;:&quot;institution&quot;,&quot;id&quot;:&quot;https://openalex.org/I4210089979&quot;,&quot;works_count&quot;:612}],&quot;x_concepts&quot;:[{&quot;id&quot;:&quot;https://openalex.org/C41008148&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q21198&quot;,&quot;display_name&quot;:&quot;Computer science&quot;,&quot;level&quot;:0,&quot;score&quot;:80.4},{&quot;id&quot;:&quot;https://openalex.org/C33923547&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q395&quot;,&quot;display_name&quot;:&quot;Mathematics&quot;,&quot;level&quot;:0,&quot;score&quot;:49.5},{&quot;id&quot;:&quot;https://openalex.org/C127413603&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11023&quot;,&quot;display_name&quot;:&quot;Engineering&quot;,&quot;level&quot;:0,&quot;score&quot;:48.5},{&quot;id&quot;:&quot;https://openalex.org/C138885662&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q5891&quot;,&quot;display_name&quot;:&quot;Philosophy&quot;,&quot;level&quot;:0,&quot;score&quot;:41.0},{&quot;id&quot;:&quot;https://openalex.org/C86803240&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q420&quot;,&quot;display_name&quot;:&quot;Biology&quot;,&quot;level&quot;:0,&quot;score&quot;:39.9},{&quot;id&quot;:&quot;https://openalex.org/C154945302&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11660&quot;,&quot;display_name&quot;:&quot;Artificial intelligence&quot;,&quot;level&quot;:1,&quot;score&quot;:38.7},{&quot;id&quot;:&quot;https://openalex.org/C17744445&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q36442&quot;,&quot;display_name&quot;:&quot;Political science&quot;,&quot;level&quot;:0,&quot;score&quot;:36.4},{&quot;id&quot;:&quot;https://openalex.org/C121332964&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q413&quot;,&quot;display_name&quot;:&quot;Physics&quot;,&quot;level&quot;:0,&quot;score&quot;:35.9},{&quot;id&quot;:&quot;https://openalex.org/C199539241&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q7748&quot;,&quot;display_name&quot;:&quot;Law&quot;,&quot;level&quot;:1,&quot;score&quot;:35.1},{&quot;id&quot;:&quot;https://openalex.org/C111919701&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q9135&quot;,&quot;display_name&quot;:&quot;Operating system&quot;,&quot;level&quot;:1,&quot;score&quot;:34.2},{&quot;id&quot;:&quot;https://openalex.org/C41895202&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q8162&quot;,&quot;display_name&quot;:&quot;Linguistics&quot;,&quot;level&quot;:1,&quot;score&quot;:30.4},{&quot;id&quot;:&quot;https://openalex.org/C15744967&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q9418&quot;,&quot;display_name&quot;:&quot;Psychology&quot;,&quot;level&quot;:0,&quot;score&quot;:29.7},{&quot;id&quot;:&quot;https://openalex.org/C162324750&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q8134&quot;,&quot;display_name&quot;:&quot;Economics&quot;,&quot;level&quot;:0,&quot;score&quot;:29.7},{&quot;id&quot;:&quot;https://openalex.org/C199360897&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q9143&quot;,&quot;display_name&quot;:&quot;Programming language&quot;,&quot;level&quot;:1,&quot;score&quot;:29.6},{&quot;id&quot;:&quot;https://openalex.org/C62520636&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q944&quot;,&quot;display_name&quot;:&quot;Quantum mechanics&quot;,&quot;level&quot;:1,&quot;score&quot;:24.3},{&quot;id&quot;:&quot;https://openalex.org/C205649164&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q1071&quot;,&quot;display_name&quot;:&quot;Geography&quot;,&quot;level&quot;:0,&quot;score&quot;:23.7},{&quot;id&quot;:&quot;https://openalex.org/C71924100&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11190&quot;,&quot;display_name&quot;:&quot;Medicine&quot;,&quot;level&quot;:0,&quot;score&quot;:23.5},{&quot;id&quot;:&quot;https://openalex.org/C144024400&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q21201&quot;,&quot;display_name&quot;:&quot;Sociology&quot;,&quot;level&quot;:0,&quot;score&quot;:22.9}],&quot;works_api_url&quot;:&quot;https://api.openalex.org/works?filter=institutions.id:I4210089979&quot;,&quot;updated_date&quot;:&quot;2023-06-18T15:05:15.375683&quot;,&quot;created_date&quot;:&quot;2022-02-02&quot;},{&quot;id&quot;:&quot;https://openalex.org/I4210091826&quot;,&quot;ror&quot;:&quot;https://ror.org/00ds41r10&quot;,&quot;display_name&quot;:&quot;Carnegie Mellon University Australia&quot;,&quot;relevance_score&quot;:3684.0657,&quot;country_code&quot;:&quot;AU&quot;,&quot;type&quot;:&quot;education&quot;,&quot;homepage_url&quot;:&quot;https://www.australia.cmu.edu/&quot;,&quot;image_url&quot;:&quot;https://upload.wikimedia.org/wikipedia/commons/4/41/Torrens_Building%2C_Wakefield_St%2C_Adelaide.JPG&quot;,&quot;image_thumbnail_url&quot;:&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Torrens_Building%2C_Wakefield_St%2C_Adelaide.JPG/100px-Torrens_Building%2C_Wakefield_St%2C_Adelaide.JPG&quot;,&quot;display_name_acronyms&quot;:[&quot;CMU&quot;],&quot;display_name_alternatives&quot;:[],&quot;repositories&quot;:[],&quot;works_count&quot;:81,&quot;cited_by_count&quot;:1672,&quot;summary_stats&quot;:{&quot;2yr_mean_citedness&quot;:0.8,&quot;h_index&quot;:11,&quot;i10_index&quot;:13},&quot;ids&quot;:{&quot;openalex&quot;:&quot;https://openalex.org/I4210091826&quot;,&quot;ror&quot;:&quot;https://ror.org/00ds41r10&quot;,&quot;grid&quot;:&quot;grid.448660.8&quot;,&quot;wikipedia&quot;:&quot;https://en.wikipedia.org/wiki/Carnegie%20Mellon%20University%2C%20Australia&quot;},&quot;geo&quot;:{&quot;city&quot;:&quot;Adelaide&quot;,&quot;geonames_city_id&quot;:&quot;2078025&quot;,&quot;region&quot;:&quot;South Australia&quot;,&quot;country_code&quot;:&quot;AU&quot;,&quot;country&quot;:&quot;Australia&quot;,&quot;latitude&quot;:40.44285,&quot;longitude&quot;:-79.94308},&quot;international&quot;:{&quot;display_name&quot;:{&quot;en&quot;:&quot;Carnegie Mellon University Australia&quot;}},&quot;associated_institutions&quot;:[{&quot;id&quot;:&quot;https://openalex.org/I74973139&quot;,&quot;ror&quot;:&quot;https://ror.org/05x2bcf33&quot;,&quot;display_name&quot;:&quot;Carnegie Mellon University&quot;,&quot;country_code&quot;:&quot;US&quot;,&quot;type&quot;:&quot;education&quot;,&quot;relationship&quot;:&quot;parent&quot;}],&quot;counts_by_year&quot;:[{&quot;year&quot;:2023,&quot;works_count&quot;:0,&quot;cited_by_count&quot;:44},{&quot;year&quot;:2022,&quot;works_count&quot;:1,&quot;cited_by_count&quot;:75},{&quot;year&quot;:2021,&quot;works_count&quot;:5,&quot;cited_by_count&quot;:79},{&quot;year&quot;:2020,&quot;works_count&quot;:5,&quot;cited_by_count&quot;:58},{&quot;year&quot;:2019,&quot;works_count&quot;:14,&quot;cited_by_count&quot;:31},{&quot;year&quot;:2018,&quot;works_count&quot;:1,&quot;cited_by_count&quot;:47},{&quot;year&quot;:2017,&quot;works_count&quot;:2,&quot;cited_by_count&quot;:28},{&quot;year&quot;:2016,&quot;works_count&quot;:20,&quot;cited_by_count&quot;:34},{&quot;year&quot;:2015,&quot;works_count&quot;:1,&quot;cited_by_count&quot;:24},{&quot;year&quot;:2014,&quot;works_count&quot;:2,&quot;cited_by_count&quot;:37},{&quot;year&quot;:2013,&quot;works_count&quot;:0,&quot;cited_by_count&quot;:45},{&quot;year&quot;:2012,&quot;works_count&quot;:9,&quot;cited_by_count&quot;:52}],&quot;roles&quot;:[{&quot;role&quot;:&quot;institution&quot;,&quot;id&quot;:&quot;https://openalex.org/I4210091826&quot;,&quot;works_count&quot;:81}],&quot;x_concepts&quot;:[{&quot;id&quot;:&quot;https://openalex.org/C41008148&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q21198&quot;,&quot;display_name&quot;:&quot;Computer science&quot;,&quot;level&quot;:0,&quot;score&quot;:85.2},{&quot;id&quot;:&quot;https://openalex.org/C111919701&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q9135&quot;,&quot;display_name&quot;:&quot;Operating system&quot;,&quot;level&quot;:1,&quot;score&quot;:44.4},{&quot;id&quot;:&quot;https://openalex.org/C17744445&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q36442&quot;,&quot;display_name&quot;:&quot;Political science&quot;,&quot;level&quot;:0,&quot;score&quot;:40.7},{&quot;id&quot;:&quot;https://openalex.org/C199539241&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q7748&quot;,&quot;display_name&quot;:&quot;Law&quot;,&quot;level&quot;:1,&quot;score&quot;:40.7},{&quot;id&quot;:&quot;https://openalex.org/C127413603&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11023&quot;,&quot;display_name&quot;:&quot;Engineering&quot;,&quot;level&quot;:0,&quot;score&quot;:38.3},{&quot;id&quot;:&quot;https://openalex.org/C33923547&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q395&quot;,&quot;display_name&quot;:&quot;Mathematics&quot;,&quot;level&quot;:0,&quot;score&quot;:38.3},{&quot;id&quot;:&quot;https://openalex.org/C144133560&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q4830453&quot;,&quot;display_name&quot;:&quot;Business&quot;,&quot;level&quot;:0,&quot;score&quot;:37.0},{&quot;id&quot;:&quot;https://openalex.org/C162324750&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q8134&quot;,&quot;display_name&quot;:&quot;Economics&quot;,&quot;level&quot;:0,&quot;score&quot;:33.3},{&quot;id&quot;:&quot;https://openalex.org/C138885662&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q5891&quot;,&quot;display_name&quot;:&quot;Philosophy&quot;,&quot;level&quot;:0,&quot;score&quot;:32.1},{&quot;id&quot;:&quot;https://openalex.org/C199360897&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q9143&quot;,&quot;display_name&quot;:&quot;Programming language&quot;,&quot;level&quot;:1,&quot;score&quot;:29.6},{&quot;id&quot;:&quot;https://openalex.org/C95457728&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q309&quot;,&quot;display_name&quot;:&quot;History&quot;,&quot;level&quot;:0,&quot;score&quot;:24.7},{&quot;id&quot;:&quot;https://openalex.org/C205649164&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q1071&quot;,&quot;display_name&quot;:&quot;Geography&quot;,&quot;level&quot;:0,&quot;score&quot;:24.7},{&quot;id&quot;:&quot;https://openalex.org/C136764020&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q466&quot;,&quot;display_name&quot;:&quot;World Wide Web&quot;,&quot;level&quot;:1,&quot;score&quot;:23.5},{&quot;id&quot;:&quot;https://openalex.org/C142362112&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q735&quot;,&quot;display_name&quot;:&quot;Art&quot;,&quot;level&quot;:0,&quot;score&quot;:23.5},{&quot;id&quot;:&quot;https://openalex.org/C71924100&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11190&quot;,&quot;display_name&quot;:&quot;Medicine&quot;,&quot;level&quot;:0,&quot;score&quot;:22.2},{&quot;id&quot;:&quot;https://openalex.org/C166957645&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q23498&quot;,&quot;display_name&quot;:&quot;Archaeology&quot;,&quot;level&quot;:1,&quot;score&quot;:22.2},{&quot;id&quot;:&quot;https://openalex.org/C86803240&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q420&quot;,&quot;display_name&quot;:&quot;Biology&quot;,&quot;level&quot;:0,&quot;score&quot;:22.2}],&quot;works_api_url&quot;:&quot;https://api.openalex.org/works?filter=institutions.id:I4210091826&quot;,&quot;updated_date&quot;:&quot;2023-06-17T15:45:46.630934&quot;,&quot;created_date&quot;:&quot;2022-02-02&quot;},{&quot;id&quot;:&quot;https://openalex.org/I4210130200&quot;,&quot;ror&quot;:&quot;https://ror.org/02f33m021&quot;,&quot;display_name&quot;:&quot;Carnegie Mellon University Africa&quot;,&quot;relevance_score&quot;:2298.7922,&quot;country_code&quot;:&quot;RW&quot;,&quot;type&quot;:&quot;education&quot;,&quot;homepage_url&quot;:&quot;https://www.africa.engineering.cmu.edu/&quot;,&quot;image_url&quot;:&quot;https://upload.wikimedia.org/wikipedia/en/b/bb/Carnegie_Mellon_University_seal.svg&quot;,&quot;image_thumbnail_url&quot;:&quot;https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Carnegie_Mellon_University_seal.svg/100px-Carnegie_Mellon_University_seal.svg.png&quot;,&quot;display_name_acronyms&quot;:[&quot;CMU&quot;],&quot;display_name_alternatives&quot;:[],&quot;repositories&quot;:[],&quot;works_count&quot;:125,&quot;cited_by_count&quot;:651,&quot;summary_stats&quot;:{&quot;2yr_mean_citedness&quot;:2.675,&quot;h_index&quot;:13,&quot;i10_index&quot;:18},&quot;ids&quot;:{&quot;openalex&quot;:&quot;https://openalex.org/I4210130200&quot;,&quot;ror&quot;:&quot;https://ror.org/02f33m021&quot;,&quot;grid&quot;:&quot;grid.508475.b&quot;,&quot;wikipedia&quot;:&quot;https://en.wikipedia.org/wiki/Carnegie%20Mellon%20University&quot;},&quot;geo&quot;:{&quot;city&quot;:&quot;Kigali&quot;,&quot;geonames_city_id&quot;:&quot;202061&quot;,&quot;region&quot;:null,&quot;country_code&quot;:&quot;RW&quot;,&quot;country&quot;:&quot;Rwanda&quot;,&quot;latitude&quot;:-1.935111,&quot;longitude&quot;:30.158602},&quot;international&quot;:{&quot;display_name&quot;:{&quot;en&quot;:&quot;Carnegie Mellon University Africa&quot;}},&quot;associated_institutions&quot;:[{&quot;id&quot;:&quot;https://openalex.org/I74973139&quot;,&quot;ror&quot;:&quot;https://ror.org/05x2bcf33&quot;,&quot;display_name&quot;:&quot;Carnegie Mellon University&quot;,&quot;country_code&quot;:&quot;US&quot;,&quot;type&quot;:&quot;education&quot;,&quot;relationship&quot;:&quot;parent&quot;}],&quot;counts_by_year&quot;:[{&quot;year&quot;:2023,&quot;works_count&quot;:14,&quot;cited_by_count&quot;:166},{&quot;year&quot;:2022,&quot;works_count&quot;:22,&quot;cited_by_count&quot;:239},{&quot;year&quot;:2021,&quot;works_count&quot;:27,&quot;cited_by_count&quot;:215},{&quot;year&quot;:2020,&quot;works_count&quot;:15,&quot;cited_by_count&quot;:102},{&quot;year&quot;:2019,&quot;works_count&quot;:9,&quot;cited_by_count&quot;:55},{&quot;year&quot;:2018,&quot;works_count&quot;:16,&quot;cited_by_count&quot;:40},{&quot;year&quot;:2017,&quot;works_count&quot;:7,&quot;cited_by_count&quot;:23},{&quot;year&quot;:2016,&quot;works_count&quot;:3,&quot;cited_by_count&quot;:11},{&quot;year&quot;:2015,&quot;works_count&quot;:2,&quot;cited_by_count&quot;:4},{&quot;year&quot;:2014,&quot;works_count&quot;:4,&quot;cited_by_count&quot;:7},{&quot;year&quot;:2013,&quot;works_count&quot;:5,&quot;cited_by_count&quot;:1},{&quot;year&quot;:2012,&quot;works_count&quot;:2,&quot;cited_by_count&quot;:1}],&quot;roles&quot;:[{&quot;role&quot;:&quot;institution&quot;,&quot;id&quot;:&quot;https://openalex.org/I4210130200&quot;,&quot;works_count&quot;:125}],&quot;x_concepts&quot;:[{&quot;id&quot;:&quot;https://openalex.org/C41008148&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q21198&quot;,&quot;display_name&quot;:&quot;Computer science&quot;,&quot;level&quot;:0,&quot;score&quot;:86.4},{&quot;id&quot;:&quot;https://openalex.org/C86803240&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q420&quot;,&quot;display_name&quot;:&quot;Biology&quot;,&quot;level&quot;:0,&quot;score&quot;:56.0},{&quot;id&quot;:&quot;https://openalex.org/C127413603&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11023&quot;,&quot;display_name&quot;:&quot;Engineering&quot;,&quot;level&quot;:0,&quot;score&quot;:52.8},{&quot;id&quot;:&quot;https://openalex.org/C162324750&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q8134&quot;,&quot;display_name&quot;:&quot;Economics&quot;,&quot;level&quot;:0,&quot;score&quot;:45.6},{&quot;id&quot;:&quot;https://openalex.org/C33923547&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q395&quot;,&quot;display_name&quot;:&quot;Mathematics&quot;,&quot;level&quot;:0,&quot;score&quot;:44.8},{&quot;id&quot;:&quot;https://openalex.org/C17744445&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q36442&quot;,&quot;display_name&quot;:&quot;Political science&quot;,&quot;level&quot;:0,&quot;score&quot;:44.0},{&quot;id&quot;:&quot;https://openalex.org/C199539241&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q7748&quot;,&quot;display_name&quot;:&quot;Law&quot;,&quot;level&quot;:1,&quot;score&quot;:38.4},{&quot;id&quot;:&quot;https://openalex.org/C111919701&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q9135&quot;,&quot;display_name&quot;:&quot;Operating system&quot;,&quot;level&quot;:1,&quot;score&quot;:36.8},{&quot;id&quot;:&quot;https://openalex.org/C144133560&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q4830453&quot;,&quot;display_name&quot;:&quot;Business&quot;,&quot;level&quot;:0,&quot;score&quot;:36.0},{&quot;id&quot;:&quot;https://openalex.org/C71924100&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11190&quot;,&quot;display_name&quot;:&quot;Medicine&quot;,&quot;level&quot;:0,&quot;score&quot;:36.0},{&quot;id&quot;:&quot;https://openalex.org/C205649164&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q1071&quot;,&quot;display_name&quot;:&quot;Geography&quot;,&quot;level&quot;:0,&quot;score&quot;:36.0},{&quot;id&quot;:&quot;https://openalex.org/C121332964&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q413&quot;,&quot;display_name&quot;:&quot;Physics&quot;,&quot;level&quot;:0,&quot;score&quot;:34.4},{&quot;id&quot;:&quot;https://openalex.org/C154945302&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q11660&quot;,&quot;display_name&quot;:&quot;Artificial intelligence&quot;,&quot;level&quot;:1,&quot;score&quot;:32.0},{&quot;id&quot;:&quot;https://openalex.org/C138885662&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q5891&quot;,&quot;display_name&quot;:&quot;Philosophy&quot;,&quot;level&quot;:0,&quot;score&quot;:29.6},{&quot;id&quot;:&quot;https://openalex.org/C18903297&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q7150&quot;,&quot;display_name&quot;:&quot;Ecology&quot;,&quot;level&quot;:1,&quot;score&quot;:26.4},{&quot;id&quot;:&quot;https://openalex.org/C105795698&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q12483&quot;,&quot;display_name&quot;:&quot;Statistics&quot;,&quot;level&quot;:1,&quot;score&quot;:26.4},{&quot;id&quot;:&quot;https://openalex.org/C38652104&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q3510521&quot;,&quot;display_name&quot;:&quot;Computer security&quot;,&quot;level&quot;:1,&quot;score&quot;:25.6},{&quot;id&quot;:&quot;https://openalex.org/C15744967&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q9418&quot;,&quot;display_name&quot;:&quot;Psychology&quot;,&quot;level&quot;:0,&quot;score&quot;:24.8},{&quot;id&quot;:&quot;https://openalex.org/C62520636&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q944&quot;,&quot;display_name&quot;:&quot;Quantum mechanics&quot;,&quot;level&quot;:1,&quot;score&quot;:24.8},{&quot;id&quot;:&quot;https://openalex.org/C127313418&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q1069&quot;,&quot;display_name&quot;:&quot;Geology&quot;,&quot;level&quot;:0,&quot;score&quot;:24.0},{&quot;id&quot;:&quot;https://openalex.org/C144024400&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q21201&quot;,&quot;display_name&quot;:&quot;Sociology&quot;,&quot;level&quot;:0,&quot;score&quot;:23.2},{&quot;id&quot;:&quot;https://openalex.org/C136764020&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q466&quot;,&quot;display_name&quot;:&quot;World Wide Web&quot;,&quot;level&quot;:1,&quot;score&quot;:23.2},{&quot;id&quot;:&quot;https://openalex.org/C76155785&quot;,&quot;wikidata&quot;:&quot;https://www.wikidata.org/wiki/Q418&quot;,&quot;display_name&quot;:&quot;Telecommunications&quot;,&quot;level&quot;:1,&quot;score&quot;:21.6}],&quot;works_api_url&quot;:&quot;https://api.openalex.org/works?filter=institutions.id:I4210130200&quot;,&quot;updated_date&quot;:&quot;2023-06-18T06:33:21.241230&quot;,&quot;created_date&quot;:&quot;2022-02-02&quot;}],&quot;group_by&quot;:[]}
 </pre></div>
 </div>
 </div>
@@ -1018,7 +943,10 @@ document.write(`
                 {
                     &quot;id&quot;: &quot;https://openalex.org/C41008148&quot;,
                     &quot;wikidata&quot;: &quot;https://www.wikidata.org/wiki/Q21198&quot;,
-                    &quot;display_name&quot;: &quot;Computer science&quot;,
+                    &quot;display_name&quot;: &quot;Compute
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>r science&quot;,
                     &quot;level&quot;: 0,
                     &quot;score&quot;: 80.4
                 },
@@ -1701,10 +1629,7 @@ document.write(`
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1 22428    1   413    0     0   1319      0  0:00:17 --:--:--  0:00:17  1319
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 22428  100 22428    0     0  58222      0 --:--:-- --:--:-- --:--:-- 58103
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 22428  100 22428    0     0   186k      0 --:--:-- --:--:-- --:--:--  187k
 </pre></div>
 </div>
 </div>
@@ -2846,10 +2771,10 @@ document.write(`
 </div>
 <p>Now we can study what we get, and extract some data. In this json file at the top, you see there are 4 results. That is because we have several campuses: Rwanda, Silicon Valley, Qatar, and the Pittsburgh campus (as you will soon see, there seems to be an Australia campus?).</p>
 <p>For each result, there is a subsection of data available. For now, let us focus on the “works_count” and “cited_by_count” data. These are the total number of publications and citations for each campus.</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="jq-shell-command-to-parse-json-files">
-<h1>jq - shell command to parse json files<a class="headerlink" href="#jq-shell-command-to-parse-json-files" title="Permalink to this heading">#</a></h1>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="jq-shell-command-to-parse-json-files">
+<h1>jq - shell command to parse json files<a class="headerlink" href="#jq-shell-command-to-parse-json-files" title="Permalink to this headline">¶</a></h1>
 <p>jq (<a class="reference external" href="https://stedolan.github.io/jq/">https://stedolan.github.io/jq/</a>) is a command-line json processor. It can be used to extract data from json files. The command generally works like this:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jq query-string json-file
 </pre></div>
@@ -2916,11 +2841,11 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="writing-a-shell-script">
-<h1>Writing a shell script<a class="headerlink" href="#writing-a-shell-script" title="Permalink to this heading">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="writing-a-shell-script">
+<h1>Writing a shell script<a class="headerlink" href="#writing-a-shell-script" title="Permalink to this headline">¶</a></h1>
 <p>It is tedious to write those commands over and over. We can avoid that by capturing the commands in a shell script. Let’s review what needs to happen for that.</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>we need to create the file where the shell commands will be put.</p></li>
 <li><p>The file needs to be executable (chmod +x fname)</p></li>
 <li><p>Then we can run the file in our shell.</p></li>
@@ -2932,7 +2857,7 @@ document.write(`
 </pre></div>
 </div>
 <p>Note this script does not have very sophisticated error checking, e.g. for too few or too many arguments. We will not address that here; it is much easier in Python.</p>
-<p>The next cell writes this <a class="reference download internal" download="" href="../_downloads/fb5728690e03ec6f51ddb44f0e51cfb6/myscript.sh"><span class="xref download myst">script</span></a>.</p>
+<p>The next cell writes this <span class="xref myst">script</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%writefile myscript.sh
@@ -2981,11 +2906,11 @@ arg2 =  arg2
 </div>
 </div>
 </div>
-<section id="openalex-institutions-script">
-<h2>OpenAlex institutions script<a class="headerlink" href="#openalex-institutions-script" title="Permalink to this heading">#</a></h2>
+<div class="section" id="openalex-institutions-script">
+<h2>OpenAlex institutions script<a class="headerlink" href="#openalex-institutions-script" title="Permalink to this headline">¶</a></h2>
 <p>Now we can create a short script with our code. We will use one argument, the institution to query. It is moderately tedious (IMO) to convert a free form query from the arguments. One option is that you require the user to enter only one argument with no spaces, and + where words should be joined.</p>
 <p>I use some bash scripting tricks here. First we assign the query variable to the first argument (this is the first word). Then the <code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">1</span></code> line moves the position from the first arg to the next one. We loop over the remaining arguments in the for loop. The special variable $&#64; holds the rest of these, and we concatenate each word onto the query with a +. Then, we put the query into the curl command. Make this file, e.g. <a class="reference external" href="http://oa-inst.sh">oa-inst.sh</a>, make it executable, and then test it with some examples.</p>
-<p>See the script <a class="reference download internal" download="" href="../_downloads/396052f241562222bb1d82f9255a2089/oa-inst.sh"><span class="xref download myst">here</span></a>.</p>
+<p>See the script <span class="xref myst">here</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%writefile oa-inst.sh
@@ -3032,26 +2957,26 @@ curl -s https://api.openalex.org/institutions?search=$query | jq &#39;.results[]
 <p class="admonition-title">Note</p>
 <p>Shell scripts are very particular about whitespace and punctuation. They are less forgiving than languages like Python.</p>
 <p>This example is about the limit of what I would consider in a shell script before switching over to Python. Some reasons to use a shell script include:</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Python is not installed.</p></li>
 <li><p>You don’t want to install Python just for a short script.</p></li>
 </ol>
 </div>
 <p>I try to minimize shell scripting in my work. I think you are almost always better off leveraging what you know in Python, and using Python tools to write code that is easier to document and debug.</p>
 <p>Some scenarios I have to use shell scripting:</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Building software. Any time you have to install or compile code, you use shell scripts.</p></li>
 <li><p>Cloud services. Any kind of maintenance or setup of cloud services almost always requires command line tools and shell scripting.</p></li>
 </ol>
 <p>Some resources on Shell scripting:</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p><a class="reference external" href="https://www.freecodecamp.org/news/shell-scripting-crash-course-how-to-write-bash-scripts-in-linux/">https://www.freecodecamp.org/news/shell-scripting-crash-course-how-to-write-bash-scripts-in-linux/</a></p></li>
 <li><p><a class="reference external" href="https://devhints.io/bash">https://devhints.io/bash</a></p></li>
 </ol>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="exercise">
-<h1>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h1>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="exercise">
+<h1>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h1>
 <p>Use the single author API (<a class="reference external" href="https://docs.openalex.org/api-entities/authors/get-a-single-author">https://docs.openalex.org/api-entities/authors/get-a-single-author</a>) to get a list of works_count and cited_by_count by year for me. Here is the url to the data: <a class="reference external" href="https://api.openalex.org/authors/https://orcid.org/0000-0003-2625-9232">https://api.openalex.org/authors/https://orcid.org/0000-0003-2625-9232</a>.</p>
 <p>For each year, print the works_count and cited_by_count. The output should look like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;2023 1 879&quot;</span>
@@ -3090,7 +3015,7 @@ curl -s https://api.openalex.org/authors/https://orcid.org/0000-0001-7235-1481 \
 </div>
 </div>
 </div>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -3104,7 +3029,7 @@ curl -s https://api.openalex.org/authors/https://orcid.org/0000-0001-7235-1481 \
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./01-rest-api-openalex"
         },
         predefinedOutput: true
@@ -3112,118 +3037,44 @@ curl -s https://api.openalex.org/authors/https://orcid.org/0000-0001-7235-1481 \
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="../00-introduction/00-introduction-terminals.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction</p>
-      </div>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../00-introduction/00-introduction-terminals.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Introduction</p>
+        </div>
     </a>
-    <a class="right-next"
-       href="../02-python-requests/02-python-requests.html"
-       title="next page">
-      <div class="prev-next-info">
+    <a class='right-next' id="next-link" href="../02-python-requests/02-python-requests.html" title="next page">
+    <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Python and REST APIs</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
-</div></div>
-  
-</div>
-
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">OpenAlex</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#api">API</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#json">JSON</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-rest-apis-in-the-shell">Using REST APIs in the shell</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-the-institutions-endpoint">Exploring the institutions endpoint</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jq-shell-command-to-parse-json-files">jq - shell command to parse json files</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-shell-script">Writing a shell script</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openalex-institutions-script">OpenAlex institutions script</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-</ul>
-
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By John Kitchin
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  <p class="copyright">
-    
-      © Copyright 2023.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
     </div>
-  </div>
-  
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By John Kitchin<br/>
+    
+        &copy; Copyright 2023.<br/>
+  </p>
+</footer>
+</main>
 
-  <footer class="bd-footer">
-  </footer>
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
   </body>
 </html>

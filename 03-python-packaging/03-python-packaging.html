@@ -1,504 +1,439 @@
 
-
 <!DOCTYPE html>
 
-
-<html lang="en" >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Python packaging and version control &#8212; Scientific software engineering</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
-  
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "jkitchin/dsmles");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '03-python-packaging/03-python-packaging';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="More on Python packaging" href="../04-more-python-packaging/04-more-python-packaging.html" />
     <link rel="prev" title="Python and REST APIs" href="../02-python-requests/02-python-requests.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="../intro.html">
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="../_static/cmu-sse.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/cmu-sse.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    Welcome to Scientific Software Engineering
-                </a>
-            </li>
-        </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../00-introduction/00-introduction-terminals.html">Introduction</a></li>
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../01-rest-api-openalex/01-rest-api-openalex.html">OpenAlex</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../02-python-requests/02-python-requests.html">Python and REST APIs</a></li>
-
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python packaging and version control</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../04-more-python-packaging/04-more-python-packaging.html">More on Python packaging</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../05-python-classes/05-python-classes.html">Introduction Python Classes</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../06-code-quality/06-code-quality.html">Code quality control</a></li>
-
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../07-github-intro/07-github-intro.html">Introduction to GitHUB</a></li>
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../08-github-actions/08-github-actions.html">gitHUB Actions</a></li>
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../09-wrapup/09-wrapup.html">Wrapping up</a></li>
-
-
-
-
-
-
-
-
-
-
-
+      
+      <img src="../_static/cmu-sse.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Scientific software engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to Scientific Software Engineering
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00-introduction/00-introduction-terminals.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-rest-api-openalex/01-rest-api-openalex.html">
+   OpenAlex
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-python-requests/02-python-requests.html">
+   Python and REST APIs
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Python packaging and version control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-more-python-packaging/04-more-python-packaging.html">
+   More on Python packaging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-python-classes/05-python-classes.html">
+   Introduction Python Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-code-quality/06-code-quality.html">
+   Code quality control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-github-intro/07-github-intro.html">
+   Introduction to GitHUB
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-github-actions/08-github-actions.html">
+   gitHUB Actions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../09-wrapup/09-wrapup.html">
+   Wrapping up
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav></div>
-    </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
 
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
-
-<div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://lab.amdatascience.com/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/sse&urlpath=lab/tree/sse/docs/03-python-packaging/03-python-packaging.ipynb&branch=main" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../_static/images/logo_jupyterhub.svg">
-  </span>
-<span class="btn__text-container">JupyterHub</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/jkitchin/sse/blob/main/docs/03-python-packaging/03-python-packaging.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
 </div>
 
 
+          
 
 
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/jkitchin/sse" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/jkitchin/sse/issues/new?title=Issue%20on%20page%20%2F03-python-packaging/03-python-packaging.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../_sources/03-python-packaging/03-python-packaging.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
-  
-</div>
-</div>
-              
-              
-
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Python packaging and version control</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
             
-            <div>
-                <h2> Contents </h2>
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/03-python-packaging/03-python-packaging.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jkitchin/sse"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/jkitchin/sse/issues/new?title=Issue%20on%20page%20%2F03-python-packaging/03-python-packaging.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/jkitchin/sse/main?urlpath=lab/tree/docs/03-python-packaging/03-python-packaging.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://lab.amdatascience.com//hub/user-redirect/git-pull?repo=https://github.com/jkitchin/sse&urlpath=lab/tree/sse/docs/03-python-packaging/03-python-packaging.ipynb&branch=main"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/jkitchin/sse/blob/main/docs/03-python-packaging/03-python-packaging.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
             </div>
-            <nav aria-label="Page">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Python packaging and version control</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-a-package">Anatomy of a package</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control">Version control</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#first-package-modification">First package modification</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-feature-branch">A feature branch</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-and-forth-on-branches">Back and forth on branches</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-commit-on-main">Add a commit on main</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-main-onto-feature-branch">merge main onto feature branch</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#try-the-new-python-function">Try the new python function</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Python packaging and version control
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anatomy-of-a-package">
+   Anatomy of a package
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#version-control">
+   Version control
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#first-package-modification">
+   First package modification
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-feature-branch">
+     A feature branch
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#back-and-forth-on-branches">
+     Back and forth on branches
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-a-commit-on-main">
+     Add a commit on main
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#merge-main-onto-feature-branch">
+     merge main onto feature branch
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#try-the-new-python-function">
+   Try the new python function
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
 </ul>
 
             </nav>
         </div>
     </div>
 </div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Python packaging and version control</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Python packaging and version control
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anatomy-of-a-package">
+   Anatomy of a package
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#version-control">
+   Version control
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#first-package-modification">
+   First package modification
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-feature-branch">
+     A feature branch
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#back-and-forth-on-branches">
+     Back and forth on branches
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-a-commit-on-main">
+     Add a commit on main
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#merge-main-onto-feature-branch">
+     merge main onto feature branch
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#try-the-new-python-function">
+   Try the new python function
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
 
-              
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
-  <section class="tex2jax_ignore mathjax_ignore" id="python-packaging-and-version-control">
-<h1>Python packaging and version control<a class="headerlink" href="#python-packaging-and-version-control" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="python-packaging-and-version-control">
+<h1>Python packaging and version control<a class="headerlink" href="#python-packaging-and-version-control" title="Permalink to this headline">¶</a></h1>
 <p>When you import a Python library, you are importing code from a package (also sometimes called a module). There is some magic that happens when you do this. For example, consider this simple import of a core library. Where is that code?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -555,15 +490,15 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="anatomy-of-a-package">
-<h1>Anatomy of a package<a class="headerlink" href="#anatomy-of-a-package" title="Permalink to this heading">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="anatomy-of-a-package">
+<h1>Anatomy of a package<a class="headerlink" href="#anatomy-of-a-package" title="Permalink to this headline">¶</a></h1>
 <p>A Python package is a collection of files and directories that follow some conventions. It is common for the whole set to be in a single root directory. This is helpful to isolate the files from other files, so they are easy to move later.</p>
 <p>In the package root, you need several files:</p>
 <ul class="simple">
 <li><p><span class="xref myst">README.md</span> :: A text file describing the package</p></li>
-<li><p><a class="reference download internal" download="" href="../_downloads/3508c56061faa9804fd85bd722c17ff2/setup.py"><span class="xref download myst">setup.py</span></a> :: A Python file for installing the package</p></li>
-<li><p><a class="reference download internal" download="" href="../_downloads/84d461a1f23029dd89f92b22bc5761f8/LICENSE"><span class="xref download myst">LICENSE</span></a> :: A file containing the terms of use for your package.</p></li>
+<li><p><span class="xref myst">setup.py</span> :: A Python file for installing the package</p></li>
+<li><p><span class="xref myst">LICENSE</span> :: A file containing the terms of use for your package.</p></li>
 </ul>
 <p>There are a lot of licenses: <a class="reference external" href="https://opensource.org/licenses">https://opensource.org/licenses</a>. We will primarily focus on the MIT license.</p>
 <p>We put the source for our package in a directory inside called <em>testpack</em>.</p>
@@ -638,7 +573,7 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 </div>
 </div>
 <p>Inside the testpack directory there must be an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file, and maybe additional package source files (.py files).</p>
-<p>Check out <a class="reference download internal" download="" href="../_downloads/868049755cdc49460e2e7b6d0aa45103/__init__.py"><span class="xref download myst">__init__.py</span></a>. This file is run every time you import the package. We define a single function in this file that we can use later, and there is a diagnostic line that should print when we import the package later.</p>
+<p>Check out <span class="xref myst">__init__.py</span>. This file is run every time you import the package. We define a single function in this file that we can use later, and there is a diagnostic line that should print when we import the package later.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> package-root/testpack/__init__.py
@@ -722,9 +657,9 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 </div>
 </div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="version-control">
-<h1>Version control<a class="headerlink" href="#version-control" title="Permalink to this heading">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="version-control">
+<h1>Version control<a class="headerlink" href="#version-control" title="Permalink to this headline">¶</a></h1>
 <p>It is tempting to start modifying the package right away. That would probably be a mistake though. What if we do something that breaks it? How would we recover back to a working state? The solution to this problem is called <em>version control</em>. It is an essential part of software development. We will use git (<a class="reference external" href="https://git-scm.com/doc">https://git-scm.com/doc</a>) for version control.</p>
 <p>With git, we will create a <em>repository</em> in our package-root. Then we can <em>commit</em> changes we make to files in the repository as we go. If some changes don’t work out, we can <em>revert</em> them. We can also make <em>branches</em> to test ideas out on.</p>
 <p>To get started, we need to tell git about ourselves. Open a terminal, and run these commands (obviously, change the name and email to yours):</p>
@@ -898,7 +833,7 @@ git commit -m &quot;First commit&quot;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main (root-commit) 819aca3] First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main (root-commit) 9c3dda9] First commit
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 4 files changed, 29 insertions(+)
@@ -959,7 +894,7 @@ git status
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main a3b705b] Add the .gitignore file
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main ae6d255] Add the .gitignore file
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 2 insertions(+)
@@ -986,13 +921,13 @@ git log
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit a3b705b6e7bb9b537754a453cae199f83568a383
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit ae6d2555573a937102572a459d253bfa4d5f2989
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Author: John Doe &lt;johndoe@example.com&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date:   Sun Jun 18 17:00:44 2023 +0000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date:   Sun Jun 18 17:02:44 2023 +0000
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1004,13 +939,13 @@ git log
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit 819aca3d1df73243621ff3c1e714254598886bc9
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit 9c3dda93465158a2987ab6be71c0826aa0879df0
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Author: John Doe &lt;johndoe@example.com&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date:   Sun Jun 18 17:00:44 2023 +0000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date:   Sun Jun 18 17:02:44 2023 +0000
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1022,9 +957,9 @@ git log
 </div>
 </div>
 <p>In the log, you can see the two commits, and each one is identified by a long hash, e.g. commit 33a50e04b75c90b34a274aea287dd1e6c6c045de. This is a unique cryptographic hash of the content that we committed, and we can use it to see what happened or changed, to revert changes, etc. We will return to that later. Now, we are ready to safely make some changes to our package. By safely, I mean we will be able to undo changes, revert changes, see what changes were made, etc.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="first-package-modification">
-<h1>First package modification<a class="headerlink" href="#first-package-modification" title="Permalink to this heading">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="first-package-modification">
+<h1>First package modification<a class="headerlink" href="#first-package-modification" title="Permalink to this headline">¶</a></h1>
 <p>There are lots of ways to use git. Here we explore the idea of using a <code class="docutils literal notranslate"><span class="pre">feature</span> <span class="pre">branch</span></code>. We have a working package, and we want to add a new feature in a way that minimizes the risk of messing up the current state. The strategy is that we make a new branch, do all our work there, and when we are satisfied with it, we merge it back on to main.</p>
 <p>Let’s see what we have so far. Our commit history is linear, and the current position is at the HEAD commit on <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
 <div class="cell docutils container">
@@ -1034,14 +969,14 @@ git log
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* <span class=" -Color -Color-Yellow">a3b705b (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span> Add the .gitignore file
-* <span class=" -Color -Color-Yellow">819aca3</span> First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* <span class=" -Color -Color-Yellow">ae6d255 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span> Add the .gitignore file
+* <span class=" -Color -Color-Yellow">9c3dda9</span> First commit
 </pre></div>
 </div>
 </div>
 </div>
-<section id="a-feature-branch">
-<h2>A feature branch<a class="headerlink" href="#a-feature-branch" title="Permalink to this heading">#</a></h2>
+<div class="section" id="a-feature-branch">
+<h2>A feature branch<a class="headerlink" href="#a-feature-branch" title="Permalink to this headline">¶</a></h2>
 <p>We are going to checkout a new branch, let’s call it <code class="docutils literal notranslate"><span class="pre">feature</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1063,10 +998,10 @@ git log --graph --oneline
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nothing to commit, working tree clean
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* a3b705b Add the .gitignore file
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* ae6d255 Add the .gitignore file
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 819aca3 First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 9c3dda9 First commit
 </pre></div>
 </div>
 </div>
@@ -1124,7 +1059,7 @@ git status
 </div>
 </div>
 <p>This is telling us two things:</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>We are on the feature branch</p></li>
 <li><p>There is a modified file.</p></li>
 </ol>
@@ -1139,26 +1074,26 @@ git log --graph --oneline
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[feature 9c869ee] Add a new function
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[feature 395aabf] Add a new function
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 3 insertions(+)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 9c869ee Add a new function
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 395aabf Add a new function
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* a3b705b Add the .gitignore file
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* ae6d255 Add the .gitignore file
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 819aca3 First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 9c3dda9 First commit
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="back-and-forth-on-branches">
-<h2>Back and forth on branches<a class="headerlink" href="#back-and-forth-on-branches" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="back-and-forth-on-branches">
+<h2>Back and forth on branches<a class="headerlink" href="#back-and-forth-on-branches" title="Permalink to this headline">¶</a></h2>
 <p>Before we go further, let’s see that we can go back to the main branch where that addition does not exist, and then come back. First, we see what is in the file right now.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1278,9 +1213,9 @@ cat testpack/__init__.py
 </div>
 </div>
 </div>
-</section>
-<section id="add-a-commit-on-main">
-<h2>Add a commit on main<a class="headerlink" href="#add-a-commit-on-main" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="add-a-commit-on-main">
+<h2>Add a commit on main<a class="headerlink" href="#add-a-commit-on-main" title="Permalink to this headline">¶</a></h2>
 <p>git allows us to have many branches where we can add features, fix bugs, try new implementations, etc. You can make changes to all the branches simultaneously. For example, let’s go back to the main branch to add some detail to the README.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1297,19 +1232,19 @@ git log --graph --oneline
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;main&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main 3bff721] document the function in the package
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main 1c71213] document the function in the package
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 3 insertions(+)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 3bff721 document the function in the package
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 1c71213 document the function in the package
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* a3b705b Add the .gitignore file
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* ae6d255 Add the .gitignore file
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 819aca3 First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 9c3dda9 First commit
 </pre></div>
 </div>
 </div>
@@ -1342,9 +1277,9 @@ cat README.md
 </div>
 </div>
 </div>
-</section>
-<section id="merge-main-onto-feature-branch">
-<h2>merge main onto feature branch<a class="headerlink" href="#merge-main-onto-feature-branch" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="merge-main-onto-feature-branch">
+<h2>merge main onto feature branch<a class="headerlink" href="#merge-main-onto-feature-branch" title="Permalink to this headline">¶</a></h2>
 <p>Before we continue, we should merge the new change in main into our feature branch.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1365,25 +1300,25 @@ git log --graph --oneline
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 3 insertions(+)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*   1df063e Merge branch &#39;main&#39; into feature
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*   0c3e650 Merge branch &#39;main&#39; into feature
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|\  
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| * 3bff721 document the function in the package
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| * 1c71213 document the function in the package
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* | 9c869ee Add a new function
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* | 395aabf Add a new function
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|/  
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* a3b705b Add the .gitignore file
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* ae6d255 Add the .gitignore file
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 819aca3 First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 9c3dda9 First commit
 </pre></div>
 </div>
 </div>
@@ -1405,7 +1340,7 @@ git log --graph --oneline
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;main&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updating 3bff721..1df063e
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updating 1c71213..0c3e650
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fast-forward
@@ -1417,28 +1352,28 @@ git log --graph --oneline
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 3 insertions(+)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Deleted branch feature (was 1df063e).
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Deleted branch feature (was 0c3e650).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*   1df063e Merge branch &#39;main&#39; into feature
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*   0c3e650 Merge branch &#39;main&#39; into feature
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|\  
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| * 3bff721 document the function in the package
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| * 1c71213 document the function in the package
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* | 9c869ee Add a new function
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* | 395aabf Add a new function
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|/  
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* a3b705b Add the .gitignore file
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* ae6d255 Add the .gitignore file
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 819aca3 First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 9c3dda9 First commit
 </pre></div>
 </div>
 </div>
@@ -1457,10 +1392,10 @@ git log --graph --oneline
 </div>
 </div>
 </div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="try-the-new-python-function">
-<h1>Try the new python function<a class="headerlink" href="#try-the-new-python-function" title="Permalink to this heading">#</a></h1>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="try-the-new-python-function">
+<h1>Try the new python function<a class="headerlink" href="#try-the-new-python-function" title="Permalink to this headline">¶</a></h1>
 <p>We might naively just try it, but it does not work.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1497,11 +1432,11 @@ git log --graph --oneline
 </div>
 </div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="summary">
-<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
 <p>We learned how to:</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>initialize a git repo</p></li>
 <li><p>Add files and commit them to the repo</p></li>
 <li><p>edit files and commit changes.</p></li>
@@ -1516,7 +1451,7 @@ git log --graph --oneline
 <p>You should also read <a class="reference external" href="https://merely-useful.tech/py-rse/git-advanced.html">https://merely-useful.tech/py-rse/git-advanced.html</a>.</p>
 <p>Today we learned about using branches to try making a change. The nice thing about branches is if you don’t like the change, you can simply delete the branch, or go back to the main branch. If you do like it, then you just merge it in, and get on with your work.</p>
 <p>There is still quite a bit to learn about git. We will get in to some of these things next time, including dealing with merge conflicts,</p>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1530,7 +1465,7 @@ git log --graph --oneline
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./03-python-packaging"
         },
         predefinedOutput: true
@@ -1538,117 +1473,44 @@ git log --graph --oneline
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="../02-python-requests/02-python-requests.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python and REST APIs</p>
-      </div>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../02-python-requests/02-python-requests.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Python and REST APIs</p>
+        </div>
     </a>
-    <a class="right-next"
-       href="../04-more-python-packaging/04-more-python-packaging.html"
-       title="next page">
-      <div class="prev-next-info">
+    <a class='right-next' id="next-link" href="../04-more-python-packaging/04-more-python-packaging.html" title="next page">
+    <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">More on Python packaging</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
-</div></div>
-  
-</div>
-
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Python packaging and version control</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-a-package">Anatomy of a package</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control">Version control</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#first-package-modification">First package modification</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-feature-branch">A feature branch</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-and-forth-on-branches">Back and forth on branches</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-commit-on-main">Add a commit on main</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-main-onto-feature-branch">merge main onto feature branch</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#try-the-new-python-function">Try the new python function</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
-</ul>
-
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By John Kitchin
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  <p class="copyright">
-    
-      © Copyright 2023.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
     </div>
-  </div>
-  
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By John Kitchin<br/>
+    
+        &copy; Copyright 2023.<br/>
+  </p>
+</footer>
+</main>
 
-  <footer class="bd-footer">
-  </footer>
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
   </body>
 </html>
