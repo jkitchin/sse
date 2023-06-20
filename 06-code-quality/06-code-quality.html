@@ -742,17 +742,13 @@ git init
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25h  Created wheel for s23bib: filename=s23bib-0.0.1-py3-none-any.whl size=2370 sha256=a74973ab92cfd74652f65b67834ebda2e7fbe8d52636809ae547b42ce17448a4
-  Stored in directory: /tmp/pip-ephem-wheel-cache-dqo3hmy1/wheels/b3/60/7f/70e7f6f38afcaff326f13b2c580aaabcf11799ef831d7933dd
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully built s23bib
+?25h  Created wheel for s23bib: filename=s23bib-0.0.1-py3-none-any.whl size=2370 sha256=c9ad76ac3e9808f6993d85d7a1ded877723fa85f122e06380fd847ab9232743d
+  Stored in directory: /tmp/pip-ephem-wheel-cache-jymdcoyk/wheels/b3/60/7f/70e7f6f38afcaff326f13b2c580aaabcf11799ef831d7933dd
+Successfully built s23bib
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: s23bib
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed s23bib-0.0.1
+Successfully installed s23bib-0.0.1
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">23.1.2</span>
@@ -769,7 +765,7 @@ git init
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: bibtexparser in /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages (1.4.0)
-Requirement already satisfied: pyparsing&gt;=2.0.3 in /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages (from bibtexparser) (3.0.9)
+Requirement already satisfied: pyparsing&gt;=2.0.3 in /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages (from bibtexparser) (3.1.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">23.1.2</span>
@@ -915,37 +911,85 @@ black black-example.py --diff
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bash: line 1: black: command not found
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- black-example.py	2023-06-20 01:51:37.403419 +0000
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;black black-example.py --diff</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/interactiveshell.py:2478,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2476</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2477</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">2478</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2480</span> <span class="c1"># The code below prevents the output from being displayed</span>
-<span class="g g-Whitespace">   </span><span class="mi">2481</span> <span class="c1"># when using magics with decodator @output_can_be_silenced</span>
-<span class="g g-Whitespace">   </span><span class="mi">2482</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2483</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
-<span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
-<span class="ne">--&gt; </span><span class="mi">153</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
-<span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">301</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
-<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="c1"># in case it&#39;s stuck in uninterruptible sleep. -9 = SIGKILL</span>
-<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="n">rc</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">9</span>
-<span class="ne">--&gt; </span><span class="mi">305</span>     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
-
-<span class="ne">CalledProcessError</span>: Command &#39;b&#39;black black-example.py --diff\n&#39;&#39; returned non-zero exit status 127.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+++ black-example.py	2023-06-20 01:51:37.574661 +0000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>@@ -1,12 +1,12 @@
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-a=4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-#how about this for loop
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+a = 4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+# how about this for loop
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> for i in range(a):
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-    b  =3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-    print( a,b)#comment two
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+    b = 3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+    print(a, b)  # comment two
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-b = [1,2,3,4,5,6,7,8,9,0]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> def f(x):
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-    &#39;docstring&#39;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-    return ([1,2,3,4,
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-             5,6,7,8,9,0])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+    &quot;docstring&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>would reformat black-example.py
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All done! ✨ 🍰 ✨
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 file would be reformatted.
 </pre></div>
 </div>
 </div>
@@ -959,37 +1003,16 @@ black black-example.py
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bash: line 1: black: command not found
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reformatted black-example.py
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;black black-example.py</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/interactiveshell.py:2478,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2476</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2477</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">2478</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2480</span> <span class="c1"># The code below prevents the output from being displayed</span>
-<span class="g g-Whitespace">   </span><span class="mi">2481</span> <span class="c1"># when using magics with decodator @output_can_be_silenced</span>
-<span class="g g-Whitespace">   </span><span class="mi">2482</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2483</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
-<span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
-<span class="ne">--&gt; </span><span class="mi">153</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
-<span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">301</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
-<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="c1"># in case it&#39;s stuck in uninterruptible sleep. -9 = SIGKILL</span>
-<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="n">rc</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">9</span>
-<span class="ne">--&gt; </span><span class="mi">305</span>     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
-
-<span class="ne">CalledProcessError</span>: Command &#39;b&#39;black black-example.py\n&#39;&#39; returned non-zero exit status 127.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All done! ✨ 🍰 ✨
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 file reformatted.
 </pre></div>
 </div>
 </div>
@@ -1002,18 +1025,18 @@ black black-example.py
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a=4
-#how about this for loop
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 4
+# how about this for loop
 for i in range(a):
-    b  =3
-    print( a,b)#comment two
+    b = 3
+    print(a, b)  # comment two
 
-b = [1,2,3,4,5,6,7,8,9,0]
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+
 
 def f(x):
-    &#39;docstring&#39;
-    return ([1,2,3,4,
-             5,6,7,8,9,0])
+    &quot;docstring&quot;
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 </pre></div>
 </div>
 </div>
@@ -1030,7 +1053,12 @@ def f(x):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/bin/sh: 1: black: not found
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">reformatted /home/runner/work/sse/sse/sse/06-code-quality/package/s23bib/test_sort.py</span>
+<span class=" -Color -Color-Bold">reformatted /home/runner/work/sse/sse/sse/06-code-quality/package/s23bib/utils.py</span>
+<span class=" -Color -Color-Bold">reformatted /home/runner/work/sse/sse/sse/06-code-quality/package/setup.py</span>
+
+<span class=" -Color -Color-Bold">All done! ✨ 🍰 ✨</span>
+<span class=" -Color -Color-Bold -Color-Bold-Blue">3 files </span><span class=" -Color -Color-Bold">reformatted</span>, <span class=" -Color -Color-Blue">1 file </span>left unchanged.
 </pre></div>
 </div>
 </div>
@@ -1043,7 +1071,99 @@ def f(x):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/bin/sh: 1: black: not found
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Usage: black [OPTIONS] SRC ...
+
+  The uncompromising code formatter.
+
+Options:
+  -c, --code TEXT                 Format the code passed in as a string.
+  -l, --line-length INTEGER       How many characters per line to allow.
+                                  [default: 88]
+  -t, --target-version [py33|py34|py35|py36|py37|py38|py39|py310|py311]
+                                  Python versions that should be supported by
+                                  Black&#39;s output. By default, Black will try
+                                  to infer this from the project metadata in
+                                  pyproject.toml. If this does not yield
+                                  conclusive results, Black will use per-file
+                                  auto-detection.
+  --pyi                           Format all input files like typing stubs
+                                  regardless of file extension (useful when
+                                  piping source on standard input).
+  --ipynb                         Format all input files like Jupyter
+                                  Notebooks regardless of file extension
+                                  (useful when piping source on standard
+                                  input).
+  --python-cell-magics TEXT       When processing Jupyter Notebooks, add the
+                                  given magic to the list of known python-
+                                  magics (capture, prun, pypy, python,
+                                  python3, time, timeit). Useful for
+                                  formatting cells with custom python magics.
+  -x, --skip-source-first-line    Skip the first line of the source code.
+  -S, --skip-string-normalization
+                                  Don&#39;t normalize string quotes or prefixes.
+  -C, --skip-magic-trailing-comma
+                                  Don&#39;t use trailing commas as a reason to
+                                  split lines.
+  --preview                       Enable potentially disruptive style changes
+                                  that may be added to Black&#39;s main
+                                  functionality in the next major release.
+  --check                         Don&#39;t write the files back, just return the
+                                  status. Return code 0 means nothing would
+                                  change. Return code 1 means some files would
+                                  be reformatted. Return code 123 means there
+                                  was an internal error.
+  --diff                          Don&#39;t write the files back, just output a
+                                  diff for each file on stdout.
+  --color / --no-color            Show colored diff. Only applies when
+                                  `--diff` is given.
+  --fast / --safe                 If --fast given, skip temporary sanity
+                                  checks. [default: --safe]
+  --required-version TEXT         Require a specific version of Black to be
+                                  running (useful for unifying results across
+                                  many environments e.g. with a pyproject.toml
+                                  file). It can be either a major version
+                                  number or an exact version.
+  --include TEXT                  A regular expression that matches files and
+                                  directories that should be included on
+                                  recursive searches. An empty value means all
+                                  files are included regardless of the name.
+                                  Use forward slashes for directories on all
+                                  platforms (Windows, too). Exclusions are
+                                  calculated first, inclusions later.
+                                  [default: (\.pyi?|\.ipynb)$]
+  --exclude TEXT                  A regular expression that matches files and
+                                  directories that should be excluded on
+                                  recursive searches. An empty value means no
+                                  paths are excluded. Use forward slashes for
+                                  directories on all platforms (Windows, too).
+                                  Exclusions are calculated first, inclusions
+                                  later. [default: /(\.direnv|\.eggs|\.git|\.h
+                                  g|\.mypy_cache|\.nox|\.tox|\.venv|venv|\.svn
+                                  |\.ipynb_checkpoints|_build|buck-
+                                  out|build|dist|__pypackages__)/]
+  --extend-exclude TEXT           Like --exclude, but adds additional files
+                                  and directories on top of the excluded ones.
+                                  (Useful if you simply want to add to the
+                                  default)
+  --force-exclude TEXT            Like --exclude, but files and directories
+                                  matching this regex will be excluded even
+                                  when they are passed explicitly as
+                                  arguments.
+  --stdin-filename TEXT           The name of the file when passing it through
+                                  stdin. Useful to make sure Black will
+                                  respect --force-exclude option on some
+                                  editors that rely on using stdin.
+  -W, --workers INTEGER RANGE     Number of parallel workers [default: number
+                                  of CPUs in the system]  [x&gt;=1]
+  -q, --quiet                     Don&#39;t emit non-error messages to stderr.
+                                  Errors are still emitted; silence those with
+                                  2&gt;/dev/null.
+  -v, --verbose                   Also emit messages to stderr about files
+                                  that were not changed or were ignored due to
+                                  exclusion patterns.
+  --version                       Show the version and exit.
+  --config FILE                   Read configuration from FILE path.
+  -h, --help                      Show this message and exit.
 </pre></div>
 </div>
 </div>
@@ -1146,20 +1266,11 @@ Requirement already satisfied: snowballstemmer&gt;=2.2.0 in /opt/hostedtoolcache
 <span class=" -Color -Color-Bold">package/s23bib/__init__.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">F401</span> &#39;.utils.sort_bibtex&#39; imported but unused
 <span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D100</span> Missing docstring in public module
 <span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>3<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">F401</span> &#39;bibtexparser&#39; imported but unused
-<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>32<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E302</span> expected 2 blank lines, found 1
-<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>33<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D103</span> Missing docstring in public function
-<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>38<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">W293</span> blank line contains whitespace
-<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>39<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D101</span> Missing docstring in public class
-<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>39<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E302</span> expected 2 blank lines, found 1
-<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>40<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D102</span> Missing docstring in public method
-<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>42<span class=" -Color -Color-Cyan">:</span>64<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">W291</span> trailing whitespace
+<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>34<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D103</span> Missing docstring in public function
+<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>41<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D101</span> Missing docstring in public class
+<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>42<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D102</span> Missing docstring in public method
 <span class=" -Color -Color-Bold">package/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D100</span> Missing docstring in public module
-<span class=" -Color -Color-Bold">package/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>3<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D103</span> Missing docstring in public function
-<span class=" -Color -Color-Bold">package/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>3<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E302</span> expected 2 blank lines, found 1
-<span class=" -Color -Color-Bold">package/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>8<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">W293</span> blank line contains whitespace
-<span class=" -Color -Color-Bold">package/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>13<span class=" -Color -Color-Cyan">:</span>19<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E225</span> missing whitespace around operator
-<span class=" -Color -Color-Bold">package/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>14<span class=" -Color -Color-Cyan">:</span>21<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E225</span> missing whitespace around operator
-<span class=" -Color -Color-Bold">package/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>18<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">W293</span> blank line contains whitespace
+<span class=" -Color -Color-Bold">package/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>4<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D103</span> Missing docstring in public function
 <span class=" -Color -Color-Bold">package/setup.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D100</span> Missing docstring in public module
 </pre></div>
 </div>
@@ -1175,20 +1286,11 @@ Requirement already satisfied: snowballstemmer&gt;=2.2.0 in /opt/hostedtoolcache
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">package/s23bib/__init__.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D104</span> Missing docstring in public package
 <span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D100</span> Missing docstring in public module
-<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>32<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E302</span> expected 2 blank lines, found 1
-<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>33<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D103</span> Missing docstring in public function
-<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>38<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">W293</span> blank line contains whitespace
-<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>39<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D101</span> Missing docstring in public class
-<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>39<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E302</span> expected 2 blank lines, found 1
-<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>40<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D102</span> Missing docstring in public method
-<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>42<span class=" -Color -Color-Cyan">:</span>64<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">W291</span> trailing whitespace
+<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>34<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D103</span> Missing docstring in public function
+<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>41<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D101</span> Missing docstring in public class
+<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>42<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D102</span> Missing docstring in public method
 <span class=" -Color -Color-Bold">package/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D100</span> Missing docstring in public module
-<span class=" -Color -Color-Bold">package/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>3<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D103</span> Missing docstring in public function
-<span class=" -Color -Color-Bold">package/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>3<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E302</span> expected 2 blank lines, found 1
-<span class=" -Color -Color-Bold">package/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>8<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">W293</span> blank line contains whitespace
-<span class=" -Color -Color-Bold">package/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>13<span class=" -Color -Color-Cyan">:</span>19<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E225</span> missing whitespace around operator
-<span class=" -Color -Color-Bold">package/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>14<span class=" -Color -Color-Cyan">:</span>21<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E225</span> missing whitespace around operator
-<span class=" -Color -Color-Bold">package/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>18<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">W293</span> blank line contains whitespace
+<span class=" -Color -Color-Bold">package/s23bib/utils.py</span><span class=" -Color -Color-Cyan">:</span>4<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D103</span> Missing docstring in public function
 <span class=" -Color -Color-Bold">package/setup.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D100</span> Missing docstring in public module
 </pre></div>
 </div>
@@ -1314,7 +1416,12 @@ black package &amp;&amp; flake8 --exclude package/build package &amp;&amp; pylin
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/bin/sh: 1: black: not found
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">All done! ✨ 🍰 ✨</span>
+<span class=" -Color -Color-Blue">4 files </span>left unchanged.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">package/s23bib/__init__.py</span><span class=" -Color -Color-Cyan">:</span>2<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">F401</span> &#39;.utils.sort_bibtex&#39; imported but unused
+<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>4<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">F401</span> &#39;bibtexparser&#39; imported but unused
 </pre></div>
 </div>
 </div>
@@ -1359,10 +1466,22 @@ make all
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>black .
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: black: No such file or directory
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All done! ✨ 🍰 ✨
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: *** [makefile:2: black] Error 127
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 files left unchanged.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>flake8 --exclude build .
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/__init__.py:2:1: F401 &#39;.utils.sort_bibtex&#39; imported but unused
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/test_sort.py:4:1: F401 &#39;bibtexparser&#39; imported but unused
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: *** [makefile:5: flake8] Error 1
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -1554,7 +1673,7 @@ git commit -m &quot;adding pyfiles&quot;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>running precommit in /home/runner/work/sse/sse/sse/06-code-quality/package
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[master (root-commit) caa9810] adding pyfiles
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[master (root-commit) 2484288] adding pyfiles
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 14 insertions(+)
@@ -1600,10 +1719,22 @@ git commit -m &quot;adding pyfiles&quot;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>black .
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: black: No such file or directory
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All done! ✨ 🍰 ✨
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: *** [makefile:2: black] Error 127
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 files left unchanged.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>flake8 --exclude build .
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/__init__.py:2:1: F401 &#39;.utils.sort_bibtex&#39; imported but unused
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/test_sort.py:4:1: F401 &#39;bibtexparser&#39; imported but unused
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: *** [makefile:5: flake8] Error 1
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -1648,13 +1779,13 @@ git log
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit caa98104ab35f44f84abcae338fb102ba47ae2a0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit 2484288ad1403581181a6944ec92756e02f15ba2
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Author: Your Name &lt;you@example.com&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date:   Sun Jun 18 19:57:39 2023 +0000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date:   Tue Jun 20 01:51:47 2023 +0000
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1750,21 +1881,25 @@ git commit --no-verify -m &quot;adding pyfiles&quot;
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading pre_commit-3.3.3-py2.py3-none-any.whl (202 kB)
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/202.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">61.4/202.8 kB</span> <span class=" -Color -Color-Red">1.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">202.8/202.8 kB</span> <span class=" -Color -Color-Red">3.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">112.6/202.8 kB</span> <span class=" -Color -Color-Red">3.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">202.8/202.8 kB</span> <span class=" -Color -Color-Red">4.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting cfgv&gt;=2.0.0 (from pre-commit)
-  Downloading cfgv-3.3.1-py2.py3-none-any.whl (7.3 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading cfgv-3.3.1-py2.py3-none-any.whl (7.3 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting identify&gt;=1.0.0 (from pre-commit)
-  Downloading identify-2.5.24-py2.py3-none-any.whl (98 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading identify-2.5.24-py2.py3-none-any.whl (98 kB)
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/98.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">98.8/98.8 kB</span> <span class=" -Color -Color-Red">13.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">98.8/98.8 kB</span> <span class=" -Color -Color-Red">11.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -1778,21 +1913,30 @@ Requirement already satisfied: pyyaml&gt;=5.1 in /opt/hostedtoolcache/Python/3.8
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.3 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺ <span class=" -Color -Color-Green">3.2/3.3 MB</span> <span class=" -Color -Color-Red">96.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.3/3.3 MB</span> <span class=" -Color -Color-Red">61.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.4/3.3 MB</span> <span class=" -Color -Color-Red">12.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages (from nodeenv&gt;=0.11.1-&gt;pre-commit) (56.0.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.8/3.3 MB</span> <span class=" -Color -Color-Red">12.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.4/3.3 MB</span> <span class=" -Color -Color-Red">13.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.0/3.3 MB</span> <span class=" -Color -Color-Red">14.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━ <span class=" -Color -Color-Green">2.8/3.3 MB</span> <span class=" -Color -Color-Red">15.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">3.2/3.3 MB</span> <span class=" -Color -Color-Red">16.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.3/3.3 MB</span> <span class=" -Color -Color-Red">15.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages (from nodeenv&gt;=0.11.1-&gt;pre-commit) (56.0.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting distlib&lt;1,&gt;=0.3.6 (from virtualenv&gt;=20.10.0-&gt;pre-commit)
   Downloading distlib-0.3.6-py2.py3-none-any.whl (468 kB)
-?25l
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/468.5 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/468.5 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">468.5/468.5 kB</span> <span class=" -Color -Color-Red">55.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">468.5/468.5 kB</span> <span class=" -Color -Color-Red">22.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -2002,10 +2146,22 @@ git commit -m &quot;add makefile&quot;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>black .
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: black: No such file or directory
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All done! ✨ 🍰 ✨
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: *** [makefile:2: black] Error 127
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 files left unchanged.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>flake8 --exclude build .
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/__init__.py:2:1: F401 &#39;.utils.sort_bibtex&#39; imported but unused
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/test_sort.py:4:1: F401 &#39;bibtexparser&#39; imported but unused
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: *** [makefile:5: flake8] Error 1
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>black................................................(no files to check)Skipped
@@ -2078,10 +2234,22 @@ git commit setup.py -m &quot;capitalize something&quot;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>black .
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: black: No such file or directory
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All done! ✨ 🍰 ✨
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: *** [makefile:2: black] Error 127
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 files left unchanged.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>flake8 --exclude build .
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/__init__.py:2:1: F401 &#39;.utils.sort_bibtex&#39; imported but unused
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/test_sort.py:4:1: F401 &#39;bibtexparser&#39; imported but unused
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: *** [makefile:5: flake8] Error 1
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>black................................................(no files to check)Skipped
