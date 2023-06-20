@@ -6,3 +6,4 @@ bibtexparser
 coverage
 flake8-docstrings
 numpydoc
+black
