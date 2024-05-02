@@ -3,14 +3,28 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: 00-introduction/00-introduction-terminals.ipynb
-- file: 01-rest-api-openalex/01-rest-api-openalex.ipynb
-- file: 02-python-requests/02-python-requests.ipynb
-- file: 03-python-packaging/03-python-packaging.ipynb
-- file: 04-more-python-packaging/04-more-python-packaging.ipynb  
-- file: 05-python-classes/05-python-classes.ipynb
-- file: 06-code-quality/06-code-quality.ipynb
-- file: 07-github-intro/07-github-intro.ipynb
-- file: 08-github-actions/08-github-actions.ipynb
-- file: 09-wrapup/09-wrapup.ipynb
+
+parts:
+- caption: Lectures
+  chapters:
+    - file: 00-introduction/00-introduction-terminals.ipynb
+    - file: 01-rest-api-openalex/01-rest-api-openalex.ipynb
+    - file: 02-python-requests/02-python-requests.ipynb
+    - file: 03-python-packaging/03-python-packaging.ipynb
+    - file: 04-more-python-packaging/04-more-python-packaging.ipynb  
+    - file: 05-python-classes/05-python-classes.ipynb
+    - file: 06-code-quality/06-code-quality.ipynb
+    - file: 07-github-intro/07-github-intro.ipynb
+    - file: 08-github-actions/08-github-actions.ipynb
+    - file: 09-wrapup/09-wrapup.ipynb
+    - file: 11-advanced-packaging/advanced-packaging.ipynb
+    - file: syllabus.ipynb    
+    - file: genindex
+
+- caption: Assignments
+  chapters:
+    - glob: assignments/**/*
+    
+- caption: About the book
+  chapters:
+    - file: build-statistics.md  
