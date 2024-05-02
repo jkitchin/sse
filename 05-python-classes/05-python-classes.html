@@ -64,7 +64,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "jkitchin/dsmles");
+    script.setAttribute("repo", "jkitchin/s24-06643");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 comment");
@@ -133,6 +133,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../00-introduction/00-introduction-terminals.html">
@@ -182,6 +187,28 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../09-wrapup/09-wrapup.html">
    Wrapping up
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11-advanced-packaging/advanced-packaging.html">
+   Advanced packaging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  About the book
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../build-statistics.html">
+   Build statistics
   </a>
  </li>
 </ul>
@@ -241,11 +268,11 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/jkitchin/sse"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/jkitchin/s24-06643"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/jkitchin/sse/issues/new?title=Issue%20on%20page%20%2F05-python-classes/05-python-classes.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/jkitchin/s24-06643/issues/new?title=Issue%20on%20page%20%2F05-python-classes/05-python-classes.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -266,21 +293,21 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/jkitchin/sse/main?urlpath=lab/tree/docs/05-python-classes/05-python-classes.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/jkitchin/s24-06643/main?urlpath=lab/tree/sse/05-python-classes/05-python-classes.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://lab.amdatascience.com//hub/user-redirect/git-pull?repo=https://github.com/jkitchin/sse&urlpath=lab/tree/sse/docs/05-python-classes/05-python-classes.ipynb&branch=main"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https://github.com/jkitchin/s24-06643&urlpath=lab/tree/s24-06643/sse/05-python-classes/05-python-classes.ipynb&branch=main"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
                     alt="Interact on JupyterHub">JupyterHub</button></a>
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/jkitchin/sse/blob/main/docs/05-python-classes/05-python-classes.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/jkitchin/s24-06643/blob/main/sse/05-python-classes/05-python-classes.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -407,12 +434,12 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Today we will touch on programming with classes in Python and Jupyter. Classes allow you to “encapsulate” data and methods. We will also learn about rich outputs in Jupyter notebooks.</p>
 <p>If you are not familiar with classes in Python you should review them. Here are some reasonable introductions:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://towardsdatascience.com/introduction-to-python-classes-da526ff745df">https://towardsdatascience.com/introduction-to-python-classes-da526ff745df</a></p></li>
-<li><p><a class="reference external" href="https://python.plainenglish.io/python-classes-and-objects-a13edcd2bc1e">https://python.plainenglish.io/python-classes-and-objects-a13edcd2bc1e</a></p></li>
-<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/classes.html">https://docs.python.org/3/tutorial/classes.html</a></p></li>
+<li><p><a class="reference external" href="https://towardsdatascience.com/introduction-to-python-classes-da526ff745df"></a></p></li>
+<li><p><a class="reference external" href="https://python.plainenglish.io/python-classes-and-objects-a13edcd2bc1e"></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/classes.html"></a></p></li>
 </ul>
 <p>I will assume you have some experience with classes, and only introduce what we need for this lecture as we go.  We are going to create a single class today to represent a <code class="docutils literal notranslate"><span class="pre">Works</span></code> object. The class will get data for a doi, and provide some representations and methods that are convenient.</p>
-<p><a class="reference external" href="https://api.openalex.org/works/https://doi.org/10.1021/acscatal.5b00538">https://api.openalex.org/works/https://doi.org/10.1021/acscatal.5b00538</a></p>
+<p><a class="reference external" href="https://api.openalex.org/works/https://doi.org/10.1021/acscatal.5b00538"></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
@@ -474,97 +501,159 @@ const thebe_selector_output = ".output, .cell_output"
  &#39;language&#39;: &#39;en&#39;,
  &#39;primary_location&#39;: {&#39;is_oa&#39;: True,
   &#39;landing_page_url&#39;: &#39;https://doi.org/10.1021/acscatal.5b00538&#39;,
-  &#39;pdf_url&#39;: None,
+  &#39;pdf_url&#39;: &#39;https://pubs.acs.org/doi/pdf/10.1021/acscatal.5b00538&#39;,
   &#39;source&#39;: {&#39;id&#39;: &#39;https://openalex.org/S37391459&#39;,
-   &#39;display_name&#39;: &#39;ACS Catalysis&#39;,
+   &#39;display_name&#39;: &#39;ACS catalysis&#39;,
    &#39;issn_l&#39;: &#39;2155-5435&#39;,
    &#39;issn&#39;: [&#39;2155-5435&#39;],
+   &#39;is_oa&#39;: False,
    &#39;is_in_doaj&#39;: False,
    &#39;host_organization&#39;: &#39;https://openalex.org/P4310320006&#39;,
    &#39;host_organization_name&#39;: &#39;American Chemical Society&#39;,
    &#39;host_organization_lineage&#39;: [&#39;https://openalex.org/P4310320006&#39;],
    &#39;host_organization_lineage_names&#39;: [&#39;American Chemical Society&#39;],
    &#39;type&#39;: &#39;journal&#39;},
-  &#39;license&#39;: &#39;acs-specific: authorchoice/editors choice usage agreement&#39;,
-  &#39;version&#39;: &#39;publishedVersion&#39;},
- &#39;type&#39;: &#39;journal-article&#39;,
+  &#39;license&#39;: &#39;publisher-specific-oa&#39;,
+  &#39;version&#39;: &#39;publishedVersion&#39;,
+  &#39;is_accepted&#39;: True,
+  &#39;is_published&#39;: True},
+ &#39;type&#39;: &#39;article&#39;,
+ &#39;type_crossref&#39;: &#39;journal-article&#39;,
+ &#39;indexed_in&#39;: [&#39;crossref&#39;],
  &#39;open_access&#39;: {&#39;is_oa&#39;: True,
   &#39;oa_status&#39;: &#39;hybrid&#39;,
-  &#39;oa_url&#39;: &#39;https://doi.org/10.1021/acscatal.5b00538&#39;,
+  &#39;oa_url&#39;: &#39;https://pubs.acs.org/doi/pdf/10.1021/acscatal.5b00538&#39;,
   &#39;any_repository_has_fulltext&#39;: False},
  &#39;authorships&#39;: [{&#39;author_position&#39;: &#39;first&#39;,
-   &#39;author&#39;: {&#39;id&#39;: &#39;https://openalex.org/A4330425867&#39;,
+   &#39;author&#39;: {&#39;id&#39;: &#39;https://openalex.org/A5003442464&#39;,
     &#39;display_name&#39;: &#39;John R. Kitchin&#39;,
-    &#39;orcid&#39;: None},
+    &#39;orcid&#39;: &#39;https://orcid.org/0000-0003-2625-9232&#39;},
    &#39;institutions&#39;: [{&#39;id&#39;: &#39;https://openalex.org/I74973139&#39;,
      &#39;display_name&#39;: &#39;Carnegie Mellon University&#39;,
      &#39;ror&#39;: &#39;https://ror.org/05x2bcf33&#39;,
      &#39;country_code&#39;: &#39;US&#39;,
-     &#39;type&#39;: &#39;education&#39;}],
+     &#39;type&#39;: &#39;education&#39;,
+     &#39;lineage&#39;: [&#39;https://openalex.org/I74973139&#39;]}],
+   &#39;countries&#39;: [&#39;US&#39;],
    &#39;is_corresponding&#39;: True,
-   &#39;raw_affiliation_string&#39;: &#39;Department#R#of Chemical Engineering Carnegie-Mellon University, 5000 Forbes#R#Avenue, Pittsburgh, Pennsylvania, 15213, United States&#39;,
-   &#39;raw_affiliation_strings&#39;: [&#39;Department#R#of Chemical Engineering Carnegie-Mellon University, 5000 Forbes#R#Avenue, Pittsburgh, Pennsylvania, 15213, United States&#39;]}],
- &#39;corresponding_author_ids&#39;: [&#39;https://openalex.org/A4330425867&#39;],
+   &#39;raw_author_name&#39;: &#39;John R. Kitchin&#39;,
+   &#39;raw_affiliation_strings&#39;: [&#39;Department\rof Chemical Engineering, Carnegie Mellon University, 5000 Forbes\rAvenue, Pittsburgh, Pennsylvania 15213, United States&#39;]}],
+ &#39;countries_distinct_count&#39;: 1,
+ &#39;institutions_distinct_count&#39;: 1,
+ &#39;corresponding_author_ids&#39;: [&#39;https://openalex.org/A5003442464&#39;],
  &#39;corresponding_institution_ids&#39;: [&#39;https://openalex.org/I74973139&#39;],
  &#39;apc_list&#39;: None,
  &#39;apc_paid&#39;: None,
- &#39;cited_by_count&#39;: 18,
+ &#39;has_fulltext&#39;: True,
+ &#39;fulltext_origin&#39;: &#39;ngrams&#39;,
+ &#39;cited_by_count&#39;: 19,
+ &#39;cited_by_percentile_year&#39;: {&#39;min&#39;: 91, &#39;max&#39;: 92},
  &#39;biblio&#39;: {&#39;volume&#39;: &#39;5&#39;,
   &#39;issue&#39;: &#39;6&#39;,
   &#39;first_page&#39;: &#39;3894&#39;,
   &#39;last_page&#39;: &#39;3899&#39;},
  &#39;is_retracted&#39;: False,
  &#39;is_paratext&#39;: False,
- &#39;concepts&#39;: [{&#39;id&#39;: &#39;https://openalex.org/C2984423262&#39;,
-   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q17327049&#39;,
-   &#39;display_name&#39;: &#39;Scientific publishing&#39;,
-   &#39;level&#39;: 3,
-   &#39;score&#39;: 0.59255606},
-  {&#39;id&#39;: &#39;https://openalex.org/C2779965156&#39;,
+ &#39;primary_topic&#39;: {&#39;id&#39;: &#39;https://openalex.org/T11986&#39;,
+  &#39;display_name&#39;: &#39;Management and Reproducibility of Scientific Workflows&#39;,
+  &#39;score&#39;: 0.9998,
+  &#39;subfield&#39;: {&#39;id&#39;: &#39;https://openalex.org/subfields/1802&#39;,
+   &#39;display_name&#39;: &#39;Information Systems and Management&#39;},
+  &#39;field&#39;: {&#39;id&#39;: &#39;https://openalex.org/fields/18&#39;,
+   &#39;display_name&#39;: &#39;Decision Sciences&#39;},
+  &#39;domain&#39;: {&#39;id&#39;: &#39;https://openalex.org/domains/2&#39;,
+   &#39;display_name&#39;: &#39;Social Sciences&#39;}},
+ &#39;topics&#39;: [{&#39;id&#39;: &#39;https://openalex.org/T11986&#39;,
+   &#39;display_name&#39;: &#39;Management and Reproducibility of Scientific Workflows&#39;,
+   &#39;score&#39;: 0.9998,
+   &#39;subfield&#39;: {&#39;id&#39;: &#39;https://openalex.org/subfields/1802&#39;,
+    &#39;display_name&#39;: &#39;Information Systems and Management&#39;},
+   &#39;field&#39;: {&#39;id&#39;: &#39;https://openalex.org/fields/18&#39;,
+    &#39;display_name&#39;: &#39;Decision Sciences&#39;},
+   &#39;domain&#39;: {&#39;id&#39;: &#39;https://openalex.org/domains/2&#39;,
+    &#39;display_name&#39;: &#39;Social Sciences&#39;}},
+  {&#39;id&#39;: &#39;https://openalex.org/T11937&#39;,
+   &#39;display_name&#39;: &#39;Data Sharing and Stewardship in Science&#39;,
+   &#39;score&#39;: 0.9987,
+   &#39;subfield&#39;: {&#39;id&#39;: &#39;https://openalex.org/subfields/1710&#39;,
+    &#39;display_name&#39;: &#39;Information Systems&#39;},
+   &#39;field&#39;: {&#39;id&#39;: &#39;https://openalex.org/fields/17&#39;,
+    &#39;display_name&#39;: &#39;Computer Science&#39;},
+   &#39;domain&#39;: {&#39;id&#39;: &#39;https://openalex.org/domains/3&#39;,
+    &#39;display_name&#39;: &#39;Physical Sciences&#39;}},
+  {&#39;id&#39;: &#39;https://openalex.org/T10715&#39;,
+   &#39;display_name&#39;: &#39;Distributed Grid Computing Systems&#39;,
+   &#39;score&#39;: 0.9884,
+   &#39;subfield&#39;: {&#39;id&#39;: &#39;https://openalex.org/subfields/1705&#39;,
+    &#39;display_name&#39;: &#39;Computer Networks and Communications&#39;},
+   &#39;field&#39;: {&#39;id&#39;: &#39;https://openalex.org/fields/17&#39;,
+    &#39;display_name&#39;: &#39;Computer Science&#39;},
+   &#39;domain&#39;: {&#39;id&#39;: &#39;https://openalex.org/domains/3&#39;,
+    &#39;display_name&#39;: &#39;Physical Sciences&#39;}}],
+ &#39;keywords&#39;: [{&#39;id&#39;: &#39;https://openalex.org/keywords/data-sharing&#39;,
+   &#39;display_name&#39;: &#39;Data Sharing&#39;,
+   &#39;score&#39;: 0.638024},
+  {&#39;id&#39;: &#39;https://openalex.org/keywords/scientific-workflows&#39;,
+   &#39;display_name&#39;: &#39;Scientific Workflows&#39;,
+   &#39;score&#39;: 0.544477},
+  {&#39;id&#39;: &#39;https://openalex.org/keywords/scientific-data-management&#39;,
+   &#39;display_name&#39;: &#39;Scientific Data Management&#39;,
+   &#39;score&#39;: 0.531088}],
+ &#39;concepts&#39;: [{&#39;id&#39;: &#39;https://openalex.org/C2779965156&#39;,
    &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q5227350&#39;,
    &#39;display_name&#39;: &#39;Data sharing&#39;,
    &#39;level&#39;: 3,
-   &#39;score&#39;: 0.516408},
-  {&#39;id&#39;: &#39;https://openalex.org/C151719136&#39;,
-   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q3972943&#39;,
-   &#39;display_name&#39;: &#39;Publishing&#39;,
-   &#39;level&#39;: 2,
-   &#39;score&#39;: 0.50584006},
+   &#39;score&#39;: 0.76668024},
   {&#39;id&#39;: &#39;https://openalex.org/C41008148&#39;,
    &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q21198&#39;,
    &#39;display_name&#39;: &#39;Computer science&#39;,
    &#39;level&#39;: 0,
-   &#39;score&#39;: 0.46287516},
+   &#39;score&#39;: 0.7374295},
+  {&#39;id&#39;: &#39;https://openalex.org/C151719136&#39;,
+   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q3972943&#39;,
+   &#39;display_name&#39;: &#39;Publishing&#39;,
+   &#39;level&#39;: 2,
+   &#39;score&#39;: 0.6537832},
+  {&#39;id&#39;: &#39;https://openalex.org/C2984423262&#39;,
+   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q17327049&#39;,
+   &#39;display_name&#39;: &#39;Scientific publishing&#39;,
+   &#39;level&#39;: 3,
+   &#39;score&#39;: 0.611992},
   {&#39;id&#39;: &#39;https://openalex.org/C2522767166&#39;,
    &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q2374463&#39;,
    &#39;display_name&#39;: &#39;Data science&#39;,
    &#39;level&#39;: 1,
-   &#39;score&#39;: 0.37777355},
+   &#39;score&#39;: 0.5780086},
+  {&#39;id&#39;: &#39;https://openalex.org/C12713177&#39;,
+   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q1900281&#39;,
+   &#39;display_name&#39;: &#39;Perspective (graphical)&#39;,
+   &#39;level&#39;: 2,
+   &#39;score&#39;: 0.553444},
+  {&#39;id&#39;: &#39;https://openalex.org/C2781396290&#39;,
+   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q17051824&#39;,
+   &#39;display_name&#39;: &#39;Data publishing&#39;,
+   &#39;level&#39;: 3,
+   &#39;score&#39;: 0.51038426},
   {&#39;id&#39;: &#39;https://openalex.org/C136764020&#39;,
    &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q466&#39;,
    &#39;display_name&#39;: &#39;World Wide Web&#39;,
    &#39;level&#39;: 1,
-   &#39;score&#39;: 0.32164475},
-  {&#39;id&#39;: &#39;https://openalex.org/C185592680&#39;,
-   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q2329&#39;,
-   &#39;display_name&#39;: &#39;Chemistry&#39;,
-   &#39;level&#39;: 0,
-   &#39;score&#39;: 0.32151806},
+   &#39;score&#39;: 0.34000608},
+  {&#39;id&#39;: &#39;https://openalex.org/C154945302&#39;,
+   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q11660&#39;,
+   &#39;display_name&#39;: &#39;Artificial intelligence&#39;,
+   &#39;level&#39;: 1,
+   &#39;score&#39;: 0.08385676},
   {&#39;id&#39;: &#39;https://openalex.org/C17744445&#39;,
    &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q36442&#39;,
    &#39;display_name&#39;: &#39;Political science&#39;,
    &#39;level&#39;: 0,
-   &#39;score&#39;: 0.24190083},
+   &#39;score&#39;: 0.07468274},
   {&#39;id&#39;: &#39;https://openalex.org/C71924100&#39;,
    &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q11190&#39;,
    &#39;display_name&#39;: &#39;Medicine&#39;,
    &#39;level&#39;: 0,
-   &#39;score&#39;: 0.13397601},
-  {&#39;id&#39;: &#39;https://openalex.org/C199539241&#39;,
-   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q7748&#39;,
-   &#39;display_name&#39;: &#39;Law&#39;,
-   &#39;level&#39;: 1,
-   &#39;score&#39;: 0.09442881},
+   &#39;score&#39;: 0.0},
   {&#39;id&#39;: &#39;https://openalex.org/C204787440&#39;,
    &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q188504&#39;,
    &#39;display_name&#39;: &#39;Alternative medicine&#39;,
@@ -574,24 +663,32 @@ const thebe_selector_output = ".output, .cell_output"
    &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q7208&#39;,
    &#39;display_name&#39;: &#39;Pathology&#39;,
    &#39;level&#39;: 1,
+   &#39;score&#39;: 0.0},
+  {&#39;id&#39;: &#39;https://openalex.org/C199539241&#39;,
+   &#39;wikidata&#39;: &#39;https://www.wikidata.org/wiki/Q7748&#39;,
+   &#39;display_name&#39;: &#39;Law&#39;,
+   &#39;level&#39;: 1,
    &#39;score&#39;: 0.0}],
  &#39;mesh&#39;: [],
  &#39;locations_count&#39;: 3,
  &#39;locations&#39;: [{&#39;is_oa&#39;: True,
    &#39;landing_page_url&#39;: &#39;https://doi.org/10.1021/acscatal.5b00538&#39;,
-   &#39;pdf_url&#39;: None,
+   &#39;pdf_url&#39;: &#39;https://pubs.acs.org/doi/pdf/10.1021/acscatal.5b00538&#39;,
    &#39;source&#39;: {&#39;id&#39;: &#39;https://openalex.org/S37391459&#39;,
-    &#39;display_name&#39;: &#39;ACS Catalysis&#39;,
+    &#39;display_name&#39;: &#39;ACS catalysis&#39;,
     &#39;issn_l&#39;: &#39;2155-5435&#39;,
     &#39;issn&#39;: [&#39;2155-5435&#39;],
+    &#39;is_oa&#39;: False,
     &#39;is_in_doaj&#39;: False,
     &#39;host_organization&#39;: &#39;https://openalex.org/P4310320006&#39;,
     &#39;host_organization_name&#39;: &#39;American Chemical Society&#39;,
     &#39;host_organization_lineage&#39;: [&#39;https://openalex.org/P4310320006&#39;],
     &#39;host_organization_lineage_names&#39;: [&#39;American Chemical Society&#39;],
     &#39;type&#39;: &#39;journal&#39;},
-   &#39;license&#39;: &#39;acs-specific: authorchoice/editors choice usage agreement&#39;,
-   &#39;version&#39;: &#39;publishedVersion&#39;},
+   &#39;license&#39;: &#39;publisher-specific-oa&#39;,
+   &#39;version&#39;: &#39;publishedVersion&#39;,
+   &#39;is_accepted&#39;: True,
+   &#39;is_published&#39;: True},
   {&#39;is_oa&#39;: False,
    &#39;landing_page_url&#39;: &#39;https://www.osti.gov/biblio/1455204&#39;,
    &#39;pdf_url&#39;: None,
@@ -599,6 +696,7 @@ const thebe_selector_output = ".output, .cell_output"
     &#39;display_name&#39;: &#39;OSTI OAI (U.S. Department of Energy Office of Scientific and Technical Information)&#39;,
     &#39;issn_l&#39;: None,
     &#39;issn&#39;: None,
+    &#39;is_oa&#39;: True,
     &#39;is_in_doaj&#39;: False,
     &#39;host_organization&#39;: &#39;https://openalex.org/I139351228&#39;,
     &#39;host_organization_name&#39;: &#39;Office of Scientific and Technical Information&#39;,
@@ -606,7 +704,9 @@ const thebe_selector_output = ".output, .cell_output"
     &#39;host_organization_lineage_names&#39;: [&#39;Office of Scientific and Technical Information&#39;],
     &#39;type&#39;: &#39;repository&#39;},
    &#39;license&#39;: None,
-   &#39;version&#39;: None},
+   &#39;version&#39;: None,
+   &#39;is_accepted&#39;: False,
+   &#39;is_published&#39;: False},
   {&#39;is_oa&#39;: False,
    &#39;landing_page_url&#39;: &#39;https://www.osti.gov/biblio/1183810&#39;,
    &#39;pdf_url&#39;: None,
@@ -614,6 +714,7 @@ const thebe_selector_output = ".output, .cell_output"
     &#39;display_name&#39;: &#39;OSTI OAI (U.S. Department of Energy Office of Scientific and Technical Information)&#39;,
     &#39;issn_l&#39;: None,
     &#39;issn&#39;: None,
+    &#39;is_oa&#39;: True,
     &#39;is_in_doaj&#39;: False,
     &#39;host_organization&#39;: &#39;https://openalex.org/I139351228&#39;,
     &#39;host_organization_name&#39;: &#39;Office of Scientific and Technical Information&#39;,
@@ -621,25 +722,38 @@ const thebe_selector_output = ".output, .cell_output"
     &#39;host_organization_lineage_names&#39;: [&#39;Office of Scientific and Technical Information&#39;],
     &#39;type&#39;: &#39;repository&#39;},
    &#39;license&#39;: None,
-   &#39;version&#39;: None}],
+   &#39;version&#39;: None,
+   &#39;is_accepted&#39;: False,
+   &#39;is_published&#39;: False}],
  &#39;best_oa_location&#39;: {&#39;is_oa&#39;: True,
   &#39;landing_page_url&#39;: &#39;https://doi.org/10.1021/acscatal.5b00538&#39;,
-  &#39;pdf_url&#39;: None,
+  &#39;pdf_url&#39;: &#39;https://pubs.acs.org/doi/pdf/10.1021/acscatal.5b00538&#39;,
   &#39;source&#39;: {&#39;id&#39;: &#39;https://openalex.org/S37391459&#39;,
-   &#39;display_name&#39;: &#39;ACS Catalysis&#39;,
+   &#39;display_name&#39;: &#39;ACS catalysis&#39;,
    &#39;issn_l&#39;: &#39;2155-5435&#39;,
    &#39;issn&#39;: [&#39;2155-5435&#39;],
+   &#39;is_oa&#39;: False,
    &#39;is_in_doaj&#39;: False,
    &#39;host_organization&#39;: &#39;https://openalex.org/P4310320006&#39;,
    &#39;host_organization_name&#39;: &#39;American Chemical Society&#39;,
    &#39;host_organization_lineage&#39;: [&#39;https://openalex.org/P4310320006&#39;],
    &#39;host_organization_lineage_names&#39;: [&#39;American Chemical Society&#39;],
    &#39;type&#39;: &#39;journal&#39;},
-  &#39;license&#39;: &#39;acs-specific: authorchoice/editors choice usage agreement&#39;,
-  &#39;version&#39;: &#39;publishedVersion&#39;},
- &#39;grants&#39;: [{&#39;funder&#39;: &#39;https://openalex.org/F4320337480&#39;,
+  &#39;license&#39;: &#39;publisher-specific-oa&#39;,
+  &#39;version&#39;: &#39;publishedVersion&#39;,
+  &#39;is_accepted&#39;: True,
+  &#39;is_published&#39;: True},
+ &#39;sustainable_development_goals&#39;: [{&#39;display_name&#39;: &#39;Industry, innovation and infrastructure&#39;,
+   &#39;score&#39;: 0.47,
+   &#39;id&#39;: &#39;https://metadata.un.org/sdg/9&#39;}],
+ &#39;grants&#39;: [{&#39;funder&#39;: &#39;https://openalex.org/F4320310207&#39;,
+   &#39;funder_display_name&#39;: &#39;Carnegie Mellon University&#39;,
+   &#39;award_id&#39;: None},
+  {&#39;funder&#39;: &#39;https://openalex.org/F4320337480&#39;,
    &#39;funder_display_name&#39;: &#39;Basic Energy Sciences&#39;,
    &#39;award_id&#39;: &#39;DE-SC0004031&#39;}],
+ &#39;datasets&#39;: [],
+ &#39;versions&#39;: [],
  &#39;referenced_works_count&#39;: 18,
  &#39;referenced_works&#39;: [&#39;https://openalex.org/W902952202&#39;,
   &#39;https://openalex.org/W1526025733&#39;,
@@ -659,16 +773,16 @@ const thebe_selector_output = ".output, .cell_output"
   &#39;https://openalex.org/W2333048302&#39;,
   &#39;https://openalex.org/W2537005472&#39;,
   &#39;https://openalex.org/W3125261728&#39;],
- &#39;related_works&#39;: [&#39;https://openalex.org/W1646698585&#39;,
-  &#39;https://openalex.org/W2127183609&#39;,
-  &#39;https://openalex.org/W2408420038&#39;,
-  &#39;https://openalex.org/W2748952813&#39;,
-  &#39;https://openalex.org/W2784807254&#39;,
-  &#39;https://openalex.org/W3021112985&#39;,
-  &#39;https://openalex.org/W4285793538&#39;,
-  &#39;https://openalex.org/W4285796209&#39;,
-  &#39;https://openalex.org/W4285798643&#39;,
-  &#39;https://openalex.org/W4287973116&#39;],
+ &#39;related_works&#39;: [&#39;https://openalex.org/W3093842987&#39;,
+  &#39;https://openalex.org/W2296657372&#39;,
+  &#39;https://openalex.org/W2125183513&#39;,
+  &#39;https://openalex.org/W2294677930&#39;,
+  &#39;https://openalex.org/W2801905285&#39;,
+  &#39;https://openalex.org/W2028846973&#39;,
+  &#39;https://openalex.org/W2698935035&#39;,
+  &#39;https://openalex.org/W2626564437&#39;,
+  &#39;https://openalex.org/W4293238240&#39;,
+  &#39;https://openalex.org/W2750416796&#39;],
  &#39;ngrams_url&#39;: &#39;https://api.openalex.org/works/W2288114809/ngrams&#39;,
  &#39;abstract_inverted_index&#39;: {&#39;We&#39;: [0, 42, 53],
   &#39;present&#39;: [1],
@@ -739,14 +853,14 @@ const thebe_selector_output = ".output, .cell_output"
   &#39;publications.&#39;: [99]},
  &#39;cited_by_api_url&#39;: &#39;https://api.openalex.org/works?filter=cites:W2288114809&#39;,
  &#39;counts_by_year&#39;: [{&#39;year&#39;: 2023, &#39;cited_by_count&#39;: 1},
-  {&#39;year&#39;: 2022, &#39;cited_by_count&#39;: 2},
+  {&#39;year&#39;: 2022, &#39;cited_by_count&#39;: 3},
   {&#39;year&#39;: 2021, &#39;cited_by_count&#39;: 2},
   {&#39;year&#39;: 2020, &#39;cited_by_count&#39;: 2},
   {&#39;year&#39;: 2019, &#39;cited_by_count&#39;: 3},
   {&#39;year&#39;: 2018, &#39;cited_by_count&#39;: 3},
   {&#39;year&#39;: 2017, &#39;cited_by_count&#39;: 1},
   {&#39;year&#39;: 2016, &#39;cited_by_count&#39;: 4}],
- &#39;updated_date&#39;: &#39;2023-06-13T06:12:44.690570&#39;,
+ &#39;updated_date&#39;: &#39;2024-04-25T05:22:04.003248&#39;,
  &#39;created_date&#39;: &#39;2016-06-24&#39;}
 </pre></div>
 </div>
@@ -760,7 +874,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Works at 0x7f9e703b2ca0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Works at 0x7f32581c8e80&gt;
 </pre></div>
 </div>
 </div>
@@ -843,7 +957,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>John R. Kitchin, Examples of Effective Data Sharing in Scientific Publishing, ACS Catalysis, 5, 6, 3894-3899, (2015), https://doi.org/10.1021/acscatal.5b00538. cited by: 18. https://openalex.org/W2288114809
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>John R. Kitchin, Examples of Effective Data Sharing in Scientific Publishing, ACS catalysis, 5, 6, 3894-3899, (2015), https://doi.org/10.1021/acscatal.5b00538. cited by: 19. https://openalex.org/W2288114809
 </pre></div>
 </div>
 </div>
@@ -868,7 +982,7 @@ const thebe_selector_output = ".output, .cell_output"
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;str&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">_authors</span> <span class="o">=</span> <span class="p">[</span><span class="n">au</span><span class="p">[</span><span class="s2">&quot;author&quot;</span><span class="p">][</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">au</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;authorships&quot;</span><span class="p">]]</span>
@@ -943,7 +1057,7 @@ const thebe_selector_output = ".output, .cell_output"
         <span class="n">b64</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
         <span class="n">citefig</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;![img](data:image/png;base64,</span><span class="si">{</span><span class="n">b64</span><span class="si">}</span><span class="s2">)&quot;</span>
 
-        <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">authors</span><span class="si">}</span><span class="s1">, *</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">*, **</span><span class="si">{</span><span class="n">journal</span><span class="si">}</span><span class="s1">**, </span><span class="si">{</span><span class="n">volume</span><span class="si">}{</span><span class="n">issue</span><span class="si">}{</span><span class="n">pages</span><span class="si">}</span><span class="s1">, (</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">), </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;doi&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">. cited by: </span><span class="si">{</span><span class="n">citedby</span><span class="si">}</span><span class="s1">. [Open Alex](</span><span class="si">{</span><span class="n">oa</span><span class="si">}</span><span class="s1">)&#39;</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">authors</span><span class="si">}</span><span class="s1">, *</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">*, </span><span class="si">{</span><span class="n">journal</span><span class="si">}</span><span class="s1">, **</span><span class="si">{</span><span class="n">volume</span><span class="si">}{</span><span class="n">issue</span><span class="si">}</span><span class="s1">**, </span><span class="si">{</span><span class="n">pages</span><span class="si">}</span><span class="s1">, (</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">), [</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;doi&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">](</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;doi&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">). cited by: </span><span class="si">{</span><span class="n">citedby</span><span class="si">}</span><span class="s1">. [Open Alex](</span><span class="si">{</span><span class="n">oa</span><span class="si">}</span><span class="s1">)&#39;</span>
 
         <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;&lt;br&gt;&quot;</span> <span class="o">+</span> <span class="n">citefig</span>
         <span class="k">return</span> <span class="n">s</span>
@@ -955,7 +1069,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<p><a class="reference external" href="https://openalex.org/A4330425867">John R. Kitchin</a>, <em>Examples of Effective Data Sharing in Scientific Publishing</em>, <strong><a class="reference external" href="https://openalex.org/S37391459">ACS Catalysis</a></strong>, 5, 63894-3899, (2015), https://doi.org/10.1021/acscatal.5b00538. cited by: 18. <a class="reference external" href="https://openalex.org/W2288114809">Open Alex</a><br>![img](data:image/png;base64,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+nSP9PZ7nuzz//7v/4yoqCijQYMGRrNmzYy77rrL+Prrr03V548//mj07dvXaNCggREYGGgMGDDA+PTTTz3So6v6nDVrVqXX+M//w/3www+NyMhIw8/Pz2jfvr3DPczSY3Xm1PU+q/o77anP2vJUny+88ILRtWtXIzAw0AgKCjKioqKMf/zjHw4fT1EbWQzDMCp9vQoAAKAOYkMxAAAwFcINAAAwFcINAAAwFcINAAAwFcINAAAwFcINAAAwFcINAAAwFcINAAAwFcINAAAwFcINAAAwFcINAEgqKytTeXm5t8sA4AKEGwC1ztq1a9W0aVOVlpY6jA8fPlwPPPCAJGnz5s3q1auX/P391b59e82ePVsXL160z124cKG6d++uBg0aKCwsTI8++qhKSkrszycnJ+uaa67RO++8oy5dushqtSo3N9czDQJwK8INgFpnxIgRKisr0zvvvGMfO3HihN59912NGTNGH3/8sRISEjRp0iTl5ORoxYoVSk5O1ty5c+3zfXx89MILL2j//v165ZVX9MEHH2jatGkO9/nll180f/58rVq1Svv371fz5s091iMA9+FbwQHUSo8++qi+++47bd26VdJvKzFLly7V4cOHNXDgQA0YMEBJSUn2+evWrdO0adP0ww8/VHq9N954Qw8//LB++uknSb+t3IwePVrZ2dnq2bOn+xsC4DGEGwC1UlZWlvr06aNjx46pVatW6tGjh0aMGKEnn3xSzZo1U0lJierVq2efX1ZWpnPnzuns2bMKDAzU+++/L5vNpgMHDqi4uFgXL150eD45OVl//etfde7cOVksFi92CsDVfL1dAABUJioqSj179tTatWt1++23a//+/Xr33XclSSUlJZo9e7buueeeCuf5+/vru+++05AhQ/TII49o7ty5atKkiXbt2qWxY8fq/PnzCgwMlCQFBAQQbAATItwAqLXGjRun559/Xt9//71iY2MVFhYmSerVq5cOHjyoiIiISs/LzMxUeXm5FixYIB+f37YWbtiwwWN1A/Auwg2AWuv+++/Xf//3f+ull17S2rVr7eMzZ87UkCFD1KZNG913333y8fHRl19+qX379ul///d/FRERoQsXLujFF1/U0KFD9cknn2j58uVe7ASAJ/FuKQC1VnBwsO699141bNhQw4cPt4/HxcVpy5Yteu+999SnTx/17dtXixYtUnh4uCSpZ8+eWrhwoebPn69u3brptddek81m81IXADyNDcUAarUBAwaoa9eueuGFF7xdCoA6gnADoFY6deqU0tLSdN999yknJ0cdO3b0dkkA6gj23AColaKionTq1CnNnz+fYAPAKazcAAAAU2FDMQAAMBXCDQAAMBXCDQAAMBXCDQAAMBXCDQAAMBXCDQAAMBXCDQAAMBXCDQAAMJX/DyiP8BdyV/GNAAAAAElFTkSuQmCC)</p>
+<p><a class="reference external" href="https://openalex.org/A5003442464">John R. Kitchin</a>, <em>Examples of Effective Data Sharing in Scientific Publishing</em>, <a class="reference external" href="https://openalex.org/S37391459">ACS catalysis</a>, <strong>5, 6</strong>, 3894-3899, (2015), <a class="reference external" href="https://doi.org/10.1021/acscatal.5b00538">https://doi.org/10.1021/acscatal.5b00538</a>. cited by: 19. <a class="reference external" href="https://openalex.org/W2288114809">Open Alex</a><br>![img](data:image/png;base64,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TFBBQYEaN26snj17avfu3dXanwMAAK4OXt9Q7GnObEiqCTYUAwDges78/K51e24AAACuBOEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYilfDzbJly9StWzcFBQUpKChIsbGx+te//nXZczZu3KgOHTrI399fXbt21datWz1ULQAAqAu8Gm5atWqlefPmKTMzUxkZGbrttts0bNgw7d+/v9L5u3fv1qhRozRu3DhlZWVp+PDhGj58uPbt2+fhygEAQG1lMQzD8HYRv9ekSRM9++yzGjduXIXnRo4cqbNnz2rLli32sd69eys6OlrLly+v1vWLi4sVHBysoqIiBQUFuazuS9r8/V2XX9MTvps32NslAABQJWd+fteaPTdlZWVav369zp49q9jY2ErnpKena8CAAQ5jcXFxSk9Pr/K6paWlKi4udjgAAIB5+Xq7gL179yo2Nlbnzp1Tw4YN9fbbb6tTp06Vzi0oKFBoaKjDWGhoqAoKCqq8vs1mU1JSkktrxtWhrq7CSc6txNXVPlltvLrx9xaX4/WVm/bt2ys7O1ufffaZHnnkEY0ePVo5OTkuu35iYqKKiorsR15ensuuDQAAah+vr9z4+fkpKipKktSzZ0998cUXWrx4sVasWFFhblhYmAoLCx3GCgsLFRYWVuX1rVarrFara4sGAAC1ltdXbv5TeXm5SktLK30uNjZWqampDmM7duyoco8OAAC4+nh15SYxMVGDBg1S69atdebMGaWkpCgtLU3bt2+XJMXHx6tly5ay2WySpMmTJ6tv375asGCBBg8erPXr1ysjI0MrV670ZhsAAKAW8Wq4OXHihOLj45Wfn6/g4GB169ZN27dv18CBAyVJubm58vH59+JSnz59lJKSopkzZ2rGjBm6/vrrtWnTJnXp0sVbLQAAgFrGq+Hm5ZdfvuzzaWlpFcZGjBihESNGuKkiAABQ19W6PTcAAABXgnADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMxelws3btWpWWllYYP3/+vNauXeuSogAAAGrK6XAzZswYFRUVVRg/c+aMxowZ45KiAAAAasrpcGMYhiwWS4Xx48ePKzg42CVFAQAA1JRvdSfGxMTIYrHIYrGof//+8vX996llZWU6evSo7rjjDrcUCQAAUF3VDjfDhw+XJGVnZysuLk4NGza0P+fn56c2bdro3nvvdXmBAAAAzqh2uJk9e7YkqU2bNho5cqT8/f3dVhQAAEBNVTvcXDJ69GhJv7076sSJEyovL3d4vnXr1q6pDAAAoAac3lD8zTff6E9/+pMCAgIUERGhyMhIRUZGqk2bNoqMjHTqWjabTb169VKjRo0UEhKi4cOH6+DBg5c9Jzk52b7359LBKhIAALjE6ZWbBx98UL6+vtqyZYuaN29e6Tunquujjz5SQkKCevXqpYsXL2rGjBm6/fbblZOTowYNGlR5XlBQkEMIupIaAACAuTgdbrKzs5WZmakOHTpc8c23bdvm8Dg5OVkhISHKzMzULbfcUuV5FotFYWFhV3x/AABgPk6/LNWpUyf99NNP7qjF/uGATZo0uey8kpISRUREKDw8XMOGDdP+/furnFtaWqri4mKHAwAAmJfT4Wb+/PmaPn260tLS9PPPP7ssOJSXl2vKlCm6+eab1aVLlyrntW/fXqtXr9bmzZu1bt06lZeXq0+fPjp+/Hil8202m4KDg+1HeHh4jWsEAAC1n9MvSw0YMECS1L9/f4fxS59cXFZWVqNCEhIStG/fPu3ateuy82JjYxUbG2t/3KdPH3Xs2FErVqzQnDlzKsxPTEzU1KlT7Y+Li4sJOAAAmJjT4ebDDz90eRETJ07Uli1btHPnTrVq1cqpc+vXr6+YmBgdPny40uetVqusVqsrygQAAHWA0+Gmb9++Lru5YRh67LHH9PbbbystLc3pt5JLv331w969e3XnnXe6rC4AAFB3OR1udu7cednnL/cup/+UkJCglJQUbd68WY0aNVJBQYEkKTg4WAEBAZKk+Ph4tWzZUjabTZL09NNPq3fv3oqKitLp06f17LPP6tixYxo/fryzrQAAABNyOtz069evwtjvP2fGmT03y5Ytq/Saa9as0YMPPihJys3NlY/Pv/c9nzp1ShMmTFBBQYEaN26snj17avfu3erUqVP1mwAAAKbldLg5deqUw+MLFy4oKytLTz75pObOnevUtQzD+MM5aWlpDo8XLVqkRYsWOXUfAABw9XA63AQHB1cYGzhwoPz8/DR16lRlZma6pDAAAICacPpzbqoSGhr6h98LBQAA4G5Or9x89dVXDo8Nw1B+fr7mzZun6OhoV9UFAABQI06Hm+joaFkslgr7ZXr37q3Vq1e7rDAAAICacDrcHD161OGxj4+PmjVrJn9/f5cVBQAAUFNOh5uIiAh31AEAAOASNdpQ/NFHH2no0KGKiopSVFSU7rrrLn388ceurg0AAMBpToebdevWacCAAQoMDNSkSZM0adIkBQQEqH///kpJSXFHjQAAANXm9MtSc+fO1TPPPKPHH3/cPjZp0iQtXLhQc+bM0f333+/SAgEAAJzh9MrNkSNHNHTo0Arjd911V4XNxgAAAJ7mdLgJDw9XampqhfH3339f4eHhLikKAACgppx+WeqJJ57QpEmTlJ2drT59+kiSPvnkEyUnJ2vx4sUuLxAAAMAZToebRx55RGFhYVqwYIE2bNggSerYsaNef/11DRs2zOUFAgAAOMPpcCNJd999t+6++25X1wIAAHDFnN5z88UXX+izzz6rMP7ZZ58pIyPDJUUBAADUlNPhJiEhQXl5eRXGv//+eyUkJLikKAAAgJpyOtzk5OSoR48eFcZjYmKUk5PjkqIAAABqyulwY7VaVVhYWGE8Pz9fvr412sIDAADgMk6Hm9tvv12JiYkqKiqyj50+fVozZszQwIEDXVocAACAs5xeannuued0yy23KCIiQjExMZKk7OxshYaG6tVXX3V5gQAAAM5wOty0bNlSX331lV577TV9+eWXCggI0JgxYzRq1CjVr1/fHTUCAABUW402yTRo0EAPPfSQq2sBAAC4Yk7vuQEAAKjNCDcAAMBUCDcAAMBUCDcAAMBUavype+fPn9eJEydUXl7uMN66desrLgoAAKCmnA4333zzjcaOHavdu3c7jBuGIYvForKyMpcVBwAA4Cynw82DDz4oX19fbdmyRc2bN5fFYnFHXQAAADXidLjJzs5WZmamOnTo4I56AAAArojTG4o7deqkn376yR21AAAAXDGnw838+fM1ffp0paWl6eeff1ZxcbHDAQAA4E1Ovyw1YMAASVL//v0dxtlQDAAAagOnw82HH37ospvbbDa99dZbOnDggAICAtSnTx/Nnz9f7du3v+x5Gzdu1JNPPqnvvvtO119/vebPn68777zTZXUBAIC6y+lw07dvX5fd/KOPPlJCQoJ69eqlixcvasaMGbr99tuVk5OjBg0aVHrO7t27NWrUKNlsNg0ZMkQpKSkaPny49uzZoy5durisNgAAUDfV6EP8Tp8+rZdffllff/21JKlz584aO3asgoODnbrOtm3bHB4nJycrJCREmZmZuuWWWyo9Z/Hixbrjjjs0bdo0SdKcOXO0Y8cOLVmyRMuXL69BNwAAwEyc3lCckZGh6667TosWLdLJkyd18uRJLVy4UNddd5327NlzRcUUFRVJkpo0aVLlnPT0dPu+n0vi4uKUnp5e6fzS0lI2PQMAcBVxeuXm8ccf11133aWXXnpJvr6/nX7x4kWNHz9eU6ZM0c6dO2tUSHl5uaZMmaKbb775si8vFRQUKDQ01GEsNDRUBQUFlc632WxKSkqqUU0AzKPN39/1dgk18t28wU7Nv1r6BC6nRis3f/vb3+zBRpJ8fX01ffp0ZWRk1LiQhIQE7du3T+vXr6/xNSqTmJiooqIi+5GXl+fS6wMAgNrF6ZWboKAg5ebmVviE4ry8PDVq1KhGRUycOFFbtmzRzp071apVq8vODQsLU2FhocNYYWGhwsLCKp1vtVpltVprVBcAAKh7nF65GTlypMaNG6fXX39deXl5ysvL0/r16zV+/HiNGjXKqWsZhqGJEyfq7bff1gcffKDIyMg/PCc2NlapqakOYzt27FBsbKxT9wYAAObk9MrNc889J4vFovj4eF28eFGSVL9+fT3yyCOaN2+eU9dKSEhQSkqKNm/erEaNGtn3zQQHBysgIECSFB8fr5YtW8pms0mSJk+erL59+2rBggUaPHiw1q9fr4yMDK1cudLZVgAAgAk5HW78/Py0ePFi2Ww2ffvtt5Kk6667ToGBgU7ffNmyZZKkfv36OYyvWbNGDz74oCQpNzdXPj7/XmDq06ePUlJSNHPmTM2YMUPXX3+9Nm3axGfcAAAASTX8nBtJCgwMVNeuXa/o5oZh/OGctLS0CmMjRozQiBEjrujeAADAnKoVbu655x4lJycrKChI99xzz2XnvvXWWy4pDAAAoCaqFW6Cg4NlsVgk/fZuqUu/BgAAqG2qFW7WrFlj/3VycrK7agEAALhiTr8V/LbbbtPp06crjBcXF+u2225zRU0AAAA15nS4SUtL0/nz5yuMnzt3Th9//LFLigIAAKipar9b6quvvrL/Oicnx+G7nMrKyrRt2za1bNnStdUBAAA4qdrhJjo6WhaLRRaLpdKXnwICAvTiiy+6tDgAAABnVTvcHD16VIZhqG3btvr888/VrFkz+3N+fn4KCQlRvXr13FIkAABAdVU73EREREiSysvL3VYMAADAlarxJxTn5OQoNze3wubiu+6664qLAgAAqCmnw82RI0d09913a+/evbJYLPavULj0wX5lZWWurRAAAMAJTr8VfPLkyYqMjNSJEycUGBio/fv3a+fOnbrhhhsq/R4oAAAAT3J65SY9PV0ffPCBrr32Wvn4+MjHx0f/7//9P9lsNk2aNElZWVnuqBMAAKBanF65KSsrU6NGjSRJ1157rX744QdJv204PnjwoGurAwAAcJLTKzddunTRl19+qcjISN1000165pln5Ofnp5UrV6pt27buqBEAAKDanA43M2fO1NmzZyVJTz/9tIYMGaI//elPatq0qdavX+/yAgEAAJzhdLiJi4uz/zoqKkoHDhzQyZMn1bhxY/s7pgAAALzF6T03Y8eO1ZkzZxzGmjRpol9++UVjx451WWEAAAA14XS4eeWVV/Trr79WGP/111+1du1alxQFAABQU9V+Waq4uFiGYcgwDJ05c0b+/v7258rKyrR161aFhIS4pUgAAIDqqna4ueaaa+zfCt6uXbsKz1ssFiUlJbm0OAAAAGdVO9x8+OGHMgxDt912m9588001adLE/pyfn58iIiLUokULtxQJAABQXdUON3379pUkHT16VK1bt+adUQAAoFaqVrj56quv1KVLF/n4+KioqEh79+6tcm63bt1cVhwAAICzqhVuoqOjVVBQoJCQEEVHRzt8G/jvWSwWvhUcAAB4VbXCzdGjR9WsWTP7rwEAAGqraoWbiIiISn8NAABQ2zj9IX42m02rV6+uML569WrNnz/fJUUBAADUlNPhZsWKFerQoUOF8c6dO2v58uUuKQoAAKCmnA43BQUFat68eYXxZs2aKT8/3yVFAQAA1JTT4SY8PFyffPJJhfFPPvmED/EDAABeV+0P8btkwoQJmjJlii5cuKDbbrtNkpSamqrp06friSeecHmBAAAAznA63EybNk0///yzHn30UZ0/f16S5O/vr7/97W9KTEx0eYEAAADOcPplKYvFovnz5+vHH3/Up59+qi+//FInT57UrFmznL75zp07NXToULVo0UIWi0WbNm267Py0tDT7l3f+/igoKHD63gAAwJycXrm5pGHDhurVq9cV3fzs2bPq3r27xo4dq3vuuafa5x08eFBBQUH2xyEhIVdUBwAAMI8ahxtXGDRokAYNGuT0eSEhIbrmmmtcXxAAAKjznH5ZqjaIjo5W8+bNNXDgwErfufV7paWlKi4udjgAAIB51alw07x5cy1fvlxvvvmm3nzzTYWHh6tfv37as2dPlefYbDYFBwfbj/DwcA9WDAAAPM2rL0s5q3379mrfvr39cZ8+ffTtt99q0aJFevXVVys9JzExUVOnTrU/Li4uJuAAAGBidSrcVObGG2/Url27qnzearXKarV6sCIAAOBNdeplqcpkZ2dX+nUQAADg6uTVlZuSkhIdPnzY/vjo0aPKzs5WkyZN1Lp1ayUmJur777/X2rVrJUnPP/+8IiMj1blzZ507d06rVq3SBx98oPfee89bLQAAgFrGq+EmIyNDt956q/3xpb0xo0ePVnJysvLz85Wbm2t//vz583riiSf0/fffKzAwUN26ddP777/vcA0AAHB182q46devnwzDqPL55ORkh8fTp0/X9OnT3VwVAACoy+r8nhsAAIDfI9wAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABT8Wq42blzp4YOHaoWLVrIYrFo06ZNf3hOWlqaevToIavVqqioKCUnJ7u9TgAAUHd4NdycPXtW3bt319KlS6s1/+jRoxo8eLBuvfVWZWdna8qUKRo/fry2b9/u5koB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MWPGDI/09nue7PP//u//jJiYGKNBgwZGs2bNjLvuusv4+uuvTdXnjz/+aPTu3dto0KCBERgYaPTv39/49NNPPdKjq/qcPXt2pdf4z//D/fDDD43o6GjDz8/PaNu2rcM9zNJjdebU9T6r+jvtqc/a8lSfL7zwgtG5c2cjMDDQCAoKMmJiYox//OMfDh9PURtZDMMwKn29CgAAoA5iQzEAADAVwg0AADAVwg0AADAVwg0AADAVwg0AADAVwg0AADAVwg0AADAVwg0AADAVwg0AADAVwg0AADAVwg0ASCorK1N5ebm3ywDgAoQbALXO2rVr1bRpU5WWljqMDx8+XA888IAkafPmzerRo4f8/f3Vtm1bJSUl6eLFi/a5CxcuVNeuXdWgQQOFh4fr0UcfVUlJif355ORkXXPNNXrnnXfUqVMnWa1W5ebmeqZBAG5FuAFQ64wYMUJlZWV655137GMnTpzQu+++q7Fjx+rjjz9WfHy8Jk+erJycHK1YsULJycmaO3eufb6Pj49eeOEF7d+/X6+88oo++OADTZ8+3eE+v/zyi+bPn69Vq1Zp//79CgkJ8ViPANyHbwUHUCs9+uij+u6777R161ZJv63ELF26VIcPH9bAgQPVv39/JSYm2uevW7dO06dP1w8//FDp9d544w09/PDD+umnnyT9tnIzZswYZWdnq3v37u5vCIDHEG4A1EpZWVnq1auXjh07ppYtW6pbt24aMWKEnnzySTVr1kwlJSWqV6+efX5ZWZnOnTuns2fPKjAwUO+//75sNpsOHDig4uJiXbx40eH55ORk/fWvf9W5c+dksVi82CkAV/P1dgEAUJmYmBh1795da9eu1e233679+/fr3XfflSSVlJQoKSlJ99xzT4Xz/P399d1332nIkCF65JFHNHfuXDVp0kS7du3SuHHjdP78eQUGBkqSAgICCDaACRFuANRa48eP1/PPP6/vv/9eAwYMUHh4uCSpR48eOnjwoKKioio9LzMzU+Xl5VqwYIF8fH7bWrhhwwaP1Q3Auwg3AGqt+++/X//93/+tl156SWvXrrWPz5o1S0OGDFHr1q113333ycfHR19++aX27dun//3f/1VUVJQuXLigF198UUOHDtUnn3yi5cuXe7ETAJ7Eu6UA1FrBwcG699571bBhQw0fPtw+HhcXpy1btui9995Tr1691Lt3by1atEgRERGSpO7du2vhwoWaP3++unTpotdee002m81LXQDwNDYUA6jV+vfvr86dO+uFF17wdikA6gjCDYBa6dSpU0pLS9N9992nnJwctW/f3tslAagj2HMDoFaKiYnRqVOnNH/+fIINAKewcgMAAEyFDcUAAMBUCDcAAMBUCDcAAMBUCDcAAMBUCDcAAMBUCDcAAMBUCDcAAMBUCDcAAMBU/j+Zq/AXH953sAAAAABJRU5ErkJggg==)</p>
 </div>
 </div>
 </div>
@@ -1045,7 +1159,7 @@ const thebe_selector_output = ".output, .cell_output"
         <span class="n">b64</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
         <span class="n">citefig</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;![img](data:image/png;base64,</span><span class="si">{</span><span class="n">b64</span><span class="si">}</span><span class="s2">)&quot;</span>
 
-        <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">authors</span><span class="si">}</span><span class="s1">, *</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">*, **</span><span class="si">{</span><span class="n">journal</span><span class="si">}</span><span class="s1">**, </span><span class="si">{</span><span class="n">volume</span><span class="si">}{</span><span class="n">issue</span><span class="si">}{</span><span class="n">pages</span><span class="si">}</span><span class="s1">, (</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">), </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;doi&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">. cited by: </span><span class="si">{</span><span class="n">citedby</span><span class="si">}</span><span class="s1">. [Open Alex](</span><span class="si">{</span><span class="n">oa</span><span class="si">}</span><span class="s1">)&#39;</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">authors</span><span class="si">}</span><span class="s1">, *</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">*, **</span><span class="si">{</span><span class="n">journal</span><span class="si">}</span><span class="s1">**, </span><span class="si">{</span><span class="n">volume</span><span class="si">}{</span><span class="n">issue</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">pages</span><span class="si">}</span><span class="s1">, (</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">), </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;doi&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">. cited by: </span><span class="si">{</span><span class="n">citedby</span><span class="si">}</span><span class="s1">. [Open Alex](</span><span class="si">{</span><span class="n">oa</span><span class="si">}</span><span class="s1">)&#39;</span>
 
         <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;&lt;br&gt;&quot;</span> <span class="o">+</span> <span class="n">citefig</span>
         <span class="k">return</span> <span class="n">s</span>
@@ -1053,10 +1167,10 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">ris</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">fields</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;journal-article&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;type_crossref&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;journal-article&quot;</span><span class="p">:</span>
             <span class="n">fields</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;TY  - JOUR&quot;</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Unsupported type </span><span class="si">{self.data[&#39;type&#39;]}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported type </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
         <span class="k">for</span> <span class="n">author</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;authorships&quot;</span><span class="p">]:</span>
             <span class="n">fields</span> <span class="o">+=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;AU  - </span><span class="si">{</span><span class="n">author</span><span class="p">[</span><span class="s2">&quot;author&quot;</span><span class="p">][</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span>
@@ -1094,13 +1208,13 @@ const thebe_selector_output = ".output, .cell_output"
 AU  - John R. Kitchin
 PY  - 2015
 TI  - Examples of Effective Data Sharing in Scientific Publishing
-JO  - ACS Catalysis
+JO  - ACS catalysis
 VL  - 5
 IS  - 6
 SP  - 3894
 EP  - 3899
 DO  - https://doi.org/10.1021/acscatal.5b00538
-ER  -</pre><br><a href="data:text/plain;base64,VFkgIC0gSk9VUgpBVSAgLSBKb2huIFIuIEtpdGNoaW4KUFkgIC0gMjAxNQpUSSAgLSBFeGFtcGxlcyBvZiBFZmZlY3RpdmUgRGF0YSBTaGFyaW5nIGluIFNjaWVudGlmaWMgUHVibGlzaGluZwpKTyAgLSBBQ1MgQ2F0YWx5c2lzClZMICAtIDUKSVMgIC0gNgpTUCAgLSAzODk0CkVQICAtIDM4OTkKRE8gIC0gaHR0cHM6Ly9kb2kub3JnLzEwLjEwMjEvYWNzY2F0YWwuNWIwMDUzOApFUiAgLQ==" download="ris">Download RIS</a></div></div>
+ER  -</pre><br><a href="data:text/plain;base64,VFkgIC0gSk9VUgpBVSAgLSBKb2huIFIuIEtpdGNoaW4KUFkgIC0gMjAxNQpUSSAgLSBFeGFtcGxlcyBvZiBFZmZlY3RpdmUgRGF0YSBTaGFyaW5nIGluIFNjaWVudGlmaWMgUHVibGlzaGluZwpKTyAgLSBBQ1MgY2F0YWx5c2lzClZMICAtIDUKSVMgIC0gNgpTUCAgLSAzODk0CkVQICAtIDM4OTkKRE8gIC0gaHR0cHM6Ly9kb2kub3JnLzEwLjEwMjEvYWNzY2F0YWwuNWIwMDUzOApFUiAgLQ==" download="ris">Download RIS</a></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1109,7 +1223,7 @@ ER  -</pre><br><a href="data:text/plain;base64,VFkgIC0gSk9VUgpBVSAgLSBKb2huIFIuI
 </div>
 </div>
 <div class="cell_output docutils container">
-<p><a class="reference external" href="https://openalex.org/A4330425867">John R. Kitchin</a>, <em>Examples of Effective Data Sharing in Scientific Publishing</em>, <strong><a class="reference external" href="https://openalex.org/S37391459">ACS Catalysis</a></strong>, 5, 63894-3899, (2015), https://doi.org/10.1021/acscatal.5b00538. cited by: 18. <a class="reference external" href="https://openalex.org/W2288114809">Open Alex</a><br>![img](data:image/png;base64,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+nSP9PZ7nuzz//7v/4yoqCijQYMGRrNmzYy77rrL+Prrr03V548//mj07dvXaNCggREYGGgMGDDA+PTTTz3So6v6nDVrVqXX+M//w/3www+NyMhIw8/Pz2jfvr3DPczSY3Xm1PU+q/o77anP2vJUny+88ILRtWtXIzAw0AgKCjKioqKMf/zjHw4fT1EbWQzDMCp9vQoAAKAOYkMxAAAwFcINAAAwFcINAAAwFcINAAAwFcINAAAwFcINAAAwFcINAAAwFcINAAAwFcINAAAwFcINAAAwFcINAEgqKytTeXm5t8sA4AKEGwC1ztq1a9W0aVOVlpY6jA8fPlwPPPCAJGnz5s3q1auX/P391b59e82ePVsXL160z124cKG6d++uBg0aKCwsTI8++qhKSkrszycnJ+uaa67RO++8oy5dushqtSo3N9czDQJwK8INgFpnxIgRKisr0zvvvGMfO3HihN59912NGTNGH3/8sRISEjRp0iTl5ORoxYoVSk5O1ty5c+3zfXx89MILL2j//v165ZVX9MEHH2jatGkO9/nll180f/58rVq1Svv371fz5s091iMA9+FbwQHUSo8++qi+++47bd26VdJvKzFLly7V4cOHNXDgQA0YMEBJSUn2+evWrdO0adP0ww8/VHq9N954Qw8//LB++uknSb+t3IwePVrZ2dnq2bOn+xsC4DGEGwC1UlZWlvr06aNjx46pVatW6tGjh0aMGKEnn3xSzZo1U0lJierVq2efX1ZWpnPnzuns2bMKDAzU+++/L5vNpgMHDqi4uFgXL150eD45OVl//etfde7cOVksFi92CsDVfL1dAABUJioqSj179tTatWt1++23a//+/Xr33XclSSUlJZo9e7buueeeCuf5+/vru+++05AhQ/TII49o7ty5atKkiXbt2qWxY8fq/PnzCgwMlCQFBAQQbAATItwAqLXGjRun559/Xt9//71iY2MVFhYmSerVq5cOHjyoiIiISs/LzMxUeXm5FixYIB+f37YWbtiwwWN1A/Auwg2AWuv+++/Xf//3f+ull17S2rVr7eMzZ87UkCFD1KZNG913333y8fHRl19+qX379ul///d/FRERoQsXLujFF1/U0KFD9cknn2j58uVe7ASAJ/FuKQC1VnBwsO699141bNhQw4cPt4/HxcVpy5Yteu+999SnTx/17dtXixYtUnh4uCSpZ8+eWrhwoebPn69u3brptddek81m81IXADyNDcUAarUBAwaoa9eueuGFF7xdCoA6gnADoFY6deqU0tLSdN999yknJ0cdO3b0dkkA6gj23AColaKionTq1CnNnz+fYAPAKazcAAAAU2FDMQAAMBXCDQAAMBXCDQAAMBXCDQAAMBXCDQAAMBXCDQAAMBXCDQAAMBXCDQAAMJX/DyiP8BdyV/GNAAAAAElFTkSuQmCC)</p>
+<p><a class="reference external" href="https://openalex.org/A5003442464">John R. Kitchin</a>, <em>Examples of Effective Data Sharing in Scientific Publishing</em>, <strong><a class="reference external" href="https://openalex.org/S37391459">ACS catalysis</a></strong>, 5, 6, 3894-3899, (2015), https://doi.org/10.1021/acscatal.5b00538. cited by: 19. <a class="reference external" href="https://openalex.org/W2288114809">Open Alex</a><br>![img](data:image/png;base64,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TFBBQYEaN26snj17avfu3dXanwMAAK4OXt9Q7GnObEiqCTYUAwDges78/K51e24AAACuBOEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYCuEGAACYilfDzbJly9StWzcFBQUpKChIsbGx+te//nXZczZu3KgOHTrI399fXbt21datWz1ULQAAqAu8Gm5atWqlefPmKTMzUxkZGbrttts0bNgw7d+/v9L5u3fv1qhRozRu3DhlZWVp+PDhGj58uPbt2+fhygEAQG1lMQzD8HYRv9ekSRM9++yzGjduXIXnRo4cqbNnz2rLli32sd69eys6OlrLly+v1vWLi4sVHBysoqIiBQUFuazuS9r8/V2XX9MTvps32NslAABQJWd+fteaPTdlZWVav369zp49q9jY2ErnpKena8CAAQ5jcXFxSk9Pr/K6paWlKi4udjgAAIB5+Xq7gL179yo2Nlbnzp1Tw4YN9fbbb6tTp06Vzi0oKFBoaKjDWGhoqAoKCqq8vs1mU1JSkktrxtWhrq7CSc6txNXVPlltvLrx9xaX4/WVm/bt2ys7O1ufffaZHnnkEY0ePVo5OTkuu35iYqKKiorsR15ensuuDQAAah+vr9z4+fkpKipKktSzZ0998cUXWrx4sVasWFFhblhYmAoLCx3GCgsLFRYWVuX1rVarrFara4sGAAC1ltdXbv5TeXm5SktLK30uNjZWqampDmM7duyoco8OAAC4+nh15SYxMVGDBg1S69atdebMGaWkpCgtLU3bt2+XJMXHx6tly5ay2WySpMmTJ6tv375asGCBBg8erPXr1ysjI0MrV670ZhsAAKAW8Wq4OXHihOLj45Wfn6/g4GB169ZN27dv18CBAyVJubm58vH59+JSnz59lJKSopkzZ2rGjBm6/vrrtWnTJnXp0sVbLQAAgFrGq+Hm5ZdfvuzzaWlpFcZGjBihESNGuKkiAABQ19W6PTcAAABXgnADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMhXADAABMxelws3btWpWWllYYP3/+vNauXeuSogAAAGrK6XAzZswYFRUVVRg/c+aMxowZ45KiAAAAasrpcGMYhiwWS4Xx48ePKzg42CVFAQAA1JRvdSfGxMTIYrHIYrGof//+8vX996llZWU6evSo7rjjDrcUCQAAUF3VDjfDhw+XJGVnZysuLk4NGza0P+fn56c2bdro3nvvdXmBAAAAzqh2uJk9e7YkqU2bNho5cqT8/f3dVhQAAEBNVTvcXDJ69GhJv7076sSJEyovL3d4vnXr1q6pDAAAoAac3lD8zTff6E9/+pMCAgIUERGhyMhIRUZGqk2bNoqMjHTqWjabTb169VKjRo0UEhKi4cOH6+DBg5c9Jzk52b7359LBKhIAALjE6ZWbBx98UL6+vtqyZYuaN29e6Tunquujjz5SQkKCevXqpYsXL2rGjBm6/fbblZOTowYNGlR5XlBQkEMIupIaAACAuTgdbrKzs5WZmakOHTpc8c23bdvm8Dg5OVkhISHKzMzULbfcUuV5FotFYWFhV3x/AABgPk6/LNWpUyf99NNP7qjF/uGATZo0uey8kpISRUREKDw8XMOGDdP+/furnFtaWqri4mKHAwAAmJfT4Wb+/PmaPn260tLS9PPPP7ssOJSXl2vKlCm6+eab1aVLlyrntW/fXqtXr9bmzZu1bt06lZeXq0+fPjp+/Hil8202m4KDg+1HeHh4jWsEAAC1n9MvSw0YMECS1L9/f4fxS59cXFZWVqNCEhIStG/fPu3ateuy82JjYxUbG2t/3KdPH3Xs2FErVqzQnDlzKsxPTEzU1KlT7Y+Li4sJOAAAmJjT4ebDDz90eRETJ07Uli1btHPnTrVq1cqpc+vXr6+YmBgdPny40uetVqusVqsrygQAAHWA0+Gmb9++Lru5YRh67LHH9PbbbystLc3pt5JLv331w969e3XnnXe6rC4AAFB3OR1udu7cednnL/cup/+UkJCglJQUbd68WY0aNVJBQYEkKTg4WAEBAZKk+Ph4tWzZUjabTZL09NNPq3fv3oqKitLp06f17LPP6tixYxo/fryzrQAAABNyOtz069evwtjvP2fGmT03y5Ytq/Saa9as0YMPPihJys3NlY/Pv/c9nzp1ShMmTFBBQYEaN26snj17avfu3erUqVP1mwAAAKbldLg5deqUw+MLFy4oKytLTz75pObOnevUtQzD+MM5aWlpDo8XLVqkRYsWOXUfAABw9XA63AQHB1cYGzhwoPz8/DR16lRlZma6pDAAAICacPpzbqoSGhr6h98LBQAA4G5Or9x89dVXDo8Nw1B+fr7mzZun6OhoV9UFAABQI06Hm+joaFkslgr7ZXr37q3Vq1e7rDAAAICacDrcHD161OGxj4+PmjVrJn9/f5cVBQAAUFNOh5uIiAh31AEAAOASNdpQ/NFHH2no0KGKiopSVFSU7rrrLn388ceurg0AAMBpToebdevWacCAAQoMDNSkSZM0adIkBQQEqH///kpJSXFHjQAAANXm9MtSc+fO1TPPPKPHH3/cPjZp0iQtXLhQc+bM0f333+/SAgEAAJzh9MrNkSNHNHTo0Arjd911V4XNxgAAAJ7mdLgJDw9XampqhfH3339f4eHhLikKAACgppx+WeqJJ57QpEmTlJ2drT59+kiSPvnkEyUnJ2vx4sUuLxAAAMAZToebRx55RGFhYVqwYIE2bNggSerYsaNef/11DRs2zOUFAgAAOMPpcCNJd999t+6++25X1wIAAHDFnN5z88UXX+izzz6rMP7ZZ58pIyPDJUUBAADUlNPhJiEhQXl5eRXGv//+eyUkJLikKAAAgJpyOtzk5OSoR48eFcZjYmKUk5PjkqIAAABqyulwY7VaVVhYWGE8Pz9fvr412sIDAADgMk6Hm9tvv12JiYkqKiqyj50+fVozZszQwIEDXVocAACAs5xeannuued0yy23KCIiQjExMZKk7OxshYaG6tVXX3V5gQAAAM5wOty0bNlSX331lV577TV9+eWXCggI0JgxYzRq1CjVr1/fHTUCAABUW402yTRo0EAPPfSQq2sBAAC4Yk7vuQEAAKjNCDcAAMBUCDcAAMBUCDcAAMBUavype+fPn9eJEydUXl7uMN66desrLgoAAKCmnA4333zzjcaOHavdu3c7jBuGIYvForKyMpcVBwAA4Cynw82DDz4oX19fbdmyRc2bN5fFYnFHXQAAADXidLjJzs5WZmamOnTo4I56AAAArojTG4o7deqkn376yR21AAAAXDGnw838+fM1ffp0paWl6eeff1ZxcbHDAQAA4E1Ovyw1YMAASVL//v0dxtlQDAAAagOnw82HH37ospvbbDa99dZbOnDggAICAtSnTx/Nnz9f7du3v+x5Gzdu1JNPPqnvvvtO119/vebPn68777zTZXUBAIC6y+lw07dvX5fd/KOPPlJCQoJ69eqlixcvasaMGbr99tuVk5OjBg0aVHrO7t27NWrUKNlsNg0ZMkQpKSkaPny49uzZoy5durisNgAAUDfV6EP8Tp8+rZdffllff/21JKlz584aO3asgoODnbrOtm3bHB4nJycrJCREmZmZuuWWWyo9Z/Hixbrjjjs0bdo0SdKcOXO0Y8cOLVmyRMuXL69BNwAAwEyc3lCckZGh6667TosWLdLJkyd18uRJLVy4UNddd5327NlzRcUUFRVJkpo0aVLlnPT0dPu+n0vi4uKUnp5e6fzS0lI2PQMAcBVxeuXm8ccf11133aWXXnpJvr6/nX7x4kWNHz9eU6ZM0c6dO2tUSHl5uaZMmaKbb775si8vFRQUKDQ01GEsNDRUBQUFlc632WxKSkqqUU0AzKPN39/1dgk18t28wU7Nv1r6BC6nRis3f/vb3+zBRpJ8fX01ffp0ZWRk1LiQhIQE7du3T+vXr6/xNSqTmJiooqIi+5GXl+fS6wMAgNrF6ZWboKAg5ebmVviE4ry8PDVq1KhGRUycOFFbtmzRzp071apVq8vODQsLU2FhocNYYWGhwsLCKp1vtVpltVprVBcAAKh7nF65GTlypMaNG6fXX39deXl5ysvL0/r16zV+/HiNGjXKqWsZhqGJEyfq7bff1gcffKDIyMg/PCc2NlapqakOYzt27FBsbKxT9wYAAObk9MrNc889J4vFovj4eF28eFGSVL9+fT3yyCOaN2+eU9dKSEhQSkqKNm/erEaNGtn3zQQHBysgIECSFB8fr5YtW8pms0mSJk+erL59+2rBggUaPHiw1q9fr4yMDK1cudLZVgAAgAk5HW78/Py0ePFi2Ww2ffvtt5Kk6667ToGBgU7ffNmyZZKkfv36OYyvWbNGDz74oCQpNzdXPj7/XmDq06ePUlJSNHPmTM2YMUPXX3+9Nm3axGfcAAAASTX8nBtJCgwMVNeuXa/o5oZh/OGctLS0CmMjRozQiBEjrujeAADAnKoVbu655x4lJycrKChI99xzz2XnvvXWWy4pDAAAoCaqFW6Cg4NlsVgk/fZuqUu/BgAAqG2qFW7WrFlj/3VycrK7agEAALhiTr8V/LbbbtPp06crjBcXF+u2225zRU0AAAA15nS4SUtL0/nz5yuMnzt3Th9//LFLigIAAKipar9b6quvvrL/Oicnx+G7nMrKyrRt2za1bNnStdUBAAA4qdrhJjo6WhaLRRaLpdKXnwICAvTiiy+6tDgAAABnVTvcHD16VIZhqG3btvr888/VrFkz+3N+fn4KCQlRvXr13FIkAABAdVU73EREREiSysvL3VYMAADAlarxJxTn5OQoNze3wubiu+6664qLAgAAqCmnw82RI0d09913a+/evbJYLPavULj0wX5lZWWurRAAAMAJTr8VfPLkyYqMjNSJEycUGBio/fv3a+fOnbrhhhsq/R4oAAAAT3J65SY9PV0ffPCBrr32Wvn4+MjHx0f/7//9P9lsNk2aNElZWVnuqBMAAKBanF65KSsrU6NGjSRJ1157rX744QdJv204PnjwoGurAwAAcJLTKzddunTRl19+qcjISN1000165pln5Ofnp5UrV6pt27buqBEAAKDanA43M2fO1NmzZyVJTz/9tIYMGaI//elPatq0qdavX+/yAgEAAJzhdLiJi4uz/zoqKkoHDhzQyZMn1bhxY/s7pgAAALzF6T03Y8eO1ZkzZxzGmjRpol9++UVjx451WWEAAAA14XS4eeWVV/Trr79WGP/111+1du1alxQFAABQU9V+Waq4uFiGYcgwDJ05c0b+/v7258rKyrR161aFhIS4pUgAAIDqqna4ueaaa+zfCt6uXbsKz1ssFiUlJbm0OAAAAGdVO9x8+OGHMgxDt912m9588001adLE/pyfn58iIiLUokULtxQJAABQXdUON3379pUkHT16VK1bt+adUQAAoFaqVrj56quv1KVLF/n4+KioqEh79+6tcm63bt1cVhwAAICzqhVuoqOjVVBQoJCQEEVHRzt8G/jvWSwWvhUcAAB4VbXCzdGjR9WsWTP7rwEAAGqraoWbiIiISn8NAABQ2zj9IX42m02rV6+uML569WrNnz/fJUUBAADUlNPhZsWKFerQoUOF8c6dO2v58uUuKQoAAKCmnA43BQUFat68eYXxZs2aKT8/3yVFAQAA1JTT4SY8PFyffPJJhfFPPvmED/EDAABeV+0P8btkwoQJmjJlii5cuKDbbrtNkpSamqrp06friSeecHmBAAAAznA63EybNk0///yzHn30UZ0/f16S5O/vr7/97W9KTEx0eYEAAADOcPplKYvFovnz5+vHH3/Up59+qi+//FInT57UrFmznL75zp07NXToULVo0UIWi0WbNm267Py0tDT7l3f+/igoKHD63gAAwJycXrm5pGHDhurVq9cV3fzs2bPq3r27xo4dq3vuuafa5x08eFBBQUH2xyEhIVdUBwAAMI8ahxtXGDRokAYNGuT0eSEhIbrmmmtcXxAAAKjznH5ZqjaIjo5W8+bNNXDgwErfufV7paWlKi4udjgAAIB51alw07x5cy1fvlxvvvmm3nzzTYWHh6tfv37as2dPlefYbDYFBwfbj/DwcA9WDAAAPM2rL0s5q3379mrfvr39cZ8+ffTtt99q0aJFevXVVys9JzExUVOnTrU/Li4uJuAAAGBidSrcVObGG2/Url27qnzearXKarV6sCIAAOBNdeplqcpkZ2dX+nUQAADg6uTVlZuSkhIdPnzY/vjo0aPKzs5WkyZN1Lp1ayUmJur777/X2rVrJUnPP/+8IiMj1blzZ507d06rVq3SBx98oPfee89bLQAAgFrGq+EmIyNDt956q/3xpb0xo0ePVnJysvLz85Wbm2t//vz583riiSf0/fffKzAwUN26ddP777/vcA0AAHB182q46devnwzDqPL55ORkh8fTp0/X9OnT3VwVAACoy+r8nhsAAIDfI9wAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABTIdwAAABT8Wq42blzp4YOHaoWLVrIYrFo06ZNf3hOWlqaevToIavVqqioKCUnJ7u9TgAAUHd4NdycPXtW3bt319KlS6s1/+jRoxo8eLBuvfVWZWdna8qUKRo/fry2b9/u5koB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MWPGDI/09nue7PP//u//jJiYGKNBgwZGs2bNjLvuusv4+uuvTdXnjz/+aPTu3dto0KCBERgYaPTv39/49NNPPdKjq/qcPXt2pdf4z//D/fDDD43o6GjDz8/PaNu2rcM9zNJjdebU9T6r+jvtqc/a8lSfL7zwgtG5c2cjMDDQCAoKMmJiYox//OMfDh9PURtZDMMwKn29CgAAoA5iQzEAADAVwg0AADAVwg0AADAVwg0AADAVwg0AADAVwg0AADAVwg0AADAVwg0AADAVwg0AADAVwg0AADAVwg0ASCorK1N5ebm3ywDgAoQbALXO2rVr1bRpU5WWljqMDx8+XA888IAkafPmzerRo4f8/f3Vtm1bJSUl6eLFi/a5CxcuVNeuXdWgQQOFh4fr0UcfVUlJif355ORkXXPNNXrnnXfUqVMnWa1W5ebmeqZBAG5FuAFQ64wYMUJlZWV655137GMnTpzQu+++q7Fjx+rjjz9WfHy8Jk+erJycHK1YsULJycmaO3eufb6Pj49eeOEF7d+/X6+88oo++OADTZ8+3eE+v/zyi+bPn69Vq1Zp//79CgkJ8ViPANyHbwUHUCs9+uij+u6777R161ZJv63ELF26VIcPH9bAgQPVv39/JSYm2uevW7dO06dP1w8//FDp9d544w09/PDD+umnnyT9tnIzZswYZWdnq3v37u5vCIDHEG4A1EpZWVnq1auXjh07ppYtW6pbt24aMWKEnnzySTVr1kwlJSWqV6+efX5ZWZnOnTuns2fPKjAwUO+//75sNpsOHDig4uJiXbx40eH55ORk/fWvf9W5c+dksVi82CkAV/P1dgEAUJmYmBh1795da9eu1e233679+/fr3XfflSSVlJQoKSlJ99xzT4Xz/P399d1332nIkCF65JFHNHfuXDVp0kS7du3SuHHjdP78eQUGBkqSAgICCDaACRFuANRa48eP1/PPP6/vv/9eAwYMUHh4uCSpR48eOnjwoKKioio9LzMzU+Xl5VqwYIF8fH7bWrhhwwaP1Q3Auwg3AGqt+++/X//93/+tl156SWvXrrWPz5o1S0OGDFHr1q113333ycfHR19++aX27dun//3f/1VUVJQuXLigF198UUOHDtUnn3yi5cuXe7ETAJ7Eu6UA1FrBwcG699571bBhQw0fPtw+HhcXpy1btui9995Tr1691Lt3by1atEgRERGSpO7du2vhwoWaP3++unTpotdee002m81LXQDwNDYUA6jV+vfvr86dO+uFF17wdikA6gjCDYBa6dSpU0pLS9N9992nnJwctW/f3tslAagj2HMDoFaKiYnRqVOnNH/+fIINAKewcgMAAEyFDcUAAMBUCDcAAMBUCDcAAMBUCDcAAMBUCDcAAMBUCDcAAMBUCDcAAMBUCDcAAMBU/j+Zq/AXH953sAAAAABJRU5ErkJggg==)</p>
 </div>
 </div>
 <p>You can copy that text to your clipboard, and import it to Zotero now. Or click on the link to download a file to your computer. Pretty sweet.</p>
@@ -1189,45 +1303,50 @@ ER  -</pre><br><a href="data:text/plain;base64,VFkgIC0gSk9VUgpBVSAgLSBKb2huIFIuI
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1. Helena Bukvova, Taking new routes: Blogs, Web sites, and Scientific Publishing, 7, 2-, (2011), None. cited by: 5. https://openalex.org/W1646698585
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1. Datong Wu, Xiaotong Wu, Jiaquan Gao, Genlin Ji, Taotao Wu, Xuyun Zhang and Wanchun Dou, A Survey of Game Theoretical Privacy Preservation for Data Sharing and Publishing, None, 205-216, (2020), https://doi.org/10.1007/978-981-15-9129-7_15. cited by: 2. https://openalex.org/W3093842987
 
 
- 2. Oscar Pulido Cortés, Natalia Lamprea and Gabriel Soto, Harmonizing Protection and Publication of Research Findings in Biosciences and Bioinformatics, None, 363-370, (2014), https://doi.org/10.1007/978-3-319-01568-2_51. cited by: 0. https://openalex.org/W2127183609
+Caught exception for https://openalex.org/W2296657372.
+ 3. Krzysztof J. Gorgolewski, Daniel S. Margulies and Michael P. Milham, Making Data Sharing Count: A Publication-Based Solution, 7, -, (2013), https://doi.org/10.3389/fnins.2013.00009. cited by: 81. https://openalex.org/W2125183513
 
 
- 3. Michael Banks, Access all theses, None, -, (2007), https://doi.org/10.1088/2058-7058/20/11/28. cited by: 0. https://openalex.org/W2408420038
+ 4. Andrew Fabinyi, On Australian Publishing, 28, 3398-, (1969), None. cited by: 0. https://openalex.org/W2294677930
 
 
-Caught exception for https://openalex.org/W2748952813.
-Caught exception for https://openalex.org/W2784807254.
- 6. Jean-Baptiste Poline, From data sharing to data publishing [version 2; peer review: 2 approved, 1 approved with reservations]., 2, -, (2019), https://doi.org/10.12688/mniopenres.12772.2. cited by: 7. https://openalex.org/W3021112985
+ 5. Erinn Huebner, A History of Christian Publishing, 61, 1-, (2018), https://doi.org/10.55221/2572-7478.1905. cited by: 0. https://openalex.org/W2801905285
 
 
- 7. Yuanchun Zhou, Construction idea and practice of international scientific data publishing platform, None, -, (2022), https://doi.org/10.11922/sciencedb.01330. cited by: 0. https://openalex.org/W4285793538
+ 6. Eric Glasgow, Alexander Strahan, publisher, 48, 291-96, (1999), https://doi.org/10.1108/00242539910259504. cited by: 0. https://openalex.org/W2028846973
 
 
- 8. 黎建辉 黎建辉, 吴超 吴超, 李成赞 李成赞, 张丽丽 张丽丽 and 胡良霖 胡良霖, Scientific data publishing survey, None, -, (2022), https://doi.org/10.11922/sciencedb.87. cited by: 0. https://openalex.org/W4285796209
+ 7. Chinyere C. Emenyonu, Establishing a publishing outfit in Nigeria, 12, 1168-177, (2017), None. cited by: 0. https://openalex.org/W2698935035
 
 
- 9. Yuanchun Zhou Yuanchun Zhou, Scientific data publishing and sharing, None, -, (2022), https://doi.org/10.11922/sciencedb.o00114.00061. cited by: 0. https://openalex.org/W4285798643
+ 8. Vittorio Bo, Scientific publishing: some food for thought, 06, 01C04-C04, (2007), https://doi.org/10.22323/2.06010304. cited by: 0. https://openalex.org/W2626564437
 
 
-10. Thomas W Elwood, Reflections on the Evolving World of Periodicals., None, -, (2020), None. cited by: 0. https://openalex.org/W4287973116
+ 9. Beatriz Juárez Santamaría and María Elena Jiménez Fragozo, Open Access and Publication Preferences of the Academic Community of the Instituto de Astronomía of the Universidad Nacional Autónoma de México, None, -, (2022), https://doi.org/10.3847/25c2cfeb.abc96a90. cited by: 0. https://openalex.org/W4293238240
+
+
+10. Ооржак Марина Сергеевна, Book publishing activity of scientific and educational institutions in the Republic of Tyva: modern problems, None, 126-31, (2016), https://doi.org/10.20913/1815-3186-2016-1-26-31. cited by: 0. https://openalex.org/W2750416796
 </pre></div>
 </div>
 </div>
 </div>
-<p>There are some exceptions caught because some entries do not have the data we try to access in the returned results. For example, <a class="reference external" href="https://openalex.org/W2748952813">https://openalex.org/W2748952813</a> does not seem to have a primary_location.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Works</span><span class="p">(</span><span class="s2">&quot;https://openalex.org/W2748952813&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_rw</span> <span class="ow">in</span> <span class="n">rw</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">_rw</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Datong Wu, Xiaotong Wu, Jiaquan Gao, Genlin Ji, Taotao Wu, Xuyun Zhang and Wanchun Dou, A Survey of Game Theoretical Privacy Preservation for Data Sharing and Publishing, None, 205-216, (2020), https://doi.org/10.1007/978-981-15-9129-7_15. cited by: 2. https://openalex.org/W3093842987
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/formatters.py:708,</span> in <span class="ni">PlainTextFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/core/formatters.py:708,</span> in <span class="ni">PlainTextFormatter.__call__</span><span class="nt">(self, obj)</span>
 <span class="g g-Whitespace">    </span><span class="mi">701</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">()</span>
 <span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="n">printer</span> <span class="o">=</span> <span class="n">pretty</span><span class="o">.</span><span class="n">RepresentationPrinter</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">703</span>     <span class="bp">self</span><span class="o">.</span><span class="n">max_width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">newline</span><span class="p">,</span>
@@ -1239,7 +1358,7 @@ Caught exception for https://openalex.org/W2784807254.
 <span class="g g-Whitespace">    </span><span class="mi">709</span> <span class="n">printer</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
 <span class="g g-Whitespace">    </span><span class="mi">710</span> <span class="k">return</span> <span class="n">stream</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/lib/pretty.py:410,</span> in <span class="ni">RepresentationPrinter.pretty</span><span class="nt">(self, obj)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/lib/pretty.py:410,</span> in <span class="ni">RepresentationPrinter.pretty</span><span class="nt">(self, obj)</span>
 <span class="g g-Whitespace">    </span><span class="mi">407</span>                         <span class="k">return</span> <span class="n">meth</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">408</span>                 <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">object</span> \
 <span class="g g-Whitespace">    </span><span class="mi">409</span>                         <span class="ow">and</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;__repr__&#39;</span><span class="p">)):</span>
@@ -1247,7 +1366,80 @@ Caught exception for https://openalex.org/W2784807254.
 <span class="g g-Whitespace">    </span><span class="mi">412</span>     <span class="k">return</span> <span class="n">_default_pprint</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">413</span> <span class="k">finally</span><span class="p">:</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/lib/pretty.py:778,</span> in <span class="ni">_repr_pprint</span><span class="nt">(obj, p, cycle)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/lib/pretty.py:778,</span> in <span class="ni">_repr_pprint</span><span class="nt">(obj, p, cycle)</span>
+<span class="g g-Whitespace">    </span><span class="mi">776</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;A pprint that just redirects to the normal repr function.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">777</span> <span class="c1"># Find newlines and replace them with p.break_()</span>
+<span class="ne">--&gt; </span><span class="mi">778</span> <span class="n">output</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">779</span> <span class="n">lines</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">780</span> <span class="k">with</span> <span class="n">p</span><span class="o">.</span><span class="n">group</span><span class="p">():</span>
+
+<span class="nn">Cell In[11], line 20,</span> in <span class="ni">Works.__repr__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="n">authors</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_authors</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; and &quot;</span> <span class="o">+</span> <span class="n">_authors</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="n">title</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
+<span class="ne">---&gt; </span><span class="mi">20</span> <span class="n">journal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;primary_location&quot;</span><span class="p">][</span><span class="s2">&quot;source&quot;</span><span class="p">][</span><span class="s2">&quot;display_name&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">volume</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="n">issue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;biblio&quot;</span><span class="p">][</span><span class="s2">&quot;issue&quot;</span><span class="p">]</span>
+
+<span class="ne">TypeError</span>: &#39;NoneType&#39; object is not subscriptable
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Krzysztof J. Gorgolewski, Daniel S. Margulies and Michael P. Milham, Making Data Sharing Count: A Publication-Based Solution, 7, -, (2013), https://doi.org/10.3389/fnins.2013.00009. cited by: 81. https://openalex.org/W2125183513
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Andrew Fabinyi, On Australian Publishing, 28, 3398-, (1969), None. cited by: 0. https://openalex.org/W2294677930
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Erinn Huebner, A History of Christian Publishing, 61, 1-, (2018), https://doi.org/10.55221/2572-7478.1905. cited by: 0. https://openalex.org/W2801905285
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eric Glasgow, Alexander Strahan, publisher, 48, 291-96, (1999), https://doi.org/10.1108/00242539910259504. cited by: 0. https://openalex.org/W2028846973
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chinyere C. Emenyonu, Establishing a publishing outfit in Nigeria, 12, 1168-177, (2017), None. cited by: 0. https://openalex.org/W2698935035
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vittorio Bo, Scientific publishing: some food for thought, 06, 01C04-C04, (2007), https://doi.org/10.22323/2.06010304. cited by: 0. https://openalex.org/W2626564437
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Beatriz Juárez Santamaría and María Elena Jiménez Fragozo, Open Access and Publication Preferences of the Academic Community of the Instituto de Astronomía of the Universidad Nacional Autónoma de México, None, -, (2022), https://doi.org/10.3847/25c2cfeb.abc96a90. cited by: 0. https://openalex.org/W4293238240
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ооржак Марина Сергеевна, Book publishing activity of scientific and educational institutions in the Republic of Tyva: modern problems, None, 126-31, (2016), https://doi.org/10.20913/1815-3186-2016-1-26-31. cited by: 0. https://openalex.org/W2750416796
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are some exceptions caught because some entries do not have the data we try to access in the returned results. For example, <a class="reference external" href="https://openalex.org/W2748952813"></a> does not seem to have a primary_location.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Works</span><span class="p">(</span><span class="s2">&quot;https://openalex.org/W2748952813&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/core/formatters.py:708,</span> in <span class="ni">PlainTextFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">701</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="n">printer</span> <span class="o">=</span> <span class="n">pretty</span><span class="o">.</span><span class="n">RepresentationPrinter</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span>     <span class="bp">self</span><span class="o">.</span><span class="n">max_width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">newline</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span>     <span class="n">max_seq_length</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_seq_length</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">705</span>     <span class="n">singleton_pprinters</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">singleton_printers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span>     <span class="n">type_pprinters</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">type_printers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span>     <span class="n">deferred_pprinters</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">deferred_printers</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">708</span> <span class="n">printer</span><span class="o">.</span><span class="n">pretty</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">709</span> <span class="n">printer</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">710</span> <span class="k">return</span> <span class="n">stream</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/lib/pretty.py:410,</span> in <span class="ni">RepresentationPrinter.pretty</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span>                         <span class="k">return</span> <span class="n">meth</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">408</span>                 <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">object</span> \
+<span class="g g-Whitespace">    </span><span class="mi">409</span>                         <span class="ow">and</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;__repr__&#39;</span><span class="p">)):</span>
+<span class="ne">--&gt; </span><span class="mi">410</span>                     <span class="k">return</span> <span class="n">_repr_pprint</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">412</span>     <span class="k">return</span> <span class="n">_default_pprint</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">413</span> <span class="k">finally</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/lib/pretty.py:778,</span> in <span class="ni">_repr_pprint</span><span class="nt">(obj, p, cycle)</span>
 <span class="g g-Whitespace">    </span><span class="mi">776</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;A pprint that just redirects to the normal repr function.&quot;&quot;&quot;</span>
 <span class="g g-Whitespace">    </span><span class="mi">777</span> <span class="c1"># Find newlines and replace them with p.break_()</span>
 <span class="ne">--&gt; </span><span class="mi">778</span> <span class="n">output</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
@@ -1329,7 +1521,7 @@ Caught exception for https://openalex.org/W2784807254.
     
       By John Kitchin<br/>
     
-        &copy; Copyright 2023.<br/>
+        &copy; Copyright 2024.<br/>
   </p>
 </footer>
 </main>

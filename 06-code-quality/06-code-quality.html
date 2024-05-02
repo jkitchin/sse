@@ -64,7 +64,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "jkitchin/dsmles");
+    script.setAttribute("repo", "jkitchin/s24-06643");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 comment");
@@ -133,6 +133,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../00-introduction/00-introduction-terminals.html">
@@ -182,6 +187,28 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../09-wrapup/09-wrapup.html">
    Wrapping up
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11-advanced-packaging/advanced-packaging.html">
+   Advanced packaging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  About the book
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../build-statistics.html">
+   Build statistics
   </a>
  </li>
 </ul>
@@ -241,11 +268,11 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/jkitchin/sse"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/jkitchin/s24-06643"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/jkitchin/sse/issues/new?title=Issue%20on%20page%20%2F06-code-quality/06-code-quality.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/jkitchin/s24-06643/issues/new?title=Issue%20on%20page%20%2F06-code-quality/06-code-quality.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -266,21 +293,21 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/jkitchin/sse/main?urlpath=lab/tree/docs/06-code-quality/06-code-quality.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/jkitchin/s24-06643/main?urlpath=lab/tree/sse/06-code-quality/06-code-quality.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://lab.amdatascience.com//hub/user-redirect/git-pull?repo=https://github.com/jkitchin/sse&urlpath=lab/tree/sse/docs/06-code-quality/06-code-quality.ipynb&branch=main"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https://github.com/jkitchin/s24-06643&urlpath=lab/tree/s24-06643/sse/06-code-quality/06-code-quality.ipynb&branch=main"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
                     alt="Interact on JupyterHub">JupyterHub</button></a>
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/jkitchin/sse/blob/main/docs/06-code-quality/06-code-quality.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/jkitchin/s24-06643/blob/main/sse/06-code-quality/06-code-quality.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -495,7 +522,10 @@ pip uninstall -y s23bib
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: Skipping s23bib as it is not installed.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping s23bib as it is not installed.</span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -742,16 +772,18 @@ git init
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25h  Created wheel for s23bib: filename=s23bib-0.0.1-py3-none-any.whl size=2370 sha256=c9ad76ac3e9808f6993d85d7a1ded877723fa85f122e06380fd847ab9232743d
-  Stored in directory: /tmp/pip-ephem-wheel-cache-jymdcoyk/wheels/b3/60/7f/70e7f6f38afcaff326f13b2c580aaabcf11799ef831d7933dd
+?25h  Created wheel for s23bib: filename=s23bib-0.0.1-py3-none-any.whl size=2371 sha256=9863d9cf3f9b19fdf909647061f732e704dcd72812b3d494d9be4916440ba421
+  Stored in directory: /tmp/pip-ephem-wheel-cache-r5srzz7k/wheels/b3/60/7f/70e7f6f38afcaff326f13b2c580aaabcf11799ef831d7933dd
 Successfully built s23bib
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: s23bib
-Successfully installed s23bib-0.0.1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">23.1.2</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed s23bib-0.0.1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">24.0</span>
 <span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
 </pre></div>
 </div>
@@ -764,11 +796,11 @@ Successfully installed s23bib-0.0.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: bibtexparser in /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages (1.4.0)
-Requirement already satisfied: pyparsing&gt;=2.0.3 in /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages (from bibtexparser) (3.1.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: bibtexparser in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (1.4.1)
+Requirement already satisfied: pyparsing&gt;=2.0.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from bibtexparser) (3.1.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">23.1.2</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">24.0</span>
 <span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
 </pre></div>
 </div>
@@ -777,24 +809,12 @@ Requirement already satisfied: pyparsing&gt;=2.0.3 in /opt/hostedtoolcache/Pytho
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">s23bib</span> <span class="kn">import</span> <span class="n">sort_bibtex</span>
-<span class="n">sort_bibtex</span><span class="p">(</span><span class="s1">&#39;references.bib&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sort_bibtex</span><span class="p">(</span><span class="s1">&#39;references.bib&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;date_added&#39;: &#39;Fri Jan 18 09:54:51 2019&#39;,
-  &#39;url&#39;: &#39;https://doi.org/10.1021/acscatal.5b00538&#39;,
-  &#39;doi&#39;: &#39;10.1021/acscatal.5b00538&#39;,
-  &#39;year&#39;: &#39;2015&#39;,
-  &#39;pages&#39;: &#39;3894-3899&#39;,
-  &#39;number&#39;: &#39;6&#39;,
-  &#39;volume&#39;: &#39;5&#39;,
-  &#39;journal&#39;: &#39;ACS Catalysis&#39;,
-  &#39;title&#39;: &#39;Examples of Effective Data Sharing in Scientific Publishing&#39;,
-  &#39;author&#39;: &#39;John R. Kitchin&#39;,
-  &#39;ENTRYTYPE&#39;: &#39;article&#39;,
-  &#39;ID&#39;: &#39;kitchin-2015-examp-effec&#39;},
- {&#39;date_added&#39;: &#39;Sun Mar 3 16:40:42 2019&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;date_added&#39;: &#39;Sun Mar 3 16:40:42 2019&#39;,
   &#39;url&#39;: &#39;https://doi.org/10.1038/s41929-018-0056-y&#39;,
   &#39;doi&#39;: &#39;10.1038/s41929-018-0056-y&#39;,
   &#39;year&#39;: &#39;2018&#39;,
@@ -805,7 +825,19 @@ Requirement already satisfied: pyparsing&gt;=2.0.3 in /opt/hostedtoolcache/Pytho
   &#39;title&#39;: &#39;Machine Learning in Catalysis&#39;,
   &#39;author&#39;: &#39;John R. Kitchin&#39;,
   &#39;ENTRYTYPE&#39;: &#39;article&#39;,
-  &#39;ID&#39;: &#39;kitchin-2018-machin-learn-catal&#39;}]
+  &#39;ID&#39;: &#39;kitchin-2018-machin-learn-catal&#39;},
+ {&#39;date_added&#39;: &#39;Fri Jan 18 09:54:51 2019&#39;,
+  &#39;url&#39;: &#39;https://doi.org/10.1021/acscatal.5b00538&#39;,
+  &#39;doi&#39;: &#39;10.1021/acscatal.5b00538&#39;,
+  &#39;year&#39;: &#39;2015&#39;,
+  &#39;pages&#39;: &#39;3894-3899&#39;,
+  &#39;number&#39;: &#39;6&#39;,
+  &#39;volume&#39;: &#39;5&#39;,
+  &#39;journal&#39;: &#39;ACS Catalysis&#39;,
+  &#39;title&#39;: &#39;Examples of Effective Data Sharing in Scientific Publishing&#39;,
+  &#39;author&#39;: &#39;John R. Kitchin&#39;,
+  &#39;ENTRYTYPE&#39;: &#39;article&#39;,
+  &#39;ID&#39;: &#39;kitchin-2015-examp-effec&#39;}]
 </pre></div>
 </div>
 </div>
@@ -880,6 +912,32 @@ Requirement already satisfied: pyparsing&gt;=2.0.3 in /opt/hostedtoolcache/Pytho
 <p>A way to manage this is to use an automatic formatter. One such tools is <a class="reference external" href="https://github.com/psf/black">black</a>. It is strongly opinionated on style.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">4</span>
+<span class="c1">#how about this for loop</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="n">b</span>  <span class="o">=</span><span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="c1">#comment two</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="s1">&#39;docstring&#39;</span>
+    <span class="k">return</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span>
+             <span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 3
+4 3
+4 3
+4 3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> black-example.py
 <span class="n">a</span><span class="o">=</span><span class="mi">4</span>
 <span class="c1">#how about this for loop</span>
@@ -906,57 +964,57 @@ Requirement already satisfied: pyparsing&gt;=2.0.3 in /opt/hostedtoolcache/Pytho
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
-black black-example.py --diff
+black black-example.py --diff --color
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- black-example.py	2023-06-20 01:51:37.403419 +0000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">--- black-example.py	2024-05-02 20:03:58.929107+00:00</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+++ black-example.py	2023-06-20 01:51:37.574661 +0000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">+++ black-example.py	2024-05-02 20:03:59.099417+00:00</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>@@ -1,12 +1,12 @@
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Cyan">@@ -1,12 +1,12 @@</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-a=4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">-a=4</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-#how about this for loop
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">-#how about this for loop</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+a = 4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Green">+a = 4</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+# how about this for loop
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Green">+# how about this for loop</span>
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> for i in range(a):
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-    b  =3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">-    b  =3</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-    print( a,b)#comment two
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">-    print( a,b)#comment two</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+    b = 3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Green">+    b = 3</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+    print(a, b)  # comment two
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Green">+    print(a, b)  # comment two</span>
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-b = [1,2,3,4,5,6,7,8,9,0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">-b = [1,2,3,4,5,6,7,8,9,0]</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Green">+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Green">+</span>
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
@@ -965,19 +1023,19 @@ black black-example.py --diff
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> def f(x):
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-    &#39;docstring&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">-    &#39;docstring&#39;</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-    return ([1,2,3,4,
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">-    return ([1,2,3,4,</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-             5,6,7,8,9,0])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">-             5,6,7,8,9,0])</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+    &quot;docstring&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Green">+    &quot;docstring&quot;</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Green">+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]</span>
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>would reformat black-example.py
@@ -1053,9 +1111,9 @@ def f(x):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">reformatted /home/runner/work/sse/sse/sse/06-code-quality/package/s23bib/test_sort.py</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">reformatted /home/runner/work/sse/sse/sse/06-code-quality/package/setup.py</span>
 <span class=" -Color -Color-Bold">reformatted /home/runner/work/sse/sse/sse/06-code-quality/package/s23bib/utils.py</span>
-<span class=" -Color -Color-Bold">reformatted /home/runner/work/sse/sse/sse/06-code-quality/package/setup.py</span>
+<span class=" -Color -Color-Bold">reformatted /home/runner/work/sse/sse/sse/06-code-quality/package/s23bib/test_sort.py</span>
 
 <span class=" -Color -Color-Bold">All done! ✨ 🍰 ✨</span>
 <span class=" -Color -Color-Bold -Color-Bold-Blue">3 files </span><span class=" -Color -Color-Bold">reformatted</span>, <span class=" -Color -Color-Blue">1 file </span>left unchanged.
@@ -1079,20 +1137,21 @@ Options:
   -c, --code TEXT                 Format the code passed in as a string.
   -l, --line-length INTEGER       How many characters per line to allow.
                                   [default: 88]
-  -t, --target-version [py33|py34|py35|py36|py37|py38|py39|py310|py311]
+  -t, --target-version [py33|py34|py35|py36|py37|py38|py39|py310|py311|py312|py313]
                                   Python versions that should be supported by
-                                  Black&#39;s output. By default, Black will try
-                                  to infer this from the project metadata in
-                                  pyproject.toml. If this does not yield
-                                  conclusive results, Black will use per-file
-                                  auto-detection.
+                                  Black&#39;s output. You should include all
+                                  versions that your code supports. By
+                                  default, Black will infer target versions
+                                  from the project metadata in pyproject.toml.
+                                  If this does not yield conclusive results,
+                                  Black will use per-file auto-detection.
   --pyi                           Format all input files like typing stubs
-                                  regardless of file extension (useful when
-                                  piping source on standard input).
+                                  regardless of file extension. This is useful
+                                  when piping source on standard input.
   --ipynb                         Format all input files like Jupyter
-                                  Notebooks regardless of file extension
-                                  (useful when piping source on standard
-                                  input).
+                                  Notebooks regardless of file extension. This
+                                  is useful when piping source on standard
+                                  input.
   --python-cell-magics TEXT       When processing Jupyter Notebooks, add the
                                   given magic to the list of known python-
                                   magics (capture, prun, pypy, python,
@@ -1107,62 +1166,103 @@ Options:
   --preview                       Enable potentially disruptive style changes
                                   that may be added to Black&#39;s main
                                   functionality in the next major release.
+  --unstable                      Enable potentially disruptive style changes
+                                  that have known bugs or are not currently
+                                  expected to make it into the stable style
+                                  Black&#39;s next major release. Implies
+                                  --preview.
+  --enable-unstable-feature [hex_codes_in_unicode_sequences|string_processing|hug_parens_with_braces_and_square_brackets|unify_docstring_detection|no_normalize_fmt_skip_whitespace|wrap_long_dict_values_in_parens|multiline_string_handling|typed_params_trailing_comma|is_simple_lookup_for_doublestar_expression|docstring_check_for_newline|remove_redundant_guard_parens|parens_for_long_if_clauses_in_case_block]
+                                  Enable specific features included in the
+                                  `--unstable` style. Requires `--preview`. No
+                                  compatibility guarantees are provided on the
+                                  behavior or existence of any unstable
+                                  features.
   --check                         Don&#39;t write the files back, just return the
                                   status. Return code 0 means nothing would
                                   change. Return code 1 means some files would
                                   be reformatted. Return code 123 means there
                                   was an internal error.
   --diff                          Don&#39;t write the files back, just output a
-                                  diff for each file on stdout.
-  --color / --no-color            Show colored diff. Only applies when
-                                  `--diff` is given.
-  --fast / --safe                 If --fast given, skip temporary sanity
-                                  checks. [default: --safe]
+                                  diff to indicate what changes Black would&#39;ve
+                                  made. They are printed to stdout so
+                                  capturing them is simple.
+  --color / --no-color            Show (or do not show) colored diff. Only
+                                  applies when --diff is given.
+  --line-ranges START-END         When specified, Black will try its best to
+                                  only format these lines. This option can be
+                                  specified multiple times, and a union of the
+                                  lines will be formatted. Each range must be
+                                  specified as two integers connected by a
+                                  `-`: `&lt;START&gt;-&lt;END&gt;`. The `&lt;START&gt;` and
+                                  `&lt;END&gt;` integer indices are 1-based and
+                                  inclusive on both ends.
+  --fast / --safe                 By default, Black performs an AST safety
+                                  check after formatting your code. The --fast
+                                  flag turns off this check and the --safe
+                                  flag explicitly enables it. [default:
+                                  --safe]
   --required-version TEXT         Require a specific version of Black to be
-                                  running (useful for unifying results across
-                                  many environments e.g. with a pyproject.toml
-                                  file). It can be either a major version
-                                  number or an exact version.
-  --include TEXT                  A regular expression that matches files and
-                                  directories that should be included on
-                                  recursive searches. An empty value means all
-                                  files are included regardless of the name.
-                                  Use forward slashes for directories on all
-                                  platforms (Windows, too). Exclusions are
-                                  calculated first, inclusions later.
-                                  [default: (\.pyi?|\.ipynb)$]
+                                  running. This is useful for ensuring that
+                                  all contributors to your project are using
+                                  the same version, because different versions
+                                  of Black may format code a little
+                                  differently. This option can be set in a
+                                  configuration file for consistent results
+                                  across environments.
   --exclude TEXT                  A regular expression that matches files and
                                   directories that should be excluded on
                                   recursive searches. An empty value means no
                                   paths are excluded. Use forward slashes for
                                   directories on all platforms (Windows, too).
-                                  Exclusions are calculated first, inclusions
-                                  later. [default: /(\.direnv|\.eggs|\.git|\.h
-                                  g|\.mypy_cache|\.nox|\.tox|\.venv|venv|\.svn
-                                  |\.ipynb_checkpoints|_build|buck-
-                                  out|build|dist|__pypackages__)/]
+                                  By default, Black also ignores all paths
+                                  listed in .gitignore. Changing this value
+                                  will override all default exclusions.
+                                  [default: /(\.direnv|\.eggs|\.git|\.hg|\.ipy
+                                  nb_checkpoints|\.mypy_cache|\.nox|\.pytest_c
+                                  ache|\.ruff_cache|\.tox|\.svn|\.venv|\.vscod
+                                  e|__pypackages__|_build|buck-
+                                  out|build|dist|venv)/]
   --extend-exclude TEXT           Like --exclude, but adds additional files
-                                  and directories on top of the excluded ones.
-                                  (Useful if you simply want to add to the
-                                  default)
+                                  and directories on top of the default values
+                                  instead of overriding them.
   --force-exclude TEXT            Like --exclude, but files and directories
                                   matching this regex will be excluded even
                                   when they are passed explicitly as
-                                  arguments.
+                                  arguments. This is useful when invoking
+                                  Black programmatically on changed files,
+                                  such as in a pre-commit hook or editor
+                                  plugin.
   --stdin-filename TEXT           The name of the file when passing it through
                                   stdin. Useful to make sure Black will
-                                  respect --force-exclude option on some
+                                  respect the --force-exclude option on some
                                   editors that rely on using stdin.
-  -W, --workers INTEGER RANGE     Number of parallel workers [default: number
-                                  of CPUs in the system]  [x&gt;=1]
-  -q, --quiet                     Don&#39;t emit non-error messages to stderr.
-                                  Errors are still emitted; silence those with
-                                  2&gt;/dev/null.
-  -v, --verbose                   Also emit messages to stderr about files
-                                  that were not changed or were ignored due to
-                                  exclusion patterns.
+  --include TEXT                  A regular expression that matches files and
+                                  directories that should be included on
+                                  recursive searches. An empty value means all
+                                  files are included regardless of the name.
+                                  Use forward slashes for directories on all
+                                  platforms (Windows, too). Overrides all
+                                  exclusions, including from .gitignore and
+                                  command line options.  [default:
+                                  (\.pyi?|\.ipynb)$]
+  -W, --workers INTEGER RANGE     When Black formats multiple files, it may
+                                  use a process pool to speed up formatting.
+                                  This option controls the number of parallel
+                                  workers. This can also be specified via the
+                                  BLACK_NUM_WORKERS environment variable.
+                                  Defaults to the number of CPUs in the
+                                  system.  [x&gt;=1]
+  -q, --quiet                     Stop emitting all non-critical output. Error
+                                  messages will still be emitted (which can
+                                  silenced by 2&gt;/dev/null).
+  -v, --verbose                   Emit messages about files that were not
+                                  changed or were ignored due to exclusion
+                                  patterns. If Black is using a configuration
+                                  file, a message detailing which one it is
+                                  using will be emitted.
   --version                       Show the version and exit.
-  --config FILE                   Read configuration from FILE path.
+  --config FILE                   Read configuration options from a
+                                  configuration file.
   -h, --help                      Show this message and exit.
 </pre></div>
 </div>
@@ -1178,11 +1278,12 @@ Options:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> flake-example.py
-<span class="n">a</span><span class="o">=</span><span class="mi">4</span>
-<span class="c1">#how about this for loop</span>
+<span class="sd">&quot;&quot;&quot;A docstring that says what this is for.&quot;&quot;&quot;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="c1">#  how about this for loop</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-    <span class="n">b</span>  <span class="o">=</span><span class="mi">3</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="c1">#comment two</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># comment two</span>
 </pre></div>
 </div>
 </div>
@@ -1198,19 +1299,6 @@ Options:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">flake-example.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">D100</span> Missing docstring in public module
-<span class=" -Color -Color-Bold">flake-example.py</span><span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span>2<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E225</span> missing whitespace around operator
-<span class=" -Color -Color-Bold">flake-example.py</span><span class=" -Color -Color-Cyan">:</span>2<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E265</span> block comment should start with &#39;# &#39;
-<span class=" -Color -Color-Bold">flake-example.py</span><span class=" -Color -Color-Cyan">:</span>4<span class=" -Color -Color-Cyan">:</span>6<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E221</span> multiple spaces before operator
-<span class=" -Color -Color-Bold">flake-example.py</span><span class=" -Color -Color-Cyan">:</span>4<span class=" -Color -Color-Cyan">:</span>9<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E225</span> missing whitespace around operator
-<span class=" -Color -Color-Bold">flake-example.py</span><span class=" -Color -Color-Cyan">:</span>5<span class=" -Color -Color-Cyan">:</span>11<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E201</span> whitespace after &#39;(&#39;
-<span class=" -Color -Color-Bold">flake-example.py</span><span class=" -Color -Color-Cyan">:</span>5<span class=" -Color -Color-Cyan">:</span>13<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E231</span> missing whitespace after &#39;,&#39;
-<span class=" -Color -Color-Bold">flake-example.py</span><span class=" -Color -Color-Cyan">:</span>5<span class=" -Color -Color-Cyan">:</span>16<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E261</span> at least two spaces before inline comment
-<span class=" -Color -Color-Bold">flake-example.py</span><span class=" -Color -Color-Cyan">:</span>5<span class=" -Color -Color-Cyan">:</span>16<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">E262</span> inline comment should start with &#39;# &#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>The output tells you all the places you need to fix the code. This has to be done manually.</p>
 <p>You can check that all your functions are documented. flake8 is extendable, and you just install a new package called <a class="reference external" href="https://gitlab.com/pycqa/flake8-docstrings">flake8-docstrings</a>. You can then specify a docstring style as an argument.</p>
@@ -1222,16 +1310,16 @@ Options:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: flake8-docstrings in /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages (1.7.0)
-Requirement already satisfied: flake8&gt;=3 in /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages (from flake8-docstrings) (6.0.0)
-Requirement already satisfied: pydocstyle&gt;=2.1 in /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages (from flake8-docstrings) (6.3.0)
-Requirement already satisfied: mccabe&lt;0.8.0,&gt;=0.7.0 in /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages (from flake8&gt;=3-&gt;flake8-docstrings) (0.7.0)
-Requirement already satisfied: pycodestyle&lt;2.11.0,&gt;=2.10.0 in /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages (from flake8&gt;=3-&gt;flake8-docstrings) (2.10.0)
-Requirement already satisfied: pyflakes&lt;3.1.0,&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages (from flake8&gt;=3-&gt;flake8-docstrings) (3.0.1)
-Requirement already satisfied: snowballstemmer&gt;=2.2.0 in /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages (from pydocstyle&gt;=2.1-&gt;flake8-docstrings) (2.2.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: flake8-docstrings in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (1.7.0)
+Requirement already satisfied: flake8&gt;=3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from flake8-docstrings) (7.0.0)
+Requirement already satisfied: pydocstyle&gt;=2.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from flake8-docstrings) (6.3.0)
+Requirement already satisfied: mccabe&lt;0.8.0,&gt;=0.7.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from flake8&gt;=3-&gt;flake8-docstrings) (0.7.0)
+Requirement already satisfied: pycodestyle&lt;2.12.0,&gt;=2.11.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from flake8&gt;=3-&gt;flake8-docstrings) (2.11.1)
+Requirement already satisfied: pyflakes&lt;3.3.0,&gt;=3.2.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from flake8&gt;=3-&gt;flake8-docstrings) (3.2.0)
+Requirement already satisfied: snowballstemmer&gt;=2.2.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from pydocstyle&gt;=2.1-&gt;flake8-docstrings) (2.2.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">23.1.2</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">24.0</span>
 <span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
 </pre></div>
 </div>
@@ -1359,10 +1447,10 @@ Overwriting package/setup.py
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: coverage in /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages (7.2.7)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: coverage in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (7.5.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">23.1.2</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">24.0</span>
 <span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
 </pre></div>
 </div>
@@ -1411,17 +1499,22 @@ black package &amp;&amp; flake8 --exclude package/build package &amp;&amp; pylin
 <p>Then you can run one command that will run these, and stop if any single command does not succeed. Put this into a file called <a class="reference external" href="http://run.sh">run.sh</a>, make it executable, and try it out. Here we use &amp;&amp; to only run subsequent commands if the previous command succeeded.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>black<span class="w"> </span>package<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>flake8<span class="w"> </span>--exclude<span class="w"> </span>package/build<span class="w"> </span>package<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pylint<span class="w"> </span>--ignore<span class="w"> </span>build<span class="w"> </span>package<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pytest<span class="w"> </span>package
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>black<span class="w"> </span>package<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>flake8<span class="w"> </span>--extend-ignore<span class="w"> </span>F401<span class="w"> </span>--exclude<span class="w"> </span>package/build,package/s23bib/.ipynb_checkpoints<span class="w"> </span>package<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w">  </span>pytest<span class="w"> </span>package
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">All done! ✨ 🍰 ✨</span>
-<span class=" -Color -Color-Blue">4 files </span>left unchanged.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">reformatted /home/runner/work/sse/sse/sse/06-code-quality/package/s23bib/__init__.py</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">package/s23bib/__init__.py</span><span class=" -Color -Color-Cyan">:</span>2<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">F401</span> &#39;.utils.sort_bibtex&#39; imported but unused
-<span class=" -Color -Color-Bold">package/s23bib/test_sort.py</span><span class=" -Color -Color-Cyan">:</span>4<span class=" -Color -Color-Cyan">:</span>1<span class=" -Color -Color-Cyan">:</span> <span class=" -Color -Color-Bold -Color-Bold-Red">F401</span> &#39;bibtexparser&#39; imported but unused
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">reformatted /home/runner/work/sse/sse/sse/06-code-quality/package/setup.py</span>
+<span class=" -Color -Color-Bold">reformatted /home/runner/work/sse/sse/sse/06-code-quality/package/s23bib/test_sort.py</span>
+
+<span class=" -Color -Color-Bold">All done! ✨ 🍰 ✨</span>
+<span class=" -Color -Color-Bold -Color-Bold-Blue">3 files </span><span class=" -Color -Color-Bold">reformatted</span>, <span class=" -Color -Color-Blue">1 file </span>left unchanged.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/bin/sh: 1: pytest: not found
 </pre></div>
 </div>
 </div>
@@ -1436,15 +1529,15 @@ black package &amp;&amp; flake8 --exclude package/build package &amp;&amp; pylin
 	<span class="n">black</span> <span class="o">.</span>
 
 <span class="n">flake8</span><span class="p">:</span>
-	<span class="n">flake8</span> <span class="o">--</span><span class="n">exclude</span> <span class="n">build</span> <span class="o">.</span>
+	<span class="n">flake8</span> <span class="o">--</span><span class="n">extend</span><span class="o">-</span><span class="n">ignore</span> <span class="n">F401</span> <span class="o">--</span><span class="n">exclude</span> <span class="n">build</span><span class="p">,</span><span class="o">.</span><span class="n">ipynb_checkpoints</span>  <span class="o">.</span>
     
 <span class="n">pylint</span><span class="p">:</span>
-	<span class="n">pylint</span> <span class="o">--</span><span class="n">ignore</span> <span class="n">build</span> <span class="o">.</span>
+	<span class="n">pylint</span> <span class="o">--</span><span class="n">ignore</span> <span class="n">build</span> <span class="n">s23bib</span>
     
 <span class="n">test</span><span class="p">:</span>
 	<span class="n">pytest</span> <span class="o">.</span>
 
-<span class="nb">all</span><span class="p">:</span> <span class="n">black</span> <span class="n">flake8</span> <span class="n">pylint</span>
+<span class="nb">all</span><span class="p">:</span> <span class="n">black</span> <span class="n">flake8</span> <span class="n">pylint</span> <span class="n">test</span>
 </pre></div>
 </div>
 </div>
@@ -1472,24 +1565,24 @@ make all
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 files left unchanged.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>flake8 --exclude build .
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>flake8 --extend-ignore F401 --exclude build,.ipynb_checkpoints  .
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/__init__.py:2:1: F401 &#39;.utils.sort_bibtex&#39; imported but unused
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pylint --ignore build s23bib
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/test_sort.py:4:1: F401 &#39;bibtexparser&#39; imported but unused
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: pylint: No such file or directory
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: *** [makefile:5: flake8] Error 1
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: *** [makefile:8: pylint] Error 127
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">34</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">35</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;cd package</span><span class="se">\n</span><span class="s1">make all</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/interactiveshell.py:2478,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/core/interactiveshell.py:2478,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
 <span class="g g-Whitespace">   </span><span class="mi">2476</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">2477</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
 <span class="ne">-&gt; </span><span class="mi">2478</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -1498,12 +1591,12 @@ make all
 <span class="g g-Whitespace">   </span><span class="mi">2482</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
 <span class="g g-Whitespace">   </span><span class="mi">2483</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
 <span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">else</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
 <span class="ne">--&gt; </span><span class="mi">153</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
 <span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">301</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
 <span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
@@ -1521,11 +1614,20 @@ make all
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
 cd package
-make test
+make black test
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>black .
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All done! ✨ 🍰 ✨
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 files left unchanged.
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pytest .
 </pre></div>
 </div>
@@ -1537,10 +1639,10 @@ make test
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">35</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;cd package</span><span class="se">\n</span><span class="s1">make test</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">36</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;cd package</span><span class="se">\n</span><span class="s1">make black test</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/interactiveshell.py:2478,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/core/interactiveshell.py:2478,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
 <span class="g g-Whitespace">   </span><span class="mi">2476</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">2477</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
 <span class="ne">-&gt; </span><span class="mi">2478</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -1549,12 +1651,12 @@ make test
 <span class="g g-Whitespace">   </span><span class="mi">2482</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
 <span class="g g-Whitespace">   </span><span class="mi">2483</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
 <span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">else</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
 <span class="ne">--&gt; </span><span class="mi">153</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
 <span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">301</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
 <span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
@@ -1562,7 +1664,7 @@ make test
 <span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="n">rc</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">9</span>
 <span class="ne">--&gt; </span><span class="mi">305</span>     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
 
-<span class="ne">CalledProcessError</span>: Command &#39;b&#39;cd package\nmake test\n&#39;&#39; returned non-zero exit status 2.
+<span class="ne">CalledProcessError</span>: Command &#39;b&#39;cd package\nmake black test\n&#39;&#39; returned non-zero exit status 2.
 </pre></div>
 </div>
 </div>
@@ -1619,6 +1721,9 @@ ls .git/hooks
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>push-to-checkout.sample
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sendemail-validate.sample
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>update.sample
 </pre></div>
 </div>
@@ -1673,10 +1778,10 @@ git commit -m &quot;adding pyfiles&quot;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>running precommit in /home/runner/work/sse/sse/sse/06-code-quality/package
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[master (root-commit) 2484288] adding pyfiles
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[master (root-commit) b7918d7] adding pyfiles
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 14 insertions(+)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 15 insertions(+)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 setup.py
@@ -1688,7 +1793,7 @@ git commit -m &quot;adding pyfiles&quot;
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> package/.git/hooks/pre-commit
 <span class="ch">#!/bin/bash</span>
-<span class="n">make</span> <span class="nb">all</span>
+<span class="n">make</span> <span class="n">black</span> <span class="n">flake8</span> <span class="n">pylint</span> <span class="n">test</span>
 </pre></div>
 </div>
 </div>
@@ -1710,7 +1815,7 @@ chmod +x package/.git/hooks/pre-commit
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
 cd package
-git add *.py
+git add *.py makefile
 git commit -m &quot;adding pyfiles&quot;
 </pre></div>
 </div>
@@ -1725,24 +1830,24 @@ git commit -m &quot;adding pyfiles&quot;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 files left unchanged.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>flake8 --exclude build .
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>flake8 --extend-ignore F401 --exclude build,.ipynb_checkpoints  .
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/__init__.py:2:1: F401 &#39;.utils.sort_bibtex&#39; imported but unused
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pylint --ignore build s23bib
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/test_sort.py:4:1: F401 &#39;bibtexparser&#39; imported but unused
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: pylint: No such file or directory
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: *** [makefile:5: flake8] Error 1
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: *** [makefile:8: pylint] Error 127
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">43</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;cd package</span><span class="se">\n</span><span class="s1">git add *.py</span><span class="se">\n</span><span class="s1">git commit -m &quot;adding pyfiles&quot;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">44</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;cd package</span><span class="se">\n</span><span class="s1">git add *.py makefile</span><span class="se">\n</span><span class="s1">git commit -m &quot;adding pyfiles&quot;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/interactiveshell.py:2478,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/core/interactiveshell.py:2478,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
 <span class="g g-Whitespace">   </span><span class="mi">2476</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">2477</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
 <span class="ne">-&gt; </span><span class="mi">2478</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -1751,12 +1856,12 @@ git commit -m &quot;adding pyfiles&quot;
 <span class="g g-Whitespace">   </span><span class="mi">2482</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
 <span class="g g-Whitespace">   </span><span class="mi">2483</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
 <span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">else</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
 <span class="ne">--&gt; </span><span class="mi">153</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
 <span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">301</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
 <span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
@@ -1764,7 +1869,7 @@ git commit -m &quot;adding pyfiles&quot;
 <span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="n">rc</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">9</span>
 <span class="ne">--&gt; </span><span class="mi">305</span>     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
 
-<span class="ne">CalledProcessError</span>: Command &#39;b&#39;cd package\ngit add *.py\ngit commit -m &quot;adding pyfiles&quot;\n&#39;&#39; returned non-zero exit status 1.
+<span class="ne">CalledProcessError</span>: Command &#39;b&#39;cd package\ngit add *.py makefile\ngit commit -m &quot;adding pyfiles&quot;\n&#39;&#39; returned non-zero exit status 1.
 </pre></div>
 </div>
 </div>
@@ -1779,13 +1884,13 @@ git log
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit 2484288ad1403581181a6944ec92756e02f15ba2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit b7918d75393925ff84d2f78a1c7e3f9c8938f4af
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Author: Your Name &lt;you@example.com&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date:   Tue Jun 20 01:51:47 2023 +0000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date:   Thu May 2 20:04:07 2024 +0000
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1806,61 +1911,13 @@ git commit --no-verify -m &quot;adding pyfiles&quot;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch master
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[master 1c30d18] adding pyfiles
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Untracked files:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 13 insertions(+)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	build/
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	makefile
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	s23bib.egg-info/
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	s23bib/
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nothing added to commit but untracked files present (use &quot;git add&quot; to track)
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">45</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;cd package</span><span class="se">\n</span><span class="s1">git add *.py</span><span class="se">\n</span><span class="s1">git commit --no-verify -m &quot;adding pyfiles&quot;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/interactiveshell.py:2478,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2476</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2477</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">2478</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2480</span> <span class="c1"># The code below prevents the output from being displayed</span>
-<span class="g g-Whitespace">   </span><span class="mi">2481</span> <span class="c1"># when using magics with decodator @output_can_be_silenced</span>
-<span class="g g-Whitespace">   </span><span class="mi">2482</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2483</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
-<span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
-<span class="ne">--&gt; </span><span class="mi">153</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
-<span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">301</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
-<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="c1"># in case it&#39;s stuck in uninterruptible sleep. -9 = SIGKILL</span>
-<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="n">rc</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">9</span>
-<span class="ne">--&gt; </span><span class="mi">305</span>     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
-
-<span class="ne">CalledProcessError</span>: Command &#39;b&#39;cd package\ngit add *.py\ngit commit --no-verify -m &quot;adding pyfiles&quot;\n&#39;&#39; returned non-zero exit status 1.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 makefile
 </pre></div>
 </div>
 </div>
@@ -1879,79 +1936,81 @@ git commit --no-verify -m &quot;adding pyfiles&quot;
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pre-commit
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading pre_commit-3.3.3-py2.py3-none-any.whl (202 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/202.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">112.6/202.8 kB</span> <span class=" -Color -Color-Red">3.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">202.8/202.8 kB</span> <span class=" -Color -Color-Red">4.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading pre_commit-3.5.0-py2.py3-none-any.whl.metadata (1.3 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting cfgv&gt;=2.0.0 (from pre-commit)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading cfgv-3.3.1-py2.py3-none-any.whl (7.3 kB)
+  Downloading cfgv-3.4.0-py2.py3-none-any.whl.metadata (8.5 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting identify&gt;=1.0.0 (from pre-commit)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading identify-2.5.24-py2.py3-none-any.whl (98 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/98.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">98.8/98.8 kB</span> <span class=" -Color -Color-Red">11.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading identify-2.5.36-py2.py3-none-any.whl.metadata (4.4 kB)
+Collecting nodeenv&gt;=0.11.1 (from pre-commit)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting nodeenv&gt;=0.11.1 (from pre-commit)
-  Downloading nodeenv-1.8.0-py2.py3-none-any.whl (22 kB)
-Requirement already satisfied: pyyaml&gt;=5.1 in /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages (from pre-commit) (6.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading nodeenv-1.8.0-py2.py3-none-any.whl.metadata (21 kB)
+Requirement already satisfied: pyyaml&gt;=5.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from pre-commit) (6.0.1)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting virtualenv&gt;=20.10.0 (from pre-commit)
-  Downloading virtualenv-20.23.1-py3-none-any.whl (3.3 MB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.3 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+  Downloading virtualenv-20.26.1-py3-none-any.whl.metadata (4.4 kB)
+Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from nodeenv&gt;=0.11.1-&gt;pre-commit) (56.0.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.4/3.3 MB</span> <span class=" -Color -Color-Red">12.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting distlib&lt;1,&gt;=0.3.7 (from virtualenv&gt;=20.10.0-&gt;pre-commit)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.8/3.3 MB</span> <span class=" -Color -Color-Red">12.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.4/3.3 MB</span> <span class=" -Color -Color-Red">13.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading distlib-0.3.8-py2.py3-none-any.whl.metadata (5.1 kB)
+Collecting filelock&lt;4,&gt;=3.12.2 (from virtualenv&gt;=20.10.0-&gt;pre-commit)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.0/3.3 MB</span> <span class=" -Color -Color-Red">14.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading filelock-3.14.0-py3-none-any.whl.metadata (2.8 kB)
+Requirement already satisfied: platformdirs&lt;5,&gt;=3.9.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from virtualenv&gt;=20.10.0-&gt;pre-commit) (4.2.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━ <span class=" -Color -Color-Green">2.8/3.3 MB</span> <span class=" -Color -Color-Red">15.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">3.2/3.3 MB</span> <span class=" -Color -Color-Red">16.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading pre_commit-3.5.0-py2.py3-none-any.whl (203 kB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/203.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.3/3.3 MB</span> <span class=" -Color -Color-Red">15.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages (from nodeenv&gt;=0.11.1-&gt;pre-commit) (56.0.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting distlib&lt;1,&gt;=0.3.6 (from virtualenv&gt;=20.10.0-&gt;pre-commit)
-  Downloading distlib-0.3.6-py2.py3-none-any.whl (468 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/468.5 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">468.5/468.5 kB</span> <span class=" -Color -Color-Red">22.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">122.9/203.7 kB</span> <span class=" -Color -Color-Red">4.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">203.7/203.7 kB</span> <span class=" -Color -Color-Red">4.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting filelock&lt;4,&gt;=3.12 (from virtualenv&gt;=20.10.0-&gt;pre-commit)
-  Downloading filelock-3.12.2-py3-none-any.whl (10 kB)
-Requirement already satisfied: platformdirs&lt;4,&gt;=3.5.1 in /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages (from virtualenv&gt;=20.10.0-&gt;pre-commit) (3.6.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading cfgv-3.4.0-py2.py3-none-any.whl (7.2 kB)
+Downloading identify-2.5.36-py2.py3-none-any.whl (98 kB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/99.0 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">99.0/99.0 kB</span> <span class=" -Color -Color-Red">32.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nodeenv-1.8.0-py2.py3-none-any.whl (22 kB)
+Downloading virtualenv-20.26.1-py3-none-any.whl (3.9 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.9 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.7/3.9 MB</span> <span class=" -Color -Color-Red">26.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.6/3.9 MB</span> <span class=" -Color -Color-Red">41.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.9/3.9 MB</span> <span class=" -Color -Color-Red">38.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading distlib-0.3.8-py2.py3-none-any.whl (468 kB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/468.9 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">468.9/468.9 kB</span> <span class=" -Color -Color-Red">77.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading filelock-3.14.0-py3-none-any.whl (12 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: distlib, nodeenv, identify, filelock, cfgv, virtualenv, pre-commit
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed cfgv-3.3.1 distlib-0.3.6 filelock-3.12.2 identify-2.5.24 nodeenv-1.8.0 pre-commit-3.3.3 virtualenv-20.23.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">23.1.2</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed cfgv-3.4.0 distlib-0.3.8 filelock-3.14.0 identify-2.5.36 nodeenv-1.8.0 pre-commit-3.5.0 virtualenv-20.26.1
+
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">24.0</span>
 <span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
 </pre></div>
 </div>
@@ -1994,17 +2053,11 @@ Requirement already satisfied: platformdirs&lt;4,&gt;=3.5.1 in /opt/hostedtoolca
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
 cd package
-pre-commit install
+pre-commit install -f
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running in migration mode with existing hooks at .git/hooks/pre-commit.legacy
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Use -f to use only pre-commit.
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pre-commit installed at .git/hooks/pre-commit
 </pre></div>
 </div>
@@ -2022,7 +2075,7 @@ pre-commit install
 # ID: 138fd403232d2ddd5efb44317e38bf03
 
 # start templated
-INSTALL_PYTHON=/opt/hostedtoolcache/Python/3.8.17/x64/bin/python
+INSTALL_PYTHON=/opt/hostedtoolcache/Python/3.8.18/x64/bin/python
 ARGS=(hook-impl --config=.pre-commit-config.yaml --hook-type=pre-commit)
 # end templated
 
@@ -2101,10 +2154,10 @@ pre-commit run --all-files
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">50</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">51</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;cd package</span><span class="se">\n</span><span class="s1">pre-commit run --all-files</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/interactiveshell.py:2478,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/core/interactiveshell.py:2478,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
 <span class="g g-Whitespace">   </span><span class="mi">2476</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">2477</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
 <span class="ne">-&gt; </span><span class="mi">2478</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -2113,12 +2166,12 @@ pre-commit run --all-files
 <span class="g g-Whitespace">   </span><span class="mi">2482</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
 <span class="g g-Whitespace">   </span><span class="mi">2483</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
 <span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">else</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
 <span class="ne">--&gt; </span><span class="mi">153</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
 <span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">301</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
 <span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
@@ -2136,122 +2189,12 @@ pre-commit run --all-files
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
 cd package
-
-git add makefile
-git commit -m &quot;add makefile&quot;
+git add .pre-commit-config.yaml
+git commit -am &quot;update precommit&quot;
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>black .
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All done! ✨ 🍰 ✨
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 files left unchanged.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>flake8 --exclude build .
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/__init__.py:2:1: F401 &#39;.utils.sort_bibtex&#39; imported but unused
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/test_sort.py:4:1: F401 &#39;bibtexparser&#39; imported but unused
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: *** [makefile:5: flake8] Error 1
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>black................................................(no files to check)Skipped
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Flake8...............................................(no files to check)Skipped
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pytest-check.............................................................Failed
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- hook id: pytest-check
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- exit code: 1
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Executable `pytest` not found
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">51</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;cd package</span><span class="se">\n\n</span><span class="s1">git add makefile</span><span class="se">\n</span><span class="s1">git commit -m &quot;add makefile&quot;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/interactiveshell.py:2478,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2476</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2477</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">2478</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2480</span> <span class="c1"># The code below prevents the output from being displayed</span>
-<span class="g g-Whitespace">   </span><span class="mi">2481</span> <span class="c1"># when using magics with decodator @output_can_be_silenced</span>
-<span class="g g-Whitespace">   </span><span class="mi">2482</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2483</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
-<span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
-<span class="ne">--&gt; </span><span class="mi">153</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
-<span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">301</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
-<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="c1"># in case it&#39;s stuck in uninterruptible sleep. -9 = SIGKILL</span>
-<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="n">rc</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">9</span>
-<span class="ne">--&gt; </span><span class="mi">305</span>     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
-
-<span class="ne">CalledProcessError</span>: Command &#39;b&#39;cd package\n\ngit add makefile\ngit commit -m &quot;add makefile&quot;\n&#39;&#39; returned non-zero exit status 1.
-</pre></div>
-</div>
-</div>
-</div>
-<p>There are a lot of things you can do with pre-commit (<a class="reference external" href="https://pre-commit.com/hooks.html">https://pre-commit.com/hooks.html</a>).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
-cd package
-
-git commit setup.py -m &quot;capitalize something&quot;
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>black .
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All done! ✨ 🍰 ✨
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 files left unchanged.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>flake8 --exclude build .
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/__init__.py:2:1: F401 &#39;.utils.sort_bibtex&#39; imported but unused
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./s23bib/test_sort.py:4:1: F401 &#39;bibtexparser&#39; imported but unused
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make: *** [makefile:5: flake8] Error 1
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>black................................................(no files to check)Skipped
 </pre></div>
 </div>
@@ -2279,9 +2222,9 @@ git commit setup.py -m &quot;capitalize something&quot;
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">52</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;cd package</span><span class="se">\n\n</span><span class="s1">git commit setup.py -m &quot;capitalize something&quot;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;cd package</span><span class="se">\n</span><span class="s1">git add .pre-commit-config.yaml</span><span class="se">\n</span><span class="s1">git commit -am &quot;update precommit&quot;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/interactiveshell.py:2478,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/core/interactiveshell.py:2478,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
 <span class="g g-Whitespace">   </span><span class="mi">2476</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">2477</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
 <span class="ne">-&gt; </span><span class="mi">2478</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -2290,12 +2233,12 @@ git commit setup.py -m &quot;capitalize something&quot;
 <span class="g g-Whitespace">   </span><span class="mi">2482</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
 <span class="g g-Whitespace">   </span><span class="mi">2483</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
 <span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">else</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
 <span class="ne">--&gt; </span><span class="mi">153</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
 <span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">301</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
 <span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
@@ -2303,11 +2246,12 @@ git commit setup.py -m &quot;capitalize something&quot;
 <span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="n">rc</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">9</span>
 <span class="ne">--&gt; </span><span class="mi">305</span>     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
 
-<span class="ne">CalledProcessError</span>: Command &#39;b&#39;cd package\n\ngit commit setup.py -m &quot;capitalize something&quot;\n&#39;&#39; returned non-zero exit status 1.
+<span class="ne">CalledProcessError</span>: Command &#39;b&#39;cd package\ngit add .pre-commit-config.yaml\ngit commit -am &quot;update precommit&quot;\n&#39;&#39; returned non-zero exit status 1.
 </pre></div>
 </div>
 </div>
 </div>
+<p>There are a lot of things you can do with pre-commit (<a class="reference external" href="https://pre-commit.com/hooks.html"></a>).</p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="summary">
 <h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
@@ -2369,7 +2313,7 @@ git commit setup.py -m &quot;capitalize something&quot;
     
       By John Kitchin<br/>
     
-        &copy; Copyright 2023.<br/>
+        &copy; Copyright 2024.<br/>
   </p>
 </footer>
 </main>

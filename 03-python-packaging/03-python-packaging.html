@@ -64,7 +64,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "jkitchin/dsmles");
+    script.setAttribute("repo", "jkitchin/s24-06643");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 comment");
@@ -133,6 +133,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../00-introduction/00-introduction-terminals.html">
@@ -182,6 +187,28 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../09-wrapup/09-wrapup.html">
    Wrapping up
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11-advanced-packaging/advanced-packaging.html">
+   Advanced packaging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  About the book
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../build-statistics.html">
+   Build statistics
   </a>
  </li>
 </ul>
@@ -241,11 +268,11 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/jkitchin/sse"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/jkitchin/s24-06643"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/jkitchin/sse/issues/new?title=Issue%20on%20page%20%2F03-python-packaging/03-python-packaging.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/jkitchin/s24-06643/issues/new?title=Issue%20on%20page%20%2F03-python-packaging/03-python-packaging.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -266,21 +293,21 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/jkitchin/sse/main?urlpath=lab/tree/docs/03-python-packaging/03-python-packaging.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/jkitchin/s24-06643/main?urlpath=lab/tree/sse/03-python-packaging/03-python-packaging.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://lab.amdatascience.com//hub/user-redirect/git-pull?repo=https://github.com/jkitchin/sse&urlpath=lab/tree/sse/docs/03-python-packaging/03-python-packaging.ipynb&branch=main"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https://github.com/jkitchin/s24-06643&urlpath=lab/tree/s24-06643/sse/03-python-packaging/03-python-packaging.ipynb&branch=main"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
                     alt="Interact on JupyterHub">JupyterHub</button></a>
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/jkitchin/sse/blob/main/docs/03-python-packaging/03-python-packaging.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/jkitchin/s24-06643/blob/main/sse/03-python-packaging/03-python-packaging.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -442,6 +469,386 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">os</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;CLD_CONTINUED&#39;,
+ &#39;CLD_DUMPED&#39;,
+ &#39;CLD_EXITED&#39;,
+ &#39;CLD_TRAPPED&#39;,
+ &#39;DirEntry&#39;,
+ &#39;EX_CANTCREAT&#39;,
+ &#39;EX_CONFIG&#39;,
+ &#39;EX_DATAERR&#39;,
+ &#39;EX_IOERR&#39;,
+ &#39;EX_NOHOST&#39;,
+ &#39;EX_NOINPUT&#39;,
+ &#39;EX_NOPERM&#39;,
+ &#39;EX_NOUSER&#39;,
+ &#39;EX_OK&#39;,
+ &#39;EX_OSERR&#39;,
+ &#39;EX_OSFILE&#39;,
+ &#39;EX_PROTOCOL&#39;,
+ &#39;EX_SOFTWARE&#39;,
+ &#39;EX_TEMPFAIL&#39;,
+ &#39;EX_UNAVAILABLE&#39;,
+ &#39;EX_USAGE&#39;,
+ &#39;F_LOCK&#39;,
+ &#39;F_OK&#39;,
+ &#39;F_TEST&#39;,
+ &#39;F_TLOCK&#39;,
+ &#39;F_ULOCK&#39;,
+ &#39;GRND_NONBLOCK&#39;,
+ &#39;GRND_RANDOM&#39;,
+ &#39;MFD_ALLOW_SEALING&#39;,
+ &#39;MFD_CLOEXEC&#39;,
+ &#39;MFD_HUGETLB&#39;,
+ &#39;MFD_HUGE_16GB&#39;,
+ &#39;MFD_HUGE_16MB&#39;,
+ &#39;MFD_HUGE_1GB&#39;,
+ &#39;MFD_HUGE_1MB&#39;,
+ &#39;MFD_HUGE_256MB&#39;,
+ &#39;MFD_HUGE_2GB&#39;,
+ &#39;MFD_HUGE_2MB&#39;,
+ &#39;MFD_HUGE_32MB&#39;,
+ &#39;MFD_HUGE_512KB&#39;,
+ &#39;MFD_HUGE_512MB&#39;,
+ &#39;MFD_HUGE_64KB&#39;,
+ &#39;MFD_HUGE_8MB&#39;,
+ &#39;MFD_HUGE_MASK&#39;,
+ &#39;MFD_HUGE_SHIFT&#39;,
+ &#39;MutableMapping&#39;,
+ &#39;NGROUPS_MAX&#39;,
+ &#39;O_ACCMODE&#39;,
+ &#39;O_APPEND&#39;,
+ &#39;O_ASYNC&#39;,
+ &#39;O_CLOEXEC&#39;,
+ &#39;O_CREAT&#39;,
+ &#39;O_DIRECT&#39;,
+ &#39;O_DIRECTORY&#39;,
+ &#39;O_DSYNC&#39;,
+ &#39;O_EXCL&#39;,
+ &#39;O_LARGEFILE&#39;,
+ &#39;O_NDELAY&#39;,
+ &#39;O_NOATIME&#39;,
+ &#39;O_NOCTTY&#39;,
+ &#39;O_NOFOLLOW&#39;,
+ &#39;O_NONBLOCK&#39;,
+ &#39;O_PATH&#39;,
+ &#39;O_RDONLY&#39;,
+ &#39;O_RDWR&#39;,
+ &#39;O_RSYNC&#39;,
+ &#39;O_SYNC&#39;,
+ &#39;O_TMPFILE&#39;,
+ &#39;O_TRUNC&#39;,
+ &#39;O_WRONLY&#39;,
+ &#39;POSIX_FADV_DONTNEED&#39;,
+ &#39;POSIX_FADV_NOREUSE&#39;,
+ &#39;POSIX_FADV_NORMAL&#39;,
+ &#39;POSIX_FADV_RANDOM&#39;,
+ &#39;POSIX_FADV_SEQUENTIAL&#39;,
+ &#39;POSIX_FADV_WILLNEED&#39;,
+ &#39;POSIX_SPAWN_CLOSE&#39;,
+ &#39;POSIX_SPAWN_DUP2&#39;,
+ &#39;POSIX_SPAWN_OPEN&#39;,
+ &#39;PRIO_PGRP&#39;,
+ &#39;PRIO_PROCESS&#39;,
+ &#39;PRIO_USER&#39;,
+ &#39;P_ALL&#39;,
+ &#39;P_NOWAIT&#39;,
+ &#39;P_NOWAITO&#39;,
+ &#39;P_PGID&#39;,
+ &#39;P_PID&#39;,
+ &#39;P_WAIT&#39;,
+ &#39;PathLike&#39;,
+ &#39;RTLD_DEEPBIND&#39;,
+ &#39;RTLD_GLOBAL&#39;,
+ &#39;RTLD_LAZY&#39;,
+ &#39;RTLD_LOCAL&#39;,
+ &#39;RTLD_NODELETE&#39;,
+ &#39;RTLD_NOLOAD&#39;,
+ &#39;RTLD_NOW&#39;,
+ &#39;RWF_DSYNC&#39;,
+ &#39;RWF_HIPRI&#39;,
+ &#39;RWF_NOWAIT&#39;,
+ &#39;RWF_SYNC&#39;,
+ &#39;R_OK&#39;,
+ &#39;SCHED_BATCH&#39;,
+ &#39;SCHED_FIFO&#39;,
+ &#39;SCHED_IDLE&#39;,
+ &#39;SCHED_OTHER&#39;,
+ &#39;SCHED_RESET_ON_FORK&#39;,
+ &#39;SCHED_RR&#39;,
+ &#39;SEEK_CUR&#39;,
+ &#39;SEEK_DATA&#39;,
+ &#39;SEEK_END&#39;,
+ &#39;SEEK_HOLE&#39;,
+ &#39;SEEK_SET&#39;,
+ &#39;ST_APPEND&#39;,
+ &#39;ST_MANDLOCK&#39;,
+ &#39;ST_NOATIME&#39;,
+ &#39;ST_NODEV&#39;,
+ &#39;ST_NODIRATIME&#39;,
+ &#39;ST_NOEXEC&#39;,
+ &#39;ST_NOSUID&#39;,
+ &#39;ST_RDONLY&#39;,
+ &#39;ST_RELATIME&#39;,
+ &#39;ST_SYNCHRONOUS&#39;,
+ &#39;ST_WRITE&#39;,
+ &#39;TMP_MAX&#39;,
+ &#39;WCONTINUED&#39;,
+ &#39;WCOREDUMP&#39;,
+ &#39;WEXITED&#39;,
+ &#39;WEXITSTATUS&#39;,
+ &#39;WIFCONTINUED&#39;,
+ &#39;WIFEXITED&#39;,
+ &#39;WIFSIGNALED&#39;,
+ &#39;WIFSTOPPED&#39;,
+ &#39;WNOHANG&#39;,
+ &#39;WNOWAIT&#39;,
+ &#39;WSTOPPED&#39;,
+ &#39;WSTOPSIG&#39;,
+ &#39;WTERMSIG&#39;,
+ &#39;WUNTRACED&#39;,
+ &#39;W_OK&#39;,
+ &#39;XATTR_CREATE&#39;,
+ &#39;XATTR_REPLACE&#39;,
+ &#39;XATTR_SIZE_MAX&#39;,
+ &#39;X_OK&#39;,
+ &#39;_Environ&#39;,
+ &#39;__all__&#39;,
+ &#39;__builtins__&#39;,
+ &#39;__cached__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__file__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__spec__&#39;,
+ &#39;_check_methods&#39;,
+ &#39;_execvpe&#39;,
+ &#39;_exists&#39;,
+ &#39;_exit&#39;,
+ &#39;_fspath&#39;,
+ &#39;_fwalk&#39;,
+ &#39;_get_exports_list&#39;,
+ &#39;_putenv&#39;,
+ &#39;_spawnvef&#39;,
+ &#39;_unsetenv&#39;,
+ &#39;_wrap_close&#39;,
+ &#39;abc&#39;,
+ &#39;abort&#39;,
+ &#39;access&#39;,
+ &#39;altsep&#39;,
+ &#39;chdir&#39;,
+ &#39;chmod&#39;,
+ &#39;chown&#39;,
+ &#39;chroot&#39;,
+ &#39;close&#39;,
+ &#39;closerange&#39;,
+ &#39;confstr&#39;,
+ &#39;confstr_names&#39;,
+ &#39;copy_file_range&#39;,
+ &#39;cpu_count&#39;,
+ &#39;ctermid&#39;,
+ &#39;curdir&#39;,
+ &#39;defpath&#39;,
+ &#39;device_encoding&#39;,
+ &#39;devnull&#39;,
+ &#39;dup&#39;,
+ &#39;dup2&#39;,
+ &#39;environ&#39;,
+ &#39;environb&#39;,
+ &#39;error&#39;,
+ &#39;execl&#39;,
+ &#39;execle&#39;,
+ &#39;execlp&#39;,
+ &#39;execlpe&#39;,
+ &#39;execv&#39;,
+ &#39;execve&#39;,
+ &#39;execvp&#39;,
+ &#39;execvpe&#39;,
+ &#39;extsep&#39;,
+ &#39;fchdir&#39;,
+ &#39;fchmod&#39;,
+ &#39;fchown&#39;,
+ &#39;fdatasync&#39;,
+ &#39;fdopen&#39;,
+ &#39;fork&#39;,
+ &#39;forkpty&#39;,
+ &#39;fpathconf&#39;,
+ &#39;fsdecode&#39;,
+ &#39;fsencode&#39;,
+ &#39;fspath&#39;,
+ &#39;fstat&#39;,
+ &#39;fstatvfs&#39;,
+ &#39;fsync&#39;,
+ &#39;ftruncate&#39;,
+ &#39;fwalk&#39;,
+ &#39;get_blocking&#39;,
+ &#39;get_exec_path&#39;,
+ &#39;get_inheritable&#39;,
+ &#39;get_terminal_size&#39;,
+ &#39;getcwd&#39;,
+ &#39;getcwdb&#39;,
+ &#39;getegid&#39;,
+ &#39;getenv&#39;,
+ &#39;getenvb&#39;,
+ &#39;geteuid&#39;,
+ &#39;getgid&#39;,
+ &#39;getgrouplist&#39;,
+ &#39;getgroups&#39;,
+ &#39;getloadavg&#39;,
+ &#39;getlogin&#39;,
+ &#39;getpgid&#39;,
+ &#39;getpgrp&#39;,
+ &#39;getpid&#39;,
+ &#39;getppid&#39;,
+ &#39;getpriority&#39;,
+ &#39;getrandom&#39;,
+ &#39;getresgid&#39;,
+ &#39;getresuid&#39;,
+ &#39;getsid&#39;,
+ &#39;getuid&#39;,
+ &#39;getxattr&#39;,
+ &#39;initgroups&#39;,
+ &#39;isatty&#39;,
+ &#39;kill&#39;,
+ &#39;killpg&#39;,
+ &#39;lchown&#39;,
+ &#39;linesep&#39;,
+ &#39;link&#39;,
+ &#39;listdir&#39;,
+ &#39;listxattr&#39;,
+ &#39;lockf&#39;,
+ &#39;lseek&#39;,
+ &#39;lstat&#39;,
+ &#39;major&#39;,
+ &#39;makedev&#39;,
+ &#39;makedirs&#39;,
+ &#39;memfd_create&#39;,
+ &#39;minor&#39;,
+ &#39;mkdir&#39;,
+ &#39;mkfifo&#39;,
+ &#39;mknod&#39;,
+ &#39;name&#39;,
+ &#39;nice&#39;,
+ &#39;open&#39;,
+ &#39;openpty&#39;,
+ &#39;pardir&#39;,
+ &#39;path&#39;,
+ &#39;pathconf&#39;,
+ &#39;pathconf_names&#39;,
+ &#39;pathsep&#39;,
+ &#39;pipe&#39;,
+ &#39;pipe2&#39;,
+ &#39;popen&#39;,
+ &#39;posix_fadvise&#39;,
+ &#39;posix_fallocate&#39;,
+ &#39;posix_spawn&#39;,
+ &#39;posix_spawnp&#39;,
+ &#39;pread&#39;,
+ &#39;preadv&#39;,
+ &#39;putenv&#39;,
+ &#39;pwrite&#39;,
+ &#39;pwritev&#39;,
+ &#39;read&#39;,
+ &#39;readlink&#39;,
+ &#39;readv&#39;,
+ &#39;register_at_fork&#39;,
+ &#39;remove&#39;,
+ &#39;removedirs&#39;,
+ &#39;removexattr&#39;,
+ &#39;rename&#39;,
+ &#39;renames&#39;,
+ &#39;replace&#39;,
+ &#39;rmdir&#39;,
+ &#39;scandir&#39;,
+ &#39;sched_get_priority_max&#39;,
+ &#39;sched_get_priority_min&#39;,
+ &#39;sched_getaffinity&#39;,
+ &#39;sched_getparam&#39;,
+ &#39;sched_getscheduler&#39;,
+ &#39;sched_param&#39;,
+ &#39;sched_rr_get_interval&#39;,
+ &#39;sched_setaffinity&#39;,
+ &#39;sched_setparam&#39;,
+ &#39;sched_setscheduler&#39;,
+ &#39;sched_yield&#39;,
+ &#39;sendfile&#39;,
+ &#39;sep&#39;,
+ &#39;set_blocking&#39;,
+ &#39;set_inheritable&#39;,
+ &#39;setegid&#39;,
+ &#39;seteuid&#39;,
+ &#39;setgid&#39;,
+ &#39;setgroups&#39;,
+ &#39;setpgid&#39;,
+ &#39;setpgrp&#39;,
+ &#39;setpriority&#39;,
+ &#39;setregid&#39;,
+ &#39;setresgid&#39;,
+ &#39;setresuid&#39;,
+ &#39;setreuid&#39;,
+ &#39;setsid&#39;,
+ &#39;setuid&#39;,
+ &#39;setxattr&#39;,
+ &#39;spawnl&#39;,
+ &#39;spawnle&#39;,
+ &#39;spawnlp&#39;,
+ &#39;spawnlpe&#39;,
+ &#39;spawnv&#39;,
+ &#39;spawnve&#39;,
+ &#39;spawnvp&#39;,
+ &#39;spawnvpe&#39;,
+ &#39;st&#39;,
+ &#39;stat&#39;,
+ &#39;stat_result&#39;,
+ &#39;statvfs&#39;,
+ &#39;statvfs_result&#39;,
+ &#39;strerror&#39;,
+ &#39;supports_bytes_environ&#39;,
+ &#39;supports_dir_fd&#39;,
+ &#39;supports_effective_ids&#39;,
+ &#39;supports_fd&#39;,
+ &#39;supports_follow_symlinks&#39;,
+ &#39;symlink&#39;,
+ &#39;sync&#39;,
+ &#39;sys&#39;,
+ &#39;sysconf&#39;,
+ &#39;sysconf_names&#39;,
+ &#39;system&#39;,
+ &#39;tcgetpgrp&#39;,
+ &#39;tcsetpgrp&#39;,
+ &#39;terminal_size&#39;,
+ &#39;times&#39;,
+ &#39;times_result&#39;,
+ &#39;truncate&#39;,
+ &#39;ttyname&#39;,
+ &#39;umask&#39;,
+ &#39;uname&#39;,
+ &#39;uname_result&#39;,
+ &#39;unlink&#39;,
+ &#39;unsetenv&#39;,
+ &#39;urandom&#39;,
+ &#39;utime&#39;,
+ &#39;wait&#39;,
+ &#39;wait3&#39;,
+ &#39;wait4&#39;,
+ &#39;waitid&#39;,
+ &#39;waitid_result&#39;,
+ &#39;waitpid&#39;,
+ &#39;walk&#39;,
+ &#39;write&#39;,
+ &#39;writev&#39;]
+</pre></div>
+</div>
+</div>
+</div>
 <p>We can find where the code for that library resides using the <code class="docutils literal notranslate"><span class="pre">__file__</span></code> attribute.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -450,12 +857,36 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/os.py&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/os.py&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>ls<span class="w"> </span>/opt/tljh/user/lib/python3.9/
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ls: cannot access &#39;/opt/tljh/user/lib/python3.9/&#39;: No such file or directory
 </pre></div>
 </div>
 </div>
 </div>
 <p>The reason we can import this file without saying where it is is because Python has a list of directories it knows to look in. These are available to you in the <code class="docutils literal notranslate"><span class="pre">sys</span></code> module. This contains a list of directories where Python looks. Here, it specifically looks for a file named <a class="reference external" href="http://os.py">os.py</a> in one of those directories. Your path may look different from this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$PYTHONPATH</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
@@ -464,12 +895,23 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/home/runner/work/sse/sse/sse/03-python-packaging&#39;,
- &#39;/opt/hostedtoolcache/Python/3.8.17/x64/lib/python38.zip&#39;,
- &#39;/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8&#39;,
- &#39;/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/lib-dynload&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/opt/hostedtoolcache/Python/3.8.18/x64/lib/python38.zip&#39;,
+ &#39;/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8&#39;,
+ &#39;/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/lib-dynload&#39;,
  &#39;&#39;,
- &#39;/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages&#39;]
+ &#39;/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>ls<span class="w"> </span>/home/jupyter-jkitchin@andrew.cm-11dd7/.local/lib/python3.9/site-packages
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ls: cannot access &#39;/home/jupyter-jkitchin@andrew.cm-11dd7/.local/lib/python3.9/site-packages&#39;: No such file or directory
 </pre></div>
 </div>
 </div>
@@ -478,14 +920,167 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;os.py&#39;</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;sklearn&#39;</span><span class="p">)):</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
         <span class="k">break</span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sklearn</span>
+<span class="n">sklearn</span><span class="o">.</span><span class="vm">__file__</span>
+</pre></div>
+</div>
+</div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sklearn</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">sklearn</span><span class="o">.</span><span class="vm">__file__</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>env
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GITHUB_STATE=/home/runner/work/_temp/_runner_file_commands/save_state_4f8c3b2d-e42c-4a0b-8332-b9c944f0c35a
+STATS_TRP=true
+DEPLOYMENT_BASEPATH=/opt/runner
+DOTNET_NOLOGO=1
+USER=runner
+CI=true
+MPLBACKEND=module://matplotlib_inline.backend_inline
+RUNNER_ENVIRONMENT=github-hosted
+GITHUB_ENV=/home/runner/work/_temp/_runner_file_commands/set_env_4f8c3b2d-e42c-4a0b-8332-b9c944f0c35a
+PIPX_HOME=/opt/pipx
+JAVA_HOME_8_X64=/usr/lib/jvm/temurin-8-jdk-amd64
+SHLVL=1
+HOME=/home/runner
+RUNNER_TEMP=/home/runner/work/_temp
+GITHUB_EVENT_PATH=/home/runner/work/_temp/_github_workflow/event.json
+JAVA_HOME_11_X64=/usr/lib/jvm/temurin-11-jdk-amd64
+PIPX_BIN_DIR=/opt/pipx_bin
+GITHUB_REPOSITORY_OWNER=jkitchin
+GRADLE_HOME=/usr/share/gradle-8.7
+ANDROID_NDK_LATEST_HOME=/usr/local/lib/android/sdk/ndk/26.3.11579264
+JAVA_HOME_21_X64=/usr/lib/jvm/temurin-21-jdk-amd64
+STATS_RDCL=true
+GITHUB_RETENTION_DAYS=90
+PAGER=cat
+GITHUB_REPOSITORY_OWNER_ID=1610070
+POWERSHELL_DISTRIBUTION_CHANNEL=GitHub-Actions-ubuntu22
+AZURE_EXTENSION_DIR=/opt/az/azcliextensions
+GITHUB_HEAD_REF=
+SYSTEMD_EXEC_PID=598
+GITHUB_GRAPHQL_URL=https://api.github.com/graphql
+GOROOT_1_20_X64=/opt/hostedtoolcache/go/1.20.14/x64
+NVM_DIR=/home/runner/.nvm
+DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
+GOROOT_1_21_X64=/opt/hostedtoolcache/go/1.21.9/x64
+JAVA_HOME_17_X64=/usr/lib/jvm/temurin-17-jdk-amd64
+ImageVersion=20240422.1.0
+pythonLocation=/opt/hostedtoolcache/Python/3.8.18/x64
+RUNNER_OS=Linux
+GITHUB_API_URL=https://api.github.com
+GOROOT_1_22_X64=/opt/hostedtoolcache/go/1.22.2/x64
+SWIFT_PATH=/usr/share/swift/usr/bin
+FORCE_COLOR=1
+RUNNER_USER=runner
+STATS_V3PS=true
+CHROMEWEBDRIVER=/usr/local/share/chromedriver-linux64
+JOURNAL_STREAM=8:1740
+GITHUB_WORKFLOW=deploy
+_=/opt/hostedtoolcache/Python/3.8.18/x64/bin/jupyter-book
+ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE=/opt/actionarchivecache
+STATS_D=true
+GITHUB_RUN_ID=8929731218
+STATS_VMFE=true
+TERM=xterm-color
+GITHUB_REF_TYPE=branch
+BOOTSTRAP_HASKELL_NONINTERACTIVE=1
+GITHUB_WORKFLOW_SHA=0f5aba65d493988b8806fe7d46b7b85db4a463b5
+GITHUB_BASE_REF=
+ImageOS=ubuntu22
+STATS_BLT=true
+GITHUB_WORKFLOW_REF=jkitchin/sse/.github/workflows/deploy.yml@refs/heads/main
+PERFLOG_LOCATION_SETTING=RUNNER_PERFLOG
+GITHUB_ACTION_REPOSITORY=
+PATH=/opt/hostedtoolcache/Python/3.8.18/x64/bin:/opt/hostedtoolcache/Python/3.8.18/x64:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+ANT_HOME=/usr/share/ant
+DOTNET_MULTILEVEL_LOOKUP=0
+RUNNER_TRACKING_ID=github_9428b0d5-8537-498c-af1a-d370be6276ee
+INVOCATION_ID=cbcfe06b8e8e499bb8d67122b186768c
+RUNNER_TOOL_CACHE=/opt/hostedtoolcache
+GITHUB_ACTION=__run_2
+GITHUB_RUN_NUMBER=16
+GITHUB_TRIGGERING_ACTOR=jkitchin
+RUNNER_ARCH=X64
+XDG_RUNTIME_DIR=/run/user/1001
+AGENT_TOOLSDIRECTORY=/opt/hostedtoolcache
+LANG=C.UTF-8
+VCPKG_INSTALLATION_ROOT=/usr/local/share/vcpkg
+CONDA=/usr/share/miniconda
+RUNNER_NAME=GitHub Actions 9
+XDG_CONFIG_HOME=/home/runner/.config
+STATS_VMD=true
+GITHUB_REF_NAME=main
+GITHUB_REPOSITORY=jkitchin/sse
+STATS_D_D=true
+STATS_UE=true
+ANDROID_NDK_ROOT=/usr/local/lib/android/sdk/ndk/25.2.9519653
+GITHUB_ACTION_REF=
+DEBIAN_FRONTEND=noninteractive
+GITHUB_REPOSITORY_ID=653337066
+GITHUB_ACTIONS=true
+CLICOLOR_FORCE=1
+GITHUB_REF_PROTECTED=false
+GITHUB_WORKSPACE=/home/runner/work/sse/sse
+ACCEPT_EULA=Y
+GITHUB_JOB=build-and-deploy-book
+RUNNER_PERFLOG=/home/runner/perflog
+GITHUB_SHA=0f5aba65d493988b8806fe7d46b7b85db4a463b5
+GITHUB_RUN_ATTEMPT=1
+GITHUB_REF=refs/heads/main
+GITHUB_ACTOR=jkitchin
+ANDROID_SDK_ROOT=/usr/local/lib/android/sdk
+LEIN_HOME=/usr/local/lib/lein
+GIT_PAGER=cat
+GITHUB_PATH=/home/runner/work/_temp/_runner_file_commands/add_path_4f8c3b2d-e42c-4a0b-8332-b9c944f0c35a
+JAVA_HOME=/usr/lib/jvm/temurin-11-jdk-amd64
+PWD=/home/runner/work/sse/sse/sse/03-python-packaging
+GITHUB_ACTOR_ID=1610070
+RUNNER_WORKSPACE=/home/runner/work/sse
+CLICOLOR=1
+HOMEBREW_CLEANUP_PERIODIC_FULL_DAYS=3650
+GITHUB_EVENT_NAME=push
+HOMEBREW_NO_AUTO_UPDATE=1
+ANDROID_HOME=/usr/local/lib/android/sdk
+GITHUB_SERVER_URL=https://github.com
+GECKOWEBDRIVER=/usr/local/share/gecko_driver
+LEIN_JAR=/usr/local/lib/lein/self-installs/leiningen-2.11.2-standalone.jar
+GHCUP_INSTALL_BASE_PREFIX=/usr/local
+GITHUB_OUTPUT=/home/runner/work/_temp/_runner_file_commands/set_output_4f8c3b2d-e42c-4a0b-8332-b9c944f0c35a
+JPY_PARENT_PID=1853
+EDGEWEBDRIVER=/usr/local/share/edge_driver
+STATS_EXT=true
+PYDEVD_USE_FRAME_EVAL=NO
+ANDROID_NDK=/usr/local/lib/android/sdk/ndk/25.2.9519653
+SGX_AESM_ADDR=1
+CHROME_BIN=/usr/bin/google-chrome
+SELENIUM_JAR_PATH=/usr/share/java/selenium-server.jar
+STATS_EXTP=https://provjobdsettingscdn.blob.core.windows.net/settings/provjobdsettings-0.5.172+1/provjobd.data
+ANDROID_NDK_HOME=/usr/local/lib/android/sdk/ndk/25.2.9519653
+GITHUB_STEP_SUMMARY=/home/runner/work/_temp/_runner_file_commands/step_summary_4f8c3b2d-e42c-4a0b-8332-b9c944f0c35a
 </pre></div>
 </div>
 </div>
@@ -530,7 +1125,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%writefile package-root/LICENSE
-Copyright 2023 John Kitchin
+Copyright 2024 John Kitchin
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -620,7 +1215,7 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">testpack</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">testpack</span><span class="o">.</span><span class="vm">__file__</span>
 
@@ -633,13 +1228,31 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;package-root&#39;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/opt/hostedtoolcache/Python/3.8.18/x64/lib/python38.zip&#39;,
+ &#39;/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8&#39;,
+ &#39;/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/lib-dynload&#39;,
+ &#39;&#39;,
+ &#39;/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;package-root&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">testpack</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading testpack! Version 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;package-root&#39;, &#39;/opt/hostedtoolcache/Python/3.8.18/x64/lib/python38.zip&#39;, &#39;/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8&#39;, &#39;/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/lib-dynload&#39;, &#39;&#39;, &#39;/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages&#39;]
+Loading testpack! Version 1
 </pre></div>
 </div>
 </div>
@@ -647,12 +1260,120 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 <p>Now, we can access the hello function that is present in the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file. We have to use the dot notation to access this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">testpack</span><span class="o">.</span><span class="n">hello</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">testpack</span><span class="o">.</span><span class="n">hello</span><span class="p">(</span><span class="s1">&#39;Class&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello John&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello Class&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;package-root&#39;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/opt/hostedtoolcache/Python/3.8.18/x64/lib/python38.zip&#39;,
+ &#39;/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8&#39;,
+ &#39;/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/lib-dynload&#39;,
+ &#39;&#39;,
+ &#39;/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pwd
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/sse/sse/sse/03-python-packaging
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd package-root 
+pip install -e .
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Obtaining file:///home/runner/work/sse/sse/sse/03-python-packaging/package-root
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py): started
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py): finished with status &#39;done&#39;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: testpack
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Running setup.py develop for testpack
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed testpack-0.0.1
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">24.0</span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">testpack</span>
+<span class="n">testpack</span><span class="o">.</span><span class="vm">__file__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/runner/work/sse/sse/sse/03-python-packaging/package-root/testpack/__init__.py&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pip<span class="w"> </span>uninstall<span class="w"> </span>testpack
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found existing installation: testpack 0.0.1
+Uninstalling testpack-0.0.1:
+  Would remove:
+    /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/testpack.egg-link
+Proceed (Y/n)? 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+<span class=" -Color -Color-Red">ERROR: Operation cancelled by user</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>package-root/testpack.egg-info
 </pre></div>
 </div>
 </div>
@@ -666,8 +1387,58 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
-git config --global user.name &quot;John Doe&quot;
+git config --global user.name &quot;John Kitchin&quot;
 git config --global user.email johndoe@example.com
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
+Your branch is ahead of &#39;origin/main&#39; by 11 commits.
+  (use &quot;git push&quot; to publish your local commits)
+
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
+	<span class=" -Color -Color-Red">modified:   03-python-packaging.ipynb</span>
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+	<span class=" -Color -Color-Red">../00-introduction/sorted-list.dat</span>
+	<span class=" -Color -Color-Red">../00-introduction/untitled.txt</span>
+	<span class=" -Color -Color-Red">../01-rest-api-openalex/test.py</span>
+	<span class=" -Color -Color-Red">../05-python-classes/ris.txt</span>
+	<span class=" -Color -Color-Red">../Untitled.ipynb</span>
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>-l
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>user.email=johndoe@example.com
+user.name=John Kitchin
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=https://github.com/jkitchin/s24-06643
+remote.origin.fetch=+refs/heads/main:refs/remotes/origin/main
+branch.main.remote=origin
+branch.main.merge=refs/heads/main
 </pre></div>
 </div>
 </div>
@@ -681,8 +1452,8 @@ git config --global user.email johndoe@example.com
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[user]
-	name = John Doe
 	email = johndoe@example.com
+	name = John Kitchin
 </pre></div>
 </div>
 </div>
@@ -697,37 +1468,59 @@ git init
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hint: Using &#39;master&#39; as the name for the initial branch. This default branch name
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialized empty Git repository in /home/jupyter-jkitchin@andrew.cm-11dd7/s24-06643/sse/03-python-packaging/package-root/.git/
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hint: is subject to change. To configure the initial branch name to use in all
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+tree -a package-root
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hint: of your new repositories, which will suppress this warning, call:
-</pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hint: 
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hint: 	git config --global init.defaultBranch &lt;name&gt;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hint: 
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hint: Names commonly chosen instead of &#39;master&#39; are &#39;main&#39;, &#39;trunk&#39; and
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hint: &#39;development&#39;. The just-created branch can be renamed via this command:
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hint: 
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hint: 	git branch -m &lt;name&gt;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialized empty Git repository in /home/runner/work/sse/sse/sse/03-python-packaging/package-root/.git/
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>package-root
+├── .git
+│   ├── branches
+│   ├── config
+│   ├── description
+│   ├── HEAD
+│   ├── hooks
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── fsmonitor-watchman.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-commit.sample
+│   │   ├── pre-merge-commit.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   ├── pre-push.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── pre-receive.sample
+│   │   └── update.sample
+│   ├── info
+│   │   └── exclude
+│   ├── objects
+│   │   ├── info
+│   │   └── pack
+│   └── refs
+│       ├── heads
+│       └── tags
+├── .ipynb_checkpoints
+│   └── README-checkpoint.md
+├── LICENSE
+├── README.md
+├── setup.py
+└── testpack
+    ├── __init__.py
+    ├── .ipynb_checkpoints
+    │   └── __init__-checkpoint.py
+    └── __pycache__
+        └── __init__.cpython-39.pyc
+
+14 directories, 23 files
 </pre></div>
 </div>
 </div>
@@ -747,39 +1540,18 @@ git status
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch master
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No commits yet
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Untracked files:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	LICENSE
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	README.md
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	setup.py
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	testpack/
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+
+No commits yet
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+	.ipynb_checkpoints/
+	LICENSE
+	README.md
+	setup.py
+	testpack/
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
 </pre></div>
 </div>
 </div>
@@ -818,6 +1590,32 @@ git checkout -b main
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd package-root
+git status
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
+
+No commits yet
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+	.gitignore
+	LICENSE
+	README.md
+	setup.py
+	testpack/
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+</pre></div>
+</div>
+</div>
+</div>
 <p>The next step is to add and commit the files. Since we have set up the .gitignore file, we will take a shortcut this time, and add everything. Then, we commit the files.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git add *
 git commit -m &quot;First commit&quot;
@@ -828,27 +1626,66 @@ git commit -m &quot;First commit&quot;
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
 cd package-root
 git add *
-git commit -m &quot;First commit&quot;
+git status
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main (root-commit) 7800f0d] First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
+	new file:   LICENSE
+	new file:   README.md
+	new file:   setup.py
+	new file:   testpack/__init__.py
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+	.gitignore
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 4 files changed, 29 insertions(+)
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd package-root
+git commit -m &quot;First commit&quot;
+git status
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 LICENSE
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main (root-commit) 33bfc38] First commit
+ 4 files changed, 29 insertions(+)
+ create mode 100644 LICENSE
+ create mode 100644 README.md
+ create mode 100644 setup.py
+ create mode 100644 testpack/__init__.py
+On branch main
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+	.gitignore
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 README.md
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>ls<span class="w"> </span>*<span class="w"> </span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 setup.py
-</pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 testpack/__init__.py
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>03-python-packaging.ipynb
+
+package-root:
+LICENSE  README.md  setup.py  testpack
 </pre></div>
 </div>
 </div>
@@ -863,21 +1700,11 @@ git status
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Untracked files:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	.gitignore
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+	.gitignore
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
 </pre></div>
 </div>
 </div>
@@ -894,19 +1721,11 @@ git status
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main 41286e2] Add the .gitignore file
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 2 insertions(+)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 .gitignore
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nothing to commit, working tree clean
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main d60276d] Add the .gitignore file
+ 1 file changed, 2 insertions(+)
+ create mode 100644 .gitignore
+On branch main
+nothing to commit, working tree clean
 </pre></div>
 </div>
 </div>
@@ -921,42 +1740,77 @@ git log
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit 41286e2e3479a2600863bdfa4f38b204d79da6f4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Author: John Doe &lt;johndoe@example.com&gt;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date:   Tue Jun 20 01:51:03 2023 +0000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Add the .gitignore file
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit 7800f0d625fa0bde9762ab4ab68dd92e330d5f24
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Author: John Doe &lt;johndoe@example.com&gt;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date:   Tue Jun 20 01:51:03 2023 +0000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit d60276d67d05e3b2dd552fbaa14c281e065c951d
+Author: John Kitchin &lt;johndoe@example.com&gt;
+Date:   Wed Mar 20 18:48:57 2024 +0000
+
+    Add the .gitignore file
+
+commit 33bfc388619ea6d316265bdf7f4ca2511de7aedb
+Author: John Kitchin &lt;johndoe@example.com&gt;
+Date:   Wed Mar 20 18:47:28 2024 +0000
+
+    First commit
 </pre></div>
 </div>
 </div>
 </div>
 <p>In the log, you can see the two commits, and each one is identified by a long hash, e.g. commit 33a50e04b75c90b34a274aea287dd1e6c6c045de. This is a unique cryptographic hash of the content that we committed, and we can use it to see what happened or changed, to revert changes, etc. We will return to that later. Now, we are ready to safely make some changes to our package. By safely, I mean we will be able to undo changes, revert changes, see what changes were made, etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd package-root
+pip install -e .
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
+Obtaining file:///home/jupyter-jkitchin%40andrew.cm-11dd7/s24-06643/sse/03-python-packaging/package-root
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status &#39;done&#39;
+Installing collected packages: testpack
+  Running setup.py develop for testpack
+Successfully installed testpack-0.0.1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">testpack</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading testpack! Version 1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd package-root
+git checkout testpack/__init__.py
+git status
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updated 1 path from the index
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+	testpack.egg-info/
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="first-package-modification">
 <h1>First package modification<a class="headerlink" href="#first-package-modification" title="Permalink to this headline">¶</a></h1>
@@ -969,8 +1823,8 @@ git log
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* <span class=" -Color -Color-Yellow">41286e2 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span> Add the .gitignore file
-* <span class=" -Color -Color-Yellow">7800f0d</span> First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* <span class=" -Color -Color-Yellow">d60276d (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span> Add the .gitignore file
+* <span class=" -Color -Color-Yellow">33bfc38</span> First commit
 </pre></div>
 </div>
 </div>
@@ -978,6 +1832,18 @@ git log
 <div class="section" id="a-feature-branch">
 <h2>A feature branch<a class="headerlink" href="#a-feature-branch" title="Permalink to this headline">¶</a></h2>
 <p>We are going to checkout a new branch, let’s call it <code class="docutils literal notranslate"><span class="pre">feature</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pwd
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/jupyter-jkitchin@andrew.cm-11dd7/s24-06643/sse/03-python-packaging
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
@@ -993,15 +1859,13 @@ git log --graph --oneline
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch feature
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nothing to commit, working tree clean
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 41286e2 Add the .gitignore file
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 7800f0d First commit
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+	testpack.egg-info/
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+* d60276d Add the .gitignore file
+* 33bfc38 First commit
 </pre></div>
 </div>
 </div>
@@ -1036,24 +1900,13 @@ git status
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch feature
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Changes not staged for commit:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	modified:   testpack/__init__.py
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
+	modified:   .gitignore
+	modified:   testpack/__init__.py
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
 </pre></div>
 </div>
 </div>
@@ -1066,27 +1919,36 @@ git status
 <p>Now, let’s commit this change.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> -a package-root/.gitignore
+<span class="o">*.</span><span class="n">egg</span><span class="o">-</span><span class="n">info</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Appending to package-root/.gitignore
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
 cd package-root
 git commit testpack/__init__.py -m &quot;Add a new function&quot;
+git commit .gitignore -m &quot;ignore the egg-info&quot;
 git log --graph --oneline
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[feature 341688a] Add a new function
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 3 insertions(+)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 341688a Add a new function
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 41286e2 Add the .gitignore file
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 7800f0d First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[feature 79cf89b] Add a new function
+ 1 file changed, 3 insertions(+)
+[feature db1b581] ignore the egg-info
+ 1 file changed, 1 insertion(+)
+* db1b581 ignore the egg-info
+* 79cf89b Add a new function
+* d60276d Add the .gitignore file
+* 33bfc38 First commit
 </pre></div>
 </div>
 </div>
@@ -1106,30 +1968,14 @@ cat testpack/__init__.py
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch feature
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nothing to commit, working tree clean
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>print(&#39;Loading testpack! Version 1&#39;)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>def hello(name):
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    return f&#39;Hello {name}&#39;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>def goodbye(name):
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    return f&#39;Goodbye {name}&#39;
+nothing to commit, working tree clean
+print(&#39;Loading testpack! Version 1&#39;)
+
+def hello(name):
+    return f&#39;Hello {name}&#39;
+
+def goodbye(name):
+    return f&#39;Goodbye {name}&#39;
 </pre></div>
 </div>
 </div>
@@ -1142,29 +1988,26 @@ cd package-root
 git checkout main
 git status
 cat testpack/__init__.py
+cat .gitignore
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;main&#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Already on &#39;main&#39;
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nothing to commit, working tree clean
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>print(&#39;Loading testpack! Version 1&#39;)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>def hello(name):
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    return f&#39;Hello {name}&#39;
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+	testpack.egg-info/
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+print(&#39;Loading testpack! Version 1&#39;)
+
+def hello(name):
+    return f&#39;Hello {name}&#39;
+__pycache__
+.ipynb_checkpoints
 </pre></div>
 </div>
 </div>
@@ -1177,6 +2020,7 @@ cd package-root
 git checkout feature
 git status
 cat testpack/__init__.py
+cat .gitignore
 </pre></div>
 </div>
 </div>
@@ -1185,30 +2029,32 @@ cat testpack/__init__.py
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch feature
+nothing to commit, working tree clean
+print(&#39;Loading testpack! Version 1&#39;)
+
+def hello(name):
+    return f&#39;Hello {name}&#39;
+
+def goodbye(name):
+    return f&#39;Goodbye {name}&#39;
+__pycache__
+.ipynb_checkpoints
+*.egg-info
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nothing to commit, working tree clean
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>package-root<span class="p">;</span><span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--graph<span class="w"> </span>--oneline
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>print(&#39;Loading testpack! Version 1&#39;)
-</pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>def hello(name):
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    return f&#39;Hello {name}&#39;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>def goodbye(name):
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    return f&#39;Goodbye {name}&#39;
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* <span class=" -Color -Color-Yellow">db1b581 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">feature</span><span class=" -Color -Color-Yellow">)</span> ignore the egg-info
+* <span class=" -Color -Color-Yellow">79cf89b</span> Add a new function
+* <span class=" -Color -Color-Yellow">d60276d (</span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span> Add the .gitignore file
+* <span class=" -Color -Color-Yellow">33bfc38</span> First commit
 </pre></div>
 </div>
 </div>
@@ -1232,19 +2078,11 @@ git log --graph --oneline
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;main&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main 58302b3] document the function in the package
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 3 insertions(+)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 58302b3 document the function in the package
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 41286e2 Add the .gitignore file
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 7800f0d First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main 2addc8c] document the function in the package
+ 1 file changed, 3 insertions(+)
+* 2addc8c document the function in the package
+* d60276d Add the .gitignore file
+* 33bfc38 First commit
 </pre></div>
 </div>
 </div>
@@ -1256,6 +2094,7 @@ git log --graph --oneline
 cd package-root
 git checkout feature
 cat README.md
+git log --graph --oneline
 </pre></div>
 </div>
 </div>
@@ -1264,15 +2103,41 @@ cat README.md
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Example package
+===============
+
+There is one function: testpack.hello.
+* db1b581 ignore the egg-info
+* 79cf89b Add a new function
+* d60276d Add the .gitignore file
+* 33bfc38 First commit
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>===============
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd package-root
+git checkout main
+cat README.md
+ git log --graph --oneline
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Already on &#39;main&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There is one function: testpack.hello.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Example package
+===============
+
+There is one function: testpack.hello.
+
+
+There is one function: testpack.hello.
+* 2addc8c document the function in the package
+* d60276d Add the .gitignore file
+* 33bfc38 First commit
 </pre></div>
 </div>
 </div>
@@ -1285,45 +2150,47 @@ cat README.md
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
 cd package-root
+git checkout feature
 git merge main
 git log --graph --oneline
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Merge made by the &#39;ort&#39; strategy.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;feature&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> README.md | 3 +++
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 3 insertions(+)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*   5cbbed0 Merge branch &#39;main&#39; into feature
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|\  
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| * 58302b3 document the function in the package
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* | 341688a Add a new function
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|/  
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 41286e2 Add the .gitignore file
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 7800f0d First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Merge made by the &#39;recursive&#39; strategy.
+ README.md | 3 +++
+ 1 file changed, 3 insertions(+)
+*   c8c84e8 Merge branch &#39;main&#39; into feature
+|\  
+| * 2addc8c document the function in the package
+* | db1b581 ignore the egg-info
+* | 79cf89b Add a new function
+|/  
+* d60276d Add the .gitignore file
+* 33bfc38 First commit
 </pre></div>
 </div>
 </div>
 </div>
 <p>Now, we can finish up our feature branch. Let’s add some documentation to the <a class="reference external" href="http://README.md">README.md</a>. Add some text about the new function you added, then commit the change.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd package-root
+git status
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch feature
+nothing to commit, working tree clean
+</pre></div>
+</div>
+</div>
+</div>
 <p>Finally, when satisfied with your feature branch, we go back to our main branch, and merge the feature into it. If you are done with the branch, it is a good practice to delete it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1340,40 +2207,22 @@ git log --graph --oneline
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;main&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updating 58302b3..5cbbed0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fast-forward
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> testpack/__init__.py | 3 +++
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 3 insertions(+)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Deleted branch feature (was 5cbbed0).
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*   5cbbed0 Merge branch &#39;main&#39; into feature
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|\  
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| * 58302b3 document the function in the package
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* | 341688a Add a new function
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|/  
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 41286e2 Add the .gitignore file
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 7800f0d First commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updating 2addc8c..aaa0dc0
+Fast-forward
+ .gitignore           | 1 +
+ README.md            | 2 +-
+ testpack/__init__.py | 3 +++
+ 3 files changed, 5 insertions(+), 1 deletion(-)
+Deleted branch feature (was aaa0dc0).
+* aaa0dc0 fixed documentation
+*   c8c84e8 Merge branch &#39;main&#39; into feature
+|\  
+| * 2addc8c document the function in the package
+* | db1b581 ignore the egg-info
+* | 79cf89b Add a new function
+|/  
+* d60276d Add the .gitignore file
+* 33bfc38 First commit
 </pre></div>
 </div>
 </div>
@@ -1406,7 +2255,7 @@ git log --graph --oneline
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">37</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="nn">Input In [31],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">testpack</span><span class="o">.</span><span class="n">goodbye</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">)</span>
 
 <span class="ne">AttributeError</span>: module &#39;testpack&#39; has no attribute &#39;goodbye&#39;
@@ -1432,6 +2281,72 @@ git log --graph --oneline
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>package-root<span class="p">;</span><span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--graph
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* <span class=" -Color -Color-Yellow">commit aaa0dc051abe98bb4959b794f7fe6dc84b396f5c (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
+<span class=" -Color -Color-Red">|</span> Author: John Kitchin &lt;johndoe@example.com&gt;
+<span class=" -Color -Color-Red">|</span> Date:   Wed Mar 20 19:17:57 2024 +0000
+<span class=" -Color -Color-Red">|</span> 
+<span class=" -Color -Color-Red">|</span>     fixed documentation
+<span class=" -Color -Color-Red">|</span>   
+*   <span class=" -Color -Color-Yellow">commit c8c84e88eeb0ef3b34e47096441365a16779b4cf</span>
+<span class=" -Color -Color-Green">|</span><span class=" -Color -Color-Yellow">\</span>  Merge: db1b581 2addc8c
+<span class=" -Color -Color-Green">|</span> <span class=" -Color -Color-Yellow">|</span> Author: John Kitchin &lt;johndoe@example.com&gt;
+<span class=" -Color -Color-Green">|</span> <span class=" -Color -Color-Yellow">|</span> Date:   Wed Mar 20 19:15:34 2024 +0000
+<span class=" -Color -Color-Green">|</span> <span class=" -Color -Color-Yellow">|</span> 
+<span class=" -Color -Color-Green">|</span> <span class=" -Color -Color-Yellow">|</span>     Merge branch &#39;main&#39; into feature
+<span class=" -Color -Color-Green">|</span> <span class=" -Color -Color-Yellow">|</span> 
+<span class=" -Color -Color-Green">|</span> * <span class=" -Color -Color-Yellow">commit 2addc8cb2991f792b49aee778c036aacda7a2d7e</span>
+<span class=" -Color -Color-Green">|</span> <span class=" -Color -Color-Yellow">|</span> Author: John Kitchin &lt;johndoe@example.com&gt;
+<span class=" -Color -Color-Green">|</span> <span class=" -Color -Color-Yellow">|</span> Date:   Wed Mar 20 19:13:02 2024 +0000
+<span class=" -Color -Color-Green">|</span> <span class=" -Color -Color-Yellow">|</span> 
+<span class=" -Color -Color-Green">|</span> <span class=" -Color -Color-Yellow">|</span>     document the function in the package
+<span class=" -Color -Color-Green">|</span> <span class=" -Color -Color-Yellow">|</span> 
+* <span class=" -Color -Color-Yellow">|</span> <span class=" -Color -Color-Yellow">commit db1b58107ad04c57d9edddaf76cfa02cc14089dc</span>
+<span class=" -Color -Color-Yellow">|</span> <span class=" -Color -Color-Yellow">|</span> Author: John Kitchin &lt;johndoe@example.com&gt;
+<span class=" -Color -Color-Yellow">|</span> <span class=" -Color -Color-Yellow">|</span> Date:   Wed Mar 20 19:01:39 2024 +0000
+<span class=" -Color -Color-Yellow">|</span> <span class=" -Color -Color-Yellow">|</span> 
+<span class=" -Color -Color-Yellow">|</span> <span class=" -Color -Color-Yellow">|</span>     ignore the egg-info
+<span class=" -Color -Color-Yellow">|</span> <span class=" -Color -Color-Yellow">|</span> 
+* <span class=" -Color -Color-Yellow">|</span> <span class=" -Color -Color-Yellow">commit 79cf89bc5eba6a128af943ee653d12af831ff17a</span>
+<span class=" -Color -Color-Yellow">|/</span>  Author: John Kitchin &lt;johndoe@example.com&gt;
+<span class=" -Color -Color-Yellow">|</span>   Date:   Wed Mar 20 19:01:39 2024 +0000
+<span class=" -Color -Color-Yellow">|</span>   
+<span class=" -Color -Color-Yellow">|</span>       Add a new function
+<span class=" -Color -Color-Yellow">|</span> 
+* <span class=" -Color -Color-Yellow">commit d60276d67d05e3b2dd552fbaa14c281e065c951d</span>
+<span class=" -Color -Color-Yellow">|</span> Author: John Kitchin &lt;johndoe@example.com&gt;
+<span class=" -Color -Color-Yellow">|</span> Date:   Wed Mar 20 18:48:57 2024 +0000
+<span class=" -Color -Color-Yellow">|</span> 
+<span class=" -Color -Color-Yellow">|</span>     Add the .gitignore file
+<span class=" -Color -Color-Yellow">|</span> 
+* <span class=" -Color -Color-Yellow">commit 33bfc388619ea6d316265bdf7f4ca2511de7aedb</span>
+  Author: John Kitchin &lt;johndoe@example.com&gt;
+  Date:   Wed Mar 20 18:47:28 2024 +0000
+  
+      First commit
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>package-root<span class="p">;</span><span class="w"> </span>git<span class="w"> </span>show<span class="w"> </span>d60276d6:.gitignore
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__pycache__
+.ipynb_checkpoints
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="summary">
 <h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
@@ -1448,7 +2363,7 @@ git log --graph --oneline
 <li><p>Look at the commit log</p></li>
 </ol>
 <p>git is an iceberg. You can learn a lot more from the <a class="reference external" href="https://git-scm.com/book/en/v2">Pro Git book</a> and the <a class="reference external" href="https://git-scm.com/docs">reference manual</a>.</p>
-<p>You should also read <a class="reference external" href="https://merely-useful.tech/py-rse/git-advanced.html">https://merely-useful.tech/py-rse/git-advanced.html</a>.</p>
+<p>You should also read <a class="reference external" href="https://third-bit.com/py-rse/git-advanced.html">https://third-bit.com/py-rse/git-advanced.html</a>.</p>
 <p>Today we learned about using branches to try making a change. The nice thing about branches is if you don’t like the change, you can simply delete the branch, or go back to the main branch. If you do like it, then you just merge it in, and get on with your work.</p>
 <p>There is still quite a bit to learn about git. We will get in to some of these things next time, including dealing with merge conflicts,</p>
 </div>
@@ -1501,7 +2416,7 @@ git log --graph --oneline
     
       By John Kitchin<br/>
     
-        &copy; Copyright 2023.<br/>
+        &copy; Copyright 2024.<br/>
   </p>
 </footer>
 </main>

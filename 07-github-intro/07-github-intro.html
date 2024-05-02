@@ -64,7 +64,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "jkitchin/dsmles");
+    script.setAttribute("repo", "jkitchin/s24-06643");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 comment");
@@ -133,6 +133,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../00-introduction/00-introduction-terminals.html">
@@ -182,6 +187,28 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../09-wrapup/09-wrapup.html">
    Wrapping up
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11-advanced-packaging/advanced-packaging.html">
+   Advanced packaging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  About the book
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../build-statistics.html">
+   Build statistics
   </a>
  </li>
 </ul>
@@ -241,11 +268,11 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/jkitchin/sse"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/jkitchin/s24-06643"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/jkitchin/sse/issues/new?title=Issue%20on%20page%20%2F07-github-intro/07-github-intro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/jkitchin/s24-06643/issues/new?title=Issue%20on%20page%20%2F07-github-intro/07-github-intro.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -266,21 +293,21 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/jkitchin/sse/main?urlpath=lab/tree/docs/07-github-intro/07-github-intro.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/jkitchin/s24-06643/main?urlpath=lab/tree/sse/07-github-intro/07-github-intro.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://lab.amdatascience.com//hub/user-redirect/git-pull?repo=https://github.com/jkitchin/sse&urlpath=lab/tree/sse/docs/07-github-intro/07-github-intro.ipynb&branch=main"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https://github.com/jkitchin/s24-06643&urlpath=lab/tree/s24-06643/sse/07-github-intro/07-github-intro.ipynb&branch=main"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
                     alt="Interact on JupyterHub">JupyterHub</button></a>
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/jkitchin/sse/blob/main/docs/07-github-intro/07-github-intro.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/jkitchin/s24-06643/blob/main/sse/07-github-intro/07-github-intro.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -439,7 +466,7 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-github">
 <h1>Introduction to GitHUB<a class="headerlink" href="#introduction-to-github" title="Permalink to this headline">¶</a></h1>
 <p>So far we have only used git locally, i.e. in the JupyterHUB. git was designed to be distributed, which means used on many machines, and collaborative, i.e. many people can make contributions. A common model for doing this is there is a central location where a repository is saved. Anyone can make a copy of that repository (called a clone) on their local machine. Then they can make modifications to their copy, and optionally push the changes back to the central location.</p>
-<p><a class="reference external" href="https://github.com/">GitHUB</a> is one such solution. To use GitHUB you need to make an account with them. You can see my account at <a class="reference external" href="https://github.com/jkitchin">https://github.com/jkitchin</a>. There you can find all the public repositories I have worked on, and you can look at the source code and version history of them.</p>
+<p><a class="reference external" href="https://github.com/">GitHUB</a> is one such solution. To use GitHUB you need to make an account with them. You can see my account at <a class="reference external" href="https://github.com/jkitchin"></a>. There you can find all the public repositories I have worked on, and you can look at the source code and version history of them.</p>
 <p>GitHUB provides many features beyond just git. There is a feature called GitHUB actions that can automate different activities like running tests. There is also GitHUB Codespaces where you can develop software directly in your browser.</p>
 <p>There are other sites similar to GitHUB: GitLab and Bitbucket are two common ones. All of them have a free tier, and a paid tier with more features.</p>
 <div class="cell docutils container">
@@ -465,7 +492,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="setting-up-a-repo-on-github">
 <h1>Setting up a repo on GitHUB<a class="headerlink" href="#setting-up-a-repo-on-github" title="Permalink to this headline">¶</a></h1>
-<p>First, go to your GitHUB account (something like <a class="reference external" href="https://github.com/">https://github.com/</a><username>?tab=repositories). We are going to first setup a new repository.</p>
+<p>First, go to your GitHUB account (something like <code class="docutils literal notranslate"><span class="pre">https://github.com/&lt;username&gt;?tab=repositories</span></code>). We are going to first setup a new repository.</p>
 <p>Click on the green button for a new repository:
 <img alt="image.png" src="../_images/07-gh-new.png" /></p>
 <p>Give it a name, fill out the details and then select Create repository.</p>
@@ -476,8 +503,69 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <p>This will make a local copy you can work in. Go ahead and change into that directory, and make two files: <a class="reference external" href="http://setup.py">setup.py</a>, and <code class="docutils literal notranslate"><span class="pre">pkg/__init__.py</span></code>. For now they can be empty. Add these files to your git repo and commit them.</p>
-<p>These files are locally under version control. Now we need to get them back to GitHUB. To do that we have to setup a personal access token. See <a class="reference external" href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic">https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic</a>.</p>
-<p>Go to <a class="reference external" href="https://github.com/settings/tokens">https://github.com/settings/tokens</a>, and click Generate new token. We only need repo permissions, so click that box. You will have to save this token to a file, you won’t be able to see it again.</p>
+<p>These files are locally under version control. Now we need to get them back to GitHUB. To do that we have to setup a personal access token. See <a class="reference external" href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic"></a>.</p>
+<p>Go to <a class="reference external" href="https://github.com/settings/tokens"></a>, and click Generate new token. We only need repo permissions, so click that box. You will have to save this token to a file, you won’t be able to see it again.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pwd
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/jupyter-jkitchin@andrew.cm-11dd7/s24-06643/sse/07-github-intro
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/jkitchin/s24-Apr-03.git
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;s24-Apr-03&#39;...
+warning: You appear to have cloned an empty repository.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd s24-Apr-03
+git add setup.py pkg
+git commit -m &quot;initial commit&quot;
+git status
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[master (root-commit) 3918ef4] initial commit
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 pkg/__init__.py
+ create mode 100644 setup.py
+On branch master
+Your branch is based on &#39;origin/master&#39;, but the upstream is gone.
+  (use &quot;git branch --unset-upstream&quot; to fixup)
+
+nothing to commit, working tree clean
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>git<span class="w"> </span>push
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Username for &#39;https://github.com&#39;: ^C
+</pre></div>
+</div>
+</div>
+</div>
 <p>Once you have a token, you can go to a terminal in the git repo, and run</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git push
 </pre></div>
@@ -531,6 +619,38 @@ Fast-forward
 </pre></div>
 </div>
 <p>In browser editing is extremely convenient for small changes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd s24-Apr-03
+git pull
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Already up to date.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span> 
+cd s24-Apr-03
+git log --graph --oneline
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* f3e9cfc Update README.md
+* 12774cd Create README.md
+* 890a746 rename test:
+* a97e836 test file
+* 3918ef4 initial commit
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="vs-code-in-the-browser">
 <h1>VS Code in the browser<a class="headerlink" href="#vs-code-in-the-browser" title="Permalink to this headline">¶</a></h1>
@@ -540,7 +660,7 @@ Fast-forward
 <h1>GitHUB Codespaces<a class="headerlink" href="#github-codespaces" title="Permalink to this headline">¶</a></h1>
 <p>An even more advanced option is to open a “CodeSpace”.</p>
 <p><img alt="image.png" src="../_images/07-gh-cs.png" /></p>
-<p>This is a full computational environment that runs in VS Code, complete with a terminal. It is like the JupyterHUB we use in class, it even can run Jupyter notebooks. It does take quite a bit of configuration to get something as functional as we have (I have already done that configuration for you). Later, you can learn more about sophisticated codespaces by studying the repos at <a class="reference external" href="https://github.com/Steel-Bank-codespaces">https://github.com/Steel-Bank-codespaces</a>. For now, we work with the base environment.</p>
+<p>This is a full computational environment that runs in VS Code, complete with a terminal. It is like the JupyterHUB we use in class, it even can run Jupyter notebooks. It does take quite a bit of configuration to get something as functional as we have (I have already done that configuration for you). Later, you can learn more about sophisticated codespaces by studying the repos at <a class="reference external" href="https://github.com/Steel-Bank-codespaces"></a>. For now, we work with the base environment.</p>
 <p>A critical point to remember about a Codespace is that it is separate from your repo. You have to commit <strong>and push</strong> changes to the repo if you want to see them on GitHUB. You can even create independent Codespaces on the same repo; these do not see each other, and are like branches.</p>
 <p>Make some new edits to the <a class="reference external" href="http://README.md">README.md</a> file, then commit to the repo. Note this does not make it go to your repo on GitHUB. You also have to push the changes. Luckily, there are no authentication issues here, you simply run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>.</p>
 </div>
@@ -645,7 +765,7 @@ git push
     
       By John Kitchin<br/>
     
-        &copy; Copyright 2023.<br/>
+        &copy; Copyright 2024.<br/>
   </p>
 </footer>
 </main>
